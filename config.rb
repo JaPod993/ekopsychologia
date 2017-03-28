@@ -2,10 +2,12 @@
 
 # Set this to the root of your project when deployed:
 http_path = "/"
-css_dir = "ekopsychologia/apps/website/css"
-sass_dir = "ekopsychologia/apps/website/scss"
-images_dir = "ekopsychologia/apps/website/images"
-javascripts_dir = "ekopsychologia/apps/website/js"
+css_dir = "ekopsychologia/apps/website/static/website/css"
+sass_dir = "ekopsychologia/apps/website/static/website/scss"
+images_dir = "ekopsychologia/apps/website/static/website/images"
+javascripts_dir = "ekopsychologia/apps/website/static/website/js"
+
+
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

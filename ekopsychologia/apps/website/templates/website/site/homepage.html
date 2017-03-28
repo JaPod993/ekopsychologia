@@ -1,6 +1,117 @@
-{% extends 'website/site/base/layout.html' %}
+{% extends 'website/site/base/layout.html' %} {% load thumbnail %} {% load staticfiles %}
 
 
 {% block body_content %}
-HOMEPAGE
+<!-- ABOUT US -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 text-center"><h1>DOŁĄCZ DO MISTRZÓW</h1></div>
+    </div>
+     <div class="row opis">
+        <div class="col-xs-12    col-md-1    col-lg-3 text-center"></div>
+         <div class="col-xs-12    col-md-10   col-lg-6 text-center">
+             <div class="row pytania">
+
+                 <div id="left" class="col-xs-12   col-md-4"><h2>Posiadasz bogate doświadczenie?</h2></div>
+                 <div id="center" class="col-xs-12   col-md-4"><h2>Pracujesz z najlepszymi?</h2></div>
+                 <div id="right" class="col-xs-12   col-md-4"><h2>Interesują Cię nowe technologie?</h2></div>
+
+             </div>
+             <p>Dołącz do Akademii Mistrzów wspólnie z Adamem Małyszem. Zapraszamy na cykl spotkań w firmie BLACHPROFIL 2®, których celem jest wymiana doświadczeń, prezentacja nowych technologii i poszukiwanie najlepszych rozwiązań dla dekarzy. To również okazja, aby spotkać najlepszego skoczka narciarskiego wśród dekarzy, a zarazem najlepszego dekarza wśród skoczków narciarskich - Adama Małysza, który został ambasadorem Akademii Mistrzów.</p>
+         </div>
+         <div class="col-xs-12    col-md-1   col-lg-3 text-center"></div>
+    </div>
+</div>
+<!-- ABOUT US END -->
+
+<div class="container"><hr class="hr"/></div>
+
+<!-- NEWS -->
+<div class="container text-center">
+  <div class="row text-center">
+      {% for post in articles %}
+      <div class="col-sm-4">
+      <div class="thumbnail">
+          {% if post.thumbnail %}
+          {% thumbnail post.thumbnail "360x180" crop="center" quality=85 as im %}
+          <img class="img-responsive"  src="{{im.url}}" alt="news_1">
+          {% endthumbnail %}
+          {% endif %}
+          <h2 class="text-left compared-text-part">{{post.identity}}</h2>
+          <h3 class="data text-left">{{post.created_at|date:"d.m.Y"}}</h3>
+          <div class="text-justify compared-text-part2">{{post.content|safe|truncatechars_html:300}}</div>
+          <div class="row">
+              <div class="col-xs-7 col-sm-6 col-md-7 col-lg-8 kreska"><hr/></div>
+              <div class="col-xs-5 col-sm-6 col-md-5 col-lg-4 zobacz"><a id="zobacz" href="{{ post.get_absolute_url }}">Zobacz więcej  <i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
+          </div>
+      </div>
+    </div>
+      {% endfor %}
+  </div>
+</div>
+<!-- NEWS END -->
+
+<div class="container"><hr class="hr"/></div>
+
+{% if homepage_gallery %}
+<!-- GALLERY -->
+    <div class="container">
+        <div class="row">
+            {% for file in homepage_gallery.children.images.all %}
+                {% thumbnail file.path "350x200" crop="center" as im %}
+                    {% thumbnail file.path "1000x750" as im_big %}
+                        <div class="col-md-3 col-xs-6 thumb">
+                            <div class="image-wrapper">
+                            <img src="{{ im.url }}" alt="{{ file.name }}" title="{{ file.name }}" class="img-responsive">
+                            <a href="{{ im_big.url }}" class="thumbnail" data-lightbox="image-1">
+                             <span class="overlay">
+                                 <div class="icon"><i class="fa fa-search-plus" aria-hidden="true"></i></div>
+                             </span>
+                             </a>
+                            </div>
+                        </div>
+                    {% endthumbnail %}
+                {% endthumbnail %}
+            {% endfor %}
+        </div>
+    </div>
+<!-- GALLERY END -->
+{% endif %}
+
+<div class="container"><hr class="gallery"/></div>
+
+<!-- VIDEO -->
+<div class="container">
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/NxDI_x9s-II" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+<!-- VIDEO END -->
+
+<div class="container"><hr class="hr"/></div>
+
+<!-- LINKS -->
+<div class="container">
+    <div id="linki" class="row">
+
+        <div class="col-xs-12 col-sm-4 text-center">
+            <a target="_blank" href="http://www.bp2.pl/produkt/zet-r-roof"><img class="img-responsive center-block" src="{% static 'website/images/zet.jpg' %}" alt=""></a>
+            <div class="margin"><a target="_blank" href="http://www.bp2.pl/produkt/zet-r-roof">www.zet-roof.eu</a></div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4 text-center">
+            <a target="_blank" href="http://www.bp2.pl"><img class="img-responsive center-block" src="{% static 'website/images/blachprofil.jpg' %}" alt=""></a>
+             <div class="margin"><a target="_blank" href="http://www.bp2.pl/">www.bp2.pl</a></div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4 text-center">
+            <a target="_blank" href="http://www.inguri.eu/produkt/system-rynnowy-inguri-r"><img class="img-responsive center-block" src="{% static 'website/images/inguri.jpg' %}" alt=""></a>
+            <div class="margin"><a target="_blank" href="http://www.inguri.eu/produkt/system-rynnowy-inguri-r">www.inguri.eu</a></div>
+        </div>
+
+    </div>
+</div>
+<!-- LINKS END -->
+
+<div class="container"><hr class="hr"/></div>
 {% endblock %}

@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-from django.conf.urls import  url
+from django.conf.urls import patterns, url
 from django.contrib.sitemaps.views import sitemap
 from django.views.generic import TemplateView
 
@@ -10,8 +10,9 @@ sitemaps = {
     'Articles': EcophonSitemap(),
     'Sites': EcophonSitesSitemap(),
 }
-urlpatterns = [
+urlpatterns = patterns('',
     url(r'^$', HomepageView.as_view(), name='website.index'),
-    url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
-    url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
-]
+
+   (r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
+   url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+)

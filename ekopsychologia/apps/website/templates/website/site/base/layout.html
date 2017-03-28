@@ -1,4 +1,4 @@
-<!DOCTYPE html>{% load staticfiles %}{% load compress %}{% load corecms_tags %}{% load corecms_render_tags %}
+<!DOCTYPE html>{% load staticfiles %}{% load compress %}{% load corecms_tags %}{% load corecms_render_tags %}{% load thumbnail %}
 <html lang="pl">
 <head>
     <meta charset="utf-8">
@@ -25,18 +25,30 @@
 
     {% block canonical_url %}{% endblock %}
 
-    {% compress css %}
-        <link href="{% static 'website/css/style.css' %}" rel="stylesheet"/>
-    {% endcompress %}
 
     {% block body_js %}{% endblock %}
     {{ request.cms_config.tracking_code|safe }}
+
+
+     <!-- Latest compiled and minified CSS -->
+    <link href="{% static 'website/css/bootstrap.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'website/css/font-awesome.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'website/css/lightbox.min.css' %}" rel="stylesheet">
+
+
+
+    {% compress css %}
+    <link href="{% static 'website/css/style.css' %}" rel="stylesheet"/>
+    {% endcompress %}
+
+    <script src="{% static 'website/js/jquery.min.js' %}"></script>
+    <script src="{% static 'website/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'website/js/lightbox.min.js' %}"></script>
+
+
+
 </head>
 <body class="{% block bodyclass %}{{ LANGUAGE_CODE }}{% endblock %}">
-<div class="cookies-warning" style="display:none;">
-    {{ request.cms_config.cookie_description|safe|default:"" }}
-    <i class="fa fa-times"></i>
-</div>
 {% if request.user.is_superuser %}
     <div class="right-edit-buttons">
         <a class="right-edit-button" href="{% url 'admin:index' %}">
@@ -48,11 +60,157 @@
     </div>
 {% endif %}
 
-{% block body_content %}
 
+<!-- NAVBAR -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a href="#">
+        <img class="img-responsive brand" alt="Akademia Mistrzów" src="{% static 'website/images/am.png' %}">
+      </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#blog">BLOG</a> </li>
+                <li><a href="#blog">FOTO</a> </li>
+                <li><a href="#blog">WIDEO</a> </li>
+                <li><a href="#blog">PROGRAM LOJALNOŚCIOWY</a> </li>
+                <li><a href="#blog">KONTAKT</a> </li>
+            </ul>
+        </div>
+    </div>
+
+</nav>
+<!-- NAVBAR_END -->
+
+
+<!-- MAŁYSZ HEADER -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 header">
+           <img class="img-responsive" src="{% static 'website/images/header.jpg' %}" alt="logo">
+        </div>
+    </div>
+</div>
+<!-- MAŁYSZ HEADER END -->
+
+
+<!-- BUTTONY -->
+<div class="container-fluid buttony">
+        <div class="text-center">
+            <a href="#" class="btn btn-default btn-1">ZAPISZ SIĘ DO AKADEMII</a>
+            <a href="#" class="btn btn-default btn-2">PROGRAM LOJALNOŚCIOWY</a>
+        </div>
+</div>
+<!-- BUTTONY END -->
+
+
+{% block body_content %}
 
 {% endblock %}
 
+
+<!-- FOOTER -->
+<footer>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 text-right">
+            <div id="social" class="row">
+
+                <div class="col-xs-12">
+                    <a href="#" id="fb" class="btn btn-default"><i class="fa fa-facebook" aria-hidden="true"></i>facebook</a>
+                </div>
+
+                <div class="col-xs-12">
+                <a href="#" id="yt" class="btn btn-default"><i class="fa fa-youtube-play" aria-hidden="true"></i>youtube</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 text-center">
+            <a href="#"><img id="am2" class="image-responsive" src="{% static 'website/images/am2.png' %}" alt=""></a>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <div id="download">
+                <ul class="text-left">
+                    <li>Download:</li>
+                    <li><a href="#"><i class="fa fa-folder-open-o" aria-hidden="true"></i>Katalog Firmowy</a></li>
+                    <li><a href="#"><i class="fa fa-folder-o" aria-hidden="true"></i>Folder pokrycia dachowe</a></li>
+                    <li><a href="#"><i class="fa fa-folder-o" aria-hidden="true"></i>Folder Zet-roof</a></li>
+                    <li><a href="#"><i class="fa fa-folder-o" aria-hidden="true"></i>Folder Inguri</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container"><hr class="footer"/></div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 text-center sc-brand">
+            Projekt i realizacja:
+           <a class="sc-logo" href="http://www.silvercube.pl/" title="Aplikacje internetowe, strony www, administracja serwerami dedykowanymi"><img src="{% static 'website/images/sc_white.svg' %}" alt="Aplikacje internetowe, strony www, administracja serwerami dedykowanymi" title="SilverCube.pl">SilverCube</a>
+        </div>
+    </div>
+</div>
+</footer>
+<!-- FOOTER END -->
+
+<script>
+
+    function set_news_height() {
+        var sizes = [];
+        $(".compared-text-part2").height('auto');
+        $(".compared-text-part").height('auto');
+
+        $(".compared-text-part").each(function(){
+            sizes.push($(this).height());
+        });
+        $(".compared-text-part").height(Math.max.apply(null, sizes));
+        $(".compared-text-part2").each(function(){
+            sizes.push($(this).height());
+        });
+        $(".compared-text-part2").height(Math.max.apply(null, sizes));
+    }
+
+    function is_desktop(){
+        return $(window).width() >= 736;
+    }
+
+    $(function(){
+        var resize_timeout = null;
+
+        setTimeout(function(){
+            if(is_desktop()){
+                set_news_height();
+            }
+        }, 200);
+
+        $(window).resize(function() {
+            if(is_desktop()){
+
+                if(resize_timeout != null){
+                    clearTimeout(resize_timeout);
+                }
+
+                resize_timeout = setTimeout(function(){
+                    set_news_height();
+                }, 200);
+
+            }
+        });
+
+    });
+
+
+</script>
 
 </body>
 </html>
