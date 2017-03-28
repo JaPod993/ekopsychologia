@@ -1,0 +1,12 @@
+*~
+*.pyc
+*.pyo
+.project
+.pydevproject
+.sass-cache/
+.idea/
+.settings/
+/media/
+/static/
+/logs/*
+ekopsychologia/apps/djangoskin

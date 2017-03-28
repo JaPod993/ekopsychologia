@@ -1,0 +1,13 @@
+
+{% load corecms_tags %}
+
+{% for article in articles_aktualnosci %}
+{% if forloop.first %}
+{% include 'website/site/element/_article_big_block.html' with title=aktualnosci_title link=True button=button_full_width article=article bottom_line=True only %}
+{% elif forloop.last %}
+{% include 'website/site/element/_article_small_block.html' with  button=button_full_width article=article bottom_line=False only %}
+{% else %}
+{% include 'website/site/element/_article_small_block.html' with  button=button_full_width article=article bottom_line=True only %}
+{% endif %}
+
+{% endfor %}

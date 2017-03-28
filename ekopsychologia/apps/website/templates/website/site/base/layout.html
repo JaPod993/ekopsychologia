@@ -1,0 +1,58 @@
+<!DOCTYPE html>{% load staticfiles %}{% load compress %}{% load corecms_tags %}{% load corecms_render_tags %}
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block description %}
+        <meta name="description" itemprop="description" content="{{ request.cms_config.seo_description|striptags }}"/>
+    {% endblock %}
+
+    {% block keywords %}
+        <meta name="keywords" itemprop="keywords" content="{{ request.cms_config.seo_keywords }}"/>
+    {% endblock %}
+
+    {% block title %}
+        <title>
+            {{ request.cms_config.site_title }}
+        </title>
+    {% endblock %}
+
+    {% block header_css %}{% endblock %}
+
+    {% block header_js %}{% endblock %}
+
+
+    {% block canonical_url %}{% endblock %}
+
+    {% compress css %}
+        <link href="{% static 'website/css/style.css' %}" rel="stylesheet"/>
+    {% endcompress %}
+
+    {% block body_js %}{% endblock %}
+    {{ request.cms_config.tracking_code|safe }}
+</head>
+<body class="{% block bodyclass %}{{ LANGUAGE_CODE }}{% endblock %}">
+<div class="cookies-warning" style="display:none;">
+    {{ request.cms_config.cookie_description|safe|default:"" }}
+    <i class="fa fa-times"></i>
+</div>
+{% if request.user.is_superuser %}
+    <div class="right-edit-buttons">
+        <a class="right-edit-button" href="{% url 'admin:index' %}">
+            <div class="right-edit-button-icon"><i class="fa fa-cog"></i></div>
+            <p>Panel administracyjny</p>
+        </a>
+        {% block edit_buttons %}
+        {% endblock %}
+    </div>
+{% endif %}
+
+{% block body_content %}
+
+
+{% endblock %}
+
+
+</body>
+</html>

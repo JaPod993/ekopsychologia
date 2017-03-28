@@ -1,0 +1,113 @@
+{% extends "admin/change_form.html" %}
+{% load i18n admin_static admin_modify admin_urls corecms_tags %}
+{% load translate_tags %}
+{% load widget_tweaks %}
+{% load staticfiles %}
+{% load corecms_render_tags %}
+
+{% block field_sets %}
+    {% content_type adminform.form.instance as ct %}
+
+    <div class="row">
+        <div class="col-md-12">
+            {% block base_object_form %}
+                <div class="card card-underline">
+                    <div class="card-head">
+                        <ul class="nav nav-tabs pull-right" data-toggle="tabs">
+                            <li class="active"><a href="#data">Dane podstawowe</a></li>
+                            {% if adminform.form.modeltranslate_enabled and translate_settings.available|length > 1 %}
+                                <li class=""><a href="#languages">Języki</a></li>{% endif %}
+                        </ul>
+                    </div>
+                    <div class="card-body tab-content">
+                        {% if adminform.form.modeltranslate_enabled and translate_settings.available|length > 1 %}
+                            <div class="tab-pane" id="languages">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        {% for l in translate_settings.available %}
+                                            {% with field_name="for_lang_"|add:l.0 %}
+                                                {% with field=adminform.form|get_form_field:field_name %}
+                                                    <div class="checkbox checkbox-styled">
+                                                        <label class="checkbox-inline checkbox-styled" for="{{ field.id_for_label }}">
+                                                            {{ field }}
+                                                            <span>{{ field.label }}</span>
+                                                        </label>
+                                                    </div>
+                                                {% endwith %}
+                                            {% endwith %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                        <div class="tab-pane active" id="data">
+                            {% include "materialtemplate/admin/_form_lang_switcher.html" with translate_form_id=opts.model_name|add:'_form' class='in-tab' %}
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {% display_field adminform.form 'identity' %}
+                                    {% display_field adminform.form 'tags' %}
+                                    {% display_field adminform.form 'status' %}
+                                    {% display_field adminform.form 'shortcut' %}
+                                    {% display_field adminform.form 'content' %}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    {% render_field adminform.form.thumbnail %}
+                                    {{ adminform.form.thumbnail.errors }}
+                                    {% render_field adminform.form.main_image %}
+                                    {{ adminform.form.main_image.errors }}
+
+
+                                </div>
+                                <div class="col-md-7">
+                                    {% display_field adminform.form 'main_parent' %}
+                                    {% display_field adminform.form 'parent' %}
+                                    {% display_field adminform.form 'slug' %}
+                                    {% display_field adminform.form 'template' %}
+
+
+                                    {% display_field adminform.form 'article_date' %}
+                                    {% display_field adminform.form 'alternative_url' %}
+
+                                    {#% include "corecms/admin/_display_field.html" with form=adminform.form field_name='created_by' only%#}
+                                    {#% include "corecms/admin/_display_field.html" with form=adminform.form field_name='updated_by' only%#}
+                                    <div class="span12" style="margin-top:15px;">
+                                        {% for extra_param in extra_parameters %}
+                                            {% display_field adminform.form extra_param %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+        </div>
+    </div>
+    {% if adminform.form.instance.pk %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                {% include "corecms/admin/_object_files.html" with object=adminform.form.instance translate_settings=translate_settings only %}
+                            </div>
+                            <div class="col-md-6" id="connector-children-area">
+                                {% include "corecms/admin/_object_connector_children.html" with object=adminform.form.instance app_gallery_exist=app_gallery_exist only %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <script>
+        $(function () {
+            EXTEND_MANAGER.tagit('#id_tags');
+            EXTEND_MANAGER.tagit('#id_tagit');
+            {% add_related_items_tab adminform.form.instance %}
+        });
+    </script>
+{% endblock %}
