@@ -89,128 +89,12 @@
 </nav>
 <!-- NAVBAR_END -->
 
-
-<!-- MAŁYSZ HEADER -->
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-xs-12 header">
-           <img class="img-responsive" src="{% static 'website/images/header.jpg' %}" alt="logo">
-        </div>
-    </div>
-</div>
-<!-- MAŁYSZ HEADER END -->
-
-
-<!-- BUTTONY -->
-<div class="container-fluid buttony">
-        <div class="text-center">
-            <a href="#" class="btn btn-default btn-1">ZAPISZ SIĘ DO AKADEMII</a>
-            <a href="#" class="btn btn-default btn-2">PROGRAM LOJALNOŚCIOWY</a>
-        </div>
-</div>
-<!-- BUTTONY END -->
-
-
 {% block body_content %}
 
 {% endblock %}
 
 
-<!-- FOOTER -->
-<footer>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-4 text-right">
-            <div id="social" class="row">
 
-                <div class="col-xs-12">
-                    <a href="#" id="fb" class="btn btn-default"><i class="fa fa-facebook" aria-hidden="true"></i>facebook</a>
-                </div>
-
-                <div class="col-xs-12">
-                <a href="#" id="yt" class="btn btn-default"><i class="fa fa-youtube-play" aria-hidden="true"></i>youtube</a>
-                </div>
-
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-4 text-center">
-            <a href="#"><img id="am2" class="image-responsive" src="{% static 'website/images/am2.png' %}" alt=""></a>
-        </div>
-        <div class="col-xs-12 col-sm-4">
-            <div id="download">
-                <ul class="text-left">
-                    <li>Download:</li>
-                    <li><a href="#"><i class="fa fa-folder-open-o" aria-hidden="true"></i>Katalog Firmowy</a></li>
-                    <li><a href="#"><i class="fa fa-folder-o" aria-hidden="true"></i>Folder pokrycia dachowe</a></li>
-                    <li><a href="#"><i class="fa fa-folder-o" aria-hidden="true"></i>Folder Zet-roof</a></li>
-                    <li><a href="#"><i class="fa fa-folder-o" aria-hidden="true"></i>Folder Inguri</a></li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<div class="container"><hr class="footer"/></div>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 text-center sc-brand">
-            Projekt i realizacja:
-           <a class="sc-logo" href="http://www.silvercube.pl/" title="Aplikacje internetowe, strony www, administracja serwerami dedykowanymi"><img src="{% static 'website/images/sc_white.svg' %}" alt="Aplikacje internetowe, strony www, administracja serwerami dedykowanymi" title="SilverCube.pl">SilverCube</a>
-        </div>
-    </div>
-</div>
-</footer>
-<!-- FOOTER END -->
-
-<script>
-
-    function set_news_height() {
-        var sizes = [];
-        $(".compared-text-part2").height('auto');
-        $(".compared-text-part").height('auto');
-
-        $(".compared-text-part").each(function(){
-            sizes.push($(this).height());
-        });
-        $(".compared-text-part").height(Math.max.apply(null, sizes));
-        $(".compared-text-part2").each(function(){
-            sizes.push($(this).height());
-        });
-        $(".compared-text-part2").height(Math.max.apply(null, sizes));
-    }
-
-    function is_desktop(){
-        return $(window).width() >= 736;
-    }
-
-    $(function(){
-        var resize_timeout = null;
-
-        setTimeout(function(){
-            if(is_desktop()){
-                set_news_height();
-            }
-        }, 200);
-
-        $(window).resize(function() {
-            if(is_desktop()){
-
-                if(resize_timeout != null){
-                    clearTimeout(resize_timeout);
-                }
-
-                resize_timeout = setTimeout(function(){
-                    set_news_height();
-                }, 200);
-
-            }
-        });
-
-    });
-
-
-</script>
 
 </body>
 </html>
