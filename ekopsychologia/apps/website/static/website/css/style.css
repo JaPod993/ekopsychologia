@@ -27,42 +27,87 @@
   font-weight: 300;
 }
 body {
-  background-color: #000000;
-  padding-top: 70px;
+  background-color: #c4c4c4;
 }
 
 .navbar-default {
-  background-color: #ee1d23;
-  margin: 0;
-  border: none;
-}
-.navbar-default .navbar-toggle {
-  border-color: #ffffff;
-  margin-top: 18px;
-  margin-bottom: 18px;
   border-radius: 0;
-}
-.navbar-default .navbar-toggle:hover {
-  background-color: #d41920;
-}
-.navbar-default .navbar-toggle:focus {
-  background-color: #d41920;
-}
-.navbar-default .navbar-toggle .icon-bar {
+  border: none;
   background-color: #ffffff;
 }
-.navbar-default .brand {
+
+.btn-circle {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background-color: #c4c4c4;
+  color: #ffffff;
+}
+
+a.btn.btn-default.btn-circle {
+  padding: 6px 0;
+  border: none;
+}
+
+.circle_btn_padding {
   padding-top: 10px;
-  padding-bottom: 10px;
 }
-.navbar-default .navbar-nav li a {
-  padding-top: 25px;
-  padding-bottom: 25px;
-  font-family: MyriadPro-Regular, sans-serif;
-  font-size: 14px;
-  color: #ffffff;
+
+/*
+.navbar-default {
+  background-color: $primary-color;
+  margin: 0;
+  border: none;
+  .navbar-toggle {
+    border-color: $tekst;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    border-radius: 0;
+    &:hover {
+      background-color: $hover;
+    }
+    &:focus {
+    background-color: $hover;
+  }
+    .icon-bar {
+      background-color: $tekst;
+    }
+  }
+  .brand {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .navbar-nav li a{
+        padding-top: 25px;
+        padding-bottom: 25px;
+        font-family: MyriadPro-Regular, sans-serif;
+        font-size: 14px;
+        color: $tekst;
+  }
+  .navbar-nav>li>a:hover {
+    background-color: $hover;
+    color: $tekst;
+
+  }
+} */
+.navbar-brand img {
+  height: 100%;
 }
-.navbar-default .navbar-nav > li > a:hover {
-  background-color: #d41920;
-  color: #ffffff;
+
+@media (min-width: 768px) {
+  .navbar-brand {
+    height: 80px;
+  }
+
+  .two-rows-nav {
+    display: flex;
+    flex-direction: column;
+    float: right;
+  }
+
+  .random-text {
+    padding-left: 15px;
+    color: #777;
+  }
 }

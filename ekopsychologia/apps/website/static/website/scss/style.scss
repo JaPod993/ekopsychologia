@@ -1,8 +1,8 @@
 // zmienne
 
 $primary-color: #ee1d23; //red
-$tekst: #ffffff; //white
-$bg: #000000; //czarny
+$white: #ffffff; //biały
+$bg: #c4c4c4; //szary
 $hover: #d41920; //czerwony hover
 
 // justify class
@@ -45,14 +45,44 @@ $hover: #d41920; //czerwony hover
 
 
 body {
-  background-color: $bg;
-  padding-top: 70px;
+ background-color: $bg;
+ // padding-top: 70px;
 }
 
 
 
 
 //...................NAVBAR......................
+
+.navbar-default {
+  border-radius: 0;
+  border: none;
+  background-color: $white;
+}
+
+.btn-circle {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  //width: 30px;
+  //height: 30px;
+  text-align: center;
+  //padding: 6px 0;
+  //font-size: 12px;
+  //line-height: 1.42;
+  //border-radius: 15px;
+  background-color: #c4c4c4;
+  color: $white;
+}
+a.btn.btn-default.btn-circle {
+  padding: 6px 0;
+  border:none;
+}
+.circle_btn_padding {
+  padding-top: 10px;
+}
+
+/*
 .navbar-default {
   background-color: $primary-color;
   margin: 0;
@@ -88,8 +118,19 @@ body {
     color: $tekst;
 
   }
-}
+} */
 //.............................................
+
+
+
+.navbar-brand img {
+  height: 100%;
+}
+
+
+
+
+
 
 
 
@@ -106,7 +147,20 @@ body {
 @media screen and (max-width : 992px) {
 
 }
-
+@media(min-width: 768px) {
+  .navbar-brand {
+    height: 80px;
+  }
+  .two-rows-nav {
+    display: flex;
+    flex-direction: column;
+    float: right;
+  }
+  .random-text {
+    padding-left: 15px;
+    color: #777;
+  }
+}
 @media screen and (max-width:768px) {
 
 }
