@@ -2,32 +2,35 @@
   text-align: justify;
 }
 
-@font-face {
-  font-family: MyriadPro-Regular;
-  src: url(../fonts/MyriadPro-Regular.otf);
-  font-style: normal;
-  font-weight: 400;
+.inactiveLink {
+  pointer-events: none;
+  cursor: default;
 }
-@font-face {
-  font-family: MyriadPro-Black;
-  src: url(../fonts/MyriadPro-Black.otf);
-  font-style: normal;
-  font-weight: 900;
-}
-@font-face {
-  font-family: MyriadPro-Bold;
-  src: url(../fonts/MyriadPro-Bold.otf);
-  font-style: normal;
-  font-weight: 700;
-}
-@font-face {
-  font-family: MyriadPro-Light;
-  src: url(../fonts/MyriadPro-Light.otf);
-  font-style: normal;
-  font-weight: 300;
-}
+
 body {
   background-color: #c4c4c4;
+}
+
+nav.navbar.navbar-default {
+  margin-bottom: 0;
+}
+
+.nav-height-top {
+  padding-bottom: 20px;
+}
+
+.nav-height-bottom {
+  padding-top: 25px;
+}
+
+.nav-content-bottom li a {
+  padding-top: 0;
+  padding-bottom: 0px;
+}
+
+.nav-content-top li a {
+  padding-top: 30px;
+  padding-bottom: 0;
 }
 
 .navbar-default {
@@ -42,6 +45,8 @@ body {
   height: 30px;
   text-align: center;
   background-color: #c4c4c4;
+}
+.btn-circle i {
   color: #ffffff;
 }
 
@@ -51,63 +56,87 @@ a.btn.btn-default.btn-circle {
 }
 
 .circle_btn_padding {
-  padding-top: 10px;
+  padding-top: 25px;
+  padding-right: 15px;
 }
 
-/*
-.navbar-default {
-  background-color: $primary-color;
-  margin: 0;
-  border: none;
-  .navbar-toggle {
-    border-color: $tekst;
-    margin-top: 18px;
-    margin-bottom: 18px;
-    border-radius: 0;
-    &:hover {
-      background-color: $hover;
-    }
-    &:focus {
-    background-color: $hover;
-  }
-    .icon-bar {
-      background-color: $tekst;
-    }
-  }
-  .brand {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  .navbar-nav li a{
-        padding-top: 25px;
-        padding-bottom: 25px;
-        font-family: MyriadPro-Regular, sans-serif;
-        font-size: 14px;
-        color: $tekst;
-  }
-  .navbar-nav>li>a:hover {
-    background-color: $hover;
-    color: $tekst;
-
-  }
-} */
-.navbar-brand img {
-  height: 100%;
+.circle_btn_padding {
+  padding-top: 25px;
+  padding-right: 15px;
 }
 
-@media (min-width: 768px) {
-  .navbar-brand {
-    height: 80px;
-  }
+.nav.navbar-nav.navbar-right.nav-content-top li a {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  color: #303030;
+}
+.nav.navbar-nav.navbar-right.nav-content-top li a i {
+  color: #0c824b;
+}
 
-  .two-rows-nav {
-    display: flex;
-    flex-direction: column;
-    float: right;
-  }
+.btn-circle {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background-color: #c4c4c4;
+}
 
-  .random-text {
-    padding-left: 15px;
-    color: #777;
-  }
+.circle_btn_padding .btn.btn-default.btn-circle i {
+  color: #ffffff !important;
+}
+
+.nav.navbar-nav.navbar-right.nav-content-bottom li a {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #303030;
+}
+
+div.container.nav-height-top {
+  padding-right: 0;
+}
+
+div.container.nav-height-bottom {
+  padding-bottom: 20px;
+}
+
+.fa-envelope:before {
+  font-size: 20px;
+}
+
+.fa-phone:before {
+  font-size: 20px;
+}
+
+span.menu-top {
+  position: relative;
+  top: -2px;
+  padding-left: 10px;
+}
+
+.nav.nav-content-bottom > li > a {
+  display: inline-block;
+  overflow-x: hidden;
+  position: relative;
+  transition: .25s ease all;
+  text-decoration: none;
+  padding-bottom: 5px;
+}
+
+.nav.nav-content-bottom > li > a::after {
+  content: " ";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: -100%;
+  height: 2px;
+  width: 100%;
+  background: #0c824b;
+  transition: .5s ease all;
+}
+
+.nav.nav-content-bottom > li > a:hover:after {
+  left: 0;
 }

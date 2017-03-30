@@ -35,6 +35,8 @@
     <link href="{% static 'website/css/font-awesome.min.css' %}" rel="stylesheet"/>
     <link href="{% static 'website/css/lightbox.min.css' %}" rel="stylesheet">
 
+    <!--GOOGLE FONT - Roboto-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
 
 
     {% compress css %}
@@ -64,25 +66,21 @@
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#"><img src="{% static 'website/images/ekopsychologia_logo.png' %}"></a>
-    </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <div class="two-rows-nav">
-        <ul class="nav navbar-nav">
-          <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>ekopsychologia@ekopsychologia.pl</a></li>
-          <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></i>+48 604 936 349</a></li>
+  <div class="container nav-height-top">
+    <ul class="nav navbar-nav navbar-right nav-content-top">
+          <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span class="menu-top inactiveLink">ekopsychologia@ekopsychologia.pl</span></a></li>
+        <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></i><span class="menu-top inactiveLink">+48 604 936 349</span></a></li>
           <li class="circle_btn_padding"><a href="#" class="btn btn-default btn-circle"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li class="circle_btn_padding"><a href="#" class="btn btn-default btn-circle"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+        <li class="circle_btn_padding"><a href="#" class="btn btn-default btn-circle"><i class="fa fa-youtube yt" aria-hidden="true"></i></a></li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
+  </div>
+</nav>
+
+
+<nav class="navbar navbar-default">
+  <div class="container nav-height-bottom">
+    <ul class="nav navbar-nav navbar-right nav-content-bottom">
             <li><a href="#">O nas</a></li>
             <li><a href="#">Projekty</a></li>
             <li><a href="#">Aktualności</a></li>
@@ -91,13 +89,17 @@
             <li><a href="#">Galeria</a></li>
             <li><a href="#">Kontakt</a></li>
         </ul>
-
-      </div>
-    </div><!-- /.navbar-collapse -->
-
-  </div><!-- /.container-fluid -->
+  </div>
 </nav>
+
+
+
+
+
+
 <!-- NAVBAR END-->
+
+
 
 
 
