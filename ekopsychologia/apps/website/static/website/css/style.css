@@ -15,10 +15,6 @@ nav.navbar.navbar-default {
   margin-bottom: 0;
 }
 
-.nav-height-top {
-  padding-bottom: 20px;
-}
-
 .nav-height-bottom {
   padding-top: 25px;
 }
@@ -29,7 +25,7 @@ nav.navbar.navbar-default {
 }
 
 .nav-content-top li a {
-  padding-top: 30px;
+  padding-top: 5px;
   padding-bottom: 0;
 }
 
@@ -56,12 +52,7 @@ a.btn.btn-default.btn-circle {
 }
 
 .circle_btn_padding {
-  padding-top: 25px;
-  padding-right: 15px;
-}
-
-.circle_btn_padding {
-  padding-top: 25px;
+  padding-top: 0px;
   padding-right: 15px;
 }
 
@@ -116,6 +107,15 @@ span.menu-top {
   padding-left: 10px;
 }
 
+a.btn.btn-default.btn-circle {
+  background-color: #c4c4c4;
+  transition: background-color .5s ease;
+}
+
+a.btn.btn-default.btn-circle:hover {
+  background-color: #0c824b;
+}
+
 .nav.nav-content-bottom > li > a {
   display: inline-block;
   overflow-x: hidden;
@@ -139,4 +139,19 @@ span.menu-top {
 
 .nav.nav-content-bottom > li > a:hover:after {
   left: 0;
+}
+
+div.container.nav-height-bottom {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#logo {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+div.col-sm-12.nav-padding {
+  padding-left: 0;
+  padding-right: 0;
 }

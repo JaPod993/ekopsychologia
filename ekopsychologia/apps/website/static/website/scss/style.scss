@@ -51,9 +51,6 @@ body {
 nav.navbar.navbar-default {
   margin-bottom: 0;
 }
-.nav-height-top {
-  padding-bottom: 20px;
-}
 .nav-height-bottom {
   padding-top: 25px;
 }
@@ -62,7 +59,7 @@ nav.navbar.navbar-default {
   padding-bottom: 0px;
 }
 .nav-content-top li a {
-  padding-top: 30px;
+  padding-top: 5px;
   padding-bottom: 0;
 }
 .navbar-default {
@@ -87,12 +84,9 @@ a.btn.btn-default.btn-circle {
   padding: 6px 0;
   border:none;
 }
+
 .circle_btn_padding {
-  padding-top: 25px;
-  padding-right: 15px;
-}
-.circle_btn_padding {
-  padding-top: 25px;
+  padding-top: 0px;
   padding-right: 15px;
 }
 .nav.navbar-nav.navbar-right.nav-content-top li a {
@@ -136,6 +130,15 @@ span.menu-top {
   top: -2px;
   padding-left: 10px;
 }
+a.btn.btn-default.btn-circle {
+  background-color: $grey;
+  transition: background-color .5s ease;
+
+}
+
+a.btn.btn-default.btn-circle:hover {
+  background-color: $hover;
+}
 
 .nav.nav-content-bottom>li>a {
     display: inline-block;
@@ -169,6 +172,18 @@ span.menu-top {
     left: 0;
 }
 
+div.container.nav-height-bottom {
+  padding-left: 0;
+  padding-right: 0;
+}
+#logo {
+  padding-right: 0;
+  padding-left: 0;
+}
+div.col-sm-12.nav-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
 //.............................................
 
 .navbar-brand img {
