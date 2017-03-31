@@ -156,6 +156,7 @@ a.btn.btn-default.btn-circle:hover {
     text-decoration: none;
     //line-height: 45px;
     padding-bottom: 5px;
+    padding-top: 10px;
 }
  .nav.nav-content-bottom>li>a::after {
    content: " ";
@@ -171,10 +172,15 @@ a.btn.btn-default.btn-circle:hover {
  .nav.nav-content-bottom>li>a:hover:after {
     left: 0;
 }
+ .nav.nav-content-bottom {
+   padding-top: 40px;
+ }
 
 div.container.nav-height-bottom {
-  padding-left: 0;
-  padding-right: 0;
+  //padding-left: 0;
+  //padding-right: 0;
+  padding-top: 25px;
+  padding-bottom: 15px;
 }
 #logo {
   padding-right: 0;
@@ -183,6 +189,43 @@ div.container.nav-height-bottom {
 div.col-sm-12.nav-padding {
   padding-left: 0;
   padding-right: 0;
+}
+
+.navbar-toggle {
+  border: none;
+  background: transparent !important;
+
+  &:hover {
+    background: transparent !important;
+  }
+
+  .icon-bar {
+    width: 22px;
+    transition: all 0.2s;
+  }
+  .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+  .middle-bar {
+    opacity: 0;
+  }
+  .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+  }
+}
+
+.navbar-toggle.collapsed {
+  .top-bar {
+    transform: rotate(0);
+  }
+  .middle-bar {
+    opacity: 1;
+  }
+  .bottom-bar {
+    transform: rotate(0);
+  }
 }
 //.............................................
 
@@ -199,6 +242,9 @@ div.col-sm-12.nav-padding {
 
 }
 @media screen and (max-width : 992px) {
+
+}
+@media (max-width: 991px) {
 
 }
 @media(min-width: 768px) {

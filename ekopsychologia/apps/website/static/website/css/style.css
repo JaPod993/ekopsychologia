@@ -123,6 +123,7 @@ a.btn.btn-default.btn-circle:hover {
   transition: .25s ease all;
   text-decoration: none;
   padding-bottom: 5px;
+  padding-top: 10px;
 }
 
 .nav.nav-content-bottom > li > a::after {
@@ -141,9 +142,13 @@ a.btn.btn-default.btn-circle:hover {
   left: 0;
 }
 
+.nav.nav-content-bottom {
+  padding-top: 40px;
+}
+
 div.container.nav-height-bottom {
-  padding-left: 0;
-  padding-right: 0;
+  padding-top: 25px;
+  padding-bottom: 15px;
 }
 
 #logo {
@@ -154,4 +159,37 @@ div.container.nav-height-bottom {
 div.col-sm-12.nav-padding {
   padding-left: 0;
   padding-right: 0;
+}
+
+.navbar-toggle {
+  border: none;
+  background: transparent !important;
+}
+.navbar-toggle:hover {
+  background: transparent !important;
+}
+.navbar-toggle .icon-bar {
+  width: 22px;
+  transition: all 0.2s;
+}
+.navbar-toggle .top-bar {
+  transform: rotate(45deg);
+  transform-origin: 10% 10%;
+}
+.navbar-toggle .middle-bar {
+  opacity: 0;
+}
+.navbar-toggle .bottom-bar {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%;
+}
+
+.navbar-toggle.collapsed .top-bar {
+  transform: rotate(0);
+}
+.navbar-toggle.collapsed .middle-bar {
+  opacity: 1;
+}
+.navbar-toggle.collapsed .bottom-bar {
+  transform: rotate(0);
 }
