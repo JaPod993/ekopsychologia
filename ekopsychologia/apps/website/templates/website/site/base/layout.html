@@ -27,6 +27,7 @@
 
     {% compress css %}
         <link href="{% static 'website/css/style.css' %}" rel="stylesheet"/>
+        <link rel="stylesheet" href="{% static 'corecms/css/site-style.css' %}">
     {% endcompress %}
 
     {% block body_js %}{% endblock %}
@@ -48,11 +49,14 @@
     </div>
 {% endif %}
 
+{% render_menu 'menu-top' template_name='website/site/element/_menu_top.html' %}
+
 {% block body_content %}
 
 
 {% endblock %}
 
+{% render_menu 'menu-bottom' template_name='website/site/element/_menu_bottom.html' %}
 
 </body>
 </html>

@@ -1,0 +1,17 @@
+{% load thumbnail %}
+{% if homepage_projekty %}
+Projekty
+
+{% if homepage_projekty_list|length > 0 %}
+    <ul>
+    {% for site in homepage_projekty_list %}
+        <li>
+            {% thumbnail site.thumbnail "100x100" crop="center" as im %}
+                <img src="{{ im.url }}" alt="{{ site }}" title="{{ site }}">
+            {% endthumbnail %}
+            <a href="{{ site.get_absolute_url }}">{{ site }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endif %}
+{% endif %}

@@ -147,8 +147,8 @@ LOGIN_REDIRECT_URL = '/admin/'
 LOGO_PATH = '/static/website/images/sercepogorza_logo_mini.svg'
 
 CMS_PLUGINS = (
-    {'name': 'form_generator', 'modules': ('article',)},
-    {'name': 'gallery', 'modules': ('article',)}
+    {'name': 'form_generator', 'modules': None},
+    {'name': 'gallery', 'modules': ('article', 'site')}
 )
 
 MATERIALTEMPLATE_CONFIG = {
@@ -175,3 +175,5 @@ SEARCH_SETTINGS = {
     'cms.Article': {'fields': ['identity', 'shortcut', 'content', 'slug'], 'template': 'website/site/element/article_list.html', 'filter': Q(status=1)},
     'cms.Site': {'fields': ['identity', 'slug', 'content'], 'template': 'website/site/element/article_list.html', 'filter': Q(status=1)},
 }
+
+THUMBNAIL_ENGINE = 'sorl.thumbnail.engines.wand_engine.Engine'

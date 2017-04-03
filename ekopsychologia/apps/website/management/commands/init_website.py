@@ -3,8 +3,8 @@ from shutil import copyfile
 from django.core.management.base import BaseCommand
 import os, errno
 from cms.models import Site
-from corecms.models.menu import Menu, RelationMenuSite
-from corecms.models.slider import Slider, SliderRow
+from corecms.models.default.models import Menu
+from corecms.models.menu import RelationMenuSite
 
 
 class Command(BaseCommand):
@@ -13,8 +13,15 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
-        sites = [u"O nas", u"Aktualności", u"Kompedium wiedzy o akustyce", u"Wpływ na ludzi",
-                    u"Przepisy", u"Sposoby poprawy", u"Dla prasy", u"Kontakt",]
+        sites = ["Strona główna"]
+
+
+        o_nas = ["Stowarzyszenie Ekopsychologia", "Obszary działania", "Sprawozdania", "W mediach", "Zapytania ofertowe"]
+
+
+
+        sites_menu_top = [(u"O nas", o_nas), u"Projekty", u"Aktualności", u"Współpraca", u"Publikacje",
+                    u"Galeria", u"Kontakt",]
 
         menu_top, created = Menu.objects.get_or_create(slug="menu-top", defaults={'name': u'Menu górne'})
         menu_bottom, created = Menu.objects.get_or_create(slug="menu-bottom", defaults={'name': u'Menu dolne'})
@@ -22,16 +29,16 @@ class Command(BaseCommand):
         for site_name in sites:
             site, created = Site.objects.get_or_create(identity=site_name, defaults={'status': Site.STATUS_PUBLISHED})
             RelationMenuSite.objects.get_or_create(parent=menu_top, child=site)
-            print site, site.slug
+            print(site, site.slug)
 
-        sliders = [
-            (u'Slide 1', u'Lorem iam eu arcu lacinia interdum. Praesent consectetur iaculis leo eget fermentum.'),
-            (u'Slide 2', u'Nunc mollis malesuada ornare. Ut faucibus libero magna, eu posuere nibh ornare quis. Praesent consectetur euismod bibendum.'),
-            (u'Slide 3', u'Etiam congue, dolor iaculis elementum iaculis, dolor tortor interdum neque, a suscipit augue neque auctor arcu.'),
-        ]
-
-        slider_home, created = Slider.objects.get_or_create(slug='home-top', defaults={'name': u'Strona główna góra'})
-
-        for slide_name, slide_text in sliders:
-            SliderRow.objects.get_or_create(name=slide_name, parent=slider_home, defaults={'text': slide_text})
+        # sliders = [
+        #     (u'Slide 1', u'Lorem iam eu arcu lacinia interdum. Praesent consectetur iaculis leo eget fermentum.'),
+        #     (u'Slide 2', u'Nunc mollis malesuada ornare. Ut faucibus libero magna, eu posuere nibh ornare quis. Praesent consectetur euismod bibendum.'),
+        #     (u'Slide 3', u'Etiam congue, dolor iaculis elementum iaculis, dolor tortor interdum neque, a suscipit augue neque auctor arcu.'),
+        # ]
+        #
+        # slider_home, created = Slider.objects.get_or_create(slug='home-top', defaults={'name': u'Strona główna góra'})
+        #
+        # for slide_name, slide_text in sliders:
+        #     SliderRow.objects.get_or_create(name=slide_name, parent=slider_home, defaults={'text': slide_text})
 

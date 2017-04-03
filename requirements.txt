@@ -10,5 +10,4 @@ mysqlclient==1.3.10
 -e git+ssh://git@git.silvercube.pl/corecms.git@1.0.6#egg=corecms
 -e git://github.com/disqus/django-bitfield.git@1.9.1#egg=django-bitfield
 -e git://github.com/maciejga/django-positions.git#egg=django-positions
-
-
+sorl-thumbnail==12.4a1

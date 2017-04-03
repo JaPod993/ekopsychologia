@@ -10,3 +10,5 @@
 /static/
 /logs/*
 ekopsychologia/apps/djangoskin
+/uploads/
+psychoups.zip

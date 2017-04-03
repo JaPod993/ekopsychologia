@@ -1,0 +1,21 @@
+{% load corecms_tags %}{% load staticfiles %}{% load thumbnail %}
+{% get_slider 'homepage-top' as slider %}
+{% if slider %}
+    <div class="container add_nav_margin" style="margin-top:10px;">
+        <div class="slider-wrapper">
+            <div class="hidden-xs hidden-sm slick_buttons to_right slick-next">
+                <img class="img-responsive" src="{% static 'website/images/arrow.svg' %}" title="{{ slide.name }}" alt="{{ slide.name }}"/></div>
+                <div class="slider">
+                    {% for slide in slider.items.all %}
+                        {% thumbnail slide.image "1140x300" crop="center" as im %}
+                            {% if slide.url %}<a href="{{ slide.url }}" title="{{ slide.name }}">{% endif %}
+                            <img src="{{ im.url }}" alt="{{ slide.name }}" title="{{ slide.name }}" class="item">
+                        {% if slide.url %}</a>{% endif %}
+                        {% endthumbnail %}
+                    {% endfor %}
+                </div>
+                <div class="hidden-xs hidden-sm slick_buttons slick-prev"><img class="img-responsive" src="{% static 'website/images/arrow.svg' %}" title="{{ slide.name }}" alt="{{ slide.name }}"/>
+            </div>
+        </div>
+    </div>
+{% endif %}
