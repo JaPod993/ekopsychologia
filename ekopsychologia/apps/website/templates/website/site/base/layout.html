@@ -1,4 +1,4 @@
-<!DOCTYPE html>{% load staticfiles %}{% load compress %}{% load corecms_tags %}{% load corecms_render_tags %}{% load thumbnail %}
+<!DOCTYPE html>{% load staticfiles %}{% load compress %}{% load corecms_tags %}{% load corecms_render_tags %}{% load thumbnail %} {% load i18n%}
 <html lang="pl">
 <head>
     <meta charset="utf-8">
@@ -136,7 +136,7 @@
             <div class="col-sm-12 home-image">
                 <div class="info-wrapper flex-center">
                     <div class="center-info">
-                        {{ block.content|default:""|parse_cms_content|safe }}
+                        {{ block.content|default:""|safe }}
                         {% if block.url %}
                         <a class="orange-button" href="{{ block.url }}">{% if block.more_button_text %}{{ block.more_button_text }}{% else %}{% trans 'zobacz' %}{% endif %}</a>
                         {% endif %}
@@ -144,7 +144,7 @@
                 </div>
             </div>
             {% else %}
-            <div class="col-sm-{{ block.box_size }} sc-block{% if block.without_margins %} no-margins-block{% endif %}" style="{% if block.background %}background-image: url({{ block.background.url }});{% endif %}background-color:{{ block.background_color }};">{{ block.content|default:""|parse_cms_content|safe }}</div>
+            <div class="col-sm-{{ block.box_size }} sc-block{% if block.without_margins %} no-margins-block{% endif %}" style="{% if block.background %}background-image: url({{ block.background.url }});{% endif %}background-color:{{ block.background_color }};">{{ block.content|default:""|safe }}</div>
             {% endif %}
         {% endif %}
         {% endfor %}

@@ -9,6 +9,8 @@ from django.views.generic import FormView
 from django.views.generic.base import TemplateView, View
 from cms.models import Site, Article
 
+from blockslider.models import BlockSlider
+
 
 class HomepageView(TemplateView):
     template_name = 'website/site/homepage.html'
