@@ -1,7 +1,6 @@
 # coding=utf-8
 
 from django.contrib.sitemaps import Sitemap
-
 from urllib import parse
 
 from cms.models import Article, Site
