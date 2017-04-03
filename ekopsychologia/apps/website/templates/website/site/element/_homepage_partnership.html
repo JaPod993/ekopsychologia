@@ -1,0 +1,13 @@
+{% load corecms_tags %}{% load staticfiles %}{% load thumbnail %}
+
+
+{% for slider in partnership_slider_list %}
+    {{ slider }}
+    {% for slide in slider.items.all %}
+        {% thumbnail slide.image "100x100"  as im %}
+            {% if slide.url %}<a href="{{ slide.url }}" title="{{ slide.name }}">{% endif %}
+            <img src="{{ im.url }}" alt="{{ slide.name }}" title="{{ slide.name }}" class="item">
+        {% if slide.url %}</a>{% endif %}
+        {% endthumbnail %}
+    {% endfor %}
+{% endfor %}

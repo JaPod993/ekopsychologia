@@ -1,13 +1,11 @@
-# coding=utf-8
+# -*- encoding: utf-8 -*-
 import os
 import sys
 import locale
 
-from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 from django.db.models import Q
 
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 sys.path.append(BASE_DIR)
 sys.path.append(os.path.dirname(BASE_DIR))
@@ -17,10 +15,36 @@ sys.path.insert(0, os.path.join(BASE_DIR, "apps"))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'm16mq5yq$90iw4$(sne46m+^&j%)&j)&)%21tbd+#kt$hm8(ym'
+SECRET_KEY = '=41#sape7s5bot&j+m-7s+dh88(bs#jw@!a1k$=$7a#=@+e$uu'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+THUMBNAIL_DEBUG = True
+
+ALLOWED_HOSTS = []
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.template.context_processors.request',
+                'django.contrib.messages.context_processors.messages',
+                'corecms.context_processors.add_translate_settings',
+            ],
+        },
+    },
+]
+
 
 INSTALLED_APPS = (
-    'override_app',
     'django_extensions',
     'materialtemplate',
     'modeltranslation',
@@ -42,22 +66,18 @@ INSTALLED_APPS = (
 
 )
 
-TEMPLATE_CONTEXT_PROCESSORS += (
-    'django.core.context_processors.request',
-    'corecms.context_processors.add_translate_settings',
-)
-
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corecms.middleware.TranslateMiddleware',
     'corecms.middleware.BreadcrumbsMiddleware',
-)
+]
+
 
 ROOT_URLCONF = 'ekopsychologia.urls'
 
@@ -98,11 +118,14 @@ DATETIME_INPUT_FORMATS = (
     '%m/%d/%y',              # '10/25/06'
 )
 
+
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media")
 MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
 STATIC_URL = '/static/'
+
+
 
 AUTH_USER_MODEL = 'account.User'
 
@@ -120,29 +143,26 @@ RESTRICTED_SLUGS = [
     'static', 'media', 'admin', 'i18n', 'login', 'logout', 'contact-form',
 ]
 
-THUMBNAIL_DEBUG = True
-
 LOGIN_REDIRECT_URL = '/admin/'
 
-LOGO_PATH = '/static/website/images/ekopsychologia_logo_mini.svg'
+LOGO_PATH = '/static/website/images/sercepogorza_logo_mini.svg'
 
 CMS_PLUGINS = (
-    {'name': 'form_generator', 'modules': ('article',)},
+    {'name': 'form_generator', 'modules': None},
     {'name': 'gallery', 'modules': ('article', 'site')}
 )
 
-
 MATERIALTEMPLATE_CONFIG = {
-    'MENU': (
-        'sites',
-        {'app': 'cms', 'models': ['article', 'site', 'textblock', 'menu', 'slider', 'tag']},
-        {'label': u'Repozytorium plików', 'url': 'admin:cms_repositorymediafile_changelist', 'icon': 'md md-attach-file'},
-        {'label': 'Konfiguracja', 'icon': 'md md-settings', 'models': [
-            {'label': 'Ustawienia', 'url': 'admin:cms_configcms_changelist', 'icon': 'md md-settings'}
-        ]},
-
-        {'app': 'account'},
-    ),
+    # 'MENU': (
+    #     'sites',
+    #     {'app': 'cms', 'models': ['article', 'site', 'textblock', 'menu', 'slider', 'tag']},
+    #     {'label': u'Repozytorium plików', 'url': 'admin:cms_repositorymediafile_changelist', 'icon': 'md md-attach-file'},
+    #     {'label': 'Konfiguracja', 'icon': 'md md-settings', 'models': [
+    #         {'label': 'Ustawienia', 'url': 'admin:cms_configcms_changelist', 'icon': 'md md-settings'}
+    #     ]},
+    #
+    #     {'app': 'account'},
+    # ),
     'EXTRA_SCRIPTS': [
         STATIC_URL + 'corecms/js/lang.scripts.js'
     ],
@@ -156,3 +176,6 @@ SEARCH_SETTINGS = {
     'cms.Article': {'fields': ['identity', 'shortcut', 'content', 'slug'], 'template': 'website/site/element/article_list.html', 'filter': Q(status=1)},
     'cms.Site': {'fields': ['identity', 'slug', 'content'], 'template': 'website/site/element/article_list.html', 'filter': Q(status=1)},
 }
+
+THUMBNAIL_ENGINE = 'sorl.thumbnail.engines.wand_engine.Engine'
+>>>>>>> dj11

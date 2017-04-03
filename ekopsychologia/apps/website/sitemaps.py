@@ -36,3 +36,4 @@ class EcophonSitesSitemap(Sitemap):
 
     def lastmod(self, obj):
         return obj.updated_at
+

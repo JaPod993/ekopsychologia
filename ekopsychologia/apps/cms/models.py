@@ -9,6 +9,9 @@ from corecms.models.media_file import AbstractMediaFile
 
 
 class Site(SiteAbstract):
+
+    old_cms_id = models.IntegerField(null=True, default=None)
+
     class Meta(SiteAbstract.Meta):
         abstract = False
         app_label = 'cms'
@@ -21,6 +24,7 @@ class Site(SiteAbstract):
 
 class Article(ArticleAbstract):
     alternative_url = models.CharField(u"Link alternatywny", max_length=255, default="", blank=True, help_text="Link na który bedzie wskazywała ten artykuł")
+    old_cms_id = models.IntegerField(null=True, default=None)
 
     class Meta(ArticleAbstract.Meta):
         app_label = 'cms'
@@ -29,6 +33,14 @@ class Article(ArticleAbstract):
         if self.alternative_url != "":
             return self.alternative_url
         return super(Article, self).get_absolute_url(category)
+
+    @staticmethod
+    def get_template_list():
+        return [('website/site/templates/article_publication_list.html', 'Publikacja')]
+
+    @property
+    def is_publication(self):
+        return self.template == 'website/site/templates/article_publication_list.html'
 
 
 class TextBlock(TextBlockAbstract):
@@ -58,3 +70,13 @@ class ConfigCMS(ConfigCMSAbstract):
     class Meta(ConfigCMSAbstract.Meta):
         abstract = False
         app_label = 'cms'
+
+
+class IsSite(models.Model):
+
+    cms_id = models.IntegerField()
+    is_site = models.BooleanField(default=False)
+
+    class Meta():
+        app_label = 'cms'
+>>>>>>> dj11

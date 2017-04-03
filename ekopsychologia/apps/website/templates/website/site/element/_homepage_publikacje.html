@@ -1,0 +1,35 @@
+{% load thumbnail %}{% load corecms_tags %}
+{% if homepage_publikacje %}
+Publikacje
+
+{% if homepage_publikacje_list|length > 0 %}
+    <ul>
+    {% for article, file in homepage_publikacje_list %}
+        <li>
+            {% if file.distinction.cover %}
+                {% take_page_of_pdf file.absolute_path 0 as page %}
+                {% thumbnail page "300x600" as im %}
+                    <img src="{{ im.url }}">
+                {% endthumbnail %}
+
+            
+            
+            {% else %}
+
+            {% endif %}
+            {% thumbnail site.thumbnail "100x100" crop="center" as im %}
+                <img src="{{ im.url }}" alt="{{ site }}" title="{{ site }}">
+            {% endthumbnail %}
+            <a href="{{ site.get_absolute_url }}">{{ site }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+
+
+    <a href="{{ homepage_publikacje.get_absolute_url }}">więcej</a>
+    <hr>
+{% endif %}
+
+
+
+{% endif %}
