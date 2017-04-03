@@ -1,7 +1,7 @@
 # coding=utf-8
 
 from django.contrib.sitemaps import Sitemap
-from urllib import parse
+from urlparse import urlparse
 
 from cms.models import Article, Site
 
@@ -12,7 +12,7 @@ class EcophonSitemap(Sitemap):
 
     def location(self, obj):
         url = obj.get_absolute_url()
-        parsed_uri = parse(url)
+        parsed_uri = urlparse(url)
         return parsed_uri.path
 
     def items(self):
@@ -28,7 +28,7 @@ class EcophonSitesSitemap(Sitemap):
 
     def location(self, obj):
         url = obj.get_absolute_url()
-        parsed_uri = parse(url)
+        parsed_uri = urlparse(url)
         return parsed_uri.path
 
     def items(self):

@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 from __future__ import unicode_literals
 
+
 import hashlib
 from pprint import pprint
 
@@ -11,9 +12,11 @@ from corecms.models.connector import Connector
 from corecms.models.gallery import Gallery
 from django.contrib.contenttypes.models import ContentType
 import os
-from urllib import parse
+from urlparse import urlparse, urljoin
+
 import uuid
-from html.parser import HTMLParser
+#from html.parser import HTMLParser
+from HTMLParser import HTMLParser
 import logging
 
 from django.contrib.auth import get_user_model
@@ -64,7 +67,7 @@ else:
 
 
 #nadpisuje tresci, connetcory, pliki itp artykułów nawet jesli sa juz w bazie, jesli false to w starych nic nie zmienia
-OVERRIDE_IF_EXIST = True
+OVERRIDE_IF_EXIST = False
 
 #wszystkie arty z tej strony i podkategori laduja do tej strony
 MODE_ALL_TO_PARENT = 'all-to-parent'
@@ -195,7 +198,8 @@ class Command(BaseCommand):
                 try:
                     is_site = IsSite.objects.get(cms_id=row['id']).is_site
                 except IsSite.DoesNotExist:
-                    var = input("Site ? {0}: ".format(row['title']))
+                    var = raw_input(u"Site ? {0}: ".format(row['title']).encode('utf-8'))
+                    var = var or None
                     is_site = var == "1"
                     IsSite.objects.create(cms_id=row['id'], is_site=is_site)
 
@@ -268,7 +272,7 @@ class Command(BaseCommand):
                                 file_object.distinction.downloadable = True
                             file_object.content_object = obj
                             file_object.save()
-                            url_paths.append((frow['fileSource'].lstrip("\."), parse.urljoin(settings.MEDIA_URL, file_object.path)))
+                            url_paths.append((frow['fileSource'].lstrip("\."), urljoin(settings.MEDIA_URL, file_object.path)))
                             print("Import pliku: %s" % old_path)
                         else:
                             print("ERROR: brak pliku: %s" % old_path)

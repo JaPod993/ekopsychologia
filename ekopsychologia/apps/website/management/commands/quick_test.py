@@ -8,6 +8,10 @@ from django.core.files import File
 from io import BytesIO
 from PIL import Image
 
+reload(sys)
+sys.setdefaultencoding("utf-8")
+
+
 
 class Command(BaseCommand):
     args = ''
