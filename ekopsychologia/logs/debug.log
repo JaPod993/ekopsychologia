@@ -2182,3 +2182,585 @@ Traceback (most recent call last):
   File "/home/cappuccio/.virtualenvs/ekopsychologia4/src/corecms/corecms/views/site.py", line 116, in get_object
     self.request.breadcrumbs(obj, obj.get_absolute_url())
 AttributeError: 'WSGIRequest' object has no attribute 'breadcrumbs'
+ERROR 2017-04-03 13:54:29,385 [exception handle_uncaught_exception 135] - Internal Server Error: /aktualnosci/
+Traceback (most recent call last):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/cappuccio/Workspace/ekopsychologia2/ekopsychologia/apps/corecms/views/site.py", line 81, in get
+    self.object = self.get_object()
+  File "/home/cappuccio/Workspace/ekopsychologia2/ekopsychologia/apps/corecms/views/site.py", line 116, in get_object
+    self.request.breadcrumbs(obj, obj.get_absolute_url())
+AttributeError: 'WSGIRequest' object has no attribute 'breadcrumbs'
+ERROR 2017-04-03 13:54:30,362 [exception handle_uncaught_exception 135] - Internal Server Error: /aktualnosci/
+Traceback (most recent call last):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/cappuccio/Workspace/ekopsychologia2/ekopsychologia/apps/corecms/views/site.py", line 81, in get
+    self.object = self.get_object()
+  File "/home/cappuccio/Workspace/ekopsychologia2/ekopsychologia/apps/corecms/views/site.py", line 116, in get_object
+    self.request.breadcrumbs(obj, obj.get_absolute_url())
+AttributeError: 'WSGIRequest' object has no attribute 'breadcrumbs'
+ERROR 2017-04-03 13:54:31,056 [exception handle_uncaught_exception 135] - Internal Server Error: /aktualnosci/
+Traceback (most recent call last):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/cappuccio/Workspace/ekopsychologia2/ekopsychologia/apps/corecms/views/site.py", line 81, in get
+    self.object = self.get_object()
+  File "/home/cappuccio/Workspace/ekopsychologia2/ekopsychologia/apps/corecms/views/site.py", line 116, in get_object
+    self.request.breadcrumbs(obj, obj.get_absolute_url())
+AttributeError: 'WSGIRequest' object has no attribute 'breadcrumbs'
+ERROR 2017-04-03 13:54:44,829 [exception handle_uncaught_exception 135] - Internal Server Error: /aktualnosci/
+Traceback (most recent call last):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 44, in select_template
+    engines = _engine_list(using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 72, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 89, in all
+    return [self[alias] for alias in self]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 80, in __getitem__
+    engine = engine_cls(params)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 30, in __init__
+    options['libraries'] = self.get_templatetag_libraries(libraries)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 48, in get_templatetag_libraries
+    libraries = get_installed_libraries()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 113, in get_installed_libraries
+    for name in get_package_libraries(pkg):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 126, in get_package_libraries
+    module = import_module(entry[1])
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/cappuccio/Workspace/ekopsychologia2/ekopsychologia/apps/blockslider/templatetags/blockslider.py", line 3, in <module>
+    from apps.blockslider.models import BlockSlider
+  File "/home/cappuccio/Workspace/ekopsychologia2/ekopsychologia/apps/blockslider/models.py", line 5, in <module>
+    class BlockSliderCategory(models.Model):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/db/models/base.py", line 322, in __new__
+    new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/apps/registry.py", line 224, in register_model
+    (model_name, app_label, app_models[model_name], model))
+RuntimeError: Conflicting 'blockslidercategory' models in application 'blockslider': <class 'blockslider.models.BlockSliderCategory'> and <class 'apps.blockslider.models.BlockSliderCategory'>.
+ERROR 2017-04-03 13:54:46,751 [exception handle_uncaught_exception 135] - Internal Server Error: /aktualnosci/
+Traceback (most recent call last):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 44, in select_template
+    engines = _engine_list(using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 72, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 89, in all
+    return [self[alias] for alias in self]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 80, in __getitem__
+    engine = engine_cls(params)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 30, in __init__
+    options['libraries'] = self.get_templatetag_libraries(libraries)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 48, in get_templatetag_libraries
+    libraries = get_installed_libraries()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 113, in get_installed_libraries
+    for name in get_package_libraries(pkg):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 126, in get_package_libraries
+    module = import_module(entry[1])
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/cappuccio/Workspace/ekopsychologia2/ekopsychologia/apps/blockslider/templatetags/blockslider.py", line 3, in <module>
+    from apps.blockslider.models import BlockSlider
+  File "/home/cappuccio/Workspace/ekopsychologia2/ekopsychologia/apps/blockslider/models.py", line 5, in <module>
+    class BlockSliderCategory(models.Model):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/db/models/base.py", line 322, in __new__
+    new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/apps/registry.py", line 224, in register_model
+    (model_name, app_label, app_models[model_name], model))
+RuntimeError: Conflicting 'blockslidercategory' models in application 'blockslider': <class 'blockslider.models.BlockSliderCategory'> and <class 'apps.blockslider.models.BlockSliderCategory'>.
+ERROR 2017-04-03 13:56:33,343 [exception handle_uncaught_exception 135] - Internal Server Error: /aktualnosci/
+Traceback (most recent call last):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 44, in select_template
+    engines = _engine_list(using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 72, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 89, in all
+    return [self[alias] for alias in self]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 80, in __getitem__
+    engine = engine_cls(params)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 30, in __init__
+    options['libraries'] = self.get_templatetag_libraries(libraries)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 48, in get_templatetag_libraries
+    libraries = get_installed_libraries()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 113, in get_installed_libraries
+    for name in get_package_libraries(pkg):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 130, in get_package_libraries
+    "trying to load '%s': %s" % (entry[1], e)
+InvalidTemplateLibrary: Invalid template library specified. ImportError raised when trying to load 'blockslider.templatetags.blockslider': No module named models
+ERROR 2017-04-03 13:56:34,662 [exception handle_uncaught_exception 135] - Internal Server Error: /aktualnosci/
+Traceback (most recent call last):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 44, in select_template
+    engines = _engine_list(using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 72, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 89, in all
+    return [self[alias] for alias in self]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 80, in __getitem__
+    engine = engine_cls(params)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 30, in __init__
+    options['libraries'] = self.get_templatetag_libraries(libraries)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 48, in get_templatetag_libraries
+    libraries = get_installed_libraries()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 113, in get_installed_libraries
+    for name in get_package_libraries(pkg):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 130, in get_package_libraries
+    "trying to load '%s': %s" % (entry[1], e)
+InvalidTemplateLibrary: Invalid template library specified. ImportError raised when trying to load 'blockslider.templatetags.blockslider': No module named models
+ERROR 2017-04-03 13:58:32,857 [exception handle_uncaught_exception 135] - Internal Server Error: /aktualnosci/
+Traceback (most recent call last):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 44, in select_template
+    engines = _engine_list(using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 72, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 89, in all
+    return [self[alias] for alias in self]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 80, in __getitem__
+    engine = engine_cls(params)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 30, in __init__
+    options['libraries'] = self.get_templatetag_libraries(libraries)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 48, in get_templatetag_libraries
+    libraries = get_installed_libraries()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 113, in get_installed_libraries
+    for name in get_package_libraries(pkg):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 130, in get_package_libraries
+    "trying to load '%s': %s" % (entry[1], e)
+InvalidTemplateLibrary: Invalid template library specified. ImportError raised when trying to load 'blockslider.templatetags.blockslider': No module named models
+ERROR 2017-04-03 13:58:33,659 [exception handle_uncaught_exception 135] - Internal Server Error: /aktualnosci/
+Traceback (most recent call last):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 44, in select_template
+    engines = _engine_list(using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 72, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 89, in all
+    return [self[alias] for alias in self]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 80, in __getitem__
+    engine = engine_cls(params)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 30, in __init__
+    options['libraries'] = self.get_templatetag_libraries(libraries)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 48, in get_templatetag_libraries
+    libraries = get_installed_libraries()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 113, in get_installed_libraries
+    for name in get_package_libraries(pkg):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 130, in get_package_libraries
+    "trying to load '%s': %s" % (entry[1], e)
+InvalidTemplateLibrary: Invalid template library specified. ImportError raised when trying to load 'blockslider.templatetags.blockslider': No module named models
+ERROR 2017-04-03 13:59:02,020 [exception handle_uncaught_exception 135] - Internal Server Error: /aktualnosci/
+Traceback (most recent call last):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 44, in select_template
+    engines = _engine_list(using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 72, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 89, in all
+    return [self[alias] for alias in self]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 80, in __getitem__
+    engine = engine_cls(params)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 30, in __init__
+    options['libraries'] = self.get_templatetag_libraries(libraries)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 48, in get_templatetag_libraries
+    libraries = get_installed_libraries()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 113, in get_installed_libraries
+    for name in get_package_libraries(pkg):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 130, in get_package_libraries
+    "trying to load '%s': %s" % (entry[1], e)
+InvalidTemplateLibrary: Invalid template library specified. ImportError raised when trying to load 'blockslider.templatetags.blockslider': No module named models
+ERROR 2017-04-03 13:59:05,615 [exception handle_uncaught_exception 135] - Internal Server Error: /aktualnosci/
+Traceback (most recent call last):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 44, in select_template
+    engines = _engine_list(using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 72, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 89, in all
+    return [self[alias] for alias in self]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 80, in __getitem__
+    engine = engine_cls(params)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 30, in __init__
+    options['libraries'] = self.get_templatetag_libraries(libraries)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 48, in get_templatetag_libraries
+    libraries = get_installed_libraries()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 113, in get_installed_libraries
+    for name in get_package_libraries(pkg):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 130, in get_package_libraries
+    "trying to load '%s': %s" % (entry[1], e)
+InvalidTemplateLibrary: Invalid template library specified. ImportError raised when trying to load 'blockslider.templatetags.blockslider': No module named models
+DEBUG 2017-04-03 13:59:19,191 [base get_thumbnail 68] - Getting thumbnail for file [article/images/f072db6070d841cb87bf9ee5c37c3099.jpeg] at [250x250]
+DEBUG 2017-04-03 13:59:20,322 [base get_thumbnail 68] - Getting thumbnail for file [article/images/f072db6070d841cb87bf9ee5c37c3099.jpeg] at [250x250]
+DEBUG 2017-04-03 13:59:21,086 [base get_thumbnail 68] - Getting thumbnail for file [article/images/f072db6070d841cb87bf9ee5c37c3099.jpeg] at [250x250]
+ERROR 2017-04-03 13:59:41,311 [exception handle_uncaught_exception 135] - Internal Server Error: /aktualnosci/
+Traceback (most recent call last):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 44, in select_template
+    engines = _engine_list(using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 72, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 89, in all
+    return [self[alias] for alias in self]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 80, in __getitem__
+    engine = engine_cls(params)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 30, in __init__
+    options['libraries'] = self.get_templatetag_libraries(libraries)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 48, in get_templatetag_libraries
+    libraries = get_installed_libraries()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 113, in get_installed_libraries
+    for name in get_package_libraries(pkg):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 130, in get_package_libraries
+    "trying to load '%s': %s" % (entry[1], e)
+InvalidTemplateLibrary: Invalid template library specified. ImportError raised when trying to load 'blockslider.templatetags.blockslider': No module named models
+ERROR 2017-04-03 14:00:52,370 [exception handle_uncaught_exception 135] - Internal Server Error: /aktualnosci/
+Traceback (most recent call last):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 44, in select_template
+    engines = _engine_list(using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 72, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 89, in all
+    return [self[alias] for alias in self]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 80, in __getitem__
+    engine = engine_cls(params)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 30, in __init__
+    options['libraries'] = self.get_templatetag_libraries(libraries)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 48, in get_templatetag_libraries
+    libraries = get_installed_libraries()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 113, in get_installed_libraries
+    for name in get_package_libraries(pkg):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 130, in get_package_libraries
+    "trying to load '%s': %s" % (entry[1], e)
+InvalidTemplateLibrary: Invalid template library specified. ImportError raised when trying to load 'blockslider.templatetags.blockslider': No module named models
+ERROR 2017-04-03 14:00:53,247 [exception handle_uncaught_exception 135] - Internal Server Error: /aktualnosci/
+Traceback (most recent call last):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 44, in select_template
+    engines = _engine_list(using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 72, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 89, in all
+    return [self[alias] for alias in self]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 80, in __getitem__
+    engine = engine_cls(params)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 30, in __init__
+    options['libraries'] = self.get_templatetag_libraries(libraries)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 48, in get_templatetag_libraries
+    libraries = get_installed_libraries()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 113, in get_installed_libraries
+    for name in get_package_libraries(pkg):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 130, in get_package_libraries
+    "trying to load '%s': %s" % (entry[1], e)
+InvalidTemplateLibrary: Invalid template library specified. ImportError raised when trying to load 'blockslider.templatetags.blockslider': No module named models
+ERROR 2017-04-03 14:01:38,137 [exception handle_uncaught_exception 135] - Internal Server Error: /aktualnosci/
+Traceback (most recent call last):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 44, in select_template
+    engines = _engine_list(using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 72, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 89, in all
+    return [self[alias] for alias in self]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 80, in __getitem__
+    engine = engine_cls(params)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 30, in __init__
+    options['libraries'] = self.get_templatetag_libraries(libraries)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 48, in get_templatetag_libraries
+    libraries = get_installed_libraries()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 113, in get_installed_libraries
+    for name in get_package_libraries(pkg):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 130, in get_package_libraries
+    "trying to load '%s': %s" % (entry[1], e)
+InvalidTemplateLibrary: Invalid template library specified. ImportError raised when trying to load 'blockslider.templatetags.blockslider': No module named models
+ERROR 2017-04-03 14:01:38,980 [exception handle_uncaught_exception 135] - Internal Server Error: /aktualnosci/
+Traceback (most recent call last):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 44, in select_template
+    engines = _engine_list(using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 72, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 89, in all
+    return [self[alias] for alias in self]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 80, in __getitem__
+    engine = engine_cls(params)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 30, in __init__
+    options['libraries'] = self.get_templatetag_libraries(libraries)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 48, in get_templatetag_libraries
+    libraries = get_installed_libraries()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 113, in get_installed_libraries
+    for name in get_package_libraries(pkg):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 130, in get_package_libraries
+    "trying to load '%s': %s" % (entry[1], e)
+InvalidTemplateLibrary: Invalid template library specified. ImportError raised when trying to load 'blockslider.templatetags.blockslider': No module named models
+ERROR 2017-04-03 14:04:56,976 [exception handle_uncaught_exception 135] - Internal Server Error: /aktualnosci/
+Traceback (most recent call last):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 44, in select_template
+    engines = _engine_list(using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 72, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 89, in all
+    return [self[alias] for alias in self]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 80, in __getitem__
+    engine = engine_cls(params)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 30, in __init__
+    options['libraries'] = self.get_templatetag_libraries(libraries)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 48, in get_templatetag_libraries
+    libraries = get_installed_libraries()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 113, in get_installed_libraries
+    for name in get_package_libraries(pkg):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 130, in get_package_libraries
+    "trying to load '%s': %s" % (entry[1], e)
+InvalidTemplateLibrary: Invalid template library specified. ImportError raised when trying to load 'blockslider.templatetags.blockslider': No module named models
+ERROR 2017-04-03 14:04:57,947 [exception handle_uncaught_exception 135] - Internal Server Error: /aktualnosci/
+Traceback (most recent call last):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 44, in select_template
+    engines = _engine_list(using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 72, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 89, in all
+    return [self[alias] for alias in self]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 80, in __getitem__
+    engine = engine_cls(params)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 30, in __init__
+    options['libraries'] = self.get_templatetag_libraries(libraries)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 48, in get_templatetag_libraries
+    libraries = get_installed_libraries()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 113, in get_installed_libraries
+    for name in get_package_libraries(pkg):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 130, in get_package_libraries
+    "trying to load '%s': %s" % (entry[1], e)
+InvalidTemplateLibrary: Invalid template library specified. ImportError raised when trying to load 'blockslider.templatetags.blockslider': No module named models
+ERROR 2017-04-03 14:05:27,605 [exception handle_uncaught_exception 135] - Internal Server Error: /aktualnosci/
+Traceback (most recent call last):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 44, in select_template
+    engines = _engine_list(using)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/loader.py", line 72, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 89, in all
+    return [self[alias] for alias in self]
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/utils.py", line 80, in __getitem__
+    engine = engine_cls(params)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 30, in __init__
+    options['libraries'] = self.get_templatetag_libraries(libraries)
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 48, in get_templatetag_libraries
+    libraries = get_installed_libraries()
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 113, in get_installed_libraries
+    for name in get_package_libraries(pkg):
+  File "/home/cappuccio/.virtualenvs/ekopsychologia4/local/lib/python2.7/site-packages/django/template/backends/django.py", line 130, in get_package_libraries
+    "trying to load '%s': %s" % (entry[1], e)
+InvalidTemplateLibrary: Invalid template library specified. ImportError raised when trying to load 'blockslider.templatetags.blockslider': No module named models
+DEBUG 2017-04-03 14:05:35,563 [base get_thumbnail 68] - Getting thumbnail for file [article/images/f072db6070d841cb87bf9ee5c37c3099.jpeg] at [250x250]
+DEBUG 2017-04-03 14:05:36,438 [base get_thumbnail 68] - Getting thumbnail for file [article/images/f072db6070d841cb87bf9ee5c37c3099.jpeg] at [250x250]
+DEBUG 2017-04-03 14:05:39,169 [base get_thumbnail 68] - Getting thumbnail for file [upload/gallery/0/6/file/89cc9d8cde564aa38f333b4e37b11bd2_inicjatywa-nr-1 (1).jpg] at [200x130]
+DEBUG 2017-04-03 14:05:39,171 [base get_thumbnail 68] - Getting thumbnail for file [upload/gallery/0/6/file/89cc9d8cde564aa38f333b4e37b11bd2_inicjatywa-nr-1 (1).jpg] at [1000x750]
+DEBUG 2017-04-03 14:05:39,173 [base get_thumbnail 68] - Getting thumbnail for file [upload/gallery/0/6/file/a25b54e8206a456c81a30eb816ec7337_inicjatywa-nr-1.jpg] at [200x130]
+DEBUG 2017-04-03 14:05:39,175 [base get_thumbnail 68] - Getting thumbnail for file [upload/gallery/0/6/file/a25b54e8206a456c81a30eb816ec7337_inicjatywa-nr-1.jpg] at [1000x750]
+DEBUG 2017-04-03 14:05:40,395 [base get_thumbnail 68] - Getting thumbnail for file [upload/gallery/0/6/file/89cc9d8cde564aa38f333b4e37b11bd2_inicjatywa-nr-1 (1).jpg] at [200x130]
+DEBUG 2017-04-03 14:05:40,396 [base get_thumbnail 68] - Getting thumbnail for file [upload/gallery/0/6/file/89cc9d8cde564aa38f333b4e37b11bd2_inicjatywa-nr-1 (1).jpg] at [1000x750]
+DEBUG 2017-04-03 14:05:40,397 [base get_thumbnail 68] - Getting thumbnail for file [upload/gallery/0/6/file/a25b54e8206a456c81a30eb816ec7337_inicjatywa-nr-1.jpg] at [200x130]
+DEBUG 2017-04-03 14:05:40,398 [base get_thumbnail 68] - Getting thumbnail for file [upload/gallery/0/6/file/a25b54e8206a456c81a30eb816ec7337_inicjatywa-nr-1.jpg] at [1000x750]
+WARNING 2017-04-03 14:14:47,553 [base get_response 152] - Not Found: /projekty/karpackie-inicjatywy-lokalne/inicjatywy-lokalne/
+WARNING 2017-04-03 14:14:48,518 [base get_response 152] - Not Found: /projekty/karpackie-inicjatywy-lokalne/inicjatywy-lokalne/

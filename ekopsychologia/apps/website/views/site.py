@@ -7,6 +7,7 @@ from corecms.models.gallery import Gallery
 
 from blockslider.models import BlockSlider
 
+
 class HomepageView(TemplateView):
     template_name = 'website/site/homepage.html'
 

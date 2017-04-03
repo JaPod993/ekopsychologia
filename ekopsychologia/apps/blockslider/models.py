@@ -60,3 +60,6 @@ class BlockSlider(models.Model):
 class BlockSliderFile(models.Model):
     user_file = models.FileField(u"Plik", upload_to="blockslider_files")
     block = models.ForeignKey(BlockSlider)
+
+    class Meta:
+        app_label = u'blockslider'
