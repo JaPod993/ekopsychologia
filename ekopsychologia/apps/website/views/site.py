@@ -15,6 +15,7 @@ class HomepageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomepageView, self).get_context_data(**kwargs)
+        context['blocks'] = BlockSlider.objects.filter(visible=True).order_by('order')
         context['articles'] = Article.objects.published().all()[:3]
         context['homepage_site'] = Site.objects.get_or_create(slug="strona-glowna",
                                                             defaults=dict(identity="Strona główna",identity_pl="Strona główna"))[0]

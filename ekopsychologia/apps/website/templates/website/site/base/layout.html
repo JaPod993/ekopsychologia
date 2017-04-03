@@ -128,6 +128,28 @@
 <!-- NAVBAR END-->
 
 
+<div class="container-fluid">
+    <div class="row">
+        {% for block in blocks %}
+        {% if block != None %}
+            {% if block.full_height %}
+            <div class="col-sm-12 home-image">
+                <div class="info-wrapper flex-center">
+                    <div class="center-info">
+                        {{ block.content|default:""|parse_cms_content|safe }}
+                        {% if block.url %}
+                        <a class="orange-button" href="{{ block.url }}">{% if block.more_button_text %}{{ block.more_button_text }}{% else %}{% trans 'zobacz' %}{% endif %}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="col-sm-{{ block.box_size }} sc-block{% if block.without_margins %} no-margins-block{% endif %}" style="{% if block.background %}background-image: url({{ block.background.url }});{% endif %}background-color:{{ block.background_color }};">{{ block.content|default:""|parse_cms_content|safe }}</div>
+            {% endif %}
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
 
 
 
