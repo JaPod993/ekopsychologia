@@ -79,4 +79,4 @@ class IsSite(models.Model):
 
     class Meta():
         app_label = 'cms'
->>>>>>> dj11
+

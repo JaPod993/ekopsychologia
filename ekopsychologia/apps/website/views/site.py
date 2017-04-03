@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # -*- encoding: utf-8 -*-
 from django.contrib.contenttypes.models import ContentType
 from django.views.generic.base import TemplateView
@@ -18,6 +19,7 @@ class HomepageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(HomepageView, self).get_context_data(**kwargs)
         #context['sites'] = Site.objects.published().all()
+        context['blocks'] = BlockSlider.objects.filter(visible=True).order_by('order')
         context['homepage_onas'] = self._get_site_by_slug("o-nas")
         context['homepage_projekty'] = self._get_site_by_slug("projekty")
         if context['homepage_projekty']:

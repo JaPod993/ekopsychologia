@@ -63,6 +63,7 @@ INSTALLED_APPS = (
     'corecms',
     'website',
     'cms',
+    'blockslider',
 
 )
 
@@ -178,4 +179,3 @@ SEARCH_SETTINGS = {
 }
 
 THUMBNAIL_ENGINE = 'sorl.thumbnail.engines.wand_engine.Engine'
->>>>>>> dj11
