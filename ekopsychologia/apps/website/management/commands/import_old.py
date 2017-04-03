@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 import hashlib
 from pprint import pprint
 
+from django.core.files.base import File
+
 from corecms.forms.forms import get_slug_for_site_or_article
 from corecms.models.connector import Connector
 from corecms.models.gallery import Gallery
@@ -62,7 +64,7 @@ else:
 
 
 #nadpisuje tresci, connetcory, pliki itp artykułów nawet jesli sa juz w bazie, jesli false to w starych nic nie zmienia
-OVERRIDE_IF_EXIST = False
+OVERRIDE_IF_EXIST = True
 
 #wszystkie arty z tej strony i podkategori laduja do tej strony
 MODE_ALL_TO_PARENT = 'all-to-parent'
@@ -136,9 +138,20 @@ class Command(BaseCommand):
             f['kind'] = files_id[str(f['id'])]
         return rtn
 
+    def get_images(self, parent_id):
+        rtn = []
+        self.cursor.execute("SELECT *  FROM `CONNECTORS` WHERE `PARENT_ID` = %s AND PARENT_NAME = 'Site' AND OBJECT_NAME = 'JP_Image' ORDER BY POSITION_PARENT DESC" % parent_id)
+        for connector in dictfetchall(self.cursor):
+            self.cursor.execute("SELECT * FROM IMAGES AS s JOIN IMAGES_lang AS sl ON s.id = sl.id_main_table WHERE id = %s AND language = 'pl'" % connector['OBJECT_ID'])
+            image = dictfetone(self.cursor)
+            image['main'] = connector['DESCRIPTION'] == "main"
+            rtn.append(image)
+        return rtn
+
     def get_galleries(self, parent_id):
         self.cursor.execute("SELECT *  FROM `CONNECTORS` WHERE `PARENT_ID` = %s AND PARENT_NAME = 'Site' AND OBJECT_NAME = 'Gallery'" % parent_id)
         galleries_id = [str(x['OBJECT_ID']) for x in dictfetchall(self.cursor)]
+
         if len(galleries_id) == 0:
             return []
         self.cursor.execute("SELECT * FROM GALLERIES AS s JOIN GALLERIES_lang AS sl ON s.id = sl.id_main_table WHERE id IN (%s) AND language = 'pl'" % ', '.join(galleries_id))
@@ -224,47 +237,21 @@ class Command(BaseCommand):
                     if parent:
                         RelationArticleSite.objects.get_or_create(child=obj, parent=parent, defaults=dict(main=True, position=0))
 
-
-                #     if created or OVERRIDE_IF_EXIST:
-                #         #jesli to akt prawny
-                #         if act:
-                #             obj.act_date_from = row['createDate']
-                #         obj.archived = archived
-                #         obj.shortcut = row['shortcut']
-                #         obj.content = row['content']
-                #         obj.important = row['distinction'] in ['1', 1]
-                #         obj.status = Article.STATUS_PUBLISHED if row['status'] == 2 else Article.STATUS_HIDDEN
-                #         obj.save()
-                #         if parent:
-                #             obj.parent = parent
-                #             RelationArticleSite.objects.get_or_create(child=obj, parent=parent, defaults=dict(main=True, position=0))
-                # else:
-                #     if row['title'] == "Archiwum":
-                #         print("to jest archiwum")
-                #         objects = self.get_children(row['id'])
-                #         self.import_objects(objects, parent, True, act=act, import_to_parent=import_to_parent)
-                #     elif import_to_parent:
-                #         objects = self.get_children(row['id'])
-                #         self.import_objects(objects, parent, act=act, import_to_parent=import_to_parent)
-                #     else:
-                #         pass
-                #         print('!!! to jest site wiec pomijam')
-                #     continue
-
-
                 url_paths = []
 
                 #print("----------- Nowy (%s)" % 'utworzyłem' if created else "jest juz utworzony"
 
                 if created or OVERRIDE_IF_EXIST:
-                    print("TWORZE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                    obj.shortcut = row['shortcut']
+                    obj.content = row['content']
+                    obj.status = Article.STATUS_PUBLISHED if row['status'] == 2 else Article.STATUS_HIDDEN
+                    obj.save()
 
                     # usuniecie juz podłaczonych
                     for f in obj.files:
                         f.delete()
                     # dodanie plików
                     for frow in self.get_files(row['id']):
-
                         old_path = get_old_path(frow['fileSource'])
                         if os.path.exists(old_path):
                             target_dir = obj.get_file_save_directory(settings.MEDIA_ROOT)
@@ -290,14 +277,27 @@ class Command(BaseCommand):
                     gallery_ct = ContentType.objects.get_for_model(Gallery)
                     for connector in obj.connector_children.filter(children_type=gallery_ct):
                         connector.children.delete()
-                    # dodanie galerii
-                    for gallery, images in self.get_galleries((row['id'])):
-                        obj_gallery = Gallery.objects.create(name=gallery['NAME'])
-                        connector = Connector.objects.create(parent=obj, children=obj_gallery)
 
+                    images = self.get_images(row['id'])
+
+                    if images:
+                        obj_gallery = Gallery()
+                        obj_gallery.name = obj.identity
+                        obj_gallery.save()
+                        connector = Connector()
+                        connector.parent = obj
+                        connector.children = obj_gallery
+                        connector.save()
+                        i = 0
                         for frow in images:
                             old_path = get_old_path(frow['fileSource'])
                             if os.path.exists(old_path):
+                                if frow['main']:
+
+                                    image_name = os.path.basename(old_path)
+                                    with open(old_path, 'rb') as f:
+                                        obj.thumbnail.save(image_name, File(f), save=True)
+                                    continue
                                 target_dir = obj_gallery.get_file_save_directory(settings.MEDIA_ROOT)
                                 upload_name = "_".join([uuid.uuid4().hex, frow['originalName']])
                                 path = os.path.join(target_dir, upload_name)
@@ -308,14 +308,43 @@ class Command(BaseCommand):
                                 file_object.title = frow['name']
                                 file_object.name = frow['originalName']
                                 file_object.path = path
-                                if frow['kind'] == 'file.download':
-                                    file_object.distinction.downloadable = True
+                                # if frow['kind'] == 'file.download':
+                                #     file_object.distinction.downloadable = True
                                 file_object.content_object = obj
                                 file_object.save()
+                                file_object.__class__.objects.filter(pk=file_object.pk).update(position=i)
                                 obj_gallery.images.add(file_object)
                                 #print("Import pliku: %s" % old_path
+                                i += 1
                             else:
                                 print("ERROR: brak pliku: %s" % old_path)
+
+                    # dodanie galerii
+                    # for gallery, images in self.get_galleries(row['id']):
+                    #     obj_gallery = Gallery.objects.create(name=gallery['NAME'])
+                    #     connector = Connector.objects.create(parent=obj, children=obj_gallery)
+                    #
+                    #     for frow in images:
+                    #         old_path = get_old_path(frow['fileSource'])
+                    #         if os.path.exists(old_path):
+                    #             target_dir = obj_gallery.get_file_save_directory(settings.MEDIA_ROOT)
+                    #             upload_name = "_".join([uuid.uuid4().hex, frow['originalName']])
+                    #             path = os.path.join(target_dir, upload_name)
+                    #             if not os.path.exists(target_dir):
+                    #                 os.makedirs(target_dir, 0o755)
+                    #             copyfile(old_path, path)
+                    #             file_object = MediaFile()
+                    #             file_object.title = frow['name']
+                    #             file_object.name = frow['originalName']
+                    #             file_object.path = path
+                    #             if frow['kind'] == 'file.download':
+                    #                 file_object.distinction.downloadable = True
+                    #             file_object.content_object = obj
+                    #             file_object.save()
+                    #             obj_gallery.images.add(file_object)
+                    #             #print("Import pliku: %s" % old_path
+                    #         else:
+                    #             print("ERROR: brak pliku: %s" % old_path)
 
                     #poprawienie sciezek do plików w treści
                     if len(url_paths) > 0:
@@ -324,7 +353,6 @@ class Command(BaseCommand):
                                 obj.shortcut = html_parser.unescape(obj.shortcut.replace(url_path[0], url_path[1]))
                             obj.content = html_parser.unescape(obj.content.replace(url_path[0], url_path[1]))
 
-                    o = obj.__class__.objects.get(pk=obj.pk)
 
             if isinstance(obj, Site):
                 objects = self.get_children(row['id'])
@@ -339,6 +367,7 @@ class Command(BaseCommand):
 
     def import_content(self):
         self.cursor.execute("SELECT * FROM  SITES AS s JOIN SITES_lang AS sl ON s.id = sl.id_main_table WHERE status >=0 AND parent=0 AND language = 'pl'")
+        #self.cursor.execute("SELECT * FROM  SITES AS s JOIN SITES_lang AS sl ON s.id = sl.id_main_table WHERE status >=0 AND language = 'pl' AND s.id=209")
         self.import_objects(dictfetchall(self.cursor))
 
     def handle(self, *args, **options):
