@@ -2,6 +2,12 @@
   text-align: justify;
 }
 
+.center-justified {
+  text-align: justify;
+  -moz-text-align-last: center;
+  text-align-last: center;
+}
+
 .inactiveLink {
   pointer-events: none;
   cursor: default;
@@ -278,6 +284,40 @@ div.o-nas {
   -o-background-size: cover;
   background-size: cover;
   height: 900px;
+}
+
+.margin {
+  margin-top: 40px;
+}
+
+hr.green {
+  border-width: 2px;
+  border-color: #0c824b;
+}
+
+.hr {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.title-header {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #374778;
+  font-size: 24px;
+}
+
+p.about {
+  margin-top: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #303030;
 }
 
 @media screen and (max-width: 1700px) {
