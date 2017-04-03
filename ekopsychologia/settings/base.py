@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'corecms',
     'website',
     'cms',
+    'blockslider',
 
 )
 
