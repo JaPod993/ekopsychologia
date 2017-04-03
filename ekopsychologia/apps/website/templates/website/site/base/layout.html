@@ -95,6 +95,8 @@
 
 
      <!-- Latest compiled and minified CSS -->
+    <link href="{% static 'website/slick/slick.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'website/slick/slick-theme.css' %}" rel="stylesheet" type="text/css"/>
     <link href="{% static 'website/css/bootstrap.min.css' %}" rel="stylesheet"/>
     <link href="{% static 'website/css/font-awesome.min.css' %}" rel="stylesheet"/>
     <link href="{% static 'website/css/lightbox.min.css' %}" rel="stylesheet">
@@ -111,6 +113,7 @@
     <script src="{% static 'website/js/jquery.min.js' %}"></script>
     <script src="{% static 'website/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'website/js/lightbox.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'website/slick/slick.min.js' %}"></script>
 
 
 
@@ -129,13 +132,6 @@
 
 
 <!-- NAVBAR -->
-
-
-
-
-
-
-
         <nav class="navbar navbar-default">
           <div class="container nav-height-bottom">
               <div class="row">
@@ -158,8 +154,8 @@
                       <div class="row">
                           <div class="col-sm-12 nav-padding">
                                <ul class="nav navbar-nav navbar-right nav-content-top">
-                                   <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span class="menu-top inactiveLink">ekopsychologia@ekopsychologia.pl</span></a></li>
-                                   <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></i><span class="menu-top inactiveLink">+48 604 936 349</span></a></li>
+                                   <li><a href="mailto:ekopsychologia@ekopsychologia.pl"><i class="fa fa-envelope"></i><span class="menu-top inactiveLink">ekopsychologia@ekopsychologia.pl</span></a></li>
+                                   <li><a href="tel:+48604936349"><i class="fa fa-phone"></i></i><span class="menu-top inactiveLink">+48 604 936 349</span></a></li>
                                    <li class="circle_btn_padding"><a href="#" class="btn btn-default btn-circle"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                    <li class="circle_btn_padding"><a href="#" class="btn btn-default btn-circle"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
                                    <li class="circle_btn_padding"><a href="#" class="btn btn-default btn-circle"><i class="fa fa-youtube yt" aria-hidden="true"></i></a></li>
@@ -184,53 +180,70 @@
 
           </div>
         </nav>
-
-
-
-
-
 <!-- NAVBAR END-->
 
 
-<div class="container-fluid">
-    <div class="row">
-        {% for block in blocks %}
-        {% if block != None %}
-            {% if block.full_height %}
-            <div class="col-sm-12 home-image">
-                <div class="info-wrapper flex-center">
-                    <div class="center-info">
-                        {{ block.content|default:""|safe }}
-                        {% if block.url %}
-                        <a class="orange-button" href="{{ block.url }}">{% if block.more_button_text %}{{ block.more_button_text }}{% else %}{% trans 'zobacz' %}{% endif %}</a>
-                        {% endif %}
+
+
+<!-- HEADER SLIDER -->
+<div class="">
+
+    <div class="container-fluid">
+        <div class="row single-item">
+            {% for block in blocks %}
+            {% if block != None %}
+                {% if block.full_height %}
+                <div class="col-sm-12 home-image">
+                    <div class="info-wrapper flex-center">
+                        <div class="center-info">
+                            {{ block.content|default:""|safe }}
+                            {% if block.url %}
+                            <a class="orange-button" href="{{ block.url }}">{% if block.more_button_text %}{{ block.more_button_text }}{% else %}{% trans 'zobacz' %}{% endif %}</a>
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
-            </div>
-            {% else %}
-            <div class="col-sm-{{ block.box_size }} sc-block{% if block.without_margins %} no-margins-block{% endif %}" style="{% if block.background %}background-image: url({{ block.background.url }});{% endif %}background-color:{{ block.background_color }};">{{ block.content|default:""|safe }}</div>
+                {% else %}
+                <div class="col-sm-{{ block.box_size }} sc-block{% if block.without_margins %} no-margins-block{% endif %}" style="{% if block.background %}background-image: url({{ block.background.url }});{% endif %}background-color:{{ block.background_color }};">{{ block.content|default:""|safe }}</div>
+                {% endif %}
             {% endif %}
-        {% endif %}
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
+
+  </div>
+
+<!-- HEADER SLIDER END -->
+
+<!-- O NAS -->
+
+<div class="o-nas">
+
+    
+
 </div>
 
-
-
-
-
-
-
-
-
-
-
+<!-- O NAS END -->
 
 
 {% block body_content %}
 
 {% endblock %}
 
+<script>
+    $(document).ready(function(){
+
+  $('.single-item').slick({
+
+      accessibility: true,
+      dots: true,
+      autoplay: false,
+      autoplaySpeed: 5000,
+  });
+
+});
+
+</script>
 
 
 
