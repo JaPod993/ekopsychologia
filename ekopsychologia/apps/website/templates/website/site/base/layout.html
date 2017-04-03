@@ -1,3 +1,4 @@
+{% comment %}
 <!DOCTYPE html>{% load staticfiles %}{% load compress %}{% load corecms_tags %}{% load corecms_render_tags %}
 <html lang="pl">
 <head>
@@ -57,6 +58,181 @@
 {% endblock %}
 
 {% render_menu 'menu-bottom' template_name='website/site/element/_menu_bottom.html' %}
+
+</body>
+</html>
+{% endcomment %}
+<!DOCTYPE html>{% load staticfiles %}{% load compress %}{% load corecms_tags %}{% load corecms_render_tags %}{% load thumbnail %} {% load i18n%}
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block description %}
+        <meta name="description" itemprop="description" content="{{ request.cms_config.seo_description|striptags }}"/>
+    {% endblock %}
+
+    {% block keywords %}
+        <meta name="keywords" itemprop="keywords" content="{{ request.cms_config.seo_keywords }}"/>
+    {% endblock %}
+
+    {% block title %}
+        <title>
+            {{ request.cms_config.site_title }}
+        </title>
+    {% endblock %}
+
+    {% block header_css %}{% endblock %}
+
+    {% block header_js %}{% endblock %}
+
+
+    {% block canonical_url %}{% endblock %}
+
+
+    {% block body_js %}{% endblock %}
+    {{ request.cms_config.tracking_code|safe }}
+
+
+     <!-- Latest compiled and minified CSS -->
+    <link href="{% static 'website/css/bootstrap.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'website/css/font-awesome.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'website/css/lightbox.min.css' %}" rel="stylesheet">
+
+    <!--GOOGLE FONT - Roboto-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
+
+
+    {% compress css %}
+    <link href="{% static 'website/css/style.css' %}" rel="stylesheet"/>
+    <link rel="stylesheet" href="{% static 'corecms/css/site-style.css' %}">
+    {% endcompress %}
+
+    <script src="{% static 'website/js/jquery.min.js' %}"></script>
+    <script src="{% static 'website/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'website/js/lightbox.min.js' %}"></script>
+
+
+
+</head>
+<body class="{% block bodyclass %}{{ LANGUAGE_CODE }}{% endblock %}">
+{% if request.user.is_superuser %}
+    <div class="right-edit-buttons">
+        <a class="right-edit-button" href="{% url 'admin:index' %}">
+            <div class="right-edit-button-icon"><i class="fa fa-cog"></i></div>
+            <p>Panel administracyjny</p>
+        </a>
+        {% block edit_buttons %}
+        {% endblock %}
+    </div>
+{% endif %}
+
+
+<!-- NAVBAR -->
+
+
+
+
+
+
+
+        <nav class="navbar navbar-default">
+          <div class="container nav-height-bottom">
+              <div class="row">
+                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar top-bar"></span>
+                      <span class="icon-bar middle-bar"></span>
+                      <span class="icon-bar bottom-bar"></span>
+                </button>
+                  <div id="logo" class="col-sm-3">
+                      <a href="/">
+        <img class="img-responsive brand" alt="Ekopsychologia" src="{% static 'website/images/ekopsychologia_logo.png' %}">
+      </a>
+                  </div>
+
+                  <div class="col-sm-9">
+
+                     <div id="navbar" class="collapse navbar-collapse">
+
+                      <div class="row">
+                          <div class="col-sm-12 nav-padding">
+                               <ul class="nav navbar-nav navbar-right nav-content-top">
+                                   <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span class="menu-top inactiveLink">ekopsychologia@ekopsychologia.pl</span></a></li>
+                                   <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></i><span class="menu-top inactiveLink">+48 604 936 349</span></a></li>
+                                   <li class="circle_btn_padding"><a href="#" class="btn btn-default btn-circle"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                   <li class="circle_btn_padding"><a href="#" class="btn btn-default btn-circle"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                   <li class="circle_btn_padding"><a href="#" class="btn btn-default btn-circle"><i class="fa fa-youtube yt" aria-hidden="true"></i></a></li>
+                               </ul>
+                          </div>
+                          <div class="col-sm-12 nav-padding">
+                                <ul class="nav navbar-nav navbar-right nav-content-bottom">
+                                    <li><a href="#">O nas</a></li>
+                                    <li><a href="#">Projekty</a></li>
+                                    <li><a href="#">Aktualności</a></li>
+                                    <li><a href="#">Współpraca</a></li>
+                                    <li><a href="#">Publikacje</a></li>
+                                    <li><a href="#">Galeria</a></li>
+                                    <li><a href="#">Kontakt</a></li>
+                                </ul>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+              </div>
+
+          </div>
+        </nav>
+
+
+
+
+
+<!-- NAVBAR END-->
+
+
+<div class="container-fluid">
+    <div class="row">
+        {% for block in blocks %}
+        {% if block != None %}
+            {% if block.full_height %}
+            <div class="col-sm-12 home-image">
+                <div class="info-wrapper flex-center">
+                    <div class="center-info">
+                        {{ block.content|default:""|safe }}
+                        {% if block.url %}
+                        <a class="orange-button" href="{{ block.url }}">{% if block.more_button_text %}{{ block.more_button_text }}{% else %}{% trans 'zobacz' %}{% endif %}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="col-sm-{{ block.box_size }} sc-block{% if block.without_margins %} no-margins-block{% endif %}" style="{% if block.background %}background-image: url({{ block.background.url }});{% endif %}background-color:{{ block.background_color }};">{{ block.content|default:""|safe }}</div>
+            {% endif %}
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% block body_content %}
+
+{% endblock %}
+
+
+
 
 </body>
 </html>

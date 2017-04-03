@@ -1,0 +1,39 @@
+{% load thumbnail %}
+{% load staticfiles %}
+<div class="container">
+<div class="row article_list">
+    <div class="col-sm-5 col-lg-4">
+        {% if article.content %}<a href="{{ article.get_absolute_url }}">{% endif %}
+        <div class="img-wrapper">
+        {% if article.thumbnail %}
+        {% thumbnail article.thumbnail "768x768" as im %} <!-- obrazek-->
+            <img src="{{ im.url }}" class="img-responsive" alt="{{ article }}">
+        {% endthumbnail %}
+        {% else %}
+            <img src="{% static 'website/images/blue_orb.svg' %}" style="height:189px; width: 100%; opacity:0.5" class="img-responsive" alt="{{ article }}">
+        {% endif %}
+        </div>
+        {% if article.content %}</a>{% endif %}
+    </div>
+    <div id="article" class="col-sm-7 col-lg-8"> <!-- article -->
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 id="title">{% if article.content %}<a href="{{ article.get_absolute_url }}">{% endif %}{{ article.identity }}{% if article.content %}</a>{% endif %}</h2> <!-- title -->
+                <p class="date">{{ article.article_date|date:"d.m.Y" }}</p>  <!-- data -->
+                <div class="content-styles">
+                    {{ article.shortcut|safe|truncatechars_html:600}}
+                </div>
+                {% include 'corecms/site/tags.html' with size="sm" label=False tags=article.tags.all %}
+            </div>
+                 {% if article.content %}  <!-- button więcej -->
+            <div class="col-md-12"><a href="{{ article.get_absolute_url }}" class="btn btn-blue pull-right full">więcej</a></div>
+                 {% endif %}
+        </div>
+        </div>
+    </div>
+
+
+</div>
+<hr>
+</div>

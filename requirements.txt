@@ -10,3 +10,4 @@ django-widget-tweaks==1.4.1
 -e git://github.com/disqus/django-bitfield.git@1.9.1#egg=django-bitfield
 -e git://github.com/maciejga/django-positions.git#egg=django-positions
 sorl-thumbnail==12.4a1
+flup==1.0.2

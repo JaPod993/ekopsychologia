@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: http://www.sercepogorza.pl/sitemap.xml
+Sitemap: http://www.ekopsychologia.pl/sitemap.xml

@@ -1,15 +1,11 @@
 # -*- encoding: utf-8 -*-
 from django.contrib.contenttypes.models import ContentType
-from django.db.models import Q
-from django.http import HttpResponse
-from django.shortcuts import render_to_response, redirect
-from django.template import RequestContext
-from django.views.generic import FormView
 from django.views.generic.base import TemplateView, View
 from cms.models import Site, Article
 from corecms.models.default.slider import Slider
 from corecms.models.gallery import Gallery
 
+from blockslider.models import BlockSlider
 
 class HomepageView(TemplateView):
     template_name = 'website/site/homepage.html'
@@ -23,6 +19,8 @@ class HomepageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(HomepageView, self).get_context_data(**kwargs)
         #context['sites'] = Site.objects.published().all()
+
+        context['blocks'] = BlockSlider.objects.filter(visible=True).order_by('order')
         context['homepage_onas'] = self._get_site_by_slug("o-nas")
         context['homepage_projekty'] = self._get_site_by_slug("projekty")
         if context['homepage_projekty']:
@@ -45,5 +43,3 @@ class HomepageView(TemplateView):
         gallery_ct = ContentType.objects.get_for_model(Gallery)
         context['homepage_gallery'] = context['homepage_site'].connector_children.filter(children_type=gallery_ct).first()
         return context
-
-

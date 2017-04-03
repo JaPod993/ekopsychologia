@@ -1,0 +1,62 @@
+{
+  "name": "ekopsychologia",
+  "authors": [],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "slick-carousel": "~1.5.8",
+    "font-awesome": "~4.4.0",
+    "components-font-awesome": "~4.4.0"
+  },
+  "overrides": {
+    "moment": {
+      "main": [
+        "moment.js",
+        "locale/pl.js"
+      ]
+    },
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  },
+  "preen": {
+    "jquery": [
+      "dist/*.js",
+      "dist/*.map",
+      "bower.json"
+    ],
+    "bootbox.js": [
+      "*.js",
+      "bower.json"
+    ],
+    "bootstrap": [
+      "dist/**",
+      "bower.json"
+    ],
+    "bootstrap-datepicker": [
+      "dist/**",
+      "bower.json"
+    ],
+    "eonasdan-bootstrap-datetimepicker": [
+      "build/**",
+      "bower.json"
+    ],
+    "components-font-awesome": [
+      "css/**",
+      "fonts/**",
+      "bower.json"
+    ]
+  }
+}

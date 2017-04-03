@@ -1,6 +1,261 @@
-@import "compass/reset";
-@import "compass/css3/box-shadow";
-@import "compass/css3/border-radius";
-@import "compass/utilities/general/clearfix";
-@import "compass/css3/transform";
-@import "compass/css3/transition";
+// kolory
+$white: #ffffff; //biały
+$grey: #c4c4c4; //szary
+$dark-grey: #303030; //ciemny szary
+$hover: #0c824b; //zielony hover
+
+// justify class
+.text-justify {
+  text-align: justify;
+}
+.inactiveLink {
+   pointer-events: none;
+   cursor: default;
+}
+//.................FONTY......................
+
+@mixin roboto-thin {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+@mixin roboto-light {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+@mixin roboto-regular {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+@mixin roboto-medium {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+@mixin roboto-bold {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+//.............................................
+
+
+
+body {
+ background-color: $grey;
+ // padding-top: 70px;
+}
+
+
+
+
+//...................NAVBAR......................
+nav.navbar.navbar-default {
+  margin-bottom: 0;
+}
+.nav-height-bottom {
+  padding-top: 25px;
+}
+.nav-content-bottom li a {
+  padding-top: 0;
+  padding-bottom: 0px;
+}
+.nav-content-top li a {
+  padding-top: 5px;
+  padding-bottom: 0;
+}
+.navbar-default {
+  border-radius: 0;
+  border: none;
+  background-color: $white;
+}
+
+.btn-circle {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background-color: $grey;
+  //color: $white;
+  i {
+    color: $white;
+  }
+}
+
+a.btn.btn-default.btn-circle {
+  padding: 6px 0;
+  border:none;
+}
+
+.circle_btn_padding {
+  padding-top: 0px;
+  padding-right: 15px;
+}
+.nav.navbar-nav.navbar-right.nav-content-top li a {
+  @include roboto-light;
+  font-size: 13px;
+  color: $dark-grey;
+  i {
+    color: $hover;
+  }
+}
+.btn-circle {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background-color: $grey;
+  //color: $white;
+}
+.circle_btn_padding .btn.btn-default.btn-circle i {
+  color: $white!important;
+}
+.nav.navbar-nav.navbar-right.nav-content-bottom li a {
+  @include roboto-medium;
+  font-size: 16px;
+  color: $dark-grey;
+}
+div.container.nav-height-top {
+  padding-right: 0;
+}
+div.container.nav-height-bottom {
+  padding-bottom: 20px;
+}
+.fa-envelope:before  {
+  font-size: 20px;
+}
+.fa-phone:before {
+  font-size: 20px;
+}
+span.menu-top {
+  position: relative;
+  top: -2px;
+  padding-left: 10px;
+}
+a.btn.btn-default.btn-circle {
+  background-color: $grey;
+  transition: background-color .5s ease;
+
+}
+
+a.btn.btn-default.btn-circle:hover {
+  background-color: $hover;
+}
+
+.nav.nav-content-bottom>li>a {
+    display: inline-block;
+    //font-weight: 600;
+    //font-size: 14px;
+    //height: 50px;
+    //color: #fff;
+    //text-transform: uppercase;
+    //padding-left: 20px;
+    //padding-right: 20px;
+    overflow-x: hidden;
+    position: relative;
+    transition: .25s ease all;
+    //background: gray;
+    text-decoration: none;
+    //line-height: 45px;
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+ .nav.nav-content-bottom>li>a::after {
+   content: " ";
+   position: absolute;
+   display: block;
+   bottom: 0;
+   left: -100%;
+   height: 2px;
+   width: 100%;
+   background: $hover;
+   transition: .5s ease all;
+}
+ .nav.nav-content-bottom>li>a:hover:after {
+    left: 0;
+}
+ .nav.nav-content-bottom {
+   padding-top: 40px;
+ }
+
+div.container.nav-height-bottom {
+  //padding-left: 0;
+  //padding-right: 0;
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+#logo {
+  padding-right: 0;
+  padding-left: 0;
+}
+div.col-sm-12.nav-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.navbar-toggle {
+  border: none;
+  background: transparent !important;
+
+  &:hover {
+    background: transparent !important;
+  }
+
+  .icon-bar {
+    width: 22px;
+    transition: all 0.2s;
+  }
+  .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+  .middle-bar {
+    opacity: 0;
+  }
+  .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+  }
+}
+
+.navbar-toggle.collapsed {
+  .top-bar {
+    transform: rotate(0);
+  }
+  .middle-bar {
+    opacity: 1;
+  }
+  .bottom-bar {
+    transform: rotate(0);
+  }
+}
+//.............................................
+
+.navbar-brand img {
+  //height: 100%;
+}
+
+//Non mobile first media
+
+//..............MEDIA QUERIES..................
+
+
+@media screen and (max-width : 1200px) {
+
+}
+@media screen and (max-width : 992px) {
+
+}
+@media (max-width: 991px) {
+
+}
+@media(min-width: 768px) {
+
+}
+@media screen and (max-width:768px) {
+
+}
+
+@media screen and (max-width:480px){
+
+}
+
+//.............................................

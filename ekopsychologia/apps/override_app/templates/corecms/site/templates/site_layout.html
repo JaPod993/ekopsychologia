@@ -1,0 +1,83 @@
+{% extends 'website/site/base/layout.html' %}
+{% load corecms_tags %}
+{% load corecms_render_tags %}
+{% load thumbnail %}
+{% load digg_paginator %}
+{% load staticfiles %}
+{% load mptt_tags %}
+{% load i18n %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'website/css/lightbox.css' %}"/>
+    <link rel="stylesheet" href="{% static 'website/icons/48px/style.css' %}"/>
+{% endblock %}
+{% block js %}
+    <script src="{% static 'website/js/lightbox.js' %}"></script>
+{% endblock %}
+{% block edit_buttons %}
+    {% render_edit_button object 'Edytuj stronę' %}
+{% endblock %}
+{% block title %}<title>{{ object }} | {{ request.cms_config.site_title }}</title>{% endblock %}
+
+{% block canonical_url %}
+    <link rel="canonical" href="{{ request.base_url }}{{ object.get_absolute_url }}">
+{% endblock %}
+{% block body_content %}
+
+    <div class="container site wow fadeIn">
+        <div class="row">
+            <div class="col-md-12 bg">
+                <!-- Tło -->
+                {% if object.main_image %}
+                    {% thumbnail object.main_image "1200x300" crop="center" as im %}
+                        <div class="bg_wrapper " style="background: url('{{ im.url }}') center center no-repeat;">
+                    {% endthumbnail %}
+                {% else %}
+                    <div class="bg_wrapper " style="background: url('{% static 'website/images/default.jpg' %}');">
+                {% endif %}
+                <div class="title wow fadeInLeft">
+                    <h2>{{ object.identity }}</h2>
+                </div>
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 right">
+                    <!-- Okruszki -->
+                    {% include 'corecms/site/_breadcrumbs.html' %}
+                    {% if published_by_hash %}
+                        <div class="panel panel-default panel-danger">
+                            <div class="panel-body">
+                                {% trans 'Widzisz tę ukrytą stronę ponieważ używasz linku z panelu administracyjnego, nie jest ona widoczna na liście artykułów i w dla wyszukiwarki google' %}
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {% block page_description %}
+                        {% include 'corecms/site/site_description.html' %}
+                    {% endblock %}
+                    {% if object.content and object_articles %}
+                        <hr>
+                    {% endif %}
+                    <!-- Lista artykułów -->
+                    {% for article in object_articles %}
+                        {% include 'corecms/site/article_list.html' with article=article only %}
+                    {% endfor %}
+                    <!-- Paginacja -->
+                    {% digg_paginator template_name='corecms/site/_digg_paginator.html' %}
+                    <!-- Pliki -->
+                    {% include 'corecms/site/_files.html' %}
+                    <!-- Zdjęcia z plików -->
+                    {% include 'corecms/site/_images.html' %}
+                    <!-- Galeria i formularz -->
+                    {% for connector in article.connector_children.all %}
+                        {% render_connector connector %}
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+{% endblock %}
