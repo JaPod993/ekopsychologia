@@ -320,6 +320,18 @@ p.about {
   color: #303030;
 }
 
+hr.grey {
+  border-width: 2px;
+  border-color: #c4c4c4;
+}
+
+.more {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #303030;
+}
+
 @media screen and (max-width: 1700px) {
   .slick-next {
     top: 190px;
