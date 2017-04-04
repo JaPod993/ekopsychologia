@@ -292,6 +292,7 @@ p.about {
   font-weight: 300;
   font-size: 16px;
   color: #303030;
+  margin-bottom: 150px;
 }
 
 .title {
@@ -337,6 +338,212 @@ span.title-text {
   margin-top: 30px;
 }
 
+div.container.tree {
+  background: url("../images/eko_tree.png");
+  height: 448px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.btn-circle.btn-about {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  border-width: 7px;
+  border-color: #ef6c45;
+  background-color: #ffffff;
+}
+
+div.container.tree {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.kontener-drzewa {
+  position: relative;
+  width: 900px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+a.dzialalnosc-miedzynarodowa {
+  position: absolute;
+  top: 347px;
+  left: 40px;
+}
+
+button.btn.btn-default.btn-circle.btn-about.btn-dzialalnosc-miedzynarodowa {
+  position: absolute;
+  top: 323px;
+  left: 167px;
+  padding-left: 10px;
+  padding-top: 8px;
+}
+
+i.eko-dzialalnosc-miedzynarodowa {
+  color: #ef6c45;
+  font-size: 40px;
+}
+
+a.dzialalnosc-miedzynarodowa > p {
+  margin-bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #303030;
+  font-size: 16px;
+}
+
+.btn-circle.btn-about.btn-dla-karpat {
+  border-color: #6c8d47;
+}
+
+a.dla-karpat {
+  position: absolute;
+  top: 214px;
+  left: 55px;
+}
+
+button.btn.btn-default.btn-circle.btn-about.btn-dla-karpat {
+  position: absolute;
+  top: 188px;
+  left: 140px;
+  padding-top: 9px;
+  padding-left: 11px;
+}
+
+i.eko-dla-karpat {
+  color: #6c8d47;
+  font-size: 40px;
+}
+
+a.dla-karpat > span {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #303030;
+  font-size: 16px;
+}
+
+.btn-circle.btn-about.btn-edukacja-ekologiczna {
+  border-color: #3c81c2;
+}
+
+a.edukacja-ekologiczna {
+  position: absolute;
+  top: 57px;
+  left: 85px;
+}
+
+button.btn.btn-default.btn-circle.btn-about.btn-edukacja-ekologiczna {
+  position: absolute;
+  top: 53px;
+  left: 183px;
+  padding-top: 6px;
+  padding-left: 10px;
+}
+
+i.eko-edukacja-ekologiczna {
+  color: #3c81c2;
+  font-size: 40px;
+}
+
+a.edukacja-ekologiczna > p {
+  margin-bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #303030;
+  font-size: 16px;
+}
+
+.btn-circle.btn-about.btn-partycypacja-spoleczna {
+  border-color: #b27a3f;
+}
+
+a.partycypacja-spoleczna {
+  position: absolute;
+  top: -40px;
+  left: 166px;
+}
+
+button.btn.btn-default.btn-circle.btn-about.btn-partycypacja-spoleczna {
+  position: absolute;
+  top: -37px;
+  left: 279px;
+  padding-top: 10px;
+  padding-left: 12px;
+}
+
+i.eko-partycypacja-spoleczna {
+  color: #b27a3f;
+  font-size: 36px;
+}
+
+a.partycypacja-spoleczna > p {
+  margin-bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #303030;
+  font-size: 16px;
+}
+
+.btn-circle.btn-about.btn-dziedzictwo-kulturowe {
+  border-color: #896b5f;
+}
+
+a.dziedzictwo-kulturowe {
+  position: absolute;
+  top: -99px;
+  right: 350px;
+}
+
+button.btn.btn-default.btn-circle.btn-about.btn-dziedzictwo-kulturowe {
+  position: absolute;
+  top: -70px;
+  right: 413px;
+  padding-top: 7px;
+  padding-left: 11px;
+}
+
+i.eko-dziedzictwo-kulturowe {
+  color: #896b5f;
+  font-size: 38px;
+}
+
+a.dziedzictwo-kulturowe > span {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #303030;
+  font-size: 16px;
+}
+
+.btn-circle.btn-about.btn-spolecznosc-lokalna {
+  border-color: #6363aa;
+}
+
+a.spolecznosc-lokalna {
+  position: absolute;
+  top: 201px;
+  right: 11px;
+}
+
+button.btn.btn-default.btn-circle.btn-about.btn-spolecznosc-lokalna {
+  position: absolute;
+  top: 188px;
+  right: 140px;
+}
+
+i.eko-spolecznosc-lokalna {
+  color: #6363aa;
+  font-size: 36px;
+}
+
+a.spolecznosc-lokalna > p {
+  margin-bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #303030;
+  font-size: 16px;
+}
+
 .more {
   display: block;
   text-align: center;
@@ -378,6 +585,7 @@ button.more-text {
   border: 2px solid #c4c4c4;
   border-radius: 25px;
   padding: 2px 15px 2px 15px;
+  margin-top: 50px;
 }
 
 @media screen and (max-width: 1700px) {

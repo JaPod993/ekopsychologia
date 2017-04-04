@@ -41,6 +41,14 @@ $title: #374778; //niebieski akcent
   font-weight: 700;
 }
 
+@mixin about {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: $dark-grey;
+  font-size: 16px;
+}
+
+
 //.............................................
 
 
@@ -332,6 +340,7 @@ p.about {
   @include roboto-regular;
   font-size: 16px;
   color: $dark-grey;
+  margin-bottom: 150px;
 }
 
 // ..........header with hr................
@@ -377,6 +386,199 @@ span.title-text {
   margin-top: 30px;
 }
 
+div.container.tree {
+  background: url("../images/eko_tree.png");
+  height: 448px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.btn-circle.btn-about {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  border-width: 7px;
+  border-color: #ef6c45;
+  background-color: $white;
+}
+//..............tree buttons....................
+div.container.tree {
+  padding-left: 0;
+  padding-right: 0;
+}
+.kontener-drzewa {
+  position: relative;
+  width: 900px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+
+// BUTTON DZIALALNOSC MIEDZYNARODOWA NR 1
+a.dzialalnosc-miedzynarodowa { // TEKST
+  position: absolute;
+  top: 347px;
+  left: 40px;
+}
+button.btn.btn-default.btn-circle.btn-about.btn-dzialalnosc-miedzynarodowa {//BUTTON
+  position: absolute;
+  top:323px;
+  left: 167px;
+  padding-left: 10px;
+  padding-top: 8px;
+}
+i.eko-dzialalnosc-miedzynarodowa {//ICON
+  color: #ef6c45;
+  font-size: 40px;
+}
+a.dzialalnosc-miedzynarodowa >  p {
+  margin-bottom: 0;
+  @include about;
+}
+// BUTTON DZIALALNOSC MIEDZYNARODOWA
+
+//.......................................................................
+
+// BUTTON DLA KARPAT NR 2
+.btn-circle.btn-about.btn-dla-karpat {
+  border-color: #6c8d47; //BUTTON BORDER COLOR
+}
+a.dla-karpat {  // TEKST
+  position: absolute;
+  top: 214px;
+  left: 55px;
+}
+button.btn.btn-default.btn-circle.btn-about.btn-dla-karpat {//BUTTON
+  position: absolute;
+  top: 188px;
+  left: 140px;
+  padding-top: 9px;
+  padding-left: 11px;
+}
+i.eko-dla-karpat { //ICON
+  color: #6c8d47;
+  font-size: 40px;
+}
+a.dla-karpat >  span {
+  @include about;
+}
+// BUTTON DLA KARPAT
+
+//.......................................................................
+
+// BUTTON EDUKACJA EKOLOGICZNA NR 3
+.btn-circle.btn-about.btn-edukacja-ekologiczna {
+  border-color: #3c81c2; //BUTTON BORDER COLOR
+}
+a.edukacja-ekologiczna {  // TEKST
+  position: absolute;
+  top: 57px;
+  left: 85px;
+}
+button.btn.btn-default.btn-circle.btn-about.btn-edukacja-ekologiczna {//BUTTON
+  position: absolute;
+  top: 53px;
+  left: 183px;
+  padding-top: 6px;
+  padding-left: 10px;
+}
+i.eko-edukacja-ekologiczna { //ICON
+  color: #3c81c2;
+  font-size: 40px;
+}
+a.edukacja-ekologiczna >  p {
+  margin-bottom: 0;
+  @include about;
+}
+// BUTTON EDUKACJA EKOLOGICZNA
+
+//.......................................................................
+
+
+// BUTTON PARTYCYPACJA SPOLECZNA NR 4
+.btn-circle.btn-about.btn-partycypacja-spoleczna  {
+  border-color: #b27a3f; //BUTTON BORDER COLOR
+}
+a.partycypacja-spoleczna  {  // TEKST
+  position: absolute;
+  top: -40px;
+  left: 166px;
+}
+button.btn.btn-default.btn-circle.btn-about.btn-partycypacja-spoleczna  {//BUTTON
+  position: absolute;
+  top: -37px;
+  left: 279px;
+  padding-top: 10px;
+  padding-left: 12px;
+}
+i.eko-partycypacja-spoleczna  { //ICON
+  color: #b27a3f;
+  font-size: 36px;
+}
+a.partycypacja-spoleczna  >  p {
+  margin-bottom: 0;
+  @include about;
+}
+// // BUTTON PARTYCYPACJA SPOLECZNA
+
+//.......................................................................
+
+// BUTTON DZIEDZICTWO KULTUROWE NR 5
+.btn-circle.btn-about.btn-dziedzictwo-kulturowe {
+  border-color: #896b5f; //BUTTON BORDER COLOR
+}
+a.dziedzictwo-kulturowe {  // TEKST
+  position: absolute;
+  top: -99px;
+  right: 350px;
+}
+button.btn.btn-default.btn-circle.btn-about.btn-dziedzictwo-kulturowe {//BUTTON
+  position: absolute;
+  top: -70px;
+  right: 413px;
+  padding-top: 7px;
+  padding-left: 11px;
+}
+i.eko-dziedzictwo-kulturowe {//ICON
+  color: #896b5f;
+  font-size: 38px;
+}
+a.dziedzictwo-kulturowe >  span {
+  @include about;
+}
+// BUTTON DZIEDZICTWO KULTUROWE
+
+//.......................................................................
+
+// BUTTON SPOLECZNOSC LOKALNA NR 8
+.btn-circle.btn-about.btn-spolecznosc-lokalna {
+  border-color: #6363aa; //BUTTON BORDER COLOR
+}
+a.spolecznosc-lokalna {  // TEKST
+  position: absolute;
+  top: 201px;
+  right: 11px;
+}
+button.btn.btn-default.btn-circle.btn-about.btn-spolecznosc-lokalna {//BUTTON
+  position: absolute;
+  top: 188px;
+  right: 140px;
+}
+i.eko-spolecznosc-lokalna {//ICON
+  color: #6363aa;
+  font-size: 36px;
+}
+a.spolecznosc-lokalna >  p {
+  margin-bottom: 0;
+  @include about;
+}
+// BUTTON SPOLECZNOSC LOKALNA
+
+//.......................................................................
+
+
+
+//............tree buttons end..................
+//...................O NAS END...................
 
 
 // ..........more button with hr................
@@ -419,6 +621,7 @@ button.more-text {
   border: 2px solid $grey;
   border-radius: 25px;
   padding: 2px 15px 2px 15px;
+  margin-top: 50px;
 }
 //.............................................
 
