@@ -8,7 +8,7 @@ TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = ['*']
 
-BASE_URL = "http://127.0.0.1:8000"
+BASE_URL = "http://127.0.0.1:8002"
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
@@ -17,9 +17,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ekopsychologia',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '',
+        'USER': 'labamba',
+        'PASSWORD': 'obojetne',
+        'HOST': '10.0.0.3',
         'PORT': '',
     }
 }
