@@ -325,26 +325,8 @@ div.o-nas {
   background-size: cover;
   height: 900px;
 }
-.margin {
-  margin-top: 40px;
-}
-hr.green {
-  border-width: 2px;
-  border-color:  $hover;
-}
-.hr {
-  padding-left: 0;
-  padding-right: 0;
-}
-.title-header {
-  margin-top: 4px;
-  margin-bottom: 4px;
-}
-.title {
-  @include roboto-bold;
-  color: $title;
-  font-size: 24px;
-}
+
+
 p.about {
   margin-top: 30px;
   @include roboto-regular;
@@ -352,14 +334,91 @@ p.about {
   color: $dark-grey;
 }
 
-hr.grey {
-  border-width: 2px;
-  border-color:  $grey;
+// ..........header with hr................
+.title {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
 }
+
+.title > span{
+    position: relative;
+    display: inline-block;
+}
+
+.title > span:before,
+.title > span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    height: 2px;
+    background: $hover;
+}
+
+.title > span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.title > span:after {
+    left: 100%;
+    margin-left: 15px;
+}
+span.title-text {
+  @include roboto-bold;
+  font-size: 24px;
+  color: $title;
+
+}
+//.............................................
+span.title-text {
+  margin-top: 30px;
+}
+
+
+
+// ..........more button with hr................
 .more {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.more > button {
+    position: relative;
+    display: inline-block;
+}
+
+.more > button:before,
+.more > button:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    height: 2px;
+    background: $grey;
+}
+
+.more > button:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.more > button:after {
+    left: 100%;
+    margin-left: 15px;
+}
+button.more-text {
   @include roboto-medium;
   font-size: 16px;
   color: $dark-grey;
+  background-color: transparent;
+  border: 2px solid $grey;
+  border-radius: 25px;
+  padding: 2px 15px 2px 15px;
 }
 //.............................................
 

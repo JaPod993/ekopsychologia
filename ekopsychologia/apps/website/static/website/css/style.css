@@ -286,32 +286,6 @@ div.o-nas {
   height: 900px;
 }
 
-.margin {
-  margin-top: 40px;
-}
-
-hr.green {
-  border-width: 2px;
-  border-color: #0c824b;
-}
-
-.hr {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.title-header {
-  margin-top: 4px;
-  margin-bottom: 4px;
-}
-
-.title {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  color: #374778;
-  font-size: 24px;
-}
-
 p.about {
   margin-top: 30px;
   font-family: 'Roboto', sans-serif;
@@ -320,16 +294,90 @@ p.about {
   color: #303030;
 }
 
-hr.grey {
-  border-width: 2px;
-  border-color: #c4c4c4;
+.title {
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.title > span {
+  position: relative;
+  display: inline-block;
+}
+
+.title > span:before,
+.title > span:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 9999px;
+  height: 2px;
+  background: #0c824b;
+}
+
+.title > span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+
+.title > span:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+span.title-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #374778;
+}
+
+span.title-text {
+  margin-top: 30px;
 }
 
 .more {
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.more > button {
+  position: relative;
+  display: inline-block;
+}
+
+.more > button:before,
+.more > button:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 9999px;
+  height: 2px;
+  background: #c4c4c4;
+}
+
+.more > button:before {
+  right: 100%;
+  margin-right: 15px;
+}
+
+.more > button:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+button.more-text {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 16px;
   color: #303030;
+  background-color: transparent;
+  border: 2px solid #c4c4c4;
+  border-radius: 25px;
+  padding: 2px 15px 2px 15px;
 }
 
 @media screen and (max-width: 1700px) {
