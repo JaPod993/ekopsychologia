@@ -4,8 +4,12 @@
   -webkit-box-shadow: 2px 3px 2px 0 rgba(0,0,0,0.4);
   box-shadow: 2px 3px 2px 0 rgba(0,0,0,0.4);
   margin-bottom: 30px;
-  img{
+  a{
+    display: block;
     padding: 10px 15px;
+    text-decoration: none;
+  }
+  img{
     -webkit-box-shadow:inset 1px 1px 2px 0 rgba(0,0,0,0.2);
     box-shadow:inset 1px 1px 2px 0 rgba(0,0,0,0.2);
   }
