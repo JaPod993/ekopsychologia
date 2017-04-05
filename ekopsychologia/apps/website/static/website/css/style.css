@@ -436,7 +436,7 @@ a.edukacja-ekologiczna {
 button.btn.btn-default.btn-circle.btn-about.btn-edukacja-ekologiczna {
   position: absolute;
   top: 53px;
-  left: 183px;
+  left: 182px;
   padding-top: 6px;
   padding-left: 10px;
 }
@@ -515,6 +515,68 @@ a.dziedzictwo-kulturowe > span {
   font-size: 16px;
 }
 
+.btn-circle.btn-about.btn-samorzady-lokalne {
+  border-color: #f2b756;
+}
+
+a.samorzady-lokalne {
+  position: absolute;
+  top: -40px;
+  right: 166px;
+}
+
+button.btn.btn-default.btn-circle.btn-about.btn-samorzady-lokalne {
+  position: absolute;
+  top: -37px;
+  right: 279px;
+  padding-top: 6px;
+  padding-left: 12px;
+}
+
+i.eko-samorzady-lokalne {
+  color: #f2b756;
+  font-size: 36px;
+}
+
+a.samorzady-lokalne > p {
+  margin-bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #303030;
+  font-size: 16px;
+}
+
+.btn-circle.btn-about.btn-organizacje-pozarzadowe {
+  border-color: #5d96a0;
+}
+
+a.organizacje-pozarzadowe {
+  position: absolute;
+  top: 57px;
+  right: 62px;
+}
+
+button.btn.btn-default.btn-circle.btn-about.btn-organizacje-pozarzadowe {
+  position: absolute;
+  top: 55px;
+  right: 183px;
+  padding-top: 8px;
+  padding-left: 11px;
+}
+
+i.eko-organizacje-pozarzadowe {
+  color: #5d96a0;
+  font-size: 40px;
+}
+
+a.organizacje-pozarzadowe > p {
+  margin-bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #303030;
+  font-size: 16px;
+}
+
 .btn-circle.btn-about.btn-spolecznosc-lokalna {
   border-color: #6363aa;
 }
@@ -529,6 +591,8 @@ button.btn.btn-default.btn-circle.btn-about.btn-spolecznosc-lokalna {
   position: absolute;
   top: 188px;
   right: 140px;
+  padding-top: 9px;
+  padding-left: 14px;
 }
 
 i.eko-spolecznosc-lokalna {
@@ -537,6 +601,37 @@ i.eko-spolecznosc-lokalna {
 }
 
 a.spolecznosc-lokalna > p {
+  margin-bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #303030;
+  font-size: 16px;
+}
+
+.btn-circle.btn-about.btn-swiat-nauki {
+  border-color: #b5842b;
+}
+
+a.swiat-nauki {
+  position: absolute;
+  top: 347px;
+  right: 84px;
+}
+
+button.btn.btn-default.btn-circle.btn-about.btn-swiat-nauki {
+  position: absolute;
+  top: 323px;
+  right: 167px;
+  padding-left: 10px;
+  padding-top: 8px;
+}
+
+i.eko-swiat-nauki {
+  color: #b5842b;
+  font-size: 40px;
+}
+
+a.swiat-nauki > p {
   margin-bottom: 0;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
