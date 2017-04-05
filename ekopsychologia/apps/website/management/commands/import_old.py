@@ -33,6 +33,9 @@ from unidecode import unidecode
 from django.db import connections
 from django.db import transaction
 from cms.models import Site, Article, RelationArticleSite, MediaFile, IsSite
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
 
 User = get_user_model()
 
@@ -67,7 +70,7 @@ else:
 
 
 #nadpisuje tresci, connetcory, pliki itp artykułów nawet jesli sa juz w bazie, jesli false to w starych nic nie zmienia
-OVERRIDE_IF_EXIST = False
+OVERRIDE_IF_EXIST = True
 
 #wszystkie arty z tej strony i podkategori laduja do tej strony
 MODE_ALL_TO_PARENT = 'all-to-parent'
@@ -185,7 +188,7 @@ class Command(BaseCommand):
         i = 1
         for row in objects:
             with transaction.atomic():
-                print("")
+
                 if parent:
                     print(int(row['id']), "[{0}]".format(parent), row['title'])
                 else:
@@ -193,15 +196,16 @@ class Command(BaseCommand):
                 #print("-- item %s" % truncatewords(row['title'], 5), row['id']
                 slug = orig = slugify(unidecode(row['title']))[:255]
 
-
-
-                try:
-                    is_site = IsSite.objects.get(cms_id=row['id']).is_site
-                except IsSite.DoesNotExist:
-                    var = raw_input(u"Site ? {0}: ".format(row['title']).encode('utf-8'))
-                    var = var or None
-                    is_site = var == "1"
-                    IsSite.objects.create(cms_id=row['id'], is_site=is_site)
+                if parent and parent.identity == "Aktualności":
+                    is_site = False
+                else:
+                    try:
+                        is_site = IsSite.objects.get(cms_id=row['id']).is_site
+                    except IsSite.DoesNotExist:
+                        var = raw_input(u"Site ? {0}: ".format(row['title']).encode('utf-8'))
+                        var = var or None
+                        is_site = var == "1"
+                        IsSite.objects.create(cms_id=row['id'], is_site=is_site)
 
                 #jesli jest w tabelce kategorii lub posiada dzieci
                 if is_site:
@@ -297,7 +301,6 @@ class Command(BaseCommand):
                             old_path = get_old_path(frow['fileSource'])
                             if os.path.exists(old_path):
                                 if frow['main']:
-
                                     image_name = os.path.basename(old_path)
                                     with open(old_path, 'rb') as f:
                                         obj.thumbnail.save(image_name, File(f), save=True)
@@ -357,7 +360,6 @@ class Command(BaseCommand):
                                 obj.shortcut = html_parser.unescape(obj.shortcut.replace(url_path[0], url_path[1]))
                             obj.content = html_parser.unescape(obj.content.replace(url_path[0], url_path[1]))
 
-
             if isinstance(obj, Site):
                 objects = self.get_children(row['id'])
                 self.import_objects(objects, obj)
@@ -374,8 +376,18 @@ class Command(BaseCommand):
         #self.cursor.execute("SELECT * FROM  SITES AS s JOIN SITES_lang AS sl ON s.id = sl.id_main_table WHERE status >=0 AND language = 'pl' AND s.id=209")
         self.import_objects(dictfetchall(self.cursor))
 
+
     def handle(self, *args, **options):
         self.cursor = connections['oldbase'].cursor()
         #self.reset_site()
         self.import_content()
+        self.set_news()
+
+
+    def set_news(self):
+        projekty_site = Site.objects.get(old_cms_id=4)
+        parent = Site.objects.get(identity="Aktualności", parent=None)
+
+        for article in Article.objects.filter(sites__in=projekty_site.get_descendants().filter(identity="Aktualności")):
+            RelationArticleSite.objects.get_or_create(child=article, parent=parent, defaults=dict(main=False, position=0))
 
