@@ -9,10 +9,6 @@
     padding: 10px 15px;
     text-decoration: none;
   }
-  img{
-    -webkit-box-shadow:inset 1px 1px 2px 0 rgba(0,0,0,0.2);
-    box-shadow:inset 1px 1px 2px 0 rgba(0,0,0,0.2);
-  }
   .gwozdz{
     position: absolute;
     left: 50%;
@@ -23,7 +19,22 @@
     margin-left: -9px;
     background: url(../images/gwozdz.png) center center no-repeat;
   }
+  .inner-shadow{
+    display: block;
+    position: relative;
+    .shadow{
+      display: block;
+      -webkit-box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.5);
+      box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.5);
+      position: absolute;
+      left: 0px;
+      top:0px;
+      width:100%;
+      height: 100%;
+    }
+  }
 }
+
 .projects-wrapper{
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cecece+0,e4e4e4+10,e4e4e4+10 */
   background: rgb(206,206,206); /* Old browsers */
