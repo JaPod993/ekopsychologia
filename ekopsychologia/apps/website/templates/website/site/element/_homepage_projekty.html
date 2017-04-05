@@ -1,6 +1,9 @@
 {% load thumbnail %}
 {% if homepage_projekty %}
-Projekty
+<div class="projects-wrapper">
+<div class="container title">
+      <span class="title-text">Projekty</span>
+</div>
 
 {% if homepage_projekty_list|length > 0 %}
 <div class="container">
@@ -8,14 +11,25 @@ Projekty
     {% for site in homepage_projekty_list %}
         <div class="col-sm-3">
             <div class="wood-frame-wrapper">
+                <a href="{{ site.get_absolute_url }}">
             {% thumbnail site.thumbnail "100x100" crop="center" as im %}
-                <img src="{{ im.url }}" alt="{{ site }}" title="{{ site }}">
+                <img src="{{ im.url }}" class="img-responsive" alt="{{ site }}" title="{{ site }}">
             {% endthumbnail %}
-            <a href="{{ site.get_absolute_url }}">{{ site }}</a>
+                <span class="gwozdz"></span>
+                </a>
             </div>
         </div>
+        {% if forloop.counter|divisibleby:"4" %}
+        <div class="clearfix hidden-xs"></div>
+        {% endif %}
+
     {% endfor %}
     </div>
 </div>
 {% endif %}
 {% endif %}
+
+    <div class="container more">
+       <button class="more-text">Więcej</button>
+    </div>
+    </div>
