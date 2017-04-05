@@ -13,23 +13,23 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
-        sites = ["Strona główna"]
+        sites = []
 
-
-        o_nas = ["Stowarzyszenie Ekopsychologia", "Obszary działania", "Sprawozdania", "W mediach", "Zapytania ofertowe"]
-
-
-
-        sites_menu_top = [(u"O nas", o_nas), u"Projekty", u"Aktualności", u"Współpraca", u"Publikacje",
-                    u"Galeria", u"Kontakt",]
+        sites_menu_top = [u"Strona główna", u"O nas", u"Projekty", u"Aktualności", u"Współpraca", u"Publikacje",
+                          u"Galeria", u"Kontakt",]
 
         menu_top, created = Menu.objects.get_or_create(slug="menu-top", defaults={'name': u'Menu górne'})
         menu_bottom, created = Menu.objects.get_or_create(slug="menu-bottom", defaults={'name': u'Menu dolne'})
 
-        for site_name in sites:
-            site, created = Site.objects.get_or_create(identity=site_name, defaults={'status': Site.STATUS_PUBLISHED})
+        old_cms_sites = [2L, 4L, 3L, 29L, 5L, 16L]
+
+        for site in Site.objects.filter(old_cms_id__in=old_cms_sites).all():
             RelationMenuSite.objects.get_or_create(parent=menu_top, child=site)
-            print(site, site.slug)
+
+        # for site_name in sites:
+        #     site, created = Site.objects.get_or_create(identity=site_name, defaults={'status': Site.STATUS_PUBLISHED})
+        #     RelationMenuSite.objects.get_or_create(parent=menu_top, child=site)
+        #     print(site, site.slug)
 
         # sliders = [
         #     (u'Slide 1', u'Lorem iam eu arcu lacinia interdum. Praesent consectetur iaculis leo eget fermentum.'),
