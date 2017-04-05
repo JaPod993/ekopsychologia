@@ -479,7 +479,7 @@ a.edukacja-ekologiczna {  // TEKST
 button.btn.btn-default.btn-circle.btn-about.btn-edukacja-ekologiczna {//BUTTON
   position: absolute;
   top: 53px;
-  left: 183px;
+  left: 182px;
   padding-top: 6px;
   padding-left: 10px;
 }
@@ -551,6 +551,62 @@ a.dziedzictwo-kulturowe >  span {
 
 //.......................................................................
 
+// BUTTON SAMORZĄDY LOKALNE NR 6
+.btn-circle.btn-about.btn-samorzady-lokalne  {
+  border-color: #f2b756; //BUTTON BORDER COLOR
+}
+a.samorzady-lokalne  {  // TEKST
+  position: absolute;
+  top: -40px;
+  right: 166px;
+}
+button.btn.btn-default.btn-circle.btn-about.btn-samorzady-lokalne  {//BUTTON
+  position: absolute;
+  top: -37px;
+  right: 279px;
+  padding-top: 6px;
+  padding-left: 12px;
+}
+i.eko-samorzady-lokalne  { //ICON
+  color: #f2b756;
+  font-size: 36px;
+}
+a.samorzady-lokalne  >  p {
+  margin-bottom: 0;
+  @include about;
+}
+// // BUTTON PARTYCYPACJA SPOLECZNA
+
+//.......................................................................
+
+// BUTTON ORGANIZACJE POZARZĄDOWE NR 7
+.btn-circle.btn-about.btn-organizacje-pozarzadowe {
+  border-color: #5d96a0; //BUTTON BORDER COLOR
+}
+a.organizacje-pozarzadowe {  // TEKST
+  position: absolute;
+  top: 57px;
+  right: 62px;
+}
+button.btn.btn-default.btn-circle.btn-about.btn-organizacje-pozarzadowe {//BUTTON
+  position: absolute;
+  top: 55px;
+  right: 183px;
+  padding-top: 8px;
+  padding-left: 11px;
+}
+i.eko-organizacje-pozarzadowe { //ICON
+  color: #5d96a0;
+  font-size: 40px;
+}
+a.organizacje-pozarzadowe >  p {
+  margin-bottom: 0;
+  @include about;
+}
+// BUTTON EDUKACJA EKOLOGICZNA
+
+//.......................................................................
+
 // BUTTON SPOLECZNOSC LOKALNA NR 8
 .btn-circle.btn-about.btn-spolecznosc-lokalna {
   border-color: #6363aa; //BUTTON BORDER COLOR
@@ -564,6 +620,8 @@ button.btn.btn-default.btn-circle.btn-about.btn-spolecznosc-lokalna {//BUTTON
   position: absolute;
   top: 188px;
   right: 140px;
+  padding-top: 9px;
+  padding-left: 14px;
 }
 i.eko-spolecznosc-lokalna {//ICON
   color: #6363aa;
@@ -577,6 +635,35 @@ a.spolecznosc-lokalna >  p {
 
 //.......................................................................
 
+// BUTTON SWIAT NAUKI NR 9
+.btn-circle.btn-about.btn-swiat-nauki {
+  border-color: #b5842b; //BUTTON BORDER COLOR
+}
+a.swiat-nauki { // TEKST
+  position: absolute;
+  top: 347px;
+  right: 84px;
+}
+button.btn.btn-default.btn-circle.btn-about.btn-swiat-nauki {//BUTTON
+  position: absolute;
+  top:323px;
+  right: 167px;
+  padding-left: 10px;
+  padding-top: 8px;
+}
+i.eko-swiat-nauki {//ICON
+  color: #b5842b;
+  font-size: 40px;
+}
+a.swiat-nauki >  p {
+  margin-bottom: 0;
+  @include about;
+}
+// BUTTON DZIALALNOSC MIEDZYNARODOWA
+
+
+
+ 
 
 
 //............tree buttons end..................
