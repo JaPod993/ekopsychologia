@@ -36,6 +36,7 @@ class HomepageView(TemplateView):
                 file = item.all_files.filter(publish=True).first()
                 context['homepage_publikacje_list'].append((item, file))
 
+        context['homepage_partnership'] = self._get_site_by_slug("wspolpraca")
         context['partnership_slider_list'] = Slider.objects.filter(slug__in=["fundatorzy", "partnerzy", "patroni", "media", "partnerzy-biznesowi"])
 
         context['homepage_site'] = Site.objects.get_or_create(slug="strona-glowna",
