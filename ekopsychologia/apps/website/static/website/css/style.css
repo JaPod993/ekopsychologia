@@ -1,3 +1,56 @@
+.wood-frame-wrapper {
+  background: url(../images/deska.png) center center no-repeat;
+  position: relative;
+  -webkit-box-shadow: 2px 3px 2px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 3px 2px 0 rgba(0, 0, 0, 0.4);
+  margin-bottom: 30px;
+}
+.wood-frame-wrapper a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+.wood-frame-wrapper img {
+  -webkit-box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+.wood-frame-wrapper .gwozdz {
+  position: absolute;
+  left: 50%;
+  top: 2px;
+  width: 18px;
+  height: 24px;
+  display: block;
+  margin-left: -9px;
+  background: url(../images/gwozdz.png) center center no-repeat;
+}
+
+.projects-wrapper {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cecece+0,e4e4e4+10,e4e4e4+10 */
+  background: #cecece;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cecece', endColorstr='#e4e4e4',GradientType=0 );
+  /* IE6-9 */
+  padding: 0px 0px 35px 0px;
+}
+.projects-wrapper .container.title {
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+.projects-wrapper button.more-text {
+  margin-top: 10px;
+}
+
+.margin-bottom-30 {
+  margin-bottom: 30px;
+}
+
 .text-justify {
   text-align: justify;
 }
