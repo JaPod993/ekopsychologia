@@ -1,11 +1,11 @@
 {% load thumbnail %}
 {% if homepage_projekty %}
+{% if homepage_projekty_list|length > 0 %}
 <div class="projects-wrapper">
 <div class="container title">
       <span class="title-text">Projekty</span>
 </div>
-
-{% if homepage_projekty_list|length > 0 %}
+    
 <div class="container">
     <div class="row">
     {% for site in homepage_projekty_list %}
@@ -27,9 +27,9 @@
     </div>
 </div>
 {% endif %}
-{% endif %}
 
     <div class="container more">
-       <button class="more-text">Więcej</button>
+        <button class="more-text">Więcej</button>
     </div>
-    </div>
+</div>
+{% endif %}
