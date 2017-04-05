@@ -10,10 +10,6 @@
   padding: 10px 15px;
   text-decoration: none;
 }
-.wood-frame-wrapper img {
-  -webkit-box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
-  box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
-}
 .wood-frame-wrapper .gwozdz {
   position: absolute;
   left: 50%;
@@ -23,6 +19,20 @@
   display: block;
   margin-left: -9px;
   background: url(../images/gwozdz.png) center center no-repeat;
+}
+.wood-frame-wrapper .inner-shadow {
+  display: block;
+  position: relative;
+}
+.wood-frame-wrapper .inner-shadow .shadow {
+  display: block;
+  -webkit-box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
 }
 
 .projects-wrapper {

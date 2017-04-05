@@ -12,9 +12,13 @@
         <div class="col-sm-3">
             <div class="wood-frame-wrapper">
                 <a href="{{ site.get_absolute_url }}">
+                    <span class="inner-shadow">
+                        <span class="shadow"></span>
             {% thumbnail site.thumbnail "242x150" crop="center" as im %}
                 <img src="{{ im.url }}" class="img-responsive" alt="{{ site }}" title="{{ site }}">
             {% endthumbnail %}
+
+                        </span>
                 <span class="gwozdz"></span>
                 </a>
             </div>
