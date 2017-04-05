@@ -1,17 +1,35 @@
 {% load thumbnail %}
 {% if homepage_projekty %}
-Projekty
-
 {% if homepage_projekty_list|length > 0 %}
-    <ul>
+<div class="projects-wrapper">
+<div class="container title">
+      <span class="title-text">Projekty</span>
+</div>
+
+<div class="container">
+    <div class="row">
     {% for site in homepage_projekty_list %}
-        <li>
-            {% thumbnail site.thumbnail "100x100" crop="center" as im %}
-                <img src="{{ im.url }}" alt="{{ site }}" title="{{ site }}">
+        <div class="col-sm-3">
+            <div class="wood-frame-wrapper">
+                <a href="{{ site.get_absolute_url }}">
+            {% thumbnail site.thumbnail "242x150" crop="center" as im %}
+                <img src="{{ im.url }}" class="img-responsive" alt="{{ site }}" title="{{ site }}">
             {% endthumbnail %}
-            <a href="{{ site.get_absolute_url }}">{{ site }}</a>
-        </li>
+                <span class="gwozdz"></span>
+                </a>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:"4" %}
+        <div class="clearfix hidden-xs"></div>
+        {% endif %}
+
     {% endfor %}
-    </ul>
+    </div>
+</div>
 {% endif %}
+
+    <div class="container more">
+        <button class="more-text">Więcej</button>
+    </div>
+</div>
 {% endif %}
