@@ -11,13 +11,13 @@
 
     <div class="container">
         <!-- opis -->
-        <div class="col-xs-1"></div>
-        <div class="col-xs-10">
+        <div class="hidden-xs hidden-sm col-xs-1"></div>
+        <div class="col-xs-12 col-md-10">
 
             <div class="about center-justified">{{ homepage_onas.content|safe }}</div>
 
         </div>
-        <div class="col-xs-1"></div>
+        <div class="hidden-xs hidden-sm col-xs-1"></div>
         <!-- opis -->
     </div>
 
@@ -27,7 +27,12 @@
 
             <!-- dzialalnosc miedzynarodowa 1 -->
             <a href="#" class="dzialalnosc-miedzynarodowa text-center"><p>i działalność</p><p>międzynarodowa</p></a>
-            <button type="button" class="btn btn-default btn-circle btn-about btn-dzialalnosc-miedzynarodowa"><i class="hi-icon eko-dzialalnosc-miedzynarodowa"></i></button>
+            <div class="kontener">
+            <button id="card" type="button" class="btn btn-default btn-circle btn-about btn-dzialalnosc-miedzynarodowa">
+                <i class=" eko-dzialalnosc-miedzynarodowa front"></i>
+                <i class=" eko-dzialalnosc-miedzynarodowa back"></i>
+            </button>
+            </div>
 
             <!-- dla karpat 2 -->
             <a href="#" class="dla-karpat"><span>dla Karpat</span></a>
