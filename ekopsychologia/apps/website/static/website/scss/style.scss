@@ -662,8 +662,33 @@ a.swiat-nauki >  p {
 // BUTTON DZIALALNOSC MIEDZYNARODOWA
 
 
-
-
+.kontener {
+  position: relative;
+  perspective: 800px;
+}
+#card {
+  width: 74px;
+  height: 74px;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+#card figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 74px;
+  height: 74px;
+  backface-visibility: hidden;
+}
+#card .front {
+}
+#card .back {
+  transform: rotateY( 180deg );
+}
+#card:hover {
+  transform: rotateY( 180deg );
+}
 
 
 //............tree buttons end..................
@@ -678,13 +703,13 @@ a.swiat-nauki >  p {
     white-space: nowrap;
 }
 
-.more > button {
+.more > a {
     position: relative;
     display: inline-block;
 }
 
-.more > button:before,
-.more > button:after {
+.more > a:before,
+.more > a:after {
     content: "";
     position: absolute;
     top: 50%;
@@ -693,16 +718,16 @@ a.swiat-nauki >  p {
     background: $grey;
 }
 
-.more > button:before {
+.more > a:before {
     right: 100%;
     margin-right: 15px;
 }
 
-.more > button:after {
+.more > a:after {
     left: 100%;
     margin-left: 15px;
 }
-button.more-text {
+a.more-text {
   @include roboto-medium;
   font-size: 16px;
   color: $dark-grey;
