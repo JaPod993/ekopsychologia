@@ -17,9 +17,9 @@ DATABASES = {
       'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ekopsychologia',
-        'USER': 'root',
+        'USER': 'labamba',
         'PASSWORD': 'obojetne',
-        'HOST': '',
+        'HOST': '10.0.0.3',
         'PORT': '',
     }
 }
@@ -36,4 +36,4 @@ EMAIL_FROM_USER = 'AM2 <noreply@silvercube.pl>'
 
 CORECMS_CONTACT_FORM_SUBJECT = "Wiadomość z serwisu www"
 CORECMS_CONTACT_FORM_RECIPIENTS = ['contact.form.am2@supermailing.eu']
-MEDIA_ROOT = '/home/janek/am2/media'
+MEDIA_ROOT = '/home/janek/ekopsychologia/media'
