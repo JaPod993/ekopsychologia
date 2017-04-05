@@ -3,15 +3,19 @@
 Projekty
 
 {% if homepage_projekty_list|length > 0 %}
-    <ul>
+<div class="container">
+    <div class="row">
     {% for site in homepage_projekty_list %}
-        <li>
+        <div class="col-sm-3">
+            <div class="wood-frame-wrapper">
             {% thumbnail site.thumbnail "100x100" crop="center" as im %}
                 <img src="{{ im.url }}" alt="{{ site }}" title="{{ site }}">
             {% endthumbnail %}
             <a href="{{ site.get_absolute_url }}">{{ site }}</a>
-        </li>
+            </div>
+        </div>
     {% endfor %}
-    </ul>
+    </div>
+</div>
 {% endif %}
 {% endif %}
