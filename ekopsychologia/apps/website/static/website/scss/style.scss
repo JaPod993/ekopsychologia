@@ -84,7 +84,7 @@ nav.navbar.navbar-default {
   background-color: $white;
 }
 
-.btn-circle {
+.btn-circle.btn-nav {
   border-radius: 50%;
   width: 30px;
   height: 30px;
@@ -96,7 +96,7 @@ nav.navbar.navbar-default {
   }
 }
 
-a.btn.btn-default.btn-circle {
+a.btn.btn-default.btn-circle.btn-nav {
   padding: 6px 0;
   border:none;
 }
@@ -113,15 +113,8 @@ a.btn.btn-default.btn-circle {
     color: $hover;
   }
 }
-.btn-circle {
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  background-color: $grey;
-  //color: $white;
-}
-.circle_btn_padding .btn.btn-default.btn-circle i {
+
+.circle_btn_padding .btn.btn-default.btn-circle.btn-nav i {
   color: $white!important;
 }
 .nav.navbar-nav.navbar-right.nav-content-bottom li a {
@@ -146,13 +139,13 @@ span.menu-top {
   top: -2px;
   padding-left: 10px;
 }
-a.btn.btn-default.btn-circle {
+a.btn.btn-default.btn-circle.btn-nav {
   background-color: $grey;
   transition: background-color .5s ease;
 
 }
 
-a.btn.btn-default.btn-circle:hover {
+a.btn.btn-default.btn-circle.btn-nav:hover {
   background-color: $hover;
 }
 
@@ -394,7 +387,7 @@ div.container.tree {
   background-repeat: no-repeat;
   background-position: center;
 }
-.btn-circle.btn-about {
+a.btn-circle.btn-about {
   width: 74px;
   height: 74px;
   border-radius: 50%;
@@ -402,6 +395,8 @@ div.container.tree {
   border-color: #ef6c45;
   background-color: transparent;
 }
+
+
 //..............tree buttons....................
 div.container.tree {
   padding-left: 0;
@@ -474,7 +469,7 @@ a.dzialalnosc-miedzynarodowa { // TEKST
   top: 347px;
   left: 40px;
 }
-button.btn.btn-default.btn-circle.btn-about.btn-dzialalnosc-miedzynarodowa {//BUTTON
+a.btn.btn-default.btn-circle.btn-about.btn-dzialalnosc-miedzynarodowa {//BUTTON
 
   padding-left: 10px;
   padding-top: 8px;
@@ -518,7 +513,7 @@ a.dla-karpat {  // TEKST
   top: 214px;
   left: 55px;
 }
-button.btn.btn-default.btn-circle.btn-about.btn-dla-karpat {//BUTTON
+a.btn.btn-default.btn-circle.btn-about.btn-dla-karpat {//BUTTON
 
   padding-top: 9px;
   padding-left: 11px;
@@ -550,7 +545,7 @@ a.edukacja-ekologiczna {  // TEKST
   top: 57px;
   left: 85px;
 }
-button.btn.btn-default.btn-circle.btn-about.btn-edukacja-ekologiczna {//BUTTON
+a.btn.btn-default.btn-circle.btn-about.btn-edukacja-ekologiczna {//BUTTON
   //position: absolute;
   padding-top: 6px;
   padding-left: 10px;
@@ -583,7 +578,7 @@ a.partycypacja-spoleczna  {  // TEKST
   top: -40px;
   left: 166px;
 }
-button.btn.btn-default.btn-circle.btn-about.btn-partycypacja-spoleczna  {//BUTTON
+a.btn.btn-default.btn-circle.btn-about.btn-partycypacja-spoleczna  {//BUTTON
  // position: absolute;
   padding-top: 10px;
   padding-left: 12px;
@@ -615,7 +610,7 @@ a.dziedzictwo-kulturowe {  // TEKST
  top: -99px;
   right: 350px;
 }
-button.btn.btn-default.btn-circle.btn-about.btn-dziedzictwo-kulturowe {//BUTTON
+a.btn.btn-default.btn-circle.btn-about.btn-dziedzictwo-kulturowe {//BUTTON
   //position: absolute;
 
  // padding-top: 7px;
@@ -650,7 +645,7 @@ a.samorzady-lokalne  {  // TEKST
   top: -40px;
   right: 166px;
 }
-button.btn.btn-default.btn-circle.btn-about.btn-samorzady-lokalne  {//BUTTON
+a.btn.btn-default.btn-circle.btn-about.btn-samorzady-lokalne  {//BUTTON
   padding-top: 6px;
   padding-left: 12px;
 }
@@ -680,7 +675,7 @@ a.organizacje-pozarzadowe {  // TEKST
   top: 57px;
   right: 62px;
 }
-button.btn.btn-default.btn-circle.btn-about.btn-organizacje-pozarzadowe {//BUTTON
+a.btn.btn-default.btn-circle.btn-about.btn-organizacje-pozarzadowe {//BUTTON
   //padding-top: 8px;
   //padding-left: 11px;
 }
@@ -710,7 +705,7 @@ a.spolecznosc-lokalna {  // TEKST
   top: 201px;
   right: 11px;
 }
-button.btn.btn-default.btn-circle.btn-about.btn-spolecznosc-lokalna {//BUTTON
+a.btn.btn-default.btn-circle.btn-about.btn-spolecznosc-lokalna {//BUTTON
 
   //padding-top: 9px;
   //padding-left: 14px;
@@ -742,7 +737,7 @@ a.swiat-nauki { // TEKST
   top: 347px;
   right: 84px;
 }
-button.btn.btn-default.btn-circle.btn-about.btn-swiat-nauki {//BUTTON
+a.btn.btn-default.btn-circle.btn-about.btn-swiat-nauki {//BUTTON
 
   //padding-left: 10px;
   //padding-top: 8px;
@@ -756,6 +751,67 @@ i.eko-swiat-nauki {//ICON
 // BUTTON DZIALALNOSC MIEDZYNARODOWA
 
 //------------------------------------------------------------------------------------------
+// BUTTON SWIAT NAUKI -------------------------------------------------------------------------------------------- NR 9 - 2
+
+.kontener.nr1-2 {
+  top: 158px;
+  left: 140px;
+}
+
+
+.kontener.nr2-2 {
+  top: 188px;
+  left: 140px;
+}
+
+
+.kontener.nr3-2 {
+  top: 55px;
+  left: 183px;
+}
+
+
+.kontener.nr4-2 {
+  top: -37px;
+  left: 279px;
+}
+
+
+.kontener.nr5-2 {
+ top: -70px;
+  right: 413px;
+}
+
+
+.kontener.nr6-2 {
+  top: -37px;
+  right: 279px;
+}
+
+
+.kontener.nr7-2 {
+  top: 55px;
+  right: 183px;
+}
+
+
+.kontener.nr8-2 {
+  top: -13px;
+  right: 36px;
+}
+
+.kontener.nr9-2 {
+  top: -13px; //zmiana
+  right: 67px; //zmiana
+}
+
+
+
+
+// BUTTON DZIALALNOSC MIEDZYNARODOWA
+
+//------------------------------------------------------------------------------------------
+
 //............tree buttons end..................
 
 
@@ -806,7 +862,49 @@ a.more-text {
 }
 //.............................................
 
+.kontener {
+  outline: 0;
+}
+.kontener:focus {
+  outline: 0;
+}
+a.btn.btn-default.btn-circle.btn-about:focus {
+  outline: 0;
+}
+//...................STOPKA............................
 
+
+
+
+//................SILVER CUBE
+.silver {
+  background-color: #0a001f;
+}
+.sc-brand {
+  font-family: MyriadPro-Regular, sans-serif;
+  font-size: 14px;
+  color: $hover;
+  margin-bottom: 15px;
+}
+a.sc-logo {
+  font-family: MyriadPro-Regular, sans-serif;
+  font-size: 14px;
+  color: $hover;
+}
+
+.sc-brand a:hover {
+  text-decoration: none;
+  color: $hover;
+}
+
+.sc-logo img {
+  width: 20px;
+  position: relative;
+  top: -2px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+//...................................................
 
 
 //Non mobile first media
@@ -872,6 +970,14 @@ a.more-text {
 }
 
 @media screen and (max-width : 992px) {
+  .kontener {
+    position: static;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  div.about.center-justified {
+    margin-bottom: 20px;
+  }
   .sc-block {
     height: 350px;
   }
@@ -886,6 +992,9 @@ a.more-text {
 }
   .slide-1 {
     margin-top: 114px;
+  }
+  div.o-nas {
+    height: 800px;
   }
 }
 
@@ -922,8 +1031,15 @@ a.more-text {
     margin-left: 240px;
   }
 }
+  div.o-nas {
+    height: 800px;
+  }
 }
-
+@media screen and (max-width:767px) {
+div.o-nas {
+    height: 1120px;
+  }
+}
 
 @media screen and (max-width:480px){
   .sc-block {
@@ -946,6 +1062,18 @@ a.more-text {
     margin-left: 180px;
   }
 }
+  div.o-nas {
+    height: 1200px;
+  }
+  div.about.center-justified {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width:360px){
+  div.o-nas {
+    height: 1250px;
+  }
 }
 
 //.............................................
