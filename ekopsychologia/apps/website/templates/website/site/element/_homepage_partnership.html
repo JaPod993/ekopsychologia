@@ -5,7 +5,7 @@
     {{ slider }}
     {% for slide in slider.items.all %}
         {% thumbnail slide.image "100x100"  as im %}
-            {% if slide.url %}<a href="{{ slide.url }}" title="{{ slide.name }}">{% endif %}
+            {% if slide.url %}<a href="{{ slide.url }}" title="{{ slide.name }}" target="_blank">{% endif %}
             <img src="{{ im.url }}" alt="{{ slide.name }}" title="{{ slide.name }}" class="item">
         {% if slide.url %}</a>{% endif %}
         {% endthumbnail %}

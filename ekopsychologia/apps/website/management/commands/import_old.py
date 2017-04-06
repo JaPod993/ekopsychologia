@@ -5,6 +5,9 @@ from __future__ import unicode_literals
 import hashlib
 from pprint import pprint
 
+from corecms.models.default.slider import Slider, SliderRow
+
+from corecms.templatetags.corecms_tags import get_slider
 from django.core.files.base import File
 
 from corecms.forms.forms import get_slug_for_site_or_article
@@ -380,8 +383,9 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         self.cursor = connections['oldbase'].cursor()
         #self.reset_site()
-        self.import_content()
-        self.set_news()
+        #self.import_content()
+        #self.set_news()
+        self.set_partnership()
 
 
     def set_news(self):
@@ -391,3 +395,31 @@ class Command(BaseCommand):
         for article in Article.objects.filter(sites__in=projekty_site.get_descendants().filter(identity="Aktualności")):
             RelationArticleSite.objects.get_or_create(child=article, parent=parent, defaults=dict(main=False, position=0))
 
+    def set_partnership(self):
+        projekty_site = Site.objects.get(old_cms_id=29)
+        gallery_ct = ContentType.objects.get_for_model(Gallery)
+
+        for site in projekty_site.children.all():
+            print site
+            gallery = site.connector_children.filter(children_type=gallery_ct).first()
+            if gallery:
+                slider, created = Slider.objects.get_or_create(slug=site.slug, defaults=dict(name=site.identity))
+
+                for image in gallery.children.images.all():
+                    try:
+                        row = SliderRow.objects.get(parent=slider, name=image.title)
+                    except Exception as ex:
+                        print ex
+                        row = SliderRow(parent=slider, name=image.title)
+                        image_path = os.path.join(settings.MEDIA_ROOT, image.path)
+                        image_name = os.path.basename(image.path)
+                        with open(image_path, 'rb') as f:
+                            row.image.save(image_name, File(f), save=True)
+                        row.save()
+
+                    row.name = image.title
+                    self.cursor.execute("SELECT * FROM `IMAGES_lang` WHERE `name`='%s'" % row.name)
+                    data = dictfetone(self.cursor)
+                    row.url = data["EXTRA_URL"]
+                    row.save()
+                #gallery.delete()

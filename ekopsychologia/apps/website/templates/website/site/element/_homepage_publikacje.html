@@ -1,33 +1,31 @@
 {% load thumbnail %}{% load corecms_tags %}
 {% if homepage_publikacje %}
-Publikacje
+
 
 {% if homepage_publikacje_list|length > 0 %}
-    <ul>
-    {% for article, file in homepage_publikacje_list %}
-        <li>
+<div class="container">
+
+    Publikacje
+
+    <div class="row ">
+        {% for article, file in homepage_publikacje_list %}
             {% if file.distinction.cover %}
-                {% take_page_of_pdf file.absolute_path 0 as page %}
-                {% thumbnail page "300x600" as im %}
-                    <img src="{{ im.url }}">
-                {% endthumbnail %}
-
-            
-            
-            {% else %}
-
+                <div class="col-md-3">
+                    {{ article }}<br>
+                    {% take_page_of_pdf file.absolute_path 0 as page %}
+                    {% thumbnail page "175x240" as im %}
+                        <img src="{{ im.url }}">
+                    {% endthumbnail %}
+                    <br><a href="{{ file.url }}" download="{{ file.download_name }}">Pobierz</a>
+                </div>
             {% endif %}
-            {% thumbnail site.thumbnail "100x100" crop="center" as im %}
-                <img src="{{ im.url }}" alt="{{ site }}" title="{{ site }}">
-            {% endthumbnail %}
-            <a href="{{ site.get_absolute_url }}">{{ site }}</a>
-        </li>
-    {% endfor %}
-    </ul>
+        {% endfor %}
+    </div>
 
-
-    <a href="{{ homepage_publikacje.get_absolute_url }}">więcej</a>
-    <hr>
+    <div class="container more">
+        <a class="more-text" href="{{ homepage_publikacje.get_absolute_url }}">Więcej</a>
+    </div>
+</div>
 {% endif %}
 
 
