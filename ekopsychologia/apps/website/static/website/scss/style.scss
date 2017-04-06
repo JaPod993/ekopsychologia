@@ -400,7 +400,7 @@ div.container.tree {
   border-radius: 50%;
   border-width: 7px;
   border-color: #ef6c45;
-  background-color: $white;
+  background-color: transparent;
 }
 //..............tree buttons....................
 div.container.tree {
@@ -414,17 +414,68 @@ div.container.tree {
   margin: 0 auto;
 }
 
+a.link {
+  @include  about;
+}
 
-// BUTTON DZIALALNOSC MIEDZYNARODOWA NR 1
+a.link:hover {
+  color: $hover;
+  text-decoration: none;
+}
+
+
+//--------------
+
+//  BUTTON DZIALALNOSC MIEDZYNARODOWA ---------------------------------------------------------------------------- NR 1
+
+.kontener {
+  position: absolute;
+  width: 74px;
+  perspective: 5000px;
+}
+
+.ico {
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  top: 7px;
+  left: 7px;
+  border-radius: 50%;
+  background-color: $white;
+  height: 60px;
+  width: 60px;
+  i {
+    margin: 0;
+    display: block;
+    position: absolute;
+    backface-visibility: hidden;
+  }
+  .back {
+    color: #52b038;
+    transform: rotateY( 180deg );
+  }
+  &:hover {
+    transform: rotateY( 180deg );
+  }
+}
+
+.kontener.nr1 {
+  top:323px; //zmiana
+  left: 167px; //zmiana
+}
+.ico.nr1 i {
+  top: 8px; //zmiana
+  left: 10px; //zmiana
+}
+
+
 a.dzialalnosc-miedzynarodowa { // TEKST
   position: absolute;
   top: 347px;
   left: 40px;
 }
 button.btn.btn-default.btn-circle.btn-about.btn-dzialalnosc-miedzynarodowa {//BUTTON
-  position: absolute;
-  top:323px;
-  left: 167px;
+
   padding-left: 10px;
   padding-top: 8px;
 }
@@ -432,15 +483,33 @@ i.eko-dzialalnosc-miedzynarodowa {//ICON
   color: #ef6c45;
   font-size: 40px;
 }
-a.dzialalnosc-miedzynarodowa >  p {
-  margin-bottom: 0;
-  @include about;
+
+.btn-about {
+  transition: border-color 0.5s ease-in!important;
+  &:hover {
+    border-color: #95633f!important;
+  }
 }
+
+
 // BUTTON DZIALALNOSC MIEDZYNARODOWA
 
 //.......................................................................
 
-// BUTTON DLA KARPAT NR 2
+// BUTTON DLA KARPAT --------------------------------------------------------------------------------------------- NR 2
+
+
+
+
+.kontener.nr2 {
+  top: 188px;
+  left: 140px;
+}
+.ico.nr2 i {
+  top: 8px; //zmiana
+  left: 10px; //zmiana
+}
+//.........................................................................
 .btn-circle.btn-about.btn-dla-karpat {
   border-color: #6c8d47; //BUTTON BORDER COLOR
 }
@@ -450,9 +519,7 @@ a.dla-karpat {  // TEKST
   left: 55px;
 }
 button.btn.btn-default.btn-circle.btn-about.btn-dla-karpat {//BUTTON
-  position: absolute;
-  top: 188px;
-  left: 140px;
+
   padding-top: 9px;
   padding-left: 11px;
 }
@@ -460,14 +527,21 @@ i.eko-dla-karpat { //ICON
   color: #6c8d47;
   font-size: 40px;
 }
-a.dla-karpat >  span {
-  @include about;
-}
 // BUTTON DLA KARPAT
 
 //.......................................................................
 
-// BUTTON EDUKACJA EKOLOGICZNA NR 3
+// BUTTON EDUKACJA EKOLOGICZNA ----------------------------------------------------------------------------------- NR 3
+
+.kontener.nr3 {
+  top: 55px;
+  left: 183px;
+}
+.ico.nr3 i {
+  top: 7px; //zmiana
+  left: 10px; //zmiana
+}
+
 .btn-circle.btn-about.btn-edukacja-ekologiczna {
   border-color: #3c81c2; //BUTTON BORDER COLOR
 }
@@ -477,9 +551,7 @@ a.edukacja-ekologiczna {  // TEKST
   left: 85px;
 }
 button.btn.btn-default.btn-circle.btn-about.btn-edukacja-ekologiczna {//BUTTON
-  position: absolute;
-  top: 53px;
-  left: 182px;
+  //position: absolute;
   padding-top: 6px;
   padding-left: 10px;
 }
@@ -487,16 +559,22 @@ i.eko-edukacja-ekologiczna { //ICON
   color: #3c81c2;
   font-size: 40px;
 }
-a.edukacja-ekologiczna >  p {
-  margin-bottom: 0;
-  @include about;
-}
 // BUTTON EDUKACJA EKOLOGICZNA
 
 //.......................................................................
 
 
-// BUTTON PARTYCYPACJA SPOLECZNA NR 4
+// BUTTON PARTYCYPACJA SPOLECZNA --------------------------------------------------------------------------------- NR 4
+
+.kontener.nr4 {
+  top: -37px;
+  left: 279px;
+}
+.ico.nr4 i {
+  top: 11px; //zmiana
+  left: 12px; //zmiana
+}
+
 .btn-circle.btn-about.btn-partycypacja-spoleczna  {
   border-color: #b27a3f; //BUTTON BORDER COLOR
 }
@@ -506,9 +584,7 @@ a.partycypacja-spoleczna  {  // TEKST
   left: 166px;
 }
 button.btn.btn-default.btn-circle.btn-about.btn-partycypacja-spoleczna  {//BUTTON
-  position: absolute;
-  top: -37px;
-  left: 279px;
+ // position: absolute;
   padding-top: 10px;
   padding-left: 12px;
 }
@@ -516,29 +592,34 @@ i.eko-partycypacja-spoleczna  { //ICON
   color: #b27a3f;
   font-size: 36px;
 }
-a.partycypacja-spoleczna  >  p {
-  margin-bottom: 0;
-  @include about;
-}
+
 // // BUTTON PARTYCYPACJA SPOLECZNA
 
 //.......................................................................
 
-// BUTTON DZIEDZICTWO KULTUROWE NR 5
+// BUTTON DZIEDZICTWO KULTUROWE ---------------------------------------------------------------------------------- NR 5
+.kontener.nr5 {
+ top: -70px;
+  right: 413px;
+}
+.ico.nr5 i {
+  top: 5px; //zmiana
+  left: 12px; //zmiana
+}
+
 .btn-circle.btn-about.btn-dziedzictwo-kulturowe {
   border-color: #896b5f; //BUTTON BORDER COLOR
 }
 a.dziedzictwo-kulturowe {  // TEKST
-  position: absolute;
-  top: -99px;
+ position: absolute;
+ top: -99px;
   right: 350px;
 }
 button.btn.btn-default.btn-circle.btn-about.btn-dziedzictwo-kulturowe {//BUTTON
-  position: absolute;
-  top: -70px;
-  right: 413px;
-  padding-top: 7px;
-  padding-left: 11px;
+  //position: absolute;
+
+ // padding-top: 7px;
+ // padding-left: 11px;
 }
 i.eko-dziedzictwo-kulturowe {//ICON
   color: #896b5f;
@@ -551,7 +632,16 @@ a.dziedzictwo-kulturowe >  span {
 
 //.......................................................................
 
-// BUTTON SAMORZĄDY LOKALNE NR 6
+// BUTTON SAMORZĄDY LOKALNE -------------------------------------------------------------------------------------- NR 6
+.kontener.nr6 {
+  top: -37px;
+  right: 279px;
+}
+.ico.nr6 i {
+  top: 8px; //zmiana
+  left: 10px; //zmiana
+}
+
 .btn-circle.btn-about.btn-samorzady-lokalne  {
   border-color: #f2b756; //BUTTON BORDER COLOR
 }
@@ -561,9 +651,6 @@ a.samorzady-lokalne  {  // TEKST
   right: 166px;
 }
 button.btn.btn-default.btn-circle.btn-about.btn-samorzady-lokalne  {//BUTTON
-  position: absolute;
-  top: -37px;
-  right: 279px;
   padding-top: 6px;
   padding-left: 12px;
 }
@@ -571,15 +658,20 @@ i.eko-samorzady-lokalne  { //ICON
   color: #f2b756;
   font-size: 36px;
 }
-a.samorzady-lokalne  >  p {
-  margin-bottom: 0;
-  @include about;
-}
 // // BUTTON PARTYCYPACJA SPOLECZNA
 
 //.......................................................................
 
-// BUTTON ORGANIZACJE POZARZĄDOWE NR 7
+// BUTTON ORGANIZACJE POZARZĄDOWE -------------------------------------------------------------------------------- NR 7
+.kontener.nr7 {
+  top: 55px;
+  right: 183px;
+}
+.ico.nr7 i {
+  top: 7px; //zmiana
+  left: 10px; //zmiana
+}
+
 .btn-circle.btn-about.btn-organizacje-pozarzadowe {
   border-color: #5d96a0; //BUTTON BORDER COLOR
 }
@@ -589,25 +681,27 @@ a.organizacje-pozarzadowe {  // TEKST
   right: 62px;
 }
 button.btn.btn-default.btn-circle.btn-about.btn-organizacje-pozarzadowe {//BUTTON
-  position: absolute;
-  top: 55px;
-  right: 183px;
-  padding-top: 8px;
-  padding-left: 11px;
+  //padding-top: 8px;
+  //padding-left: 11px;
 }
 i.eko-organizacje-pozarzadowe { //ICON
   color: #5d96a0;
   font-size: 40px;
 }
-a.organizacje-pozarzadowe >  p {
-  margin-bottom: 0;
-  @include about;
-}
 // BUTTON EDUKACJA EKOLOGICZNA
 
 //.......................................................................
 
-// BUTTON SPOLECZNOSC LOKALNA NR 8
+// BUTTON SPOLECZNOSC LOKALNA ------------------------------------------------------------------------------------ NR 8
+.kontener.nr8 {
+  top: 188px;
+  right: 140px;
+}
+.ico.nr8 i {
+  top: 9px; //zmiana
+  left: 14px; //zmiana
+}
+
 .btn-circle.btn-about.btn-spolecznosc-lokalna {
   border-color: #6363aa; //BUTTON BORDER COLOR
 }
@@ -617,25 +711,29 @@ a.spolecznosc-lokalna {  // TEKST
   right: 11px;
 }
 button.btn.btn-default.btn-circle.btn-about.btn-spolecznosc-lokalna {//BUTTON
-  position: absolute;
-  top: 188px;
-  right: 140px;
-  padding-top: 9px;
-  padding-left: 14px;
+
+  //padding-top: 9px;
+  //padding-left: 14px;
 }
 i.eko-spolecznosc-lokalna {//ICON
   color: #6363aa;
   font-size: 36px;
 }
-a.spolecznosc-lokalna >  p {
-  margin-bottom: 0;
-  @include about;
-}
 // BUTTON SPOLECZNOSC LOKALNA
 
 //.......................................................................
 
-// BUTTON SWIAT NAUKI NR 9
+// BUTTON SWIAT NAUKI -------------------------------------------------------------------------------------------- NR 9
+.kontener.nr9 {
+  top:323px; //zmiana
+  right: 167px; //zmiana
+}
+.ico.nr9 i {
+  top: 10px; //zmiana
+  left: 12px; //zmiana
+}
+
+
 .btn-circle.btn-about.btn-swiat-nauki {
   border-color: #b5842b; //BUTTON BORDER COLOR
 }
@@ -645,53 +743,22 @@ a.swiat-nauki { // TEKST
   right: 84px;
 }
 button.btn.btn-default.btn-circle.btn-about.btn-swiat-nauki {//BUTTON
-  position: absolute;
-  top:323px;
-  right: 167px;
-  padding-left: 10px;
-  padding-top: 8px;
+
+  //padding-left: 10px;
+  //padding-top: 8px;
 }
 i.eko-swiat-nauki {//ICON
   color: #b5842b;
-  font-size: 40px;
+  font-size: 36px;
 }
-a.swiat-nauki >  p {
-  margin-bottom: 0;
-  @include about;
-}
+
+
 // BUTTON DZIALALNOSC MIEDZYNARODOWA
 
-
-.kontener {
-  position: relative;
-  perspective: 800px;
-}
-#card {
-  width: 74px;
-  height: 74px;
-  position: absolute;
-  transform-style: preserve-3d;
-  transition: transform 1s;
-}
-#card figure {
-  margin: 0;
-  display: block;
-  position: absolute;
-  width: 74px;
-  height: 74px;
-  backface-visibility: hidden;
-}
-#card .front {
-}
-#card .back {
-  transform: rotateY( 180deg );
-}
-#card:hover {
-  transform: rotateY( 180deg );
-}
-
-
+//------------------------------------------------------------------------------------------
 //............tree buttons end..................
+
+
 //...................O NAS END...................
 
 

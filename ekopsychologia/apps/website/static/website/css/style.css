@@ -414,7 +414,7 @@ div.container.tree {
   border-radius: 50%;
   border-width: 7px;
   border-color: #ef6c45;
-  background-color: #ffffff;
+  background-color: transparent;
 }
 
 div.container.tree {
@@ -429,6 +429,59 @@ div.container.tree {
   margin: 0 auto;
 }
 
+a.link {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #303030;
+  font-size: 16px;
+}
+
+a.link:hover {
+  color: #0c824b;
+  text-decoration: none;
+}
+
+.kontener {
+  position: absolute;
+  width: 74px;
+  perspective: 5000px;
+}
+
+.ico {
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  top: 7px;
+  left: 7px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  height: 60px;
+  width: 60px;
+}
+.ico i {
+  margin: 0;
+  display: block;
+  position: absolute;
+  backface-visibility: hidden;
+}
+.ico .back {
+  color: #52b038;
+  transform: rotateY(180deg);
+}
+.ico:hover {
+  transform: rotateY(180deg);
+}
+
+.kontener.nr1 {
+  top: 323px;
+  left: 167px;
+}
+
+.ico.nr1 i {
+  top: 8px;
+  left: 10px;
+}
+
 a.dzialalnosc-miedzynarodowa {
   position: absolute;
   top: 347px;
@@ -436,9 +489,6 @@ a.dzialalnosc-miedzynarodowa {
 }
 
 button.btn.btn-default.btn-circle.btn-about.btn-dzialalnosc-miedzynarodowa {
-  position: absolute;
-  top: 323px;
-  left: 167px;
   padding-left: 10px;
   padding-top: 8px;
 }
@@ -448,12 +498,21 @@ i.eko-dzialalnosc-miedzynarodowa {
   font-size: 40px;
 }
 
-a.dzialalnosc-miedzynarodowa > p {
-  margin-bottom: 0;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  color: #303030;
-  font-size: 16px;
+.btn-about {
+  transition: border-color 0.5s ease-in !important;
+}
+.btn-about:hover {
+  border-color: #95633f !important;
+}
+
+.kontener.nr2 {
+  top: 188px;
+  left: 140px;
+}
+
+.ico.nr2 i {
+  top: 8px;
+  left: 10px;
 }
 
 .btn-circle.btn-about.btn-dla-karpat {
@@ -467,9 +526,6 @@ a.dla-karpat {
 }
 
 button.btn.btn-default.btn-circle.btn-about.btn-dla-karpat {
-  position: absolute;
-  top: 188px;
-  left: 140px;
   padding-top: 9px;
   padding-left: 11px;
 }
@@ -479,11 +535,14 @@ i.eko-dla-karpat {
   font-size: 40px;
 }
 
-a.dla-karpat > span {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  color: #303030;
-  font-size: 16px;
+.kontener.nr3 {
+  top: 55px;
+  left: 183px;
+}
+
+.ico.nr3 i {
+  top: 7px;
+  left: 10px;
 }
 
 .btn-circle.btn-about.btn-edukacja-ekologiczna {
@@ -497,9 +556,6 @@ a.edukacja-ekologiczna {
 }
 
 button.btn.btn-default.btn-circle.btn-about.btn-edukacja-ekologiczna {
-  position: absolute;
-  top: 53px;
-  left: 182px;
   padding-top: 6px;
   padding-left: 10px;
 }
@@ -509,12 +565,14 @@ i.eko-edukacja-ekologiczna {
   font-size: 40px;
 }
 
-a.edukacja-ekologiczna > p {
-  margin-bottom: 0;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  color: #303030;
-  font-size: 16px;
+.kontener.nr4 {
+  top: -37px;
+  left: 279px;
+}
+
+.ico.nr4 i {
+  top: 11px;
+  left: 12px;
 }
 
 .btn-circle.btn-about.btn-partycypacja-spoleczna {
@@ -528,9 +586,6 @@ a.partycypacja-spoleczna {
 }
 
 button.btn.btn-default.btn-circle.btn-about.btn-partycypacja-spoleczna {
-  position: absolute;
-  top: -37px;
-  left: 279px;
   padding-top: 10px;
   padding-left: 12px;
 }
@@ -540,12 +595,14 @@ i.eko-partycypacja-spoleczna {
   font-size: 36px;
 }
 
-a.partycypacja-spoleczna > p {
-  margin-bottom: 0;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  color: #303030;
-  font-size: 16px;
+.kontener.nr5 {
+  top: -70px;
+  right: 413px;
+}
+
+.ico.nr5 i {
+  top: 5px;
+  left: 12px;
 }
 
 .btn-circle.btn-about.btn-dziedzictwo-kulturowe {
@@ -556,14 +613,6 @@ a.dziedzictwo-kulturowe {
   position: absolute;
   top: -99px;
   right: 350px;
-}
-
-button.btn.btn-default.btn-circle.btn-about.btn-dziedzictwo-kulturowe {
-  position: absolute;
-  top: -70px;
-  right: 413px;
-  padding-top: 7px;
-  padding-left: 11px;
 }
 
 i.eko-dziedzictwo-kulturowe {
@@ -578,6 +627,16 @@ a.dziedzictwo-kulturowe > span {
   font-size: 16px;
 }
 
+.kontener.nr6 {
+  top: -37px;
+  right: 279px;
+}
+
+.ico.nr6 i {
+  top: 8px;
+  left: 10px;
+}
+
 .btn-circle.btn-about.btn-samorzady-lokalne {
   border-color: #f2b756;
 }
@@ -589,9 +648,6 @@ a.samorzady-lokalne {
 }
 
 button.btn.btn-default.btn-circle.btn-about.btn-samorzady-lokalne {
-  position: absolute;
-  top: -37px;
-  right: 279px;
   padding-top: 6px;
   padding-left: 12px;
 }
@@ -601,12 +657,14 @@ i.eko-samorzady-lokalne {
   font-size: 36px;
 }
 
-a.samorzady-lokalne > p {
-  margin-bottom: 0;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  color: #303030;
-  font-size: 16px;
+.kontener.nr7 {
+  top: 55px;
+  right: 183px;
+}
+
+.ico.nr7 i {
+  top: 7px;
+  left: 10px;
 }
 
 .btn-circle.btn-about.btn-organizacje-pozarzadowe {
@@ -619,25 +677,19 @@ a.organizacje-pozarzadowe {
   right: 62px;
 }
 
-button.btn.btn-default.btn-circle.btn-about.btn-organizacje-pozarzadowe {
-  position: absolute;
-  top: 55px;
-  right: 183px;
-  padding-top: 8px;
-  padding-left: 11px;
-}
-
 i.eko-organizacje-pozarzadowe {
   color: #5d96a0;
   font-size: 40px;
 }
 
-a.organizacje-pozarzadowe > p {
-  margin-bottom: 0;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  color: #303030;
-  font-size: 16px;
+.kontener.nr8 {
+  top: 188px;
+  right: 140px;
+}
+
+.ico.nr8 i {
+  top: 9px;
+  left: 14px;
 }
 
 .btn-circle.btn-about.btn-spolecznosc-lokalna {
@@ -650,25 +702,19 @@ a.spolecznosc-lokalna {
   right: 11px;
 }
 
-button.btn.btn-default.btn-circle.btn-about.btn-spolecznosc-lokalna {
-  position: absolute;
-  top: 188px;
-  right: 140px;
-  padding-top: 9px;
-  padding-left: 14px;
-}
-
 i.eko-spolecznosc-lokalna {
   color: #6363aa;
   font-size: 36px;
 }
 
-a.spolecznosc-lokalna > p {
-  margin-bottom: 0;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  color: #303030;
-  font-size: 16px;
+.kontener.nr9 {
+  top: 323px;
+  right: 167px;
+}
+
+.ico.nr9 i {
+  top: 10px;
+  left: 12px;
 }
 
 .btn-circle.btn-about.btn-swiat-nauki {
@@ -681,55 +727,9 @@ a.swiat-nauki {
   right: 84px;
 }
 
-button.btn.btn-default.btn-circle.btn-about.btn-swiat-nauki {
-  position: absolute;
-  top: 323px;
-  right: 167px;
-  padding-left: 10px;
-  padding-top: 8px;
-}
-
 i.eko-swiat-nauki {
   color: #b5842b;
-  font-size: 40px;
-}
-
-a.swiat-nauki > p {
-  margin-bottom: 0;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  color: #303030;
-  font-size: 16px;
-}
-
-.kontener {
-  position: relative;
-  perspective: 800px;
-}
-
-#card {
-  width: 74px;
-  height: 74px;
-  position: absolute;
-  transform-style: preserve-3d;
-  transition: transform 1s;
-}
-
-#card figure {
-  margin: 0;
-  display: block;
-  position: absolute;
-  width: 74px;
-  height: 74px;
-  backface-visibility: hidden;
-}
-
-#card .back {
-  transform: rotateY(180deg);
-}
-
-#card:hover {
-  transform: rotateY(180deg);
+  font-size: 36px;
 }
 
 .more {
