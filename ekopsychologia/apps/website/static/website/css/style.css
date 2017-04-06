@@ -825,20 +825,153 @@ a.btn.btn-default.btn-circle.btn-about:focus {
   outline: 0;
 }
 
+.footer {
+  background-color: #098241;
+}
+
+ul.footer-inline {
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+ul.footer-inline li {
+  display: inline;
+  list-style: none;
+}
+
+a.btn.btn-default.btn-circle.btn-nav.footer-social {
+  width: 35px;
+  height: 35px;
+  background-color: #374778;
+  transition: background-color .5s ease;
+}
+a.btn.btn-default.btn-circle.btn-nav.footer-social:hover {
+  background-color: #303030;
+}
+
+span.dolacz {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  font-size: 16px;
+  padding-right: 8px;
+}
+
+.circle_btn_padding_footer {
+  padding-right: 8px;
+}
+
+#eko-white {
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+
+#osigw {
+  padding-top: 40px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+}
+
+.osigw-tekst {
+  padding-bottom: 25px;
+}
+
+.ico-social {
+  font-size: 19px;
+}
+
+i.ico-social {
+  padding-top: 2px;
+  padding-right: 2px;
+}
+
+p.osigw-tekst {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+ul.lista-projekty,
+ul.kontakt,
+ul.menu-bottom {
+  list-style: none;
+  padding-left: 0;
+  padding-top: 45px;
+}
+ul.lista-projekty li,
+ul.kontakt li,
+ul.menu-bottom li {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #ffffff;
+  list-style: none;
+  padding-bottom: 5px;
+}
+ul.lista-projekty li.projekty,
+ul.lista-projekty li.menu,
+ul.lista-projekty li.kontakt,
+ul.kontakt li.projekty,
+ul.kontakt li.menu,
+ul.kontakt li.kontakt,
+ul.menu-bottom li.projekty,
+ul.menu-bottom li.menu,
+ul.menu-bottom li.kontakt {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+ul.lista-projekty li a,
+ul.kontakt li a,
+ul.menu-bottom li a {
+  color: #ffffff;
+  transition: color .5s ease;
+}
+ul.lista-projekty li a:hover,
+ul.kontakt li a:hover,
+ul.menu-bottom li a:hover {
+  color: #374778;
+  text-decoration: none;
+}
+
+.osigw-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .silver {
-  background-color: #0a001f;
+  background-color: #303030;
 }
 
 .sc-brand {
-  font-family: MyriadPro-Regular, sans-serif;
-  font-size: 14px;
-  color: #0c824b;
-  margin-bottom: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #777677;
+  height: 50px;
+  padding-top: 5px;
 }
 
 a.sc-logo {
-  font-family: MyriadPro-Regular, sans-serif;
-  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #777677;
+  transition: color .5s ease;
+}
+
+#sc-white {
+  position: relative;
+  top: 7px;
+  left: 7px;
+  color: #777677;
+  font-size: 26px;
+  transition: color .5s ease;
+}
+
+#sc-white:hover {
   color: #0c824b;
 }
 

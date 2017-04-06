@@ -24,6 +24,16 @@ DATABASES = {
     }
 }
 
+DATABASES = {
+      'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ekopsychologia',
+        'USER': 'root',
+        'PASSWORD': 'obojetne',
+        'HOST': '',
+        'PORT': '',
+    }
+}
 
 #EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 

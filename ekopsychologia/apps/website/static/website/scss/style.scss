@@ -5,6 +5,7 @@ $white: #ffffff; //biały
 $grey: #c4c4c4; //szary
 $dark-grey: #303030; //ciemny szary
 $hover: #0c824b; //zielony hover
+$footer: #098241;
 $title: #374778; //niebieski akcent
 
 // justify class
@@ -872,23 +873,123 @@ a.btn.btn-default.btn-circle.btn-about:focus {
   outline: 0;
 }
 //...................STOPKA............................
+.footer {
+  background-color: $footer;
+}
+ul.footer-inline {
+  padding-left: 0;
+  margin-bottom: 30px;
+  li {
+    display: inline;
+    list-style: none;
+  }
+}
+a.btn.btn-default.btn-circle.btn-nav.footer-social {
+  width: 35px;
+  height: 35px;
+  background-color: $title;
+  transition: background-color .5s ease;
+  &:hover {
+  background-color: $dark-grey;
+}
+}
+span.dolacz {
+  @include roboto-light;
+  color: $white;
+  font-size: 16px;
+  padding-right: 8px;
+}
+.circle_btn_padding_footer {
+  padding-right: 8px;
+}
+#eko-white {
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+#osigw {
+  padding-top: 40px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+}
+.osigw-tekst {
+  padding-bottom: 25px;
+}
+.ico-social {
+  font-size: 19px;
+}
+i.ico-social {
+  padding-top: 2px;
+  padding-right: 2px;
+}
+p.osigw-tekst {
+  @include roboto-light;
+  font-size: 16px;
+  color: $white;
+}
 
-
+ul.lista-projekty,
+ul.kontakt,
+ul.menu-bottom {
+  list-style: none;
+  padding-left: 0;
+  padding-top: 45px;
+  li {
+    @include roboto-light;
+    font-size: 16px;
+    color: $white;
+    list-style: none;
+    padding-bottom: 5px;
+  }
+  li.projekty,
+  li.menu,
+  li.kontakt {
+    @include roboto-regular;
+    color: $white;
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+  li a {
+    color: $white;
+    transition: color .5s ease;
+    &:hover {
+      color: $title;
+      text-decoration: none;
+    }
+  }
+}
+.osigw-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
 
 
 //................SILVER CUBE
 .silver {
-  background-color: #0a001f;
+  background-color: $dark-grey;
 }
 .sc-brand {
-  font-family: MyriadPro-Regular, sans-serif;
-  font-size: 14px;
-  color: $hover;
-  margin-bottom: 15px;
+  @include roboto-regular;
+  font-size: 16px;
+  color: #777677;
+  height: 50px;
+  padding-top: 5px;
 }
 a.sc-logo {
-  font-family: MyriadPro-Regular, sans-serif;
-  font-size: 14px;
+  @include roboto-regular;
+  font-size: 16px;
+  color: #777677;
+  transition: color .5s ease;
+}
+#sc-white {
+  position: relative;
+  top: 7px;
+  left: 7px;
+  color: #777677;
+  font-size: 26px;
+  //z-index: 1000;
+  transition: color .5s ease;
+}
+#sc-white:hover {
   color: $hover;
 }
 

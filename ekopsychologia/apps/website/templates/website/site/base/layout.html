@@ -184,18 +184,84 @@
 
 <!-- FOOTER -->
 <footer>
-<div class="container">
-    <div class="row">
+    <div class="contaier-fluiid footer">
+        <div class="container">
+            <div class="row">
 
+                <!-- SOCIAL MEDIA -->
+                <div class="col-md-3">
+                    <a href="/"><img id="eko-white" class="image-responsive" src="{% static 'website/images/eko-white.png' %}" alt=""></a>
+                    <ul class="footer-inline">
+                        <li><span class="dolacz">Dołącz do nas!</span></li>
+                        <li class="circle_btn_padding_footer"><a href="#" class="btn btn-default btn-circle btn-nav footer-social"><i class="fa fa-facebook ico-social" aria-hidden="true"></i></a></li>
+                        <li class="circle_btn_padding_footer"><a href="#" class="btn btn-default btn-circle btn-nav footer-social"><i class="fa fa-google-plus ico-social" aria-hidden="true"></i></a></li>
+                        <li class="circle_btn_padding_footer"><a href="#" class="btn btn-default btn-circle btn-nav footer-social"><i class="fa fa-youtube yt ico-social" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+
+                <!-- KONTAKT -->
+                <div class="col-md-3">
+                    <ul class="text-left kontakt">
+                        <li class="kontakt">Stowarzyszenie Ekopsychologia</li>
+
+                        <li>Monika Ochwat-Marcinkiewicz</li>
+                        <li>ul. Grabina 6/18<br>34-840 Zakliczyn</li>
+                        <li>+48 785 341 089</li>
+                        <li>ekopsychologia@ekopsychologia.pl</li>
+
+
+                    </ul>
+                </div>
+
+                <!-- MENU BOTTOM -->
+                <div class="col-md-1">
+                    <ul class="text-left menu-bottom">
+                        <li class="menu">Menu</li>
+
+                        <li>O nas</li>
+                        <li>Aktualności</li>
+                        <li>Współpraca</li>
+                        <li>Publikacje</li>
+                        <li>Galeria</li>
+                        <li>Kontakt</li>
+
+                        <!--
+                        {% render_menu 'menu-bottom' template_name='website/site/element/_menu_bottom.html' %}
+                        -->
+
+                    </ul>
+                </div>
+
+                <!-- PROJEKTY -->
+                <div class="col-md-3">
+                    <ul class="text-left lista-projekty">
+                        <li class="projekty">Projekty</li>
+
+                        <li>Karpaty Łączą</li>
+                        <li>Karpackie Inicjatywy Lokalne</li>
+                        <li>Karpacki Uniwersytet Partycypacji</li>
+                        <li>InRuTou</li>
+                        <li>Cafe Obywatelska</li>
+                        <li><a href="#">Więcej...</a></li>
+
+                </div>
+
+                <!-- OŚiGW -->
+                <div class="col-md-2 osigw-padding">
+                    <a href="/"><img id="osigw" class="image-responsive" src="{% static 'website/images/osigw.png' %}" alt=""></a>
+                    <p class="text-left osigw-tekst">Sfinansowano ze środków Narodowego Funduszu Ochrony Środowiksa i Gospodarki Wodnej</p>
+                </div>
+
+            </div>
+        </div>
     </div>
-</div>
 
 
-<div class="container silver">
+<div class="container-fluid silver">
     <div class="row">
         <div class="col-xs-12 text-center sc-brand">
             Projekt i realizacja:
-           <a class="sc-logo" href="http://www.silvercube.pl/" title="Aplikacje internetowe, strony www, administracja serwerami dedykowanymi"><img src="{% static 'website/images/sc_white.svg' %}" alt="Aplikacje internetowe, strony www, administracja serwerami dedykowanymi" title="SilverCube.pl">SilverCube</a>
+           <a class="sc-logo" href="http://www.silvercube.pl/" title="Aplikacje internetowe, strony www, administracja serwerami dedykowanymi"><span>SilverCube</span><span id="sc-white" class="eko-sc_white"></span></a>
         </div>
     </div>
 </div>
