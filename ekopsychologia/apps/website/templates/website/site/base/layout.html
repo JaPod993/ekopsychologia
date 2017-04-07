@@ -184,37 +184,47 @@
 
 <!-- FOOTER -->
 <footer>
-    <div class="contaier-fluiid footer">
+
+    <!-- !!! STOPKA SM MD LG !!! -->
+    <div class="contaier-fluiid footer hidden-xs">
         <div class="container">
             <div class="row">
 
                 <!-- SOCIAL MEDIA -->
-                <div class="col-md-3">
-                    <a href="/"><img id="eko-white" class="image-responsive" src="{% static 'website/images/eko-white.png' %}" alt=""></a>
+                <div class="col-sm-6 col-md-3 padding-left-footer">
+                    <a href="/"><img id="eko-white" class="img-responsive" src="{% static 'website/images/eko-white.png' %}" alt=""></a>
                     <ul class="footer-inline">
-                        <li><span class="dolacz">Dołącz do nas!</span></li>
+                        <li><span class="dolacz hidden-md">Dołącz do nas!</span></li>
                         <li class="circle_btn_padding_footer"><a href="#" class="btn btn-default btn-circle btn-nav footer-social"><i class="fa fa-facebook ico-social" aria-hidden="true"></i></a></li>
                         <li class="circle_btn_padding_footer"><a href="#" class="btn btn-default btn-circle btn-nav footer-social"><i class="fa fa-google-plus ico-social" aria-hidden="true"></i></a></li>
                         <li class="circle_btn_padding_footer"><a href="#" class="btn btn-default btn-circle btn-nav footer-social"><i class="fa fa-youtube yt ico-social" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
 
+                 <!-- OŚiGW visible xd & sm -->
+                <div class="col-sm-6 col-md-2 osigw-padding hidden-md hidden-lg">
+                    <a href="/"><img id="osigw" class="img-responsive" src="{% static 'website/images/osigw.png' %}" alt=""></a>
+                    <p class="text-left osigw-tekst">Sfinansowano ze środków Narodowego Funduszu Ochrony Środowiksa i Gospodarki Wodnej</p>
+                </div>
+
+                 <div class="clearfix visible-sm-block"></div>
+
                 <!-- KONTAKT -->
-                <div class="col-md-3">
+                <div class="col-sm-5 col-md-3 padding-left-footer">
                     <ul class="text-left kontakt">
                         <li class="kontakt">Stowarzyszenie Ekopsychologia</li>
 
-                        <li>Monika Ochwat-Marcinkiewicz</li>
-                        <li>ul. Grabina 6/18<br>34-840 Zakliczyn</li>
-                        <li>+48 785 341 089</li>
-                        <li>ekopsychologia@ekopsychologia.pl</li>
+                        <li class="imie">Monika Ochwat-Marcinkiewicz</li>
+                        <li class="adres">ul. Grabina 6/18<br>34-840 Zakliczyn</li>
+                        <li class="telefon">+48 785 341 089</li>
+                        <li class="email">ekopsychologia@ekopsychologia.pl</li>
 
 
                     </ul>
                 </div>
 
                 <!-- MENU BOTTOM -->
-                <div class="col-md-1">
+                <div class="col-sm-2 col-md-1 padding-left-footer">
                     <ul class="text-left menu-bottom">
                         <li class="menu">Menu</li>
 
@@ -233,35 +243,155 @@
                 </div>
 
                 <!-- PROJEKTY -->
-                <div class="col-md-3">
+                <div class="col-sm-5 col-md-3">
                     <ul class="text-left lista-projekty">
-                        <li class="projekty">Projekty</li>
+                        <li class="projekty hidden-xs">Projekty</li>
 
-                        <li>Karpaty Łączą</li>
                         <li>Karpackie Inicjatywy Lokalne</li>
                         <li>Karpacki Uniwersytet Partycypacji</li>
                         <li>InRuTou</li>
                         <li>Cafe Obywatelska</li>
                         <li><a href="#">Więcej...</a></li>
-
                 </div>
 
-                <!-- OŚiGW -->
-                <div class="col-md-2 osigw-padding">
-                    <a href="/"><img id="osigw" class="image-responsive" src="{% static 'website/images/osigw.png' %}" alt=""></a>
+                <!-- OŚiGW visible md & lg -->
+                <div class="col-md-2 osigw-padding visible-md visible-lg">
+                    <a href="/"><img id="osigw" class="img-responsive" src="{% static 'website/images/osigw.png' %}" alt=""></a>
                     <p class="text-left osigw-tekst">Sfinansowano ze środków Narodowego Funduszu Ochrony Środowiksa i Gospodarki Wodnej</p>
                 </div>
 
             </div>
         </div>
     </div>
+<!-- !!! STOPKA SM MD LG !!! -->
+
+
+    <!-- !!! STOPKA ONLY XS !!! -->
+    <div class="contaier-fluiid footer visible-xs">
+        <div class="container">
+            <div class="row">
+
+
+                      <!-- SOCIAL MEDIA -->
+                <div class="padding-left-footer">
+                    <a href="/"><img id="eko-white" class="img-responsive center-block" src="{% static 'website/images/eko-white.png' %}" alt=""></a>
+                    <ul class="footer-inline">
+                        <li><span class="dolacz hidden-md">Dołącz do nas!</span></li>
+                        <li class="circle_btn_padding_footer"><a href="#" class="btn btn-default btn-circle btn-nav footer-social"><i class="fa fa-facebook ico-social" aria-hidden="true"></i></a></li>
+                        <li class="circle_btn_padding_footer"><a href="#" class="btn btn-default btn-circle btn-nav footer-social"><i class="fa fa-google-plus ico-social" aria-hidden="true"></i></a></li>
+                        <li class="circle_btn_padding_footer"><a href="#" class="btn btn-default btn-circle btn-nav footer-social"><i class="fa fa-youtube yt ico-social" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+
+
+                <!-- SOCIAL MEDIA
+                <div class=" col-sm-6 col-md-3 padding-left-footer">
+                    <a href="/"><img id="eko-white" class="img-responsive" src="{% static 'website/images/eko-white.png' %}" alt=""></a>
+                    <ul class="footer-inline">
+                        <li><span class="dolacz hidden-md">Dołącz do nas!</span></li>
+                        <li class="circle_btn_padding_footer"><a href="#" class="btn btn-default btn-circle btn-nav footer-social"><i class="fa fa-facebook ico-social" aria-hidden="true"></i></a></li>
+                        <li class="circle_btn_padding_footer"><a href="#" class="btn btn-default btn-circle btn-nav footer-social"><i class="fa fa-google-plus ico-social" aria-hidden="true"></i></a></li>
+                        <li class="circle_btn_padding_footer"><a href="#" class="btn btn-default btn-circle btn-nav footer-social"><i class="fa fa-youtube yt ico-social" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+ -->
+
+
+                <div class="clearfix visible-sm-block"></div>
+
+
+
+
+                <!-- KONTAKT -->
+                <div class="col-xs-12 col-sm-5 col-md-3 padding-left-footer">
+                    <hr class="footer-hr">
+                    <button class="btn btn-default btn-block button-footer collapsed" data-toggle="collapse" data-target="#kontakt-mobile"><span class="padding-button-name">Kontakt</span></button>
+
+                        <ul id="kontakt-mobile" class="text-left kontakt collapse">
+
+                            <li class="kontakt">Stowarzyszenie Ekopsychologia</li>
+                            <li class="imie">Monika Ochwat-Marcinkiewicz</li>
+                            <li class="adres">ul. Grabina 6/18<br>34-840 Zakliczyn</li>
+                            <li class="telefon">+48 785 341 089</li>
+                            <li class="email">ekopsychologia@ekopsychologia.pl</li>
+
+                        </ul>
+
+                </div>
+
+                <!-- MENU BOTTOM -->
+                <div class="col-xs-12 col-sm-2 col-md-1 padding-left-footer">
+                    <hr class="footer-hr">
+                    <button class="btn btn-default btn-block button-footer collapsed" data-toggle="collapse" data-target="#menu-mobile"><span class="padding-button-name">Menu</span></button>
+                    <ul  id="menu-mobile"  class="text-left menu-bottom collapse">
+
+                        <li>O nas</li>
+                        <li>Aktualności</li>
+                        <li>Współpraca</li>
+                        <li>Publikacje</li>
+                        <li>Galeria</li>
+                        <li>Kontakt</li>
+
+                        <!--
+                        {% render_menu 'menu-bottom' template_name='website/site/element/_menu_bottom.html' %}
+                        -->
+
+                    </ul>
+                </div>
+
+                <!-- PROJEKTY -->
+                <div class="col-xs-12 col-sm-5 col-md-3 padding-left-footer">
+                    <hr class="footer-hr">
+                    <button class="btn btn-default btn-block button-footer collapsed" data-toggle="collapse" data-target="#projekty-mobile"><span class="padding-button-name">Projekty</span></button>
+
+                    <ul id="projekty-mobile"  class="text-left lista-projekty collapse">
+
+                        <li>Karpackie Inicjatywy Lokalne</li>
+                        <li>Karpacki Uniwersytet Partycypacji</li>
+                        <li>InRuTou</li>
+                        <li>Cafe Obywatelska</li>
+                        <li><a href="#">Więcej...</a></li>
+                    </ul>
+                    <hr class="footer-hr">
+                </div>
+
+                <!-- OŚiGW visible xd & sm -->
+                <div class="osigw-padding">
+                    <a href="/"><img id="osigw" class="img-responsive center-block" src="{% static 'website/images/osigw.png' %}" alt=""></a>
+                    <p class="text-center osigw-tekst">Sfinansowano ze środków<br>Narodowego Funduszu<br>Ochrony Środowiksa<br>i Gospodarki Wodnej</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- !!! STOPKA ONLY XS !!! -->
+
+
+
+
+    <!-- PROJEKTY
+                <div class="col-sm-5 col-md-3">
+                    <ul class="text-left lista-projekty">
+                        <button class="btn btn-default btn-block visible-xs hidden-sm hidden-md hidden-lg" data-toggle="collapse" data-target="#Foo">Projekty</button>
+                        <li class="projekty hidden-xs"><a href="#demo" data-toggle="collapse">Projekty</a></li>
+
+                        <div id="Foo" class="collapse in">
+                        <li>Karpackie Inicjatywy Lokalne</li>
+                        <li>Karpacki Uniwersytet Partycypacji</li>
+                        <li>InRuTou</li>
+                        <li>Cafe Obywatelska</li>
+                        <li><a href="#">Więcej...</a></li>
+                        </div>
+                </div>
+    -->
+
 
 
 <div class="container-fluid silver">
     <div class="row">
         <div class="col-xs-12 text-center sc-brand">
             Projekt i realizacja:
-           <a class="sc-logo" href="http://www.silvercube.pl/" title="Aplikacje internetowe, strony www, administracja serwerami dedykowanymi"><span>SilverCube</span><span id="sc-white" class="eko-sc_white"></span></a>
+            <a class="sc-logo" href="http://www.silvercube.pl/" title="Aplikacje internetowe, strony www, administracja serwerami dedykowanymi"><span>SilverCube</span><span id="sc-white" class="eko-sc_white"></span></a>
         </div>
     </div>
 </div>
@@ -274,15 +404,15 @@
 <script>
     $(document).ready(function(){
 
-  $('.single-item').slick({
+        $('.single-item').slick({
 
-      accessibility: true,
-      dots: true,
-      autoplay: false,
-      autoplaySpeed: 5000,
-  });
+            accessibility: true,
+            dots: true,
+            autoplay: false,
+            autoplaySpeed: 5000,
+        });
 
-});
+    });
 
 </script>
 

@@ -904,7 +904,7 @@ span.dolacz {
 }
 #eko-white {
   padding-top: 40px;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
 }
 #osigw {
   padding-top: 40px;
@@ -940,6 +940,15 @@ ul.menu-bottom {
     list-style: none;
     padding-bottom: 5px;
   }
+  li.imie {
+    padding-bottom: 16px;
+  }
+  li.adres {
+    padding-bottom: 15px;
+  }
+  li.telefon {
+    padding-bottom: 16px;
+  }
   li.projekty,
   li.menu,
   li.kontakt {
@@ -960,6 +969,9 @@ ul.menu-bottom {
 .osigw-padding {
   padding-left: 0;
   padding-right: 0;
+}
+.padding-left-footer {
+  padding-left: 0;
 }
 
 
@@ -1068,6 +1080,37 @@ a.sc-logo {
   .slide-1 {
     margin-top: 139px;
   }
+  //footer medium screen styles
+  span.dolacz,
+  ul.lista-projekty li,
+  ul.kontakt li,
+  ul.menu-bottom li {
+    font-size: 14px;
+  }
+  p.osigw-tekst {
+    font-size: 13px;
+  }
+  ul.lista-projekty,
+  ul.kontakt,
+  ul.menu-bottom {
+    li.kontakt,
+    li.menu,
+    li.projekty {
+      font-size: 16px;
+    }
+  }
+  #eko-white {
+    padding-top: 50px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+  }
+  #osigw {
+    padding-left: 20px;
+  }
+  ul.footer-inline {
+    text-align: center;
+  }
+   //footer medium screen styles
 }
 
 @media screen and (max-width : 992px) {
@@ -1097,6 +1140,39 @@ a.sc-logo {
   div.o-nas {
     height: 800px;
   }
+  //stopka
+  #eko-white {
+    padding-left: 120px;
+    padding-right: 0;
+    padding-top: 50px;
+    //padding-right: 20px;
+    padding-bottom: 30px;
+  }
+ul.lista-projekty,
+ul.kontakt,
+ul.menu-bottom {
+  padding-top: 0px;
+}
+  #osigw {
+    padding-left: 80px;
+  }
+  ul.footer-inline {
+    padding-left: 120px;
+  }
+  p.osigw-tekst {
+    padding-left: 60px;
+    padding-right: 140px;
+  }
+  ul.kontakt {
+    padding-left: 60px;
+  }
+  ul.menu-bottom {
+    padding-left: 40px;
+  }
+  ul.lista-projekty {
+    padding-left: 50px;
+  }
+  //stopka
 }
 
 @media (max-width: 991px) {
@@ -1135,11 +1211,101 @@ a.sc-logo {
   div.o-nas {
     height: 800px;
   }
+
 }
 @media screen and (max-width:767px) {
 div.o-nas {
     height: 1120px;
   }
+  //stopka
+   ul.kontakt {
+    padding-left: 0;
+  }
+  ul.menu-bottom {
+    padding-left: 0;
+  }
+  ul.lista-projekty {
+    padding-left: 0;
+  }
+  .padding-left-footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .button-footer:focus,
+  .button-footer:active:focus,
+  .button-footer:active,
+  .button-footer:visited,
+  .button-footer:hover,
+  .button-footer {
+    outline: none;
+    border-radius: 0;
+    border: none;
+    background-color: #076332!important;
+    @include roboto-regular;
+    font-size: 16px;
+    color: $white!important;
+  }
+  .row-xs {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  p.osigw-tekst {
+    padding-top: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+  .padding-osigw-xs {
+    padding-left: 0;
+  }
+  .osigw-xs {
+    padding: 20px 20px 20px 40px;
+  }
+  .button-footer:after {
+    font-family: FontAwesome;
+    font-size: 12px;
+    content:  "\f078";
+    float: right;
+  }
+  .button-footer.collapsed:after {
+    font-family: FontAwesome;
+    content:  "\f054";
+  }
+
+  ul.lista-projekty,
+  ul.kontakt,
+  ul.menu-bottom {
+    li {
+      text-align: center;
+    }
+  }
+  .padding-button-name {
+    padding-left: 10px;
+  }
+  img#eko-white {
+    padding-top: 30px;
+    padding-left: 0;
+  }
+  ul.footer-inline {
+    padding-left: 0;
+  }
+  img#osigw {
+    padding-top: 15px;
+    padding-left: 0;
+    padding-bottom: 0;
+  }
+  ul.footer-inline {
+    margin-bottom: 15px;
+  }
+  p.osigw-tekst {
+    padding-top: 10px;
+  }
+  hr.footer-hr {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-color: rgba(255, 255, 255, .1);
+  }
+  //stopka
 }
 
 @media screen and (max-width:480px){
