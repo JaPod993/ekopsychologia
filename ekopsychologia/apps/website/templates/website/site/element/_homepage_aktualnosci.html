@@ -1,18 +1,33 @@
 {% load thumbnail %}
-{% if homepage_aktualnosci %}
-Aktualnosci
 
-{% if homepage_aktualnosci_list|length > 0 %}
-    <ul>
-    {% for article in homepage_aktualnosci_list %}
-        <li>
-            {% thumbnail article.thumbnail "100x100" crop="center" as im %}
-                <img src="{{ im.url }}" alt="{{ site }}" title="{{ site }}">
-            {% endthumbnail %}
-            <a href="{{ article.get_absolute_url }}">{{ article }}</a><br>
-            {{ article.shortcut|safe }}
-        </li>
-    {% endfor %}
-    </ul>
-{% endif %}
-{% endif %}
+<div class="container-fluid article-bacground">
+
+    {% if homepage_aktualnosci %}
+    <div class="container title">
+        <span class="title-text">Aktualności</span>
+    </div>
+
+    {% if homepage_aktualnosci_list|length > 0 %}
+    <div class="container">
+        <div class="row">
+
+            <ul class="article-li">
+                {% for article in homepage_aktualnosci_list %}
+                <div class="col-md-4">
+                    <li>
+                        {% thumbnail article.thumbnail "350x200" crop="center" as im %}
+                        <img src="{{ im.url }}" alt="{{ site }}" title="{{ site }}">
+                        {% endthumbnail %}
+                        <a href="{{ article.get_absolute_url }}">{{ article }}</a><br>
+                        {{ article.shortcut|safe }}
+                    </li>
+                </div>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+    {% endif %}
+    {% endif %}
+
+</div>

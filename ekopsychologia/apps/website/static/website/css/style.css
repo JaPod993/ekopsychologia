@@ -825,6 +825,14 @@ a.btn.btn-default.btn-circle.btn-about:focus {
   outline: 0;
 }
 
+.article-bacground {
+  background-color: #ececec;
+}
+
+ul.article_li {
+  list-style: none;
+}
+
 .footer {
   background-color: #098241;
 }

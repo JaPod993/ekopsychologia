@@ -2,6 +2,7 @@
 
 // kolory
 $white: #ffffff; //biały
+$white-accent: #ececec;
 $grey: #c4c4c4; //szary
 $dark-grey: #303030; //ciemny szary
 $hover: #0c824b; //zielony hover
@@ -494,9 +495,6 @@ i.eko-dzialalnosc-miedzynarodowa {//ICON
 
 // BUTTON DLA KARPAT --------------------------------------------------------------------------------------------- NR 2
 
-
-
-
 .kontener.nr2 {
   top: 188px;
   left: 140px;
@@ -752,7 +750,7 @@ i.eko-swiat-nauki {//ICON
 // BUTTON DZIALALNOSC MIEDZYNARODOWA
 
 //------------------------------------------------------------------------------------------
-// BUTTON SWIAT NAUKI -------------------------------------------------------------------------------------------- NR 9 - 2
+// BUTTON SWIAT NAUKI ------------------------------------------------------------------------------------- buttony - 2
 
 .kontener.nr1-2 {
   top: 158px;
@@ -805,9 +803,6 @@ i.eko-swiat-nauki {//ICON
   top: -13px; //zmiana
   right: 67px; //zmiana
 }
-
-
-
 
 // BUTTON DZIALALNOSC MIEDZYNARODOWA
 
@@ -872,6 +867,17 @@ a.more-text {
 a.btn.btn-default.btn-circle.btn-about:focus {
   outline: 0;
 }
+////....................ARTYKULY.........................
+
+.article-bacground {
+  background-color: $white-accent;
+}
+ul.article_li {
+  list-style: none;
+}
+
+//.......................................................
+
 //...................STOPKA............................
 .footer {
   background-color: $footer;
