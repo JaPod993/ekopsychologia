@@ -893,6 +893,43 @@ div.article-title-2 {
   vertical-align: middle;
 }
 
+.newsletter-bg {
+  background: url("../images/newsletter_bg.png") no-repeat center center;
+}
+
+.email-form {
+  margin-top: 33px;
+  margin-bottom: 33px;
+}
+
+input.form-control {
+  border-radius: 0;
+}
+
+button.button-email {
+  border-radius: 0;
+}
+
+.email-form-width {
+  width: 250px;
+}
+
+.newsletter-header {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: #374778;
+  margin-top: 17px;
+}
+
+.newsletter-body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 16px;
+  color: #303030;
+  margin-bottom: 17px;
+}
+
 .footer {
   background-color: #098241;
 }
