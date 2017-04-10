@@ -8,6 +8,7 @@ $dark-grey: #303030; //ciemny szary
 $hover: #0c824b; //zielony hover
 $footer: #098241;
 $title: #374778; //niebieski akcent
+$tekst: #8c8c8c; //szary tekst
 
 // justify class
 .text-justify {
@@ -328,7 +329,7 @@ div.o-nas {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 900px;
+  height: 855px;
 }
 
 
@@ -855,7 +856,17 @@ a.more-text {
   border-radius: 25px;
   padding: 2px 15px 2px 15px;
   margin-top: 50px;
+  &.projekty {
+    margin-top: 10px;
+  }
+  &.aktualnosci {
+    margin-top: 30px;
+  }
+  &.about-us {
+    margin-top: 30px;
+  }
 }
+
 //.............................................
 
 .kontener {
@@ -867,13 +878,68 @@ a.more-text {
 a.btn.btn-default.btn-circle.btn-about:focus {
   outline: 0;
 }
+
+
 ////....................ARTYKULY.........................
 
+.aktualnosci {
+  margin-bottom: 30px;
+}
+ul.article-li {
+  padding-left: 0;
+}
 .article-bacground {
   background-color: $white-accent;
 }
-ul.article_li {
+li.article-style-li {
   list-style: none;
+  @include roboto-light;
+  font-size: 16px;
+  color: $dark-grey;
+  text-align: justify;
+  span {
+    @include roboto-light;
+    font-size: 16px;
+    color: $dark-grey;
+    text-align: justify;
+  }
+  a {
+    color: $dark-grey;
+  }
+}
+a.article-title {
+  @include roboto-bold;
+  font-size: 18px;
+  color: $dark-grey;
+  //border-left: solid;
+  //border-color: $grey;
+  //border-width: 2px;
+  //display: block;
+  //padding-left: 10px;
+  //padding-right: 10px;
+  //margin-top: 10px;
+}
+
+div.article-title-2 {
+  border-left: solid;
+  border-color: $grey;
+  border-width: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.srodkowanie-pionowe-tabela {
+  display: table;
+  width: 100%;
+}
+
+.srodkowanie-pionowe-komorka {
+  display: table-cell;
+  //text-align: center;
+  vertical-align: middle;
 }
 
 //.......................................................
@@ -1144,7 +1210,7 @@ a.sc-logo {
     margin-top: 114px;
   }
   div.o-nas {
-    height: 800px;
+    height: 770px;
   }
   //stopka
   #eko-white {
@@ -1190,6 +1256,10 @@ ul.menu-bottom {
 }
 
 @media screen and (max-width:768px) {
+ img.default.img-responsive {
+    //height: 350px;
+    width: 100%;
+  }
   .sc-block {
     height: 300px;
   }
@@ -1215,13 +1285,13 @@ ul.menu-bottom {
   }
 }
   div.o-nas {
-    height: 800px;
+    //height: 800px;
   }
 
 }
 @media screen and (max-width:767px) {
 div.o-nas {
-    height: 1120px;
+    height: 1100px;
   }
   //stopka
    ul.kontakt {
@@ -1313,6 +1383,11 @@ div.o-nas {
   }
   //stopka
 }
+@media screen and (max-width:537px) {
+  div.o-nas {
+    height: 1120px;
+  }
+}
 
 @media screen and (max-width:480px){
   .sc-block {
@@ -1336,16 +1411,21 @@ div.o-nas {
   }
 }
   div.o-nas {
-    height: 1200px;
+    height: 1150px;
   }
   div.about.center-justified {
     text-align: center;
   }
 }
+@media screen and (max-width:400px){
+  div.o-nas {
+    height: 1170px;
 
+  }
+}
 @media screen and (max-width:360px){
   div.o-nas {
-    height: 1250px;
+    height: 1220px;
   }
 }
 

@@ -338,7 +338,7 @@ div.o-nas {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 900px;
+  height: 855px;
 }
 
 div.about {
@@ -812,6 +812,15 @@ a.more-text {
   padding: 2px 15px 2px 15px;
   margin-top: 50px;
 }
+a.more-text.projekty {
+  margin-top: 10px;
+}
+a.more-text.aktualnosci {
+  margin-top: 30px;
+}
+a.more-text.about-us {
+  margin-top: 30px;
+}
 
 .kontener {
   outline: 0;
@@ -825,12 +834,63 @@ a.btn.btn-default.btn-circle.btn-about:focus {
   outline: 0;
 }
 
+.aktualnosci {
+  margin-bottom: 30px;
+}
+
+ul.article-li {
+  padding-left: 0;
+}
+
 .article-bacground {
   background-color: #ececec;
 }
 
-ul.article_li {
+li.article-style-li {
   list-style: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #303030;
+  text-align: justify;
+}
+li.article-style-li span {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #303030;
+  text-align: justify;
+}
+li.article-style-li a {
+  color: #303030;
+}
+
+a.article-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #303030;
+}
+
+div.article-title-2 {
+  border-left: solid;
+  border-color: #c4c4c4;
+  border-width: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.srodkowanie-pionowe-tabela {
+  display: table;
+  width: 100%;
+}
+
+.srodkowanie-pionowe-komorka {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .footer {
@@ -1143,7 +1203,7 @@ a.sc-logo {
   }
 
   div.o-nas {
-    height: 800px;
+    height: 770px;
   }
 
   #eko-white {
@@ -1185,6 +1245,10 @@ a.sc-logo {
   }
 }
 @media screen and (max-width: 768px) {
+  img.default.img-responsive {
+    width: 100%;
+  }
+
   .sc-block {
     height: 300px;
   }
@@ -1214,14 +1278,10 @@ a.sc-logo {
     font-size: 12px;
     margin-left: 240px;
   }
-
-  div.o-nas {
-    height: 800px;
-  }
 }
 @media screen and (max-width: 767px) {
   div.o-nas {
-    height: 1120px;
+    height: 1100px;
   }
 
   ul.kontakt {
@@ -1328,6 +1388,11 @@ a.sc-logo {
     border-color: rgba(255, 255, 255, 0.1);
   }
 }
+@media screen and (max-width: 537px) {
+  div.o-nas {
+    height: 1120px;
+  }
+}
 @media screen and (max-width: 480px) {
   .sc-block {
     height: 200px;
@@ -1354,15 +1419,20 @@ a.sc-logo {
   }
 
   div.o-nas {
-    height: 1200px;
+    height: 1150px;
   }
 
   div.about.center-justified {
     text-align: center;
   }
 }
+@media screen and (max-width: 400px) {
+  div.o-nas {
+    height: 1170px;
+  }
+}
 @media screen and (max-width: 360px) {
   div.o-nas {
-    height: 1250px;
+    height: 1220px;
   }
 }

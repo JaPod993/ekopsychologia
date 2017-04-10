@@ -3,31 +3,43 @@
 <div class="container-fluid article-bacground">
 
     {% if homepage_aktualnosci %}
-    <div class="container title">
+    <div class="container title aktualnosci">
         <span class="title-text">Aktualności</span>
     </div>
 
     {% if homepage_aktualnosci_list|length > 0 %}
-    <div class="container">
-        <div class="row">
 
-            <ul class="article-li">
-                {% for article in homepage_aktualnosci_list %}
-                <div class="col-md-4">
-                    <li>
-                        {% thumbnail article.thumbnail "350x200" crop="center" as im %}
-                        <img src="{{ im.url }}" alt="{{ site }}" title="{{ site }}">
+
+    <ul class="article-li">
+         <div class="container">
+            <div class="row">
+        {% for article in homepage_aktualnosci_list %}
+
+                <div class="col-xs-12 col-sm-4">
+                    <li class="article-style-li">
+                        {% thumbnail article.thumbnail "360x200" crop="center" as im %}
+                        <img class="default img-responsive" src="{{ im.url }}" alt="{{ site }}" title="{{ site }}">
                         {% endthumbnail %}
-                        <a href="{{ article.get_absolute_url }}">{{ article }}</a><br>
-                        {{ article.shortcut|safe }}
+                        <div class="article-title-2 compared-text-part srodkowanie-pionowe-tabela">
+                            <div class="srodkowanie-pionowe-komorka">
+                                <a class="article-title" href="{{ article.get_absolute_url }}">{{ article }}</a>
+                            </div>
+                        </div>
+
+                        <div class="compared-text-part2">{{ article.shortcut|truncatechars_html:240|safe }}</div>
                     </li>
                 </div>
                 {% endfor %}
-            </ul>
-
+            </div>
         </div>
+    </ul>
+
+
+    {% endif %}
+    {% endif %}
+
+     <div class="container more">
+        <a class="more-text aktualnosci" href="{{ homepage_aktualnosci.get_absolute_url }}">Starsze</a>
     </div>
-    {% endif %}
-    {% endif %}
 
 </div>
