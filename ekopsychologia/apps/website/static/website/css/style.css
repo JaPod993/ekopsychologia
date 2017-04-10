@@ -1473,3 +1473,18 @@ a.sc-logo {
     height: 1220px;
   }
 }
+#newsletter-sign-in button {
+  outline: 0;
+}
+#newsletter-sign-in .msg {
+  position: absolute;
+  left: 5px;
+  top: 33px;
+  font-size: 13px;
+}
+#newsletter-sign-in .msg.error {
+  color: #ef5350;
+}
+#newsletter-sign-in .msg.success {
+  color: #4caf50;
+}

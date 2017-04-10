@@ -1,11 +1,15 @@
 # -*- encoding: utf-8 -*-
 from django.contrib.contenttypes.models import ContentType
+from django.http.response import JsonResponse
 from django.views.generic.base import TemplateView, View
+from django.views.generic.edit import FormView
+
 from cms.models import Site, Article
 from corecms.models.default.slider import Slider
 from corecms.models.gallery import Gallery
 
 from blockslider.models import BlockSlider
+from website.forms import NewsletterSignForm
 
 
 class HomepageView(TemplateView):
@@ -33,15 +37,36 @@ class HomepageView(TemplateView):
         if context['homepage_publikacje']:
             context['homepage_publikacje_list'] = []
             for item in context['homepage_publikacje'].articles.filter(for_lang=True).published()[:12]:
-                file = item.all_files.filter(publish=True).first()
-                context['homepage_publikacje_list'].append((item, file))
+                file_item = item.all_files.filter(publish=True).first()
+                context['homepage_publikacje_list'].append((item, file_item))
 
         context['homepage_partnership'] = self._get_site_by_slug("wspolpraca")
         context['partnership_slider_list'] = Slider.objects.filter(slug__in=["fundatorzy", "partnerzy", "patroni", "media", "partnerzy-biznesowi"])
 
         context['homepage_site'] = Site.objects.get_or_create(slug="strona-glowna",
-                                                             defaults=dict(identity="Strona główna",
-                                                                           identity_pl="Strona główna"))[0]
+                                                              defaults=dict(identity="Strona główna",
+                                                                            identity_pl="Strona główna"))[0]
         gallery_ct = ContentType.objects.get_for_model(Gallery)
         context['homepage_gallery'] = context['homepage_site'].connector_children.filter(children_type=gallery_ct).first()
         return context
+
+
+class NewsletterSignView(FormView):
+    http_method_names = ["post"]
+    form_class = NewsletterSignForm
+
+    def form_invalid(self, form):
+        error_email = dict(form.errors.items()).get('email')
+        response = {
+            "status": "NOK",
+            "error": " ".join(error_email) if error_email else "Podany email jest niepoprawny"
+        }
+        return JsonResponse(response)
+
+    def form_valid(self, form):
+        form.save()
+        response = {
+            "status": "OK",
+            "success": "Zostałeś zapisany do newslettera"
+        }
+        return JsonResponse(response)

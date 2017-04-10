@@ -10,7 +10,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ekopsychologia',
-        'USER': 'root',
+        'USER': 'mysql',
         'PASSWORD': '',
         'HOST': '',
         'PORT': '',
@@ -18,7 +18,7 @@ DATABASES = {
     'oldbase': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ekopsychologia_php',
-        'USER': 'root',
+        'USER': 'mysql',
         'PASSWORD': '',
         'HOST': '',
         'PORT': '',

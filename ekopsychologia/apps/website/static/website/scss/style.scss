@@ -1464,3 +1464,22 @@ div.o-nas {
 }
 
 //.............................................
+
+
+#newsletter-sign-in{
+  button{
+    outline:0;
+  }
+  .msg{
+    position: absolute;
+    left: 5px;
+    top: 33px;
+    font-size: 13px;
+    &.error{
+      color: #ef5350;
+    }
+    &.success{
+      color: #4caf50;
+    }
+  }
+}
