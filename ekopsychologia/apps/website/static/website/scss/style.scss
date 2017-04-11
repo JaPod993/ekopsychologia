@@ -1161,33 +1161,6 @@ a.sc-logo {
   display: inline-block;
 }
 
-//.col-xs-15 {
-//    width: 100%;
-//    float: left;
-//}
-//
-//@media (min-width: 768px) {
-//.col-sm-15 {
-//        width: 20%;
-//        float: left;
-//    }
-//}
-//
-//@media (min-width: 992px) {
-//    .col-md-15 {
-//        width: 20%;
-//        float: left;
-//    }
-//}
-//
-//@media (min-width: 1200px) {
-//    .col-lg-15 {
-//        width: 20%;
-//        float: left;
-//    }
-//}
-//Non mobile first media
-
 //..............MEDIA QUERIES..................
 
 @media screen and (max-width : 1700px) {
@@ -1227,14 +1200,14 @@ a.sc-logo {
   .sc-block {
     height: 450px;
   }
-  div.col-sm-2.dot-four {
+  div.col-md-2.dot-four {
     width: 20%;
   //  border: 1px solid #000;
   }
 }
 
 @media screen and (max-width : 1200px) {
-  div.col-sm-2.dot-four {
+  div.col-md-2.dot-four {
     width: 20%;
  //   border: 1px solid #000;
   }
@@ -1404,8 +1377,8 @@ ul.menu-bottom {
 
 }
 @media screen and (max-width:767px) {
-  div.col-sm-2.dot-four {
-    width: 100%;
+  div.col-md-2.dot-four {
+    width: 50%;
     //border: 1px solid #000;
   }
 div.o-nas {

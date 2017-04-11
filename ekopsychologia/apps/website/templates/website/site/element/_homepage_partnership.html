@@ -9,14 +9,14 @@
     <div class="row ">
 {% for slider in partnership_slider_list %}
 
-        <div class="col-xs-12 col-sm-2 dot-four">
+        <div class="col-xs-12 col-sm-6 col-md-2 dot-four">
     <div class="partner-1 text-center">
 
 
     {{ slider }}
     {% for slide in slider.items.all %}
         <div class="partenr text-center">
-        {% thumbnail slide.image "100x100"  as im %}
+        {% thumbnail slide.image "120x120"  as im %}
             {% if slide.url %}<a href="{{ slide.url }}" title="{{ slide.name }}" target="_blank">{% endif %}
             <img src="{{ im.url }}" alt="{{ slide.name }}" title="{{ slide.name }}" class="item">
         {% if slide.url %}</a>{% endif %}
@@ -25,6 +25,7 @@
     {% endfor %}
     </div>
             </div>
+          <div class="clearfix hidden-xs"></div>
         {% endfor %}
     </div>
 </div>
