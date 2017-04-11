@@ -9,6 +9,7 @@ $hover: #0c824b; //zielony hover
 $footer: #098241;
 $title: #374778; //niebieski akcent
 $tekst: #8c8c8c; //szary tekst
+$tekst-ciemny: #595959;//#737373;
 
 // justify class
 .text-justify {
@@ -35,7 +36,7 @@ $tekst: #8c8c8c; //szary tekst
 }
 @mixin roboto-regular {
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
 }
 @mixin roboto-medium {
   font-family: 'Roboto', sans-serif;
@@ -895,12 +896,12 @@ li.article-style-li {
   list-style: none;
   @include roboto-light;
   font-size: 16px;
-  color: $dark-grey;
+  color: $tekst-ciemny;
   text-align: justify;
   span {
     @include roboto-light;
     font-size: 16px;
-    color: $dark-grey;
+    color: $tekst-ciemny;
     text-align: justify;
   }
   a {
@@ -954,14 +955,30 @@ div.article-title-2 {
   margin-top: 33px;
   margin-bottom: 33px;
 }
+.input-group {
+  //box-shadow: 0px 4px 7.68px 0.32px rgba(0, 0, 0, 0.25);
+}
 input.form-control {
   border-radius: 0;
+  //box-shadow: 0px 4px 7.68px 0.32px rgba(0, 0, 0, 0.25);
+  //border: none;
+  &:focus {
+    border-color: #cccccc;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
 }
 button.button-email {
+  color: $title;
   border-radius: 0;
+  //border: none;
 }
 .email-form-width {
-  width: 250px;
+  //width: 260px;
+}
+.kontener-inline {
+  display: inline-block;
 }
 .newsletter-header {
   @include roboto-medium;
@@ -970,10 +987,11 @@ button.button-email {
   margin-top: 17px;
 }
 .newsletter-body {
-  @include roboto-thin;
+  @include roboto-regular;
   font-size: 16px;
   color: $dark-grey;
   margin-bottom: 17px;
+
 }
 //.......................................................
 
@@ -1290,6 +1308,19 @@ ul.menu-bottom {
 }
 
 @media screen and (max-width:768px) {
+  div.newsletter-text {
+    text-align: center;
+  }
+  .email-form-width {
+    text-align: center;
+  }
+  div.input-group.email-form {
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+  p.newsletter-header {
+    margin-top: 25px;
+  }
  img.default.img-responsive {
     //height: 350px;
     width: 100%;
@@ -1424,6 +1455,9 @@ div.o-nas {
 }
 
 @media screen and (max-width:480px){
+  p.newsletter-header {
+    font-size: 22px;
+  }
   .sc-block {
     height: 200px;
   }

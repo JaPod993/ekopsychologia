@@ -370,24 +370,6 @@
 
 
 
-    <!-- PROJEKTY
-                <div class="col-sm-5 col-md-3">
-                    <ul class="text-left lista-projekty">
-                        <button class="btn btn-default btn-block visible-xs hidden-sm hidden-md hidden-lg" data-toggle="collapse" data-target="#Foo">Projekty</button>
-                        <li class="projekty hidden-xs"><a href="#demo" data-toggle="collapse">Projekty</a></li>
-
-                        <div id="Foo" class="collapse in">
-                        <li>Karpackie Inicjatywy Lokalne</li>
-                        <li>Karpacki Uniwersytet Partycypacji</li>
-                        <li>InRuTou</li>
-                        <li>Cafe Obywatelska</li>
-                        <li><a href="#">Więcej...</a></li>
-                        </div>
-                </div>
-    -->
-
-
-
 <div class="container-fluid silver">
     <div class="row">
         <div class="col-xs-12 text-center sc-brand">
@@ -398,72 +380,6 @@
 </div>
 </footer>
 <!-- FOOTER END -->
-
-
-
-
-<script>
-    $(document).ready(function(){
-
-        $('.single-item').slick({
-
-            accessibility: true,
-            dots: true,
-            autoplay: false,
-            autoplaySpeed: 5000,
-        });
-
-    });
-
-    //article height
-
-    function set_news_height() {
-        var sizes = [];
-        $(".compared-text-part2").height('auto');
-        $(".compared-text-part").height('auto');
-
-        $(".compared-text-part").each(function(){
-            sizes.push($(this).height());
-        });
-        $(".compared-text-part").height(Math.max.apply(null, sizes));
-        $(".compared-text-part2").each(function(){
-            sizes.push($(this).height());
-        });
-        $(".compared-text-part2").height(Math.max.apply(null, sizes));
-    }
-
-    function is_desktop(){
-        return $(window).width() >= 736;
-    }
-
-    $(function(){
-        var resize_timeout = null;
-
-        setTimeout(function(){
-            if(is_desktop()){
-                set_news_height();
-            }
-        }, 200);
-
-        $(window).resize(function() {
-            if(is_desktop()){
-
-                if(resize_timeout != null){
-                    clearTimeout(resize_timeout);
-                }
-
-                resize_timeout = setTimeout(function(){
-                    set_news_height();
-                }, 200);
-
-            }
-        });
-
-    });
-
-</script>
-
-
 
 </body>
 </html>
