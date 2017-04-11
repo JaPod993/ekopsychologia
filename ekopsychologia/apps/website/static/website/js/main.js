@@ -29,6 +29,12 @@ $(function(){
             autoplay: false,
             autoplaySpeed: 5000,
         });
+        $('.partner-1').slick({
+           dots: false,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 5000,
+        });
 
     });
 

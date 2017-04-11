@@ -894,7 +894,7 @@ div.article-title-2 {
 }
 
 .newsletter-bg {
-  background: url("../images/newsletter_bg.png") no-repeat center center;
+  background: url("../images/newsletter_bg.png") no-repeat center 64%;
 }
 
 .email-form {
@@ -972,7 +972,7 @@ span.dolacz {
   padding-right: 8px;
 }
 
-#eko-white {
+.eko-white {
   padding-top: 40px;
   padding-bottom: 50px;
 }
@@ -1201,7 +1201,7 @@ a.sc-logo {
     font-size: 16px;
   }
 
-  #eko-white {
+  .eko-white {
     padding-top: 50px;
     padding-right: 20px;
     padding-bottom: 30px;
@@ -1250,7 +1250,7 @@ a.sc-logo {
     height: 770px;
   }
 
-  #eko-white {
+  .eko-white {
     padding-left: 120px;
     padding-right: 0;
     padding-top: 50px;
@@ -1420,7 +1420,7 @@ a.sc-logo {
     padding-left: 10px;
   }
 
-  img#eko-white {
+  img.eko-white {
     padding-top: 30px;
     padding-left: 0;
   }

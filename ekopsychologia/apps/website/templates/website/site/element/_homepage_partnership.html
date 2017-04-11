@@ -1,16 +1,32 @@
 {% load corecms_tags %}{% load staticfiles %}{% load thumbnail %}
 
+<div class="projects-wrapper">
+    <div class="container title">
+        <span class="title-text">WSPÓŁPRACA</span>
+    </div>
 
+<div class="container">
+    <div class="row">
 {% for slider in partnership_slider_list %}
+        <div class="col-sm-2">
+    <div class="partner-1">
+
+
     {{ slider }}
     {% for slide in slider.items.all %}
+        <div class="partenr">
         {% thumbnail slide.image "100x100"  as im %}
             {% if slide.url %}<a href="{{ slide.url }}" title="{{ slide.name }}" target="_blank">{% endif %}
             <img src="{{ im.url }}" alt="{{ slide.name }}" title="{{ slide.name }}" class="item">
         {% if slide.url %}</a>{% endif %}
         {% endthumbnail %}
+            </div>
     {% endfor %}
-{% endfor %}
+    </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 
 <div class="container more">
     <a class="more-text" href="{{ homepage_partnership.get_absolute_url }}">Więcej</a>
