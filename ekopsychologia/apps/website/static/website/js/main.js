@@ -33,6 +33,8 @@ $(function(){
            dots: false,
             arrows: false,
             autoplay: true,
+            fade: true,
+            centerMode: true,
             autoplaySpeed: 5000,
         });
 

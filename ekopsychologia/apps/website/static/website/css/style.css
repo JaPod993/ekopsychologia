@@ -937,6 +937,13 @@ button.button-email {
   margin-bottom: 17px;
 }
 
+.partner-1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #303030;
+}
+
 .footer {
   background-color: #098241;
 }
@@ -1119,6 +1126,10 @@ a.sc-logo {
   margin-right: 5px;
 }
 
+.slick-slide img {
+  display: inline-block;
+}
+
 @media screen and (max-width: 1700px) {
   .slick-next {
     top: 190px;
@@ -1156,8 +1167,16 @@ a.sc-logo {
   .sc-block {
     height: 450px;
   }
+
+  div.col-sm-2.dot-four {
+    width: 20%;
+  }
 }
 @media screen and (max-width: 1200px) {
+  div.col-sm-2.dot-four {
+    width: 20%;
+  }
+
   .sc-block {
     height: 400px;
   }
@@ -1341,6 +1360,10 @@ a.sc-logo {
   }
 }
 @media screen and (max-width: 767px) {
+  div.col-sm-2.dot-four {
+    width: 100%;
+  }
+
   div.o-nas {
     height: 1100px;
   }
