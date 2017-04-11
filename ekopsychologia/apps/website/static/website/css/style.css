@@ -61,6 +61,37 @@
   margin-bottom: 30px;
 }
 
+.gallery-container {
+  background: url(../images/eko_gallery.png) top center no-repeat;
+  height: 200px;
+}
+
+.gallery-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+.gallery-wrapper .slick-dots {
+  bottom: -30px;
+  top: auto;
+}
+.gallery-wrapper .slick-dots li button:before {
+  color: #098241;
+}
+
+.gallery-container a {
+  display: inline-block;
+  margin: 34px 12px;
+  outline: none;
+}
+.gallery-container a:hover, .gallery-container a:active {
+  outline: none !important;
+}
+.gallery-container a img {
+  display: block;
+  -webkit-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.6);
+  box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.6);
+}
+
 .text-justify {
   text-align: justify;
 }
