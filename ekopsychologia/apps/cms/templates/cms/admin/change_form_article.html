@@ -13,40 +13,54 @@
     </style>
     <script>
         $(function () {
+
+            window.global_galleries_json = {{ global_galleries_json }};
+
             setInterval(function(){
+
+
+
                 if(!$("#connector-children-area .gallery-table").hasClass('.homepage-fixed')){
                     var add_to_gallery_site = '<a href="#" class="add-to-gallery-site" title="Pokaż w galerii globalnej"><i class="glyphicon glyphicon-globe"></i></a>';
                     $("#connector-children-area .gallery-table tr td:nth-child(2)").append(add_to_gallery_site);
                     $("#connector-children-area .gallery-table").addClass('.homepage-fixed');
+
+
                     $("#connector-children-area .gallery-table .add-to-gallery-site").on('click',function(){
                         var that = $(this);
+                        var gallery_id = that.parents("tr").data('id');
                         $.ajax({
                             type: "POST",
                             url: "/admin/cms/gallery/set-global/",
                             dataType: "json",
                             data: {
-                                gallery_id: that.parents("tr").data('id'),
-                                set: !that.hasClass("active"),
+                                gallery_id: gallery_id,
+                                set: !that.hasClass("active") ? 1 : 0,
                             },
                             success: function (data) {
-                                if(data.active == 'true'){
+                                if(data.active == 1){
                                     that.addClass("active");
+                                    if($.inArray(gallery_id, window.global_galleries_json) == -1) {
+                                        window.global_galleries_json.push(gallery_id);
+                                    }
                                 }else{
                                     that.removeClass("active");
+                                    if($.inArray(gallery_id, window.global_galleries_json) != -1){
+                                        window.global_galleries_json.splice($.inArray(gallery_id), 1);
+                                    }
                                 }
                             }
                         });
                     });
+                    $("#connector-children-area .gallery-table .add-to-gallery-site").each(function(key, value){
+                        var gallery_id = $(value).parents("tr").data('id');
+                        if($.inArray(gallery_id, window.global_galleries_json) > -1){
+                            $(value).addClass("active");
+                        }
+                    });
+
                 }
             }, 1000);
-
-
-
-
-
-
-
-
         });
     </script>
 {% endblock %}

@@ -38,6 +38,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.messages.context_processors.messages',
                 'corecms.context_processors.add_translate_settings',
+                'website.context_processors.default',
             ],
         },
     },

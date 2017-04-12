@@ -3,6 +3,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.http.response import JsonResponse
 from django.views.generic.base import TemplateView, View
 from django.views.generic.edit import FormView
+from django.views.generic.list import ListView
 
 from cms.models import Site, Article
 from corecms.models.default.slider import Slider
@@ -70,3 +71,13 @@ class NewsletterSignView(FormView):
             "success": "Zostałeś zapisany do newslettera"
         }
         return JsonResponse(response)
+
+
+class GalleryListView(ListView):
+    model = Gallery
+    template_name = "website/site/gallery.html"
+
+    def get_queryset(self):
+        queryset = super(GalleryListView, self).get_queryset()
+        queryset = queryset.filter(gallerydistinction__in_global=True)
+        return queryset

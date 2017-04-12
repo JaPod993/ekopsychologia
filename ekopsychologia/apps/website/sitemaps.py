@@ -6,7 +6,7 @@ from urlparse import urlparse
 from cms.models import Article, Site
 
 
-class EcophonSitemap(Sitemap):
+class SiteSitemap(Sitemap):
     changefreq = "monthly"
     priority = 0.5
 
@@ -22,7 +22,7 @@ class EcophonSitemap(Sitemap):
         return obj.updated_at
 
 
-class EcophonSitesSitemap(Sitemap):
+class SiteSitesSitemap(Sitemap):
     changefreq = "monthly"
     priority = 0.5
 

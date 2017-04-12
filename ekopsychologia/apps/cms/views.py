@@ -11,11 +11,19 @@ class GallerySetGlobalView(CsrfExemptMixin, StaffuserRequiredMixin, View):
 
     def post(self, request, *args, **kwargs):
         gallery = Gallery.objects.get(pk=request.POST["gallery_id"])
-        if request.POST.get('set'):
+
+        print request.POST.get('set', u"1"), type(request.POST.get('set', u"1"))
+
+        set_global = request.POST.get('set', u"1") == u"1"
+
+        print set_global
+
+        if set_global:
             GalleryDistinction.objects.get_or_create(gallery=gallery, defaults=dict(in_global=True))
         else:
+            print 'delete'
             GalleryDistinction.objects.filter(gallery=gallery).delete()
         response = {
-            "active": request.POST.get('set', True)
+            "active": 1 if set_global else 0
         }
         return JsonResponse(response)

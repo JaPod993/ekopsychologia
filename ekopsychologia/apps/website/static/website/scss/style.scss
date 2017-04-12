@@ -9,39 +9,46 @@ $hover: #0c824b; //zielony hover
 $footer: #098241;
 $title: #374778; //niebieski akcent
 $tekst: #8c8c8c; //szary tekst
-$tekst-ciemny: #595959;//#737373;
+$tekst-ciemny: #595959; //#737373;
 
 // justify class
 .text-justify {
   text-align: justify;
 }
+
 .center-justified {
-    text-align: justify;
-    -moz-text-align-last: center;
-    text-align-last: center;
+  text-align: justify;
+  -moz-text-align-last: center;
+  text-align-last: center;
 }
+
 .inactiveLink {
-   pointer-events: none;
-   cursor: default;
+  pointer-events: none;
+  cursor: default;
 }
+
 //.................FONTY......................
 
 @mixin roboto-thin {
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
 }
+
 @mixin roboto-light {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
 }
+
 @mixin roboto-regular {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }
+
 @mixin roboto-medium {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
 }
+
 @mixin roboto-bold {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
@@ -55,37 +62,37 @@ $tekst-ciemny: #595959;//#737373;
 }
 
 @mixin shadow-2 {
-  -webkit-box-shadow: 0px 0px 42px 7px rgba(0,0,0,0.15);
-  -moz-box-shadow: 0px 0px 42px 7px rgba(0,0,0,0.15);
-  box-shadow: 0px 0px 42px 7px rgba(0,0,0,0.15);
+  -webkit-box-shadow: 0px 0px 42px 7px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 0px 42px 7px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 42px 7px rgba(0, 0, 0, 0.15);
 }
+
 //.............................................
 
-
-
 body {
- //background-color: $grey;
- // padding-top: 70px;
+  //background-color: $grey;
+  // padding-top: 70px;
 }
-
-
-
 
 //...................NAVBAR......................
 nav.navbar.navbar-default {
   margin-bottom: 0;
 }
+
 .nav-height-bottom {
   padding-top: 25px;
 }
+
 .nav-content-bottom li a {
   padding-top: 0;
   padding-bottom: 0px;
 }
+
 .nav-content-top li a {
   padding-top: 5px;
   padding-bottom: 0;
 }
+
 .navbar-default {
   border-radius: 0;
   border: none;
@@ -106,13 +113,14 @@ nav.navbar.navbar-default {
 
 a.btn.btn-default.btn-circle.btn-nav {
   padding: 6px 0;
-  border:none;
+  border: none;
 }
 
 .circle_btn_padding {
   padding-top: 0px;
   padding-right: 15px;
 }
+
 .nav.navbar-nav.navbar-right.nav-content-top li a {
   @include roboto-light;
   font-size: 13px;
@@ -123,30 +131,37 @@ a.btn.btn-default.btn-circle.btn-nav {
 }
 
 .circle_btn_padding .btn.btn-default.btn-circle.btn-nav i {
-  color: $white!important;
+  color: $white !important;
 }
+
 .nav.navbar-nav.navbar-right.nav-content-bottom li a {
   @include roboto-medium;
   font-size: 16px;
   color: $dark-grey;
 }
+
 div.container.nav-height-top {
   padding-right: 0;
 }
+
 div.container.nav-height-bottom {
   padding-bottom: 20px;
 }
-.fa-envelope:before  {
+
+.fa-envelope:before {
   font-size: 20px;
 }
+
 .fa-phone:before {
   font-size: 20px;
 }
+
 span.menu-top {
   position: relative;
   top: -2px;
   padding-left: 10px;
 }
+
 a.btn.btn-default.btn-circle.btn-nav {
   background-color: $grey;
   transition: background-color .5s ease;
@@ -157,41 +172,44 @@ a.btn.btn-default.btn-circle.btn-nav:hover {
   background-color: $hover;
 }
 
-.nav.nav-content-bottom>li>a {
-    display: inline-block;
-    //font-weight: 600;
-    //font-size: 14px;
-    //height: 50px;
-    //color: #fff;
-    //text-transform: uppercase;
-    //padding-left: 20px;
-    //padding-right: 20px;
-    overflow-x: hidden;
-    position: relative;
-    transition: .25s ease all;
-    //background: gray;
-    text-decoration: none;
-    //line-height: 45px;
-    padding-bottom: 5px;
-    padding-top: 10px;
+.nav.nav-content-bottom > li > a {
+  display: inline-block;
+  //font-weight: 600;
+  //font-size: 14px;
+  //height: 50px;
+  //color: #fff;
+  //text-transform: uppercase;
+  //padding-left: 20px;
+  //padding-right: 20px;
+  overflow-x: hidden;
+  position: relative;
+  transition: .25s ease all;
+  //background: gray;
+  text-decoration: none;
+  //line-height: 45px;
+  padding-bottom: 5px;
+  padding-top: 10px;
 }
- .nav.nav-content-bottom>li>a::after {
-   content: " ";
-   position: absolute;
-   display: block;
-   bottom: 0;
-   left: -100%;
-   height: 2px;
-   width: 100%;
-   background: $hover;
-   transition: .5s ease all;
+
+.nav.nav-content-bottom > li > a::after {
+  content: " ";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: -100%;
+  height: 2px;
+  width: 100%;
+  background: $hover;
+  transition: .5s ease all;
 }
- .nav.nav-content-bottom>li>a:hover:after {
-    left: 0;
+
+.nav.nav-content-bottom > li > a:hover:after {
+  left: 0;
 }
- .nav.nav-content-bottom {
-   padding-top: 40px;
- }
+
+.nav.nav-content-bottom {
+  padding-top: 40px;
+}
 
 div.container.nav-height-bottom {
   //padding-left: 0;
@@ -199,10 +217,12 @@ div.container.nav-height-bottom {
   padding-top: 25px;
   padding-bottom: 15px;
 }
+
 #logo {
   padding-right: 0;
   padding-left: 0;
 }
+
 div.col-sm-12.nav-padding {
   padding-left: 0;
   padding-right: 0;
@@ -244,13 +264,13 @@ div.col-sm-12.nav-padding {
     transform: rotate(0);
   }
 }
-//.............................................
 
+//.............................................
 
 //................HEADER.....................
 
 .sc-block {
-   background-repeat:  no-repeat;
+  background-repeat: no-repeat;
   background-position: center center;;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -258,54 +278,57 @@ div.col-sm-12.nav-padding {
   background-size: cover;
 }
 
-
 .slick-prev,
 .slick-next {
-    font-size: 0;
-    position: absolute;
-    bottom: 20px;
-    color: $white;
-    border: 0;
-    background: none;
-    z-index: 1;
+  font-size: 0;
+  position: absolute;
+  bottom: 20px;
+  color: $white;
+  border: 0;
+  background: none;
+  z-index: 1;
 }
 
 .slick-prev {
-    top: 190px;
-    left: 400px;
+  top: 190px;
+  left: 400px;
 }
 
 .slick-prev:before {
-	  content: "\f104";
-    font: 70px/1 'FontAwesome';
+  content: "\f104";
+  font: 70px/1 'FontAwesome';
 }
 
 .slick-next {
-    top: 190px;
-    right: 400px;
-    text-align: right;
+  top: 190px;
+  right: 400px;
+  text-align: right;
 }
 
 .slick-next:before {
-	   content: "\f105";
-     font: 70px/1 'FontAwesome';
+  content: "\f105";
+  font: 70px/1 'FontAwesome';
 }
 
 .slick-prev:hover:before,
 .slick-next:hover:before {
-    color: $hover;
+  color: $hover;
 }
+
 .slick-dots {
   top: 400px;
 }
+
 .slick-dots li button:before {
   color: $white;
   font-size: 16px;
 }
+
 .slick-dots li.slick-active button:before {
   color: $hover;
   font-size: 16px;
 }
+
 .slide-1 {
   @include roboto-thin;
   font-size: 24px;
@@ -319,16 +342,17 @@ div.col-sm-12.nav-padding {
     margin-left: 330px;
   }
 }
-//.............................................
 
+//.............................................
 
 //...................O NAS....................
 div.row.single-item.slick-initialized.slick-slider.slick-dotted {
- margin-bottom: 0;
+  margin-bottom: 0;
 }
+
 div.o-nas {
   background: url("../images/leafs.jpg");
-   background-repeat:  no-repeat;
+  background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -336,7 +360,6 @@ div.o-nas {
   background-size: cover;
   height: 855px;
 }
-
 
 div.about {
   margin-top: 30px;
@@ -348,42 +371,44 @@ div.about {
 
 // ..........header with hr................
 .title {
-    display: block;
-    text-align: center;
-    overflow: hidden;
-    white-space: nowrap;
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.title > span{
-    position: relative;
-    display: inline-block;
+.title > span {
+  position: relative;
+  display: inline-block;
 }
 
 .title > span:before,
 .title > span:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 9999px;
-    height: 2px;
-    background: $hover;
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 9999px;
+  height: 2px;
+  background: $hover;
 }
 
 .title > span:before {
-    right: 100%;
-    margin-right: 15px;
+  right: 100%;
+  margin-right: 15px;
 }
 
 .title > span:after {
-    left: 100%;
-    margin-left: 15px;
+  left: 100%;
+  margin-left: 15px;
 }
+
 span.title-text {
   @include roboto-bold;
   font-size: 24px;
   color: $title;
 
 }
+
 //.............................................
 span.title-text {
   margin-top: 30px;
@@ -395,6 +420,7 @@ div.container.tree {
   background-repeat: no-repeat;
   background-position: center;
 }
+
 a.btn-circle.btn-about {
   width: 74px;
   height: 74px;
@@ -404,12 +430,12 @@ a.btn-circle.btn-about {
   background-color: transparent;
 }
 
-
 //..............tree buttons....................
 div.container.tree {
   padding-left: 0;
   padding-right: 0;
 }
+
 .kontener-drzewa {
   position: relative;
   width: 900px;
@@ -418,14 +444,13 @@ div.container.tree {
 }
 
 a.link {
-  @include  about;
+  @include about;
 }
 
 a.link:hover {
   color: $hover;
   text-decoration: none;
 }
-
 
 //--------------
 
@@ -455,45 +480,46 @@ a.link:hover {
   }
   .back {
     color: #52b038;
-    transform: rotateY( 180deg );
+    transform: rotateY(180deg);
   }
   &:hover {
-    transform: rotateY( 180deg );
+    transform: rotateY(180deg);
   }
 }
 
 .kontener.nr1 {
-  top:323px; //zmiana
+  top: 323px; //zmiana
   left: 167px; //zmiana
 }
+
 .ico.nr1 i {
   top: 8px; //zmiana
   left: 10px; //zmiana
 }
-
 
 a.dzialalnosc-miedzynarodowa { // TEKST
   position: absolute;
   top: 347px;
   left: 40px;
 }
-a.btn.btn-default.btn-circle.btn-about.btn-dzialalnosc-miedzynarodowa {//BUTTON
+
+a.btn.btn-default.btn-circle.btn-about.btn-dzialalnosc-miedzynarodowa { //BUTTON
 
   padding-left: 10px;
   padding-top: 8px;
 }
-i.eko-dzialalnosc-miedzynarodowa {//ICON
+
+i.eko-dzialalnosc-miedzynarodowa { //ICON
   color: #ef6c45;
   font-size: 40px;
 }
 
 .btn-about {
-  transition: border-color 0.5s ease-in!important;
+  transition: border-color 0.5s ease-in !important;
   &:hover {
-    border-color: #95633f!important;
+    border-color: #95633f !important;
   }
 }
-
 
 // BUTTON DZIALALNOSC MIEDZYNARODOWA
 
@@ -505,28 +531,34 @@ i.eko-dzialalnosc-miedzynarodowa {//ICON
   top: 188px;
   left: 140px;
 }
+
 .ico.nr2 i {
   top: 8px; //zmiana
   left: 10px; //zmiana
 }
+
 //.........................................................................
 .btn-circle.btn-about.btn-dla-karpat {
   border-color: #6c8d47; //BUTTON BORDER COLOR
 }
-a.dla-karpat {  // TEKST
+
+a.dla-karpat { // TEKST
   position: absolute;
   top: 214px;
   left: 55px;
 }
-a.btn.btn-default.btn-circle.btn-about.btn-dla-karpat {//BUTTON
+
+a.btn.btn-default.btn-circle.btn-about.btn-dla-karpat { //BUTTON
 
   padding-top: 9px;
   padding-left: 11px;
 }
+
 i.eko-dla-karpat { //ICON
   color: #6c8d47;
   font-size: 40px;
 }
+
 // BUTTON DLA KARPAT
 
 //.......................................................................
@@ -537,6 +569,7 @@ i.eko-dla-karpat { //ICON
   top: 55px;
   left: 183px;
 }
+
 .ico.nr3 i {
   top: 7px; //zmiana
   left: 10px; //zmiana
@@ -545,24 +578,27 @@ i.eko-dla-karpat { //ICON
 .btn-circle.btn-about.btn-edukacja-ekologiczna {
   border-color: #3c81c2; //BUTTON BORDER COLOR
 }
-a.edukacja-ekologiczna {  // TEKST
+
+a.edukacja-ekologiczna { // TEKST
   position: absolute;
   top: 57px;
   left: 85px;
 }
-a.btn.btn-default.btn-circle.btn-about.btn-edukacja-ekologiczna {//BUTTON
+
+a.btn.btn-default.btn-circle.btn-about.btn-edukacja-ekologiczna { //BUTTON
   //position: absolute;
   padding-top: 6px;
   padding-left: 10px;
 }
+
 i.eko-edukacja-ekologiczna { //ICON
   color: #3c81c2;
   font-size: 40px;
 }
+
 // BUTTON EDUKACJA EKOLOGICZNA
 
 //.......................................................................
-
 
 // BUTTON PARTYCYPACJA SPOLECZNA --------------------------------------------------------------------------------- NR 4
 
@@ -570,25 +606,29 @@ i.eko-edukacja-ekologiczna { //ICON
   top: -37px;
   left: 279px;
 }
+
 .ico.nr4 i {
   top: 11px; //zmiana
   left: 12px; //zmiana
 }
 
-.btn-circle.btn-about.btn-partycypacja-spoleczna  {
+.btn-circle.btn-about.btn-partycypacja-spoleczna {
   border-color: #b27a3f; //BUTTON BORDER COLOR
 }
-a.partycypacja-spoleczna  {  // TEKST
+
+a.partycypacja-spoleczna { // TEKST
   position: absolute;
   top: -40px;
   left: 166px;
 }
-a.btn.btn-default.btn-circle.btn-about.btn-partycypacja-spoleczna  {//BUTTON
- // position: absolute;
+
+a.btn.btn-default.btn-circle.btn-about.btn-partycypacja-spoleczna { //BUTTON
+  // position: absolute;
   padding-top: 10px;
   padding-left: 12px;
 }
-i.eko-partycypacja-spoleczna  { //ICON
+
+i.eko-partycypacja-spoleczna { //ICON
   color: #b27a3f;
   font-size: 36px;
 }
@@ -599,9 +639,10 @@ i.eko-partycypacja-spoleczna  { //ICON
 
 // BUTTON DZIEDZICTWO KULTUROWE ---------------------------------------------------------------------------------- NR 5
 .kontener.nr5 {
- top: -70px;
+  top: -70px;
   right: 413px;
 }
+
 .ico.nr5 i {
   top: 5px; //zmiana
   left: 12px; //zmiana
@@ -610,24 +651,29 @@ i.eko-partycypacja-spoleczna  { //ICON
 .btn-circle.btn-about.btn-dziedzictwo-kulturowe {
   border-color: #896b5f; //BUTTON BORDER COLOR
 }
-a.dziedzictwo-kulturowe {  // TEKST
- position: absolute;
- top: -99px;
+
+a.dziedzictwo-kulturowe { // TEKST
+  position: absolute;
+  top: -99px;
   right: 350px;
 }
-a.btn.btn-default.btn-circle.btn-about.btn-dziedzictwo-kulturowe {//BUTTON
+
+a.btn.btn-default.btn-circle.btn-about.btn-dziedzictwo-kulturowe { //BUTTON
   //position: absolute;
 
- // padding-top: 7px;
- // padding-left: 11px;
+  // padding-top: 7px;
+  // padding-left: 11px;
 }
-i.eko-dziedzictwo-kulturowe {//ICON
+
+i.eko-dziedzictwo-kulturowe { //ICON
   color: #896b5f;
   font-size: 38px;
 }
-a.dziedzictwo-kulturowe >  span {
+
+a.dziedzictwo-kulturowe > span {
   @include about;
 }
+
 // BUTTON DZIEDZICTWO KULTUROWE
 
 //.......................................................................
@@ -637,27 +683,32 @@ a.dziedzictwo-kulturowe >  span {
   top: -37px;
   right: 279px;
 }
+
 .ico.nr6 i {
   top: 8px; //zmiana
   left: 10px; //zmiana
 }
 
-.btn-circle.btn-about.btn-samorzady-lokalne  {
+.btn-circle.btn-about.btn-samorzady-lokalne {
   border-color: #f2b756; //BUTTON BORDER COLOR
 }
-a.samorzady-lokalne  {  // TEKST
+
+a.samorzady-lokalne { // TEKST
   position: absolute;
   top: -40px;
   right: 166px;
 }
-a.btn.btn-default.btn-circle.btn-about.btn-samorzady-lokalne  {//BUTTON
+
+a.btn.btn-default.btn-circle.btn-about.btn-samorzady-lokalne { //BUTTON
   padding-top: 6px;
   padding-left: 12px;
 }
-i.eko-samorzady-lokalne  { //ICON
+
+i.eko-samorzady-lokalne { //ICON
   color: #f2b756;
   font-size: 36px;
 }
+
 // // BUTTON PARTYCYPACJA SPOLECZNA
 
 //.......................................................................
@@ -667,6 +718,7 @@ i.eko-samorzady-lokalne  { //ICON
   top: 55px;
   right: 183px;
 }
+
 .ico.nr7 i {
   top: 7px; //zmiana
   left: 10px; //zmiana
@@ -675,19 +727,23 @@ i.eko-samorzady-lokalne  { //ICON
 .btn-circle.btn-about.btn-organizacje-pozarzadowe {
   border-color: #5d96a0; //BUTTON BORDER COLOR
 }
-a.organizacje-pozarzadowe {  // TEKST
+
+a.organizacje-pozarzadowe { // TEKST
   position: absolute;
   top: 57px;
   right: 62px;
 }
-a.btn.btn-default.btn-circle.btn-about.btn-organizacje-pozarzadowe {//BUTTON
+
+a.btn.btn-default.btn-circle.btn-about.btn-organizacje-pozarzadowe { //BUTTON
   //padding-top: 8px;
   //padding-left: 11px;
 }
+
 i.eko-organizacje-pozarzadowe { //ICON
   color: #5d96a0;
   font-size: 40px;
 }
+
 // BUTTON EDUKACJA EKOLOGICZNA
 
 //.......................................................................
@@ -697,6 +753,7 @@ i.eko-organizacje-pozarzadowe { //ICON
   top: 188px;
   right: 140px;
 }
+
 .ico.nr8 i {
   top: 9px; //zmiana
   left: 14px; //zmiana
@@ -705,53 +762,59 @@ i.eko-organizacje-pozarzadowe { //ICON
 .btn-circle.btn-about.btn-spolecznosc-lokalna {
   border-color: #6363aa; //BUTTON BORDER COLOR
 }
-a.spolecznosc-lokalna {  // TEKST
+
+a.spolecznosc-lokalna { // TEKST
   position: absolute;
   top: 201px;
   right: 11px;
 }
-a.btn.btn-default.btn-circle.btn-about.btn-spolecznosc-lokalna {//BUTTON
+
+a.btn.btn-default.btn-circle.btn-about.btn-spolecznosc-lokalna { //BUTTON
 
   //padding-top: 9px;
   //padding-left: 14px;
 }
-i.eko-spolecznosc-lokalna {//ICON
+
+i.eko-spolecznosc-lokalna { //ICON
   color: #6363aa;
   font-size: 36px;
 }
+
 // BUTTON SPOLECZNOSC LOKALNA
 
 //.......................................................................
 
 // BUTTON SWIAT NAUKI -------------------------------------------------------------------------------------------- NR 9
 .kontener.nr9 {
-  top:323px; //zmiana
+  top: 323px; //zmiana
   right: 167px; //zmiana
 }
+
 .ico.nr9 i {
   top: 10px; //zmiana
   left: 12px; //zmiana
 }
 
-
 .btn-circle.btn-about.btn-swiat-nauki {
   border-color: #b5842b; //BUTTON BORDER COLOR
 }
+
 a.swiat-nauki { // TEKST
   position: absolute;
   top: 347px;
   right: 84px;
 }
-a.btn.btn-default.btn-circle.btn-about.btn-swiat-nauki {//BUTTON
+
+a.btn.btn-default.btn-circle.btn-about.btn-swiat-nauki { //BUTTON
 
   //padding-left: 10px;
   //padding-top: 8px;
 }
-i.eko-swiat-nauki {//ICON
+
+i.eko-swiat-nauki { //ICON
   color: #b5842b;
   font-size: 36px;
 }
-
 
 // BUTTON DZIALALNOSC MIEDZYNARODOWA
 
@@ -763,42 +826,35 @@ i.eko-swiat-nauki {//ICON
   left: 140px;
 }
 
-
 .kontener.nr2-2 {
   top: 188px;
   left: 140px;
 }
-
 
 .kontener.nr3-2 {
   top: 55px;
   left: 183px;
 }
 
-
 .kontener.nr4-2 {
   top: -37px;
   left: 279px;
 }
 
-
 .kontener.nr5-2 {
- top: -70px;
+  top: -70px;
   right: 413px;
 }
-
 
 .kontener.nr6-2 {
   top: -37px;
   right: 279px;
 }
 
-
 .kontener.nr7-2 {
   top: 55px;
   right: 183px;
 }
-
 
 .kontener.nr8-2 {
   top: -13px;
@@ -816,42 +872,41 @@ i.eko-swiat-nauki {//ICON
 
 //............tree buttons end..................
 
-
 //...................O NAS END...................
-
 
 // ..........more button with hr................
 .more {
-    display: block;
-    text-align: center;
-    overflow: hidden;
-    white-space: nowrap;
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .more > a {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .more > a:before,
 .more > a:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 9999px;
-    height: 2px;
-    background: $grey;
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 9999px;
+  height: 2px;
+  background: $grey;
 }
 
 .more > a:before {
-    right: 100%;
-    margin-right: 15px;
+  right: 100%;
+  margin-right: 15px;
 }
 
 .more > a:after {
-    left: 100%;
-    margin-left: 15px;
+  left: 100%;
+  margin-left: 15px;
 }
+
 a.more-text {
   @include roboto-medium;
   font-size: 16px;
@@ -877,25 +932,29 @@ a.more-text {
 .kontener {
   outline: 0;
 }
+
 .kontener:focus {
   outline: 0;
 }
+
 a.btn.btn-default.btn-circle.btn-about:focus {
   outline: 0;
 }
-
 
 ////....................ARTYKULY.........................
 
 .aktualnosci {
   margin-bottom: 30px;
 }
+
 ul.article-li {
   padding-left: 0;
 }
+
 .article-bacground {
   background-color: $white-accent;
 }
+
 li.article-style-li {
   list-style: none;
   @include roboto-light;
@@ -912,6 +971,7 @@ li.article-style-li {
     color: $dark-grey;
   }
 }
+
 a.article-title {
   @include roboto-bold;
   font-size: 18px;
@@ -949,16 +1009,17 @@ div.article-title-2 {
 
 //.......................................................
 
-
 //......................NEWSLETTER.......................
 
 .newsletter-bg {
   background: url("../images/newsletter_bg.png") no-repeat center 64%;
 }
+
 .email-form {
   margin-top: 33px;
   margin-bottom: 33px;
 }
+
 .input-group {
   //box-shadow: 0px 4px 7.68px 0.32px rgba(0, 0, 0, 0.25);
 }
@@ -974,23 +1035,28 @@ input.form-control {
     box-shadow: none;
   }
 }
+
 button.button-email {
   color: $title;
   border-radius: 0;
   //border: none;
 }
+
 .email-form-width {
   //width: 260px;
 }
+
 .kontener-inline {
   display: inline-block;
 }
+
 .newsletter-header {
   @include roboto-medium;
   font-size: 24px;
   color: $title;
   margin-top: 17px;
 }
+
 .newsletter-body {
   @include roboto-regular;
   font-size: 16px;
@@ -998,8 +1064,8 @@ button.button-email {
   margin-bottom: 17px;
 
 }
-//.......................................................
 
+//.......................................................
 
 //......................WSPÓŁPRACA.......................
 .partner-1 {
@@ -1007,14 +1073,22 @@ button.button-email {
   font-size: 16px;
   color: $dark-grey;
 }
+
+.wspolpraca-zdj {
+  //display: block;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+a.more-text.more-wspolpraca {
+  margin-top: 5px;
+}
 //.......................................................
-
-
 
 //...................STOPKA............................
 .footer {
   background-color: $footer;
 }
+
 ul.footer-inline {
   padding-left: 0;
   margin-bottom: 30px;
@@ -1023,43 +1097,52 @@ ul.footer-inline {
     list-style: none;
   }
 }
+
 a.btn.btn-default.btn-circle.btn-nav.footer-social {
   width: 35px;
   height: 35px;
   background-color: $title;
   transition: background-color .5s ease;
   &:hover {
-  background-color: $dark-grey;
+    background-color: $dark-grey;
+  }
 }
-}
+
 span.dolacz {
   @include roboto-light;
   color: $white;
   font-size: 16px;
   padding-right: 8px;
 }
+
 .circle_btn_padding_footer {
   padding-right: 8px;
 }
+
 .eko-white {
   padding-top: 40px;
   padding-bottom: 50px;
 }
+
 #osigw {
   padding-top: 40px;
   padding-bottom: 10px;
   padding-left: 30px;
 }
+
 .osigw-tekst {
   padding-bottom: 25px;
 }
+
 .ico-social {
   font-size: 19px;
 }
+
 i.ico-social {
   padding-top: 2px;
   padding-right: 2px;
 }
+
 p.osigw-tekst {
   @include roboto-light;
   font-size: 16px;
@@ -1105,19 +1188,21 @@ ul.menu-bottom {
     }
   }
 }
+
 .osigw-padding {
   padding-left: 0;
   padding-right: 0;
 }
+
 .padding-left-footer {
   padding-left: 0;
 }
-
 
 //................SILVER CUBE
 .silver {
   background-color: $dark-grey;
 }
+
 .sc-brand {
   @include roboto-regular;
   font-size: 16px;
@@ -1125,12 +1210,14 @@ ul.menu-bottom {
   height: 50px;
   padding-top: 5px;
 }
+
 a.sc-logo {
   @include roboto-regular;
   font-size: 16px;
   color: #777677;
   transition: color .5s ease;
 }
+
 #sc-white {
   position: relative;
   top: 7px;
@@ -1140,6 +1227,7 @@ a.sc-logo {
   //z-index: 1000;
   transition: color .5s ease;
 }
+
 #sc-white:hover {
   color: $hover;
 }
@@ -1156,6 +1244,7 @@ a.sc-logo {
   margin-left: 5px;
   margin-right: 5px;
 }
+
 //...................................................
 .slick-slide img {
   display: inline-block;
@@ -1163,36 +1252,36 @@ a.sc-logo {
 
 //..............MEDIA QUERIES..................
 
-@media screen and (max-width : 1700px) {
-    .slick-next {
-      top: 190px;
-      right: 250px;
+@media screen and (max-width: 1700px) {
+  .slick-next {
+    top: 190px;
+    right: 250px;
   }
-    .slick-prev {
-      top: 190px;
-      left: 250px;
-  }
-}
-
-@media screen and (max-width : 1500px) {
-    .slick-next {
-      top: 190px;
-      right: 200px;
-  }
-    .slick-prev {
-      top: 190px;
-      left: 200px;
+  .slick-prev {
+    top: 190px;
+    left: 250px;
   }
 }
 
-@media screen and (max-width : 1300px) {
-    .slick-next {
-      top: 190px;
-      right: 100px;
+@media screen and (max-width: 1500px) {
+  .slick-next {
+    top: 190px;
+    right: 200px;
   }
-    .slick-prev {
-      top: 190px;
-      left: 100px;
+  .slick-prev {
+    top: 190px;
+    left: 200px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .slick-next {
+    top: 190px;
+    right: 100px;
+  }
+  .slick-prev {
+    top: 190px;
+    left: 100px;
   }
 }
 
@@ -1202,27 +1291,26 @@ a.sc-logo {
   }
   div.col-md-2.dot-four {
     width: 20%;
-  //  border: 1px solid #000;
+    //  border: 1px solid #000;
   }
 }
 
-@media screen and (max-width : 1200px) {
+@media screen and (max-width: 1200px) {
   div.col-md-2.dot-four {
     width: 20%;
- //   border: 1px solid #000;
   }
-   .sc-block {
+  .sc-block {
     height: 400px;
   }
-    .slick-next {
-      top: 165px;
+  .slick-next {
+    top: 165px;
   }
-    .slick-prev {
-      top: 165px;
+  .slick-prev {
+    top: 165px;
   }
   .slick-dots {
-  top: 350px;
-}
+    top: 350px;
+  }
   .slide-1 {
     margin-top: 139px;
   }
@@ -1256,12 +1344,15 @@ a.sc-logo {
   ul.footer-inline {
     text-align: center;
   }
-   //footer medium screen styles
+  //footer medium screen styles
 }
 
-@media screen and (max-width : 992px) {
+@media screen and (max-width: 992px) {
   div.partner-1 {
     //font-size: 14px;
+  }
+  div.col-md-2.dot-four {
+    width: 20%;
   }
   .kontener {
     position: static;
@@ -1274,15 +1365,15 @@ a.sc-logo {
   .sc-block {
     height: 350px;
   }
-     .slick-next {
-      top: 140px;
+  .slick-next {
+    top: 140px;
   }
-    .slick-prev {
-      top: 140px;
+  .slick-prev {
+    top: 140px;
   }
   .slick-dots {
-  top: 300px;
-}
+    top: 300px;
+  }
   .slide-1 {
     margin-top: 114px;
   }
@@ -1297,11 +1388,11 @@ a.sc-logo {
     //padding-right: 20px;
     padding-bottom: 30px;
   }
-ul.lista-projekty,
-ul.kontakt,
-ul.menu-bottom {
-  padding-top: 0px;
-}
+  ul.lista-projekty,
+  ul.kontakt,
+  ul.menu-bottom {
+    padding-top: 0px;
+  }
   #osigw {
     padding-left: 80px;
   }
@@ -1332,7 +1423,7 @@ ul.menu-bottom {
 
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
   div.newsletter-text {
     text-align: center;
   }
@@ -1346,51 +1437,51 @@ ul.menu-bottom {
   p.newsletter-header {
     margin-top: 25px;
   }
- img.default.img-responsive {
+  img.default.img-responsive {
     //height: 350px;
     width: 100%;
   }
   .sc-block {
     height: 300px;
   }
-     .slick-next {
-      top: 115px;
+  .slick-next {
+    top: 115px;
   }
-    .slick-prev {
-      top: 115px;
+  .slick-prev {
+    top: 115px;
   }
   .slick-prev:before,
-.slick-next:before {
-   display:none;
-}
-  .slick-dots {
-  top: 250px;
-}
-  .slide-1 {
-  font-size: 18px;
-  margin-top: 104px;
-  p.proverb {
-    font-size: 12px;
-    margin-left: 240px;
+  .slick-next:before {
+    display: none;
   }
-}
+  .slick-dots {
+    top: 250px;
+  }
+  .slide-1 {
+    font-size: 18px;
+    margin-top: 104px;
+    p.proverb {
+      font-size: 12px;
+      margin-left: 240px;
+    }
+  }
   div.o-nas {
     //height: 800px;
   }
 
 }
-@media screen and (max-width:767px) {
+
+@media screen and (max-width: 767px) {
   div.col-md-2.dot-four {
     width: 50%;
 
-
-    //border: 1px solid #000;
+  //border: 1px solid #000;
   }
-div.o-nas {
+  div.o-nas {
     height: 1100px;
   }
   //stopka
-   ul.kontakt {
+  ul.kontakt {
     padding-left: 0;
   }
   ul.menu-bottom {
@@ -1412,10 +1503,10 @@ div.o-nas {
     outline: none;
     border-radius: 0;
     border: none;
-    background-color: #076332!important;
+    background-color: #076332 !important;
     @include roboto-regular;
     font-size: 16px;
-    color: $white!important;
+    color: $white !important;
   }
   .row-xs {
     margin-left: 0;
@@ -1436,12 +1527,12 @@ div.o-nas {
   .button-footer:after {
     font-family: FontAwesome;
     font-size: 12px;
-    content:  "\f078";
+    content: "\f078";
     float: right;
   }
   .button-footer.collapsed:after {
     font-family: FontAwesome;
-    content:  "\f054";
+    content: "\f054";
   }
 
   ul.lista-projekty,
@@ -1479,36 +1570,44 @@ div.o-nas {
   }
   //stopka
 }
-@media screen and (max-width:537px) {
+
+@media screen and (max-width: 537px) {
   div.o-nas {
     height: 1120px;
   }
 }
 
-@media screen and (max-width:480px){
+@media screen and (max-width: 480px) {
+
+  div.col-md-2.dot-four {
+    width: 100%;
+
+  //border: 1px solid #000;
+  }
   p.newsletter-header {
     font-size: 22px;
   }
+  
   .sc-block {
     height: 200px;
   }
- .slick-prev:before,
-.slick-next:before {
-   display:none;
-}
+  .slick-prev:before,
+  .slick-next:before {
+    display: none;
+  }
   .slick-dots {
-  top: 150px;
-}
+    top: 150px;
+  }
   .slide-1 {
     padding-left: 0;
     padding-right: 0;
-  font-size: 14px;
-  margin-top: 63px;
-  p.proverb {
-    font-size: 10px;
-    margin-left: 180px;
+    font-size: 14px;
+    margin-top: 63px;
+    p.proverb {
+      font-size: 10px;
+      margin-left: 180px;
+    }
   }
-}
   div.o-nas {
     height: 1150px;
   }
@@ -1516,13 +1615,15 @@ div.o-nas {
     text-align: center;
   }
 }
-@media screen and (max-width:400px){
+
+@media screen and (max-width: 400px) {
   div.o-nas {
     height: 1170px;
 
   }
 }
-@media screen and (max-width:360px){
+
+@media screen and (max-width: 360px) {
   div.o-nas {
     height: 1220px;
   }
@@ -1530,20 +1631,19 @@ div.o-nas {
 
 //.............................................
 
-
-#newsletter-sign-in{
-  button{
-    outline:0;
+#newsletter-sign-in {
+  button {
+    outline: 0;
   }
-  .msg{
+  .msg {
     position: absolute;
     left: 5px;
     top: 33px;
     font-size: 13px;
-    &.error{
+    &.error {
       color: #ef5350;
     }
-    &.success{
+    &.success {
       color: #4caf50;
     }
   }

@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block description %}
-        <meta name="description" itemprop="description" content="{{ request.cms_config.seo_description|striptags }}"/>
+    <meta name="description" itemprop="description" content="{{ request.cms_config.seo_description|striptags }}"/>
     {% endblock %}
 
     {% block keywords %}
-        <meta name="keywords" itemprop="keywords" content="{{ request.cms_config.seo_keywords }}"/>
+    <meta name="keywords" itemprop="keywords" content="{{ request.cms_config.seo_keywords }}"/>
     {% endblock %}
 
     {% block title %}
-        <title>
-            {{ request.cms_config.site_title }}
-        </title>
+    <title>
+        {{ request.cms_config.site_title }}
+    </title>
     {% endblock %}
 
     {% block header_css %}{% endblock %}
@@ -27,8 +27,8 @@
     {% block canonical_url %}{% endblock %}
 
     {% compress css %}
-        <link href="{% static 'website/css/style.css' %}" rel="stylesheet"/>
-        <link rel="stylesheet" href="{% static 'corecms/css/site-style.css' %}">
+    <link href="{% static 'website/css/style.css' %}" rel="stylesheet"/>
+    <link rel="stylesheet" href="{% static 'corecms/css/site-style.css' %}">
     {% endcompress %}
 
     {% block body_js %}{% endblock %}
@@ -40,14 +40,14 @@
     <i class="fa fa-times"></i>
 </div>
 {% if request.user.is_superuser %}
-    <div class="right-edit-buttons">
-        <a class="right-edit-button" href="{% url 'admin:index' %}">
-            <div class="right-edit-button-icon"><i class="fa fa-cog"></i></div>
-            <p>Panel administracyjny</p>
-        </a>
-        {% block edit_buttons %}
-        {% endblock %}
-    </div>
+<div class="right-edit-buttons">
+    <a class="right-edit-button" href="{% url 'admin:index' %}">
+        <div class="right-edit-button-icon"><i class="fa fa-cog"></i></div>
+        <p>Panel administracyjny</p>
+    </a>
+    {% block edit_buttons %}
+    {% endblock %}
+</div>
 {% endif %}
 
 {% render_menu 'menu-top' template_name='website/site/element/_menu_top.html' %}
@@ -69,17 +69,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block description %}
-        <meta name="description" itemprop="description" content="{{ request.cms_config.seo_description|striptags }}"/>
+    <meta name="description" itemprop="description" content="{{ request.cms_config.seo_description|striptags }}"/>
     {% endblock %}
 
     {% block keywords %}
-        <meta name="keywords" itemprop="keywords" content="{{ request.cms_config.seo_keywords }}"/>
+    <meta name="keywords" itemprop="keywords" content="{{ request.cms_config.seo_keywords }}"/>
     {% endblock %}
 
     {% block title %}
-        <title>
-            {{ request.cms_config.site_title }}
-        </title>
+    <title>
+        {{ request.cms_config.site_title }}
+    </title>
     {% endblock %}
 
     {% block header_css %}{% endblock %}
@@ -94,7 +94,7 @@
     {{ request.cms_config.tracking_code|safe }}
 
 
-     <!-- Latest compiled and minified CSS -->
+    <!-- Latest compiled and minified CSS -->
     <link href="{% static 'website/slick/slick.css' %}" rel="stylesheet" type="text/css"/>
     <link href="{% static 'website/slick/slick-theme.css' %}" rel="stylesheet" type="text/css"/>
     <link href="{% static 'website/css/bootstrap.min.css' %}" rel="stylesheet"/>
@@ -103,7 +103,8 @@
     <link href="{% static 'website/css/ekopsychologia.css' %}" rel="stylesheet"/>
 
     <!--GOOGLE FONT - Roboto-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&amp;subset=latin-ext"
+          rel="stylesheet">
 
 
     {% compress css %}
@@ -118,65 +119,72 @@
     <script src="{% static 'website/js/main.js' %}"></script>
 
 
-
 </head>
 <body class="{% block bodyclass %}{{ LANGUAGE_CODE }}{% endblock %}">
 {% if request.user.is_superuser %}
-    <div class="right-edit-buttons">
-        <a class="right-edit-button" href="{% url 'admin:index' %}">
-            <div class="right-edit-button-icon"><i class="fa fa-cog"></i></div>
-            <p>Panel administracyjny</p>
-        </a>
-        {% block edit_buttons %}
-        {% endblock %}
-    </div>
+<div class="right-edit-buttons">
+    <a class="right-edit-button" href="{% url 'admin:index' %}">
+        <div class="right-edit-button-icon"><i class="fa fa-cog"></i></div>
+        <p>Panel administracyjny</p>
+    </a>
+    {% block edit_buttons %}
+    {% endblock %}
+</div>
 {% endif %}
 
 
 <!-- NAVBAR -->
-        <nav class="navbar navbar-default">
-          <div class="container nav-height-bottom">
-              <div class="row">
-                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar top-bar"></span>
-                      <span class="icon-bar middle-bar"></span>
-                      <span class="icon-bar bottom-bar"></span>
-                </button>
-                  <div id="logo" class="col-sm-3">
-                      <a href="/">
-        <img class="img-responsive brand" alt="Ekopsychologia" src="{% static 'website/images/ekopsychologia_logo.png' %}">
-      </a>
-                  </div>
+<nav class="navbar navbar-default">
+    <div class="container nav-height-bottom">
+        <div class="row">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar top-bar"></span>
+                <span class="icon-bar middle-bar"></span>
+                <span class="icon-bar bottom-bar"></span>
+            </button>
+            <div id="logo" class="col-sm-3">
+                <a href="/">
+                    <img class="img-responsive brand" alt="Ekopsychologia"
+                         src="{% static 'website/images/ekopsychologia_logo.png' %}">
+                </a>
+            </div>
 
-                  <div class="col-sm-9">
+            <div class="col-sm-9">
 
-                     <div id="navbar" class="collapse navbar-collapse">
+                <div id="navbar" class="collapse navbar-collapse">
 
-                      <div class="row">
-                          <div class="col-sm-12 nav-padding">
-                               <ul class="nav navbar-nav navbar-right nav-content-top">
-                                   <li><a href="mailto:ekopsychologia@ekopsychologia.pl"><i class="fa fa-envelope"></i><span class="menu-top inactiveLink">ekopsychologia@ekopsychologia.pl</span></a></li>
-                                   <li><a href="tel:+48604936349"><i class="fa fa-phone"></i></i><span class="menu-top inactiveLink">+48 604 936 349</span></a></li>
-                                   <li class="circle_btn_padding"><a href="#" class="btn btn-default btn-circle btn-nav"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                   <li class="circle_btn_padding"><a href="#" class="btn btn-default btn-circle btn-nav"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                   <li class="circle_btn_padding"><a href="#" class="btn btn-default btn-circle btn-nav"><i class="fa fa-youtube yt" aria-hidden="true"></i></a></li>
-                               </ul>
-                          </div>
-                          <div class="col-sm-12 nav-padding">
+                    <div class="row">
+                        <div class="col-sm-12 nav-padding">
+                            <ul class="nav navbar-nav navbar-right nav-content-top">
+                                <li><a href="mailto:ekopsychologia@ekopsychologia.pl"><i
+                                        class="fa fa-envelope"></i><span class="menu-top inactiveLink">ekopsychologia@ekopsychologia.pl</span></a>
+                                </li>
+                                <li><a href="tel:+48604936349"><i class="fa fa-phone"></i></i><span
+                                        class="menu-top inactiveLink">+48 604 936 349</span></a></li>
+                                <li class="circle_btn_padding"><a href="#" class="btn btn-default btn-circle btn-nav"><i
+                                        class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li class="circle_btn_padding"><a href="#" class="btn btn-default btn-circle btn-nav"><i
+                                        class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                <li class="circle_btn_padding"><a href="#" class="btn btn-default btn-circle btn-nav"><i
+                                        class="fa fa-youtube yt" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-12 nav-padding">
 
-                                {% render_menu 'menu-top' template_name='website/site/element/_menu_top.html' %}
+                            {% render_menu 'menu-top' template_name='website/site/element/_menu_top.html' %}
 
 
-                          </div>
-                      </div>
+                        </div>
+                    </div>
 
-                  </div>
-              </div>
-              </div>
+                </div>
+            </div>
+        </div>
 
-          </div>
-        </nav>
+    </div>
+</nav>
 <!-- NAVBAR END-->
 
 {% block body_content %}
@@ -193,22 +201,31 @@
 
                 <!-- SOCIAL MEDIA -->
                 <div class="col-sm-6 col-md-3 padding-left-footer">
-                    <a href="/"><img id="" class="eko-white img-responsive" src="{% static 'website/images/eko-white.png' %}" alt=""></a>
+                    <a href="/"><img id="" class="eko-white img-responsive"
+                                     src="{% static 'website/images/eko-white.png' %}" alt=""></a>
                     <ul class="footer-inline">
                         <li><span class="dolacz hidden-md">Dołącz do nas!</span></li>
-                        <li class="circle_btn_padding_footer"><a href="#" class="btn btn-default btn-circle btn-nav footer-social"><i class="fa fa-facebook ico-social" aria-hidden="true"></i></a></li>
-                        <li class="circle_btn_padding_footer"><a href="#" class="btn btn-default btn-circle btn-nav footer-social"><i class="fa fa-google-plus ico-social" aria-hidden="true"></i></a></li>
-                        <li class="circle_btn_padding_footer"><a href="#" class="btn btn-default btn-circle btn-nav footer-social"><i class="fa fa-youtube yt ico-social" aria-hidden="true"></i></a></li>
+                        <li class="circle_btn_padding_footer"><a href="#"
+                                                                 class="btn btn-default btn-circle btn-nav footer-social"><i
+                                class="fa fa-facebook ico-social" aria-hidden="true"></i></a></li>
+                        <li class="circle_btn_padding_footer"><a href="#"
+                                                                 class="btn btn-default btn-circle btn-nav footer-social"><i
+                                class="fa fa-google-plus ico-social" aria-hidden="true"></i></a></li>
+                        <li class="circle_btn_padding_footer"><a href="#"
+                                                                 class="btn btn-default btn-circle btn-nav footer-social"><i
+                                class="fa fa-youtube yt ico-social" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
 
-                 <!-- OŚiGW visible xd & sm -->
+                <!-- OŚiGW visible xd & sm -->
                 <div class="col-sm-6 col-md-2 osigw-padding hidden-md hidden-lg">
-                    <a href="/"><img id="osigw" class="img-responsive" src="{% static 'website/images/osigw.png' %}" alt=""></a>
-                    <p class="text-left osigw-tekst">Sfinansowano ze środków Narodowego Funduszu Ochrony Środowiksa i Gospodarki Wodnej</p>
+                    <a href="/"><img id="osigw" class="img-responsive" src="{% static 'website/images/osigw.png' %}"
+                                     alt=""></a>
+                    <p class="text-left osigw-tekst">Sfinansowano ze środków Narodowego Funduszu Ochrony Środowiksa i
+                        Gospodarki Wodnej</p>
                 </div>
 
-                 <div class="clearfix visible-sm-block"></div>
+                <div class="clearfix visible-sm-block"></div>
 
                 <!-- KONTAKT -->
                 <div class="col-sm-5 col-md-3 padding-left-footer">
@@ -257,14 +274,16 @@
 
                 <!-- OŚiGW visible md & lg -->
                 <div class="col-md-2 osigw-padding visible-md visible-lg">
-                    <a href="/"><img id="osigw" class="img-responsive" src="{% static 'website/images/osigw.png' %}" alt=""></a>
-                    <p class="text-left osigw-tekst">Sfinansowano ze środków Narodowego Funduszu Ochrony Środowiksa i Gospodarki Wodnej</p>
+                    <a href="/"><img id="osigw" class="img-responsive" src="{% static 'website/images/osigw.png' %}"
+                                     alt=""></a>
+                    <p class="text-left osigw-tekst">Sfinansowano ze środków Narodowego Funduszu Ochrony Środowiksa i
+                        Gospodarki Wodnej</p>
                 </div>
 
             </div>
         </div>
     </div>
-<!-- !!! STOPKA SM MD LG !!! -->
+    <!-- !!! STOPKA SM MD LG !!! -->
 
 
     <!-- !!! STOPKA ONLY XS !!! -->
@@ -273,14 +292,21 @@
             <div class="row">
 
 
-                      <!-- SOCIAL MEDIA -->
+                <!-- SOCIAL MEDIA -->
                 <div class="padding-left-footer">
-                    <a href="/"><img id="" class="eko-white img-responsive center-block" src="{% static 'website/images/eko-white.png' %}" alt=""></a>
+                    <a href="/"><img id="" class="eko-white img-responsive center-block"
+                                     src="{% static 'website/images/eko-white.png' %}" alt=""></a>
                     <ul class="footer-inline">
                         <li><span class="dolacz hidden-md">Dołącz do nas!</span></li>
-                        <li class="circle_btn_padding_footer"><a href="#" class="btn btn-default btn-circle btn-nav footer-social"><i class="fa fa-facebook ico-social" aria-hidden="true"></i></a></li>
-                        <li class="circle_btn_padding_footer"><a href="#" class="btn btn-default btn-circle btn-nav footer-social"><i class="fa fa-google-plus ico-social" aria-hidden="true"></i></a></li>
-                        <li class="circle_btn_padding_footer"><a href="#" class="btn btn-default btn-circle btn-nav footer-social"><i class="fa fa-youtube yt ico-social" aria-hidden="true"></i></a></li>
+                        <li class="circle_btn_padding_footer"><a href="#"
+                                                                 class="btn btn-default btn-circle btn-nav footer-social"><i
+                                class="fa fa-facebook ico-social" aria-hidden="true"></i></a></li>
+                        <li class="circle_btn_padding_footer"><a href="#"
+                                                                 class="btn btn-default btn-circle btn-nav footer-social"><i
+                                class="fa fa-google-plus ico-social" aria-hidden="true"></i></a></li>
+                        <li class="circle_btn_padding_footer"><a href="#"
+                                                                 class="btn btn-default btn-circle btn-nav footer-social"><i
+                                class="fa fa-youtube yt ico-social" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
 
@@ -288,30 +314,30 @@
                 <div class="clearfix visible-sm-block"></div>
 
 
-
-
                 <!-- KONTAKT -->
                 <div class="col-xs-12 col-sm-5 col-md-3 padding-left-footer">
                     <hr class="footer-hr">
-                    <button class="btn btn-default btn-block button-footer collapsed" data-toggle="collapse" data-target="#kontakt-mobile"><span class="padding-button-name">Kontakt</span></button>
+                    <button class="btn btn-default btn-block button-footer collapsed" data-toggle="collapse"
+                            data-target="#kontakt-mobile"><span class="padding-button-name">Kontakt</span></button>
 
-                        <ul id="kontakt-mobile" class="text-left kontakt collapse">
+                    <ul id="kontakt-mobile" class="text-left kontakt collapse">
 
-                            <li class="kontakt">Stowarzyszenie Ekopsychologia</li>
-                            <li class="imie">Monika Ochwat-Marcinkiewicz</li>
-                            <li class="adres">ul. Grabina 6/18<br>34-840 Zakliczyn</li>
-                            <li class="telefon">+48 785 341 089</li>
-                            <li class="email">ekopsychologia@ekopsychologia.pl</li>
+                        <li class="kontakt">Stowarzyszenie Ekopsychologia</li>
+                        <li class="imie">Monika Ochwat-Marcinkiewicz</li>
+                        <li class="adres">ul. Grabina 6/18<br>34-840 Zakliczyn</li>
+                        <li class="telefon">+48 785 341 089</li>
+                        <li class="email">ekopsychologia@ekopsychologia.pl</li>
 
-                        </ul>
+                    </ul>
 
                 </div>
 
                 <!-- MENU BOTTOM -->
                 <div class="col-xs-12 col-sm-2 col-md-1 padding-left-footer">
                     <hr class="footer-hr">
-                    <button class="btn btn-default btn-block button-footer collapsed" data-toggle="collapse" data-target="#menu-mobile"><span class="padding-button-name">Menu</span></button>
-                    <ul  id="menu-mobile"  class="text-left menu-bottom collapse">
+                    <button class="btn btn-default btn-block button-footer collapsed" data-toggle="collapse"
+                            data-target="#menu-mobile"><span class="padding-button-name">Menu</span></button>
+                    <ul id="menu-mobile" class="text-left menu-bottom collapse">
 
                         <li>O nas</li>
                         <li>Aktualności</li>
@@ -330,9 +356,10 @@
                 <!-- PROJEKTY -->
                 <div class="col-xs-12 col-sm-5 col-md-3 padding-left-footer">
                     <hr class="footer-hr">
-                    <button class="btn btn-default btn-block button-footer collapsed" data-toggle="collapse" data-target="#projekty-mobile"><span class="padding-button-name">Projekty</span></button>
+                    <button class="btn btn-default btn-block button-footer collapsed" data-toggle="collapse"
+                            data-target="#projekty-mobile"><span class="padding-button-name">Projekty</span></button>
 
-                    <ul id="projekty-mobile"  class="text-left lista-projekty collapse">
+                    <ul id="projekty-mobile" class="text-left lista-projekty collapse">
 
                         <li>Karpackie Inicjatywy Lokalne</li>
                         <li>Karpacki Uniwersytet Partycypacji</li>
@@ -345,8 +372,10 @@
 
                 <!-- OŚiGW visible xd & sm -->
                 <div class="osigw-padding">
-                    <a href="/"><img id="osigw" class="img-responsive center-block" src="{% static 'website/images/osigw.png' %}" alt=""></a>
-                    <p class="text-center osigw-tekst">Sfinansowano ze środków<br>Narodowego Funduszu<br>Ochrony Środowiksa<br>i Gospodarki Wodnej</p>
+                    <a href="/"><img id="osigw" class="img-responsive center-block"
+                                     src="{% static 'website/images/osigw.png' %}" alt=""></a>
+                    <p class="text-center osigw-tekst">Sfinansowano ze środków<br>Narodowego Funduszu<br>Ochrony
+                        Środowiksa<br>i Gospodarki Wodnej</p>
                 </div>
 
             </div>
@@ -355,16 +384,16 @@
     <!-- !!! STOPKA ONLY XS !!! -->
 
 
-
-
-<div class="container-fluid silver">
-    <div class="row">
-        <div class="col-xs-12 text-center sc-brand">
-            Projekt i realizacja:
-            <a class="sc-logo" href="http://www.silvercube.pl/" title="Aplikacje internetowe, strony www, administracja serwerami dedykowanymi"><span>SilverCube</span><span id="sc-white" class="eko-sc_white"></span></a>
+    <div class="container-fluid silver">
+        <div class="row">
+            <div class="col-xs-12 text-center sc-brand">
+                Projekt i realizacja:
+                <a class="sc-logo" href="http://www.silvercube.pl/"
+                   title="Aplikacje internetowe, strony www, administracja serwerami dedykowanymi"><span>SilverCube</span><span
+                        id="sc-white" class="eko-sc_white"></span></a>
+            </div>
         </div>
     </div>
-</div>
 </footer>
 <!-- FOOTER END -->
 

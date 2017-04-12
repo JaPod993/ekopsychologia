@@ -981,6 +981,15 @@ button.button-email {
   color: #303030;
 }
 
+.wspolpraca-zdj {
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+a.more-text.more-wspolpraca {
+  margin-top: 5px;
+}
+
 .footer {
   background-color: #098241;
 }
@@ -1272,6 +1281,10 @@ a.sc-logo {
   }
 }
 @media screen and (max-width: 992px) {
+  div.col-md-2.dot-four {
+    width: 20%;
+  }
+
   .kontener {
     position: static;
     margin-top: 30px;
@@ -1515,6 +1528,10 @@ a.sc-logo {
   }
 }
 @media screen and (max-width: 480px) {
+  div.col-md-2.dot-four {
+    width: 100%;
+  }
+
   p.newsletter-header {
     font-size: 22px;
   }
