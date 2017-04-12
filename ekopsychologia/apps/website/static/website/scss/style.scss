@@ -943,6 +943,7 @@ a.btn.btn-default.btn-circle.btn-about:focus {
 
 ////....................ARTYKULY.........................
 
+
 .aktualnosci {
   margin-bottom: 30px;
 }
@@ -953,6 +954,7 @@ ul.article-li {
 
 .article-bacground {
   background-color: $white-accent;
+  background: linear-gradient(to bottom, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
 }
 
 li.article-style-li {
@@ -1081,6 +1083,15 @@ button.button-email {
 }
 a.more-text.more-wspolpraca {
   margin-top: 5px;
+}
+//.......................................................
+
+//.....................OSIĄGNIĘCIA.......................
+.leaf {
+  background: url("../images/leaf.png.png") no-repeat center center;
+}
+.wafel {
+  height: 200px;
 }
 //.......................................................
 
@@ -1591,6 +1602,7 @@ a.sc-logo {
   .sc-block {
     height: 200px;
   }
+
   .slick-prev:before,
   .slick-next:before {
     display: none;

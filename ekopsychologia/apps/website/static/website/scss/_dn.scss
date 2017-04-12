@@ -61,10 +61,11 @@
   background: url(../images/eko_gallery.png) top center no-repeat;
   height: 200px;
 }
+
 .gallery-wrapper{
   position: relative;
-  margin-bottom: 20px;
-    margin-top: 25px;
+  //margin-bottom: 20px;
+  //  margin-top: 25px;
   @include bg-fake-shadow;
 
   .slick-dots{
