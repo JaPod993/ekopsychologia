@@ -62,6 +62,13 @@
 .gallery-wrapper{
   position: relative;
   margin-bottom: 20px;
+    margin-top: 25px;
+    background: #cecece;
+    background: -moz-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
+    background: -webkit-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
+    background: linear-gradient(to bottom, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cecece', endColorstr='#e4e4e4',GradientType=0 );
+
   .slick-dots{
     bottom: -30px;
     top:auto;
