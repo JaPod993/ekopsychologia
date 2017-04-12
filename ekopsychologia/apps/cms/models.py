@@ -79,3 +79,12 @@ class IsSite(models.Model):
 
     class Meta():
         app_label = 'cms'
+
+
+class GalleryDistinction(models.Model):
+
+    gallery = models.ForeignKey('cms.Gallery')
+    in_global = models.BooleanField(default=False)
+
+    class Meta:
+        app_label = 'cms'

@@ -1,0 +1,52 @@
+{% extends "corecms/admin/change_form.html" %}
+
+{% block field_sets %}
+    {{ block.super }}
+    <style>
+        #connector-children-area .gallery-table tr td:nth-child(2){
+            width: 50px;
+            text-align: center;;
+        }
+        #connector-children-area .gallery-table .add-to-gallery-site.active{
+            color: red;
+        }
+    </style>
+    <script>
+        $(function () {
+            setInterval(function(){
+                if(!$("#connector-children-area .gallery-table").hasClass('.homepage-fixed')){
+                    var add_to_gallery_site = '<a href="#" class="add-to-gallery-site" title="Pokaż w galerii globalnej"><i class="glyphicon glyphicon-globe"></i></a>';
+                    $("#connector-children-area .gallery-table tr td:nth-child(2)").append(add_to_gallery_site);
+                    $("#connector-children-area .gallery-table").addClass('.homepage-fixed');
+                    $("#connector-children-area .gallery-table .add-to-gallery-site").on('click',function(){
+                        var that = $(this);
+                        $.ajax({
+                            type: "POST",
+                            url: "/admin/cms/gallery/set-global/",
+                            dataType: "json",
+                            data: {
+                                gallery_id: that.parents("tr").data('id'),
+                                set: !that.hasClass("active"),
+                            },
+                            success: function (data) {
+                                if(data.active == 'true'){
+                                    that.addClass("active");
+                                }else{
+                                    that.removeClass("active");
+                                }
+                            }
+                        });
+                    });
+                }
+            }, 1000);
+
+
+
+
+
+
+
+
+        });
+    </script>
+{% endblock %}
