@@ -61,6 +61,37 @@
   margin-bottom: 30px;
 }
 
+.gallery-container {
+  background: url(../images/eko_gallery.png) top center no-repeat;
+  height: 200px;
+}
+
+.gallery-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+.gallery-wrapper .slick-dots {
+  bottom: -30px;
+  top: auto;
+}
+.gallery-wrapper .slick-dots li button:before {
+  color: #098241;
+}
+
+.gallery-container a {
+  display: inline-block;
+  margin: 34px 12px;
+  outline: none;
+}
+.gallery-container a:hover, .gallery-container a:active {
+  outline: none !important;
+}
+.gallery-container a img {
+  display: block;
+  -webkit-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.6);
+  box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.6);
+}
+
 .text-justify {
   text-align: justify;
 }
@@ -344,7 +375,7 @@ div.o-nas {
 div.about {
   margin-top: 30px;
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
   color: #303030;
   margin-bottom: 150px;
@@ -851,14 +882,14 @@ li.article-style-li {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 16px;
-  color: #303030;
+  color: #595959;
   text-align: justify;
 }
 li.article-style-li span {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 16px;
-  color: #303030;
+  color: #595959;
   text-align: justify;
 }
 li.article-style-li a {
@@ -894,7 +925,7 @@ div.article-title-2 {
 }
 
 .newsletter-bg {
-  background: url("../images/newsletter_bg.png") no-repeat center center;
+  background: url("../images/newsletter_bg.png") no-repeat center 64%;
 }
 
 .email-form {
@@ -905,13 +936,20 @@ div.article-title-2 {
 input.form-control {
   border-radius: 0;
 }
+input.form-control:focus {
+  border-color: #cccccc;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
 
 button.button-email {
+  color: #374778;
   border-radius: 0;
 }
 
-.email-form-width {
-  width: 250px;
+.kontener-inline {
+  display: inline-block;
 }
 
 .newsletter-header {
@@ -924,10 +962,17 @@ button.button-email {
 
 .newsletter-body {
   font-family: 'Roboto', sans-serif;
-  font-weight: 100;
+  font-weight: 400;
   font-size: 16px;
   color: #303030;
   margin-bottom: 17px;
+}
+
+.partner-1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #303030;
 }
 
 .footer {
@@ -965,7 +1010,7 @@ span.dolacz {
   padding-right: 8px;
 }
 
-#eko-white {
+.eko-white {
   padding-top: 40px;
   padding-bottom: 50px;
 }
@@ -1038,7 +1083,7 @@ ul.menu-bottom li.projekty,
 ul.menu-bottom li.menu,
 ul.menu-bottom li.kontakt {
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   color: #ffffff;
   font-size: 18px;
   padding-bottom: 10px;
@@ -1071,7 +1116,7 @@ ul.menu-bottom li a:hover {
 
 .sc-brand {
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
   color: #777677;
   height: 50px;
@@ -1080,7 +1125,7 @@ ul.menu-bottom li a:hover {
 
 a.sc-logo {
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
   color: #777677;
   transition: color .5s ease;
@@ -1110,6 +1155,10 @@ a.sc-logo {
   top: -2px;
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.slick-slide img {
+  display: inline-block;
 }
 
 @media screen and (max-width: 1700px) {
@@ -1149,8 +1198,16 @@ a.sc-logo {
   .sc-block {
     height: 450px;
   }
+
+  div.col-md-2.dot-four {
+    width: 20%;
+  }
 }
 @media screen and (max-width: 1200px) {
+  div.col-md-2.dot-four {
+    width: 20%;
+  }
+
   .sc-block {
     height: 400px;
   }
@@ -1194,7 +1251,7 @@ a.sc-logo {
     font-size: 16px;
   }
 
-  #eko-white {
+  .eko-white {
     padding-top: 50px;
     padding-right: 20px;
     padding-bottom: 30px;
@@ -1243,7 +1300,7 @@ a.sc-logo {
     height: 770px;
   }
 
-  #eko-white {
+  .eko-white {
     padding-left: 120px;
     padding-right: 0;
     padding-top: 50px;
@@ -1282,6 +1339,23 @@ a.sc-logo {
   }
 }
 @media screen and (max-width: 768px) {
+  div.newsletter-text {
+    text-align: center;
+  }
+
+  .email-form-width {
+    text-align: center;
+  }
+
+  div.input-group.email-form {
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+
+  p.newsletter-header {
+    margin-top: 25px;
+  }
+
   img.default.img-responsive {
     width: 100%;
   }
@@ -1317,6 +1391,10 @@ a.sc-logo {
   }
 }
 @media screen and (max-width: 767px) {
+  div.col-md-2.dot-four {
+    width: 50%;
+  }
+
   div.o-nas {
     height: 1100px;
   }
@@ -1349,7 +1427,7 @@ a.sc-logo {
     border: none;
     background-color: #076332 !important;
     font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 16px;
     color: #ffffff !important;
   }
@@ -1396,7 +1474,7 @@ a.sc-logo {
     padding-left: 10px;
   }
 
-  img#eko-white {
+  img.eko-white {
     padding-top: 30px;
     padding-left: 0;
   }
@@ -1431,6 +1509,10 @@ a.sc-logo {
   }
 }
 @media screen and (max-width: 480px) {
+  p.newsletter-header {
+    font-size: 22px;
+  }
+
   .sc-block {
     height: 200px;
   }

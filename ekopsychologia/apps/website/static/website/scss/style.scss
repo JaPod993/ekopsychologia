@@ -9,6 +9,7 @@ $hover: #0c824b; //zielony hover
 $footer: #098241;
 $title: #374778; //niebieski akcent
 $tekst: #8c8c8c; //szary tekst
+$tekst-ciemny: #595959;//#737373;
 
 // justify class
 .text-justify {
@@ -35,7 +36,7 @@ $tekst: #8c8c8c; //szary tekst
 }
 @mixin roboto-regular {
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
 }
 @mixin roboto-medium {
   font-family: 'Roboto', sans-serif;
@@ -53,7 +54,11 @@ $tekst: #8c8c8c; //szary tekst
   font-size: 16px;
 }
 
-
+@mixin shadow-2 {
+  -webkit-box-shadow: 0px 0px 42px 7px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 0px 42px 7px rgba(0,0,0,0.15);
+  box-shadow: 0px 0px 42px 7px rgba(0,0,0,0.15);
+}
 //.............................................
 
 
@@ -895,12 +900,12 @@ li.article-style-li {
   list-style: none;
   @include roboto-light;
   font-size: 16px;
-  color: $dark-grey;
+  color: $tekst-ciemny;
   text-align: justify;
   span {
     @include roboto-light;
     font-size: 16px;
-    color: $dark-grey;
+    color: $tekst-ciemny;
     text-align: justify;
   }
   a {
@@ -948,20 +953,37 @@ div.article-title-2 {
 //......................NEWSLETTER.......................
 
 .newsletter-bg {
-  background: url("../images/newsletter_bg.png") no-repeat center center;
+  background: url("../images/newsletter_bg.png") no-repeat center 64%;
 }
 .email-form {
   margin-top: 33px;
   margin-bottom: 33px;
 }
+.input-group {
+  //box-shadow: 0px 4px 7.68px 0.32px rgba(0, 0, 0, 0.25);
+}
+
 input.form-control {
   border-radius: 0;
+  //box-shadow: 0px 4px 7.68px 0.32px rgba(0, 0, 0, 0.25);
+  //border: none;
+  &:focus {
+    border-color: #cccccc;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
 }
 button.button-email {
+  color: $title;
   border-radius: 0;
+  //border: none;
 }
 .email-form-width {
-  width: 250px;
+  //width: 260px;
+}
+.kontener-inline {
+  display: inline-block;
 }
 .newsletter-header {
   @include roboto-medium;
@@ -970,12 +992,23 @@ button.button-email {
   margin-top: 17px;
 }
 .newsletter-body {
-  @include roboto-thin;
+  @include roboto-regular;
   font-size: 16px;
   color: $dark-grey;
   margin-bottom: 17px;
+
 }
 //.......................................................
+
+
+//......................WSPÓŁPRACA.......................
+.partner-1 {
+  @include roboto-medium;
+  font-size: 16px;
+  color: $dark-grey;
+}
+//.......................................................
+
 
 
 //...................STOPKA............................
@@ -1008,7 +1041,7 @@ span.dolacz {
 .circle_btn_padding_footer {
   padding-right: 8px;
 }
-#eko-white {
+.eko-white {
   padding-top: 40px;
   padding-bottom: 50px;
 }
@@ -1124,9 +1157,9 @@ a.sc-logo {
   margin-right: 5px;
 }
 //...................................................
-
-
-//Non mobile first media
+.slick-slide img {
+  display: inline-block;
+}
 
 //..............MEDIA QUERIES..................
 
@@ -1167,10 +1200,17 @@ a.sc-logo {
   .sc-block {
     height: 450px;
   }
-
+  div.col-md-2.dot-four {
+    width: 20%;
+  //  border: 1px solid #000;
+  }
 }
 
 @media screen and (max-width : 1200px) {
+  div.col-md-2.dot-four {
+    width: 20%;
+ //   border: 1px solid #000;
+  }
    .sc-block {
     height: 400px;
   }
@@ -1205,7 +1245,7 @@ a.sc-logo {
       font-size: 16px;
     }
   }
-  #eko-white {
+  .eko-white {
     padding-top: 50px;
     padding-right: 20px;
     padding-bottom: 30px;
@@ -1220,6 +1260,9 @@ a.sc-logo {
 }
 
 @media screen and (max-width : 992px) {
+  div.partner-1 {
+    //font-size: 14px;
+  }
   .kontener {
     position: static;
     margin-top: 30px;
@@ -1247,7 +1290,7 @@ a.sc-logo {
     height: 770px;
   }
   //stopka
-  #eko-white {
+  .eko-white {
     padding-left: 120px;
     padding-right: 0;
     padding-top: 50px;
@@ -1290,6 +1333,19 @@ ul.menu-bottom {
 }
 
 @media screen and (max-width:768px) {
+  div.newsletter-text {
+    text-align: center;
+  }
+  .email-form-width {
+    text-align: center;
+  }
+  div.input-group.email-form {
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+  p.newsletter-header {
+    margin-top: 25px;
+  }
  img.default.img-responsive {
     //height: 350px;
     width: 100%;
@@ -1324,6 +1380,12 @@ ul.menu-bottom {
 
 }
 @media screen and (max-width:767px) {
+  div.col-md-2.dot-four {
+    width: 50%;
+
+
+    //border: 1px solid #000;
+  }
 div.o-nas {
     height: 1100px;
   }
@@ -1392,7 +1454,7 @@ div.o-nas {
   .padding-button-name {
     padding-left: 10px;
   }
-  img#eko-white {
+  img.eko-white {
     padding-top: 30px;
     padding-left: 0;
   }
@@ -1424,6 +1486,9 @@ div.o-nas {
 }
 
 @media screen and (max-width:480px){
+  p.newsletter-header {
+    font-size: 22px;
+  }
   .sc-block {
     height: 200px;
   }
