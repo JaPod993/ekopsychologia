@@ -3,7 +3,10 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
+from cms.views import GallerySetGlobalView
+
 urlpatterns = [
+    url(r'^admin/cms/gallery/set-global/$', GallerySetGlobalView.as_view()),
     url(r'^admin/cms/', include('corecms.urls.admin', namespace='admin-corecms')),
     #url(r'^logout/$', 'django.contrib.auth.views.logout', {'next': '/'}, name="logout-url"),
     url(r'^admin/', include(admin.site.urls)),
