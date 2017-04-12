@@ -38,15 +38,10 @@
 .projects-wrapper {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cecece+0,e4e4e4+10,e4e4e4+10 */
   background: #cecece;
-  /* Old browsers */
   background: -moz-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
-  /* FF3.6-15 */
   background: -webkit-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
-  /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cecece', endColorstr='#e4e4e4',GradientType=0 );
-  /* IE6-9 */
   padding: 0px 0px 35px 0px;
 }
 .projects-wrapper .container.title {
@@ -82,6 +77,17 @@
 }
 .gallery-wrapper .slick-dots li button:before {
   color: #098241;
+}
+
+.publications-wrapper {
+  background: #cecece;
+  background: -moz-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
+  background: -webkit-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
+  background: linear-gradient(to bottom, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cecece', endColorstr='#e4e4e4',GradientType=0 );
+}
+.publications-wrapper a.more-text {
+  margin-bottom: 30px;
 }
 
 .gallery-container a {
