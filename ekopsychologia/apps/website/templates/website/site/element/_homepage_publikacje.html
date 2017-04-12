@@ -3,19 +3,25 @@
 
 
 {% if homepage_publikacje_list|length > 0 %}
+<div class="publications-wrapper">
 <div class="container">
 
-    Publikacje
+    <div class="container title">
+        <span class="title-text">Publikacje</span>
+    </div>
 
-    <div class="row ">
+
+    <div class="row publications-slick">
         {% for article, file in homepage_publikacje_list %}
             {% if file.distinction.cover %}
                 <div class="col-md-3">
-                    {{ article }}<br>
+                    <div class="text-center"><strong>{{ article }}</strong></div>
+                    <div class="text-center">
                     {% take_page_of_pdf file.absolute_path 0 as page %}
                     {% thumbnail page "175x240" as im %}
                         <img src="{{ im.url }}">
                     {% endthumbnail %}
+                    </div>
                     <br><a href="{{ file.url }}" download="{{ file.download_name }}">Pobierz</a>
                 </div>
             {% endif %}
@@ -26,8 +32,47 @@
         <a class="more-text" href="{{ homepage_publikacje.get_absolute_url }}">Więcej</a>
     </div>
 </div>
+</div>
+
+<script>
+$(function(){
+
+    $('.publications-slick').slick({
+  dots: true,
+  infinite: false,
+  speed: 300,
+  arrows: true,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+    });
+
+});
+</script>
+
 {% endif %}
-
-
-
 {% endif %}

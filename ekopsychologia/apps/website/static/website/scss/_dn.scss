@@ -34,14 +34,16 @@
     }
   }
 }
-
+@mixin bg-fake-shadow{
+    background: #cecece;
+    background: -moz-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
+    background: -webkit-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
+    background: linear-gradient(to bottom, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cecece', endColorstr='#e4e4e4',GradientType=0 );
+}
 .projects-wrapper{
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cecece+0,e4e4e4+10,e4e4e4+10 */
-  background: rgb(206,206,206); /* Old browsers */
-  background: -moz-linear-gradient(top, rgba(206,206,206,1) 0%, rgba(228,228,228,1) 10%, rgba(228,228,228,1) 10%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(206,206,206,1) 0%,rgba(228,228,228,1) 10%,rgba(228,228,228,1) 10%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(206,206,206,1) 0%,rgba(228,228,228,1) 10%,rgba(228,228,228,1) 10%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cecece', endColorstr='#e4e4e4',GradientType=0 ); /* IE6-9 */
+  @include bg-fake-shadow;
   padding: 0px 0px 35px 0px;
   .container.title{
     margin-bottom: 30px;
@@ -63,11 +65,7 @@
   position: relative;
   margin-bottom: 20px;
     margin-top: 25px;
-    background: #cecece;
-    background: -moz-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
-    background: -webkit-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
-    background: linear-gradient(to bottom, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cecece', endColorstr='#e4e4e4',GradientType=0 );
+  @include bg-fake-shadow;
 
   .slick-dots{
     bottom: -30px;
@@ -77,9 +75,13 @@
     color:#098241;
   }
 }
+.publications-wrapper{
+  @include bg-fake-shadow;
 
-
-
+  a.more-text{
+    margin-bottom: 30px;
+  }
+}
 .gallery-container a{
     display: inline-block;
     margin: 34px 12px;
