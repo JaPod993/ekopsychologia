@@ -1,0 +1,10 @@
+{% extends 'website/site/base/layout.html' %}
+
+{% block body_content %}
+    Galerie<br>
+    {% for gallery in object_list %}
+        {{ gallery }}<br>
+        {% include "website/site/element/_gallery.html" with gallery=gallery %}
+        <hr>
+    {% endfor %}
+{% endblock %}

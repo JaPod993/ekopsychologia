@@ -25,6 +25,7 @@ class Command(BaseCommand):
 
         for site in Site.objects.filter(old_cms_id__in=old_cms_sites).all():
             RelationMenuSite.objects.get_or_create(parent=menu_top, child=site)
+            RelationMenuSite.objects.get_or_create(parent=menu_bottom, child=site)
 
         # for site_name in sites:
         #     site, created = Site.objects.get_or_create(identity=site_name, defaults={'status': Site.STATUS_PUBLISHED})
