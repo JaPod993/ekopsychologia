@@ -1086,17 +1086,46 @@ a.more-text.more-wspolpraca {
 }
 //.......................................................
 
+
 //.....................OSIĄGNIĘCIA.......................
 .osiagniecia-bg {
    @include bg-fake-shadow;
 }
-
+img.rotate-180{
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Safari */
+    transform: rotate(180deg);
+}
+img.rotate-180-Y {
+  -ms-transform: rotateY(180deg); /* IE 9 */
+  -webkit-transform: rotateY(180deg); /* Safari */
+  transform: rotateY(180deg);
+}
+img.rotate-180-X {
+  -ms-transform: rotateX(180deg); /* IE 9 */
+  -webkit-transform: rotateX(180deg); /* Safari */
+  transform: rotateX(180deg);
+}
 .osiagniecia-podpis,
 .osiagniecia-kreska {
   @include roboto-bold;
   font-size: 16px;
-  color: $grey;
+  color: #b3b3b3;
+  letter-spacing: 1px;
   text-shadow: 1.5px 1px 0 #000000;
+}
+.osiagniecia-cyfry {
+  @include roboto-bold;
+  font-size: 36px;
+  color: $white;
+}
+.leaf-relative {
+  position: relative;
+  top: -75px;
+}
+div.leaf {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 //.......................................................
