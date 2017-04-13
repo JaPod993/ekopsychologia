@@ -37,7 +37,7 @@
 
 .projects-wrapper {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cecece+0,e4e4e4+10,e4e4e4+10 */
-  background: #cecece;
+  background: #efefef;
   background: -moz-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
   background: -webkit-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
   background: linear-gradient(to bottom, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
@@ -63,7 +63,7 @@
 
 .gallery-wrapper {
   position: relative;
-  background: #cecece;
+  background: #efefef;
   background: -moz-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
   background: -webkit-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
   background: linear-gradient(to bottom, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
@@ -78,7 +78,7 @@
 }
 
 .publications-wrapper {
-  background: #cecece;
+  background: #efefef;
   background: -moz-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
   background: -webkit-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
   background: linear-gradient(to bottom, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
@@ -995,12 +995,21 @@ a.more-text.more-wspolpraca {
   margin-top: 5px;
 }
 
-.leaf {
-  background: url("../images/leaf.png.png") no-repeat center center;
+.osiagniecia-bg {
+  background: #efefef;
+  background: -moz-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
+  background: -webkit-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
+  background: linear-gradient(to bottom, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cecece', endColorstr='#e4e4e4',GradientType=0 );
 }
 
-.wafel {
-  height: 200px;
+.osiagniecia-podpis,
+.osiagniecia-kreska {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #c4c4c4;
+  text-shadow: 1.5px 1px 0 #000000;
 }
 
 .footer {

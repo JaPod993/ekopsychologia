@@ -35,7 +35,7 @@
   }
 }
 @mixin bg-fake-shadow{
-    background: #cecece;
+    background: #efefef;
     background: -moz-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
     background: -webkit-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
     background: linear-gradient(to bottom, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
