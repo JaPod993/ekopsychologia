@@ -1087,12 +1087,18 @@ a.more-text.more-wspolpraca {
 //.......................................................
 
 //.....................OSIĄGNIĘCIA.......................
-.leaf {
-  background: url("../images/leaf.png.png") no-repeat center center;
+.osiagniecia-bg {
+   @include bg-fake-shadow;
 }
-.wafel {
-  height: 200px;
+
+.osiagniecia-podpis,
+.osiagniecia-kreska {
+  @include roboto-bold;
+  font-size: 16px;
+  color: $grey;
+  text-shadow: 1.5px 1px 0 #000000;
 }
+
 //.......................................................
 
 //...................STOPKA............................
