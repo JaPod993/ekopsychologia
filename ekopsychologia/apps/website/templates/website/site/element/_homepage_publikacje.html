@@ -4,34 +4,35 @@
 
 {% if homepage_publikacje_list|length > 0 %}
 <div class="publications-wrapper">
-<div class="container">
-
     <div class="container title">
         <span class="title-text">Publikacje</span>
     </div>
+<div class="container">
 
 
     <div class="row publications-slick">
         {% for article, file in homepage_publikacje_list %}
             {% if file.distinction.cover %}
                 <div class="col-md-3">
-                    <div class="text-center"><strong>{{ article }}</strong></div>
+                    <div class="text-center publication-title"><strong>{{ article|truncatewords:4 }}</strong></div>
                     <div class="text-center">
                     {% take_page_of_pdf file.absolute_path 0 as page %}
-                    {% thumbnail page "175x240" as im %}
-                        <img src="{{ im.url }}">
+                    {% thumbnail page "175x240" seoname=article|addstr:"" as im %}
+                        <img src="{{ im.url }}" class="img-responsive publication-image">
                     {% endthumbnail %}
                     </div>
-                    <br><a href="{{ file.url }}" download="{{ file.download_name }}">Pobierz</a>
+                    <div class="text-center">
+                        <a href="{{ file.url }}" class="download-btn" download="{{ file.download_name }}"><span class="fa fa-file-pdf-o"></span> Pobierz</a>
+                    </div>
                 </div>
             {% endif %}
         {% endfor %}
     </div>
 
+</div>
     <div class="container more">
         <a class="more-text" href="{{ homepage_publikacje.get_absolute_url }}">Więcej</a>
     </div>
-</div>
 </div>
 
 <script>
@@ -55,7 +56,7 @@ $(function(){
       }
     },
     {
-      breakpoint: 768,
+      breakpoint: 767,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 2
