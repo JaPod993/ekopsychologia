@@ -111,19 +111,29 @@
     -webkit-box-shadow: 3px 4px 0 0 #a7a7a7;
     box-shadow: 3px 4px 0 0 #a7a7a7;
   }
-  
+
 }
-.gallery-container a{
-    display: inline-block;
-    margin: 34px 12px;
+.gallery-container{
+  .slick-slide{
+    text-align: center;
+  }
+a {
+  display: inline-block;
+  margin: 34px 12px;
   outline: none;
-  &:hover, &:active{
+  &:hover, &:active {
     outline: none !important;
   }
   img {
-    display: block;
+    display: inline-block;
     -webkit-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.6);
     box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.6);
+  }
+}
+}
+.navbar-collapse{
+  .navbar-nav{
+    margin: 0px;
   }
 }
 .navbar-default .navbar-toggle{
