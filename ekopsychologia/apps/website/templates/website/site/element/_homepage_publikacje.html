@@ -17,7 +17,7 @@
                     <div class="text-center publication-title"><strong>{{ article|truncatewords:4 }}</strong></div>
                     <div class="text-center">
                     {% take_page_of_pdf file.absolute_path 0 as page %}
-                    {% thumbnail page "175x240" as im %}
+                    {% thumbnail page "175x240" seoname=article|addstr:"" as im %}
                         <img src="{{ im.url }}" class="img-responsive publication-image">
                     {% endthumbnail %}
                     </div>
