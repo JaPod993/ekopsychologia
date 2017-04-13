@@ -1729,3 +1729,22 @@ a.sc-logo {
     }
   }
 }
+
+
+@media screen and (max-width: 768px){
+
+  .circle_btn_padding{
+    padding-right: 8px;
+    position: relative;
+    top:4px;
+    &:last-child{
+      padding-right: 0px;
+    }
+  }
+  .nav>li>a{
+    padding: 10px 5px;
+  }
+  .nav.nav-content-bottom{
+    padding-top: 5px;
+  }
+}
