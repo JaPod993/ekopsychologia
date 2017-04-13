@@ -20,10 +20,16 @@ $(function () {
 });
 
 
-$(function () {
+$(window).load(function () {
+
     var hasBeenTrigged = false;
+    var odleglosc = $('.osiagniecia-bg').offset().top - 550 - $('.osiagniecia-bg').height();
+
     $(window).scroll(function () {
-        if ($(this).scrollTop() >= 2500 && !hasBeenTrigged) { // if scroll is greater/equal then 100 and hasBeenTrigged is set to false.
+ console.log(odleglosc)
+        if ($(this).scrollTop() >= odleglosc && !hasBeenTrigged) { // if scroll is greater/equal then 100 and hasBeenTrigged is set to false.
+            console.log("aaaaaaa")
+
 
             $('.osiagniecia-cyfry').each(function () {
                 $(this).prop('Counter', 0).animate({
@@ -36,7 +42,7 @@ $(function () {
                     }
                 });
             });
-            hasBeenTrigged = true;
+           hasBeenTrigged = true;
         }
     });
 });
