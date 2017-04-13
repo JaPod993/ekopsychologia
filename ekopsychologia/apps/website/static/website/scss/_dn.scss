@@ -68,10 +68,13 @@
   //margin-bottom: 20px;
   //  margin-top: 25px;
   @include bg-fake-shadow;
-
+  padding-bottom: 25px;
   .slick-dots{
     bottom: -30px;
     top:auto;
+  }
+  .container.title{
+    margin-bottom: 20px;
   }
   .slick-dots li button:before{
     color:#098241;
