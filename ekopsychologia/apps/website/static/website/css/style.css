@@ -1743,3 +1743,22 @@ a.sc-logo {
 #newsletter-sign-in .msg.success {
   color: #4caf50;
 }
+
+@media screen and (max-width: 768px) {
+  .circle_btn_padding {
+    padding-right: 8px;
+    position: relative;
+    top: 4px;
+  }
+  .circle_btn_padding:last-child {
+    padding-right: 0px;
+  }
+
+  .nav > li > a {
+    padding: 10px 5px;
+  }
+
+  .nav.nav-content-bottom {
+    padding-top: 5px;
+  }
+}
