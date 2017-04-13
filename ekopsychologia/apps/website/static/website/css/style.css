@@ -1084,16 +1084,39 @@ img.rotate-180-X {
   font-weight: 700;
   font-size: 36px;
   color: #ffffff;
+  padding-bottom: 40px;
 }
 
 .leaf-relative {
   position: relative;
-  top: -75px;
+  top: -78px;
+}
+
+.leaf-1,
+.leaf-3 {
+  padding-left: 25px;
+}
+
+.leaf-2 {
+  padding-left: 15px;
+}
+
+.leaf-4 {
+  padding-right: 15px;
+}
+
+.leaf-6,
+.leaf-5 {
+  padding-right: 20px;
 }
 
 div.leaf {
   padding-left: 0;
   padding-right: 0;
+}
+
+.title-osiagniecia {
+  margin-bottom: 30px;
 }
 
 .footer {
@@ -1325,6 +1348,14 @@ a.sc-logo {
   }
 }
 @media screen and (max-width: 1200px) {
+  .osiagniecia-cyfry {
+    font-size: 30px;
+  }
+
+  .leaf-relative {
+    top: -65px;
+  }
+
   div.col-md-2.dot-four {
     width: 20%;
   }
@@ -1387,6 +1418,10 @@ a.sc-logo {
   }
 }
 @media screen and (max-width: 992px) {
+  .leaf-relative {
+    top: -75px;
+  }
+
   div.col-md-2.dot-four {
     width: 20%;
   }
@@ -1682,6 +1717,14 @@ a.sc-logo {
 @media screen and (max-width: 360px) {
   div.o-nas {
     height: 1220px;
+  }
+
+  .osiagniecia-cyfry {
+    font-size: 24px;
+  }
+
+  .leaf-relative {
+    top: -55px;
   }
 }
 #newsletter-sign-in button {
