@@ -74,6 +74,7 @@
 .gallery-wrapper .slick-dots {
   bottom: -30px;
   top: auto;
+  margin-left: -15px;
 }
 .gallery-wrapper .container.title {
   margin-bottom: 20px;
