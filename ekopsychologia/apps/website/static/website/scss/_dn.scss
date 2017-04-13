@@ -125,3 +125,7 @@ box-shadow: 3px 4px 0 0 #a7a7a7;
     box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.6);
   }
 }
+.navbar-default .navbar-toggle{
+  position: relative;
+  z-index: 1;
+}
