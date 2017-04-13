@@ -26,9 +26,7 @@ $(window).load(function () {
     var odleglosc = $('.osiagniecia-bg').offset().top - 550 - $('.osiagniecia-bg').height();
 
     $(window).scroll(function () {
- console.log(odleglosc)
         if ($(this).scrollTop() >= odleglosc && !hasBeenTrigged) { // if scroll is greater/equal then 100 and hasBeenTrigged is set to false.
-            console.log("aaaaaaa")
 
 
             $('.osiagniecia-cyfry').each(function () {
