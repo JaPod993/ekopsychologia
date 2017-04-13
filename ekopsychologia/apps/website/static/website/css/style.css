@@ -1003,13 +1003,55 @@ a.more-text.more-wspolpraca {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cecece', endColorstr='#e4e4e4',GradientType=0 );
 }
 
+img.rotate-180 {
+  -ms-transform: rotate(180deg);
+  /* IE 9 */
+  -webkit-transform: rotate(180deg);
+  /* Safari */
+  transform: rotate(180deg);
+}
+
+img.rotate-180-Y {
+  -ms-transform: rotateY(180deg);
+  /* IE 9 */
+  -webkit-transform: rotateY(180deg);
+  /* Safari */
+  transform: rotateY(180deg);
+}
+
+img.rotate-180-X {
+  -ms-transform: rotateX(180deg);
+  /* IE 9 */
+  -webkit-transform: rotateX(180deg);
+  /* Safari */
+  transform: rotateX(180deg);
+}
+
 .osiagniecia-podpis,
 .osiagniecia-kreska {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 16px;
-  color: #c4c4c4;
+  color: #b3b3b3;
+  letter-spacing: 1px;
   text-shadow: 1.5px 1px 0 #000000;
+}
+
+.osiagniecia-cyfry {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  color: #ffffff;
+}
+
+.leaf-relative {
+  position: relative;
+  top: -75px;
+}
+
+div.leaf {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .footer {
