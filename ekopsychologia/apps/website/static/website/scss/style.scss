@@ -341,6 +341,34 @@ div.col-sm-12.nav-padding {
     font-size: 14px;
     margin-left: 330px;
   }
+  opacity: 0;
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+  transition: all 1.5s;
+}
+
+.slide-2 {
+  @include roboto-thin;
+  font-size: 20px;
+  color: $white;
+  margin-top: 114px;
+  opacity: 0;
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+  transition: all 1.5s;
+}
+
+.slick-current {
+  & .slide-2,
+  & .slide-1 {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slider-style {
+  font-size: 20px;
 }
 
 //.............................................
@@ -943,7 +971,6 @@ a.btn.btn-default.btn-circle.btn-about:focus {
 
 ////....................ARTYKULY.........................
 
-
 .aktualnosci {
   margin-bottom: 30px;
 }
@@ -1081,31 +1108,36 @@ button.button-email {
   margin-top: 5px;
   margin-bottom: 30px;
 }
+
 a.more-text.more-wspolpraca {
   margin-top: 5px;
 }
-//.......................................................
 
+//.......................................................
 
 //.....................OSIĄGNIĘCIA.......................
 .osiagniecia-bg {
-   @include bg-fake-shadow;
+  @include bg-fake-shadow;
 }
-img.rotate-180{
-    -ms-transform: rotate(180deg); /* IE 9 */
-    -webkit-transform: rotate(180deg); /* Safari */
-    transform: rotate(180deg);
+
+img.rotate-180 {
+  -ms-transform: rotate(180deg); /* IE 9 */
+  -webkit-transform: rotate(180deg); /* Safari */
+  transform: rotate(180deg);
 }
+
 img.rotate-180-Y {
   -ms-transform: rotateY(180deg); /* IE 9 */
   -webkit-transform: rotateY(180deg); /* Safari */
   transform: rotateY(180deg);
 }
+
 img.rotate-180-X {
   -ms-transform: rotateX(180deg); /* IE 9 */
   -webkit-transform: rotateX(180deg); /* Safari */
   transform: rotateX(180deg);
 }
+
 .osiagniecia-podpis,
 .osiagniecia-kreska {
   @include roboto-bold;
@@ -1114,34 +1146,42 @@ img.rotate-180-X {
   letter-spacing: 1px;
   text-shadow: 1.5px 1px 0 #000000;
 }
+
 .osiagniecia-cyfry {
   @include roboto-bold;
   font-size: 36px;
   color: $white;
   padding-bottom: 40px;
 }
+
 .leaf-relative {
   position: relative;
   top: -78px;
 }
+
 .leaf-1,
 .leaf-3 {
   padding-left: 25px;
 }
+
 .leaf-2 {
   padding-left: 15px;
 }
+
 .leaf-4 {
   padding-right: 15px;
 }
+
 .leaf-6,
 .leaf-5 {
   padding-right: 20px;
 }
+
 div.leaf {
   padding-left: 0;
   padding-right: 0;
 }
+
 .title-osiagniecia {
   margin-bottom: 30px;
 }
@@ -1384,6 +1424,9 @@ a.sc-logo {
   .slide-1 {
     margin-top: 139px;
   }
+  .slide-2 {
+    margin-top: 89px;
+  }
   //footer medium screen styles
   span.dolacz,
   ul.lista-projekty li,
@@ -1449,6 +1492,9 @@ a.sc-logo {
   }
   .slide-1 {
     margin-top: 114px;
+  }
+  .slide-2 {
+    margin-top: 64px;
   }
   div.o-nas {
     height: 770px;
@@ -1538,6 +1584,13 @@ a.sc-logo {
       margin-left: 240px;
     }
   }
+  .slider-style {
+    font-size: 16px;
+  }
+  .slide-2 {
+    margin-top: 54px;
+    font-size: 18px;
+  }
   div.o-nas {
     //height: 800px;
   }
@@ -1548,7 +1601,7 @@ a.sc-logo {
   div.col-md-2.dot-four {
     width: 50%;
 
-  //border: 1px solid #000;
+    //border: 1px solid #000;
   }
   div.o-nas {
     height: 1100px;
@@ -1655,7 +1708,7 @@ a.sc-logo {
   div.col-md-2.dot-four {
     width: 100%;
 
-  //border: 1px solid #000;
+    //border: 1px solid #000;
   }
   p.newsletter-header {
     font-size: 22px;
@@ -1682,6 +1735,15 @@ a.sc-logo {
       margin-left: 180px;
     }
   }
+  .slide-2 {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 13px;
+    font-size: 13px;
+  }
+  .slider-style {
+    font-size: 10px;
+  }
   div.o-nas {
     height: 1150px;
   }
@@ -1701,14 +1763,13 @@ a.sc-logo {
   div.o-nas {
     height: 1220px;
   }
-   .osiagniecia-cyfry {
+  .osiagniecia-cyfry {
     font-size: 24px;
   }
   .leaf-relative {
     top: -55px;
   }
 }
-
 
 //.............................................
 
@@ -1730,21 +1791,20 @@ a.sc-logo {
   }
 }
 
+@media screen and (max-width: 768px) {
 
-@media screen and (max-width: 768px){
-
-  .circle_btn_padding{
+  .circle_btn_padding {
     padding-right: 8px;
     position: relative;
-    top:4px;
-    &:last-child{
+    top: 4px;
+    &:last-child {
       padding-right: 0px;
     }
   }
-  .nav>li>a{
+  .nav > li > a {
     padding: 10px 5px;
   }
-  .nav.nav-content-bottom{
+  .nav.nav-content-bottom {
     padding-top: 5px;
   }
 }

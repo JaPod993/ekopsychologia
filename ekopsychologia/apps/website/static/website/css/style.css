@@ -401,6 +401,10 @@ div.col-sm-12.nav-padding {
   font-size: 24px;
   color: #ffffff;
   margin-top: 164px;
+  opacity: 0;
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+  transition: all 1.5s;
 }
 .slide-1 p {
   margin-bottom: 0;
@@ -408,6 +412,28 @@ div.col-sm-12.nav-padding {
 .slide-1 p.proverb {
   font-size: 14px;
   margin-left: 330px;
+}
+
+.slide-2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 20px;
+  color: #ffffff;
+  margin-top: 114px;
+  opacity: 0;
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+  transition: all 1.5s;
+}
+
+.slick-current .slide-2, .slick-current .slide-1 {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slider-style {
+  font-size: 20px;
 }
 
 div.row.single-item.slick-initialized.slick-slider.slick-dotted {
@@ -1381,6 +1407,10 @@ a.sc-logo {
     margin-top: 139px;
   }
 
+  .slide-2 {
+    margin-top: 89px;
+  }
+
   span.dolacz,
   ul.lista-projekty li,
   ul.kontakt li,
@@ -1455,6 +1485,10 @@ a.sc-logo {
 
   .slide-1 {
     margin-top: 114px;
+  }
+
+  .slide-2 {
+    margin-top: 64px;
   }
 
   div.o-nas {
@@ -1549,6 +1583,15 @@ a.sc-logo {
   .slide-1 p.proverb {
     font-size: 12px;
     margin-left: 240px;
+  }
+
+  .slider-style {
+    font-size: 16px;
+  }
+
+  .slide-2 {
+    margin-top: 54px;
+    font-size: 18px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1700,6 +1743,17 @@ a.sc-logo {
   .slide-1 p.proverb {
     font-size: 10px;
     margin-left: 180px;
+  }
+
+  .slide-2 {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 13px;
+    font-size: 13px;
+  }
+
+  .slider-style {
+    font-size: 10px;
   }
 
   div.o-nas {
