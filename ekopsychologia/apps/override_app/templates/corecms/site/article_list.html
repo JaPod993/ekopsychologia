@@ -2,6 +2,7 @@
 {% load staticfiles %}
 <div class="container">
 <div class="row article_list">
+
     <div class="col-sm-5 col-lg-4">
         {% if article.content %}<a href="{{ article.get_absolute_url }}">{% endif %}
         <div class="img-wrapper">
@@ -29,6 +30,7 @@
                  {% if article.content %}  <!-- button więcej -->
             <div class="col-md-12"><a href="{{ article.get_absolute_url }}" class="btn btn-blue pull-right full">więcej</a></div>
                  {% endif %}
+
         </div>
         </div>
     </div>

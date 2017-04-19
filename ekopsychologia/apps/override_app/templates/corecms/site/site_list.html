@@ -1,0 +1,36 @@
+{% load thumbnail %}
+{% load staticfiles %}
+{% corecms_tags %}
+
+<div class="row article_list">
+    <div class="col-md-3">
+        {% if object.content %}<a href="{{ object.get_absolute_url }}">{% endif %}
+        <div class="img-wrapper">
+            {% if object.thumbnail %}
+
+            {% thumbnail object.thumbnail  "250x250" as im %}
+            <img src="{{ im.url }}" class="img-responsive" alt="{{ object }}">
+            {% endthumbnail %}
+            {% else %}
+            <img src="{% static 'website/images/blue_orb.svg' %}" style="height:189px; width: 100%; opacity:0.5" class="img-responsive" alt="{{ object }}">
+            {% endif %}
+        </div>
+        {% if object.content %}</a>{% endif %}
+    </div>
+    <div class="col-md-7">
+        <p class="date">{{ object.object_date }}</p>
+
+        <h2>{% if object.content %}<a href="{{ object.get_absolute_url }}">{% endif %}{{ object.identity }}{% if object.content %}</a>{% endif %}</h2>
+
+        <div class="content-styles">
+            {{ object.content|striptags|truncatewords:20 }}
+        </div>
+        {% include 'corecms/site/tags.html' with size="sm" label=False tags=object.tags.all %}
+
+    </div>
+    {% if object.content %}
+    <div class="col-md-2"><a href="{{ object.get_absolute_url }}" class="btn btn-blue pull-right full">więcej</a></div>
+    {% endif %}
+
+</div>
+<hr>
