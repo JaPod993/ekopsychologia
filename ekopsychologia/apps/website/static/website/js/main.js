@@ -22,27 +22,29 @@ $(function () {
 
 $(window).load(function () {
 
-    var hasBeenTrigged = false;
-    var odleglosc = $('.osiagniecia-bg').offset().top - 550 - $('.osiagniecia-bg').height();
+    if ($('.osiagniecia-bg').length > 0) {
+        var hasBeenTrigged = false;
+        var odleglosc = $('.osiagniecia-bg').offset().top - 550 - $('.osiagniecia-bg').height();
 
-    $(window).scroll(function () {
-        if ($(this).scrollTop() >= odleglosc && !hasBeenTrigged) { // if scroll is greater/equal then 100 and hasBeenTrigged is set to false.
+        $(window).scroll(function () {
+            if ($(this).scrollTop() >= odleglosc && !hasBeenTrigged) { // if scroll is greater/equal then 100 and hasBeenTrigged is set to false.
 
 
-            $('.osiagniecia-cyfry').each(function () {
-                $(this).prop('Counter', 0).animate({
-                    Counter: $(this).text()
-                }, {
-                    duration: 4000,
-                    easing: 'swing',
-                    step: function (now) {
-                        $(this).text(Math.ceil(now));
-                    }
+                $('.osiagniecia-cyfry').each(function () {
+                    $(this).prop('Counter', 0).animate({
+                        Counter: $(this).text()
+                    }, {
+                        duration: 4000,
+                        easing: 'swing',
+                        step: function (now) {
+                            $(this).text(Math.ceil(now));
+                        }
+                    });
                 });
-            });
-           hasBeenTrigged = true;
-        }
-    });
+                hasBeenTrigged = true;
+            }
+        });
+    }
 });
 
 
@@ -52,8 +54,9 @@ $(document).ready(function () {
 
         accessibility: true,
         dots: true,
-        autoplay: false,
-        autoplaySpeed: 5000,
+        autoplay: true,
+        autoplaySpeed: 7000,
+        speed: 1500,
     });
     $('.partner-1').slick({
         dots: false,
