@@ -46,6 +46,7 @@ TEMPLATES = [
 
 
 INSTALLED_APPS = (
+    'override_app',
     'django_extensions',
     'materialtemplate',
     'modeltranslation',
