@@ -29,7 +29,7 @@
             <div class="col-md-12 bg">
                 <!-- Tło -->
                 {% if object.main_image %}
-                    {% thumbnail object.main_image "1200x300" crop="center" as im %}
+                    {% thumbnail object.main_image "1200x300" crop="center" seoname=object|addstr:"" as im %}
                         <div class="bg_wrapper " style="background: url('{{ im.url }}') center center no-repeat;">
                     {% endthumbnail %}
                 {% else %}
@@ -42,7 +42,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12 right">
+                <div class="col-md-3 left">
+                    {% render_submenu object category 'corecms/admin/_render_submenu_left.html' %}
+                    {% include 'corecms/site/_left_column.html' %}
+                </div>
+                <div class="col-md-9 right">
                     <!-- Okruszki -->
                     {% include 'corecms/site/_breadcrumbs.html' %}
                     {% if published_by_hash %}

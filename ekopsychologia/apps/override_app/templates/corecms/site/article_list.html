@@ -1,14 +1,14 @@
 {% load thumbnail %}
 {% load staticfiles %}
-<div class="container">
+{% load corecms_tags %}
+
 <div class="row article_list">
-
-    <div class="col-sm-5 col-lg-4">
-
+    <div class="col-md-3">
         {% if article.content %}<a href="{{ article.get_absolute_url }}">{% endif %}
         <div class="img-wrapper">
         {% if article.thumbnail %}
-        {% thumbnail article.thumbnail "768x768" as im %} <!-- obrazek-->
+
+        {% thumbnail article.thumbnail "250x250" seoname=article|addstr:"" as im %}
             <img src="{{ im.url }}" class="img-responsive" alt="{{ article }}">
         {% endthumbnail %}
         {% else %}
@@ -17,26 +17,18 @@
         </div>
         {% if article.content %}</a>{% endif %}
     </div>
-    <div id="article" class="col-sm-7 col-lg-8"> <!-- article -->
-        <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 id="title">{% if article.content %}<a href="{{ article.get_absolute_url }}">{% endif %}{{ article.identity }}{% if article.content %}</a>{% endif %}</h2> <!-- title -->
-                <p class="date">{{ article.article_date|date:"d.m.Y" }}</p>  <!-- data -->
-                <div class="content-styles">
-                    {{ article.shortcut|safe|truncatechars_html:600}}
-                </div>
-                {% include 'corecms/site/tags.html' with size="sm" label=False tags=article.tags.all %}
-            </div>
-                 {% if article.content %}  <!-- button więcej -->
-            <div class="col-md-12"><a href="{{ article.get_absolute_url }}" class="btn btn-blue pull-right full">więcej</a></div>
-                 {% endif %}
+    <div class="col-md-7">
+        <p class="date">{{ article.article_date }}</p>
+        <h2>{% if article.content %}<a href="{{ article.get_absolute_url }}">{% endif %}{{ article.identity }}{% if article.content %}</a>{% endif %}</h2>
+        <div class="content-styles">
+            {{ article.shortcut|safe }}
+        </div>
+        {% include 'corecms/site/tags.html' with size="sm" label=False tags=article.tags.all %}
 
-        </div>
-        </div>
     </div>
-
+    {% if article.content %}
+    <div class="col-md-2"><a href="{{ article.get_absolute_url }}" class="btn btn-blue pull-right full">więcej</a></div>
+    {% endif %}
 
 </div>
 <hr>
-</div>
