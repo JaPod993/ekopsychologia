@@ -1,0 +1,35 @@
+{% load thumbnail %}
+{% load corecms_tags %}
+{% load i18n %}
+
+{% is_valid_for_lang connector.children as is_valid_lang %}
+{% if is_valid_lang %}
+<div class="gallery files">
+    <h4>{{ connector.children|capfirst }}</h4>
+    <hr class="article-gallery-hr">
+    <div class="row">
+        {% for file in connector.children.images.all %}
+            {% with seo_object_name=object|addstr:"-"|addstr:forloop.counter %}
+            {% thumbnail file.path "200x130" crop="center" seoname=file|media_file_seo_name:seo_object_name as im %}
+                {% thumbnail file.path "1000x750" seoname=file|media_file_seo_name:seo_object_name as im_big %}
+                    <div class="col-sm-3 col-xs-6 img_col">
+                        <div class="wood-frame-wrapper">
+                            <a href="{{ im_big.url }}" data-lightbox="{{ object }}" data-title="{{ object }} - {% trans 'Zdjęcia' %}">
+                                <span class="inner-shadow">
+                                <span class="shadow"></span>
+                                <img src="{{ im.url }}" class="img-responsive" alt="{{ file.name }}, {{ object }}">
+                                    </span>
+                                <!--<span class="gwozdz"></span>-->
+                            </a>
+                        </div>
+                    </div>
+                {% endthumbnail %}
+            {% endthumbnail %}
+            {% endwith %}
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+
+

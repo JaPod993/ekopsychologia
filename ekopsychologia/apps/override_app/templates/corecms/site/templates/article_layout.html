@@ -26,6 +26,18 @@
 
 {% block body_content %}
 
+
+<div class="top-wrapper top-{{object.slug}}">
+    <div class="container">
+        <div class="col-sm-12">
+            <!--<div class="title ">-->
+            <!--<span class="site-title">{{ object.get_main_parent.identity }}</span>-->
+        <!--</div>-->
+             <h2 class="site-title text-center">{{ object.get_main_parent.identity }}</h2>
+        </div>
+    </div>
+</div>
+
     <div class="container site wow fadeIn">
         <div class="row">
             <div class="col-md-12 bg">
@@ -38,7 +50,7 @@
                     <div class="bg_wrapper " style="background: url('{% static 'website/images/default.jpg' %}');">
                 {% endif %}
                 <div class="title wow fadeInLeft">
-                    <h2>{{ object.get_main_parent.identity }}</h2>
+                    <!--<h2>{{ object.get_main_parent.identity }}</h2>-->
                 </div>
                 </div>
                 </div>
@@ -51,7 +63,7 @@
                 </div>
                 <div class="col-md-9 right">
                     <!-- Okruszki -->
-                    {% include 'corecms/site/_breadcrumbs.html' %}
+                    <!--{% include 'corecms/site/_breadcrumbs.html' %}-->
                     {% if published_by_hash %}
                         <div class="panel panel-default panel-danger">
                             <div class="panel-body">

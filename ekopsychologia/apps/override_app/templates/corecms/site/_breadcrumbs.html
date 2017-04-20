@@ -1,0 +1,13 @@
+{% load i18n %}
+<ol class="breadcrumb">
+    <li><a href="/">{% trans "Strona główna" %}</a></li>
+    {% for breadcrumb in request.breadcrumbs %}
+        {% if forloop.last %}
+            <li class="active">{{ breadcrumb.name|capfirst }}</li>
+        {% else %}
+            <li><a href="{{ breadcrumb.url }}">{{ breadcrumb.name|capfirst }}</a></li>
+        {% endif %}
+    {% endfor %}
+</ol>
+
+

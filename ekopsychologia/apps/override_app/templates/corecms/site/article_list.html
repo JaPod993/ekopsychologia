@@ -2,13 +2,17 @@
 {% load staticfiles %}
 {% load corecms_tags %}
 
+
+
 <div class="row article_list">
-    <div class="col-md-3">
+
+
+    <div class="col-xs-12 col-sm-4">
         {% if article.content %}<a href="{{ article.get_absolute_url }}">{% endif %}
         <div class="img-wrapper">
         {% if article.thumbnail %}
 
-        {% thumbnail article.thumbnail "250x250" seoname=article|addstr:"" as im %}
+        {% thumbnail article.thumbnail "335x220" crop="center" seoname=article|addstr:"" as im %}
             <img src="{{ im.url }}" class="img-responsive" alt="{{ article }}">
         {% endthumbnail %}
         {% else %}
@@ -17,18 +21,20 @@
         </div>
         {% if article.content %}</a>{% endif %}
     </div>
-    <div class="col-md-7">
-        <p class="date">{{ article.article_date }}</p>
-        <h2>{% if article.content %}<a href="{{ article.get_absolute_url }}">{% endif %}{{ article.identity }}{% if article.content %}</a>{% endif %}</h2>
-        <div class="content-styles">
+    <div class="col-xs-12 col-sm-8">
+
+        <h2 class="article-list-title">{% if article.content %}<a href="{{ article.get_absolute_url }}">{% endif %}{{ article.identity }}{% if article.content %}</a>{% endif %}</h2>
+        <p class="date article-list-date">{{ article.article_date }}</p>
+        <div class="content-styles article-list-content">
             {{ article.shortcut|safe }}
         </div>
         {% include 'corecms/site/tags.html' with size="sm" label=False tags=article.tags.all %}
 
-    </div>
-    {% if article.content %}
-    <div class="col-md-2"><a href="{{ article.get_absolute_url }}" class="btn btn-blue pull-right full">więcej</a></div>
+         {% if article.content %}
+    <div class=""><a href="{{ article.get_absolute_url }}" class="btn btn-blue pull-right full article-list-more">więcej <i class="fa fa-caret-right more-arrow" aria-hidden="true"></i></a></div>
     {% endif %}
 
+    </div>
+    <div class="col-xs-12 col-sm-12"><hr class="article-list-hr"></div>
+
 </div>
-<hr>

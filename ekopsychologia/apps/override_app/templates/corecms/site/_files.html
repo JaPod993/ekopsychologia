@@ -1,0 +1,35 @@
+{% load thumbnail %}
+{% load corecms_tags %}
+{% load corecms_render_tags %}
+
+
+{% if object.published_files|media_distinction:'downloadable' %}
+    <div class="files" style="margin-top:20px;">
+        <h4>Pliki do pobrania</h4>
+        {% for file in object.published_files|media_distinction:'downloadable' %}
+            {% if forloop.counter0|divisibleby:"2" %}
+                {% if not forloop.first %}
+                    <hr class="article-files-hr-top">{% endif %}
+                {% if forloop.first and not first_hr %}
+                    <hr class="article-files-hr-top">{% endif %}
+                <div class="row">
+            {% endif %}
+        <div class="col-md-6 col-xs-12 flex-center">
+            <i class="file-icon-48 {{ file.extension }}"></i>
+
+            <div class="animated_link4">
+                <a href="{{ file.url }}" download="{{ file.download_name }}">{{ file }}</a>
+                {% include 'corecms/site/tags.html' with size="xs" no_border=True label=False tags=file.parent.tags.all %}
+            </div>
+
+            <br/>
+            {% if not forloop.counter0|add:"1"|divisibleby:"2" %}
+                <hr class="hidden-lg hidden-md">
+            {% endif %}
+        </div>
+        {% if forloop.counter0|add:"1"|divisibleby:"2" or forloop.last %}
+            </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}

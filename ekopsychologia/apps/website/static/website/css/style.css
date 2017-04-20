@@ -1161,6 +1161,221 @@ div.leaf {
   margin-bottom: 30px;
 }
 
+.top-wrapper {
+  height: 200px;
+  margin-bottom: 30px;
+  -webkit-box-shadow: 0px 0px 42px 7px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 0px 42px 7px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 42px 7px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  background: url("../images/eko_aktualnosci_9.jpg") no-repeat center center;
+}
+.top-wrapper .title > span:before,
+.top-wrapper .title > span:after {
+  background: #374778;
+}
+.top-wrapper h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  margin-top: 80px;
+  font-size: 36px;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px #000000;
+}
+.top-wrapper.top-aktualnosci {
+  background: url("../images/eko_aktualnosci_9.jpg") no-repeat center center;
+}
+.top-wrapper.top-o-nas {
+  background: url("../images/eko_aktualnosci_6.jpg") no-repeat center center;
+}
+.top-wrapper.top-publikacje {
+  background: url("../images/eko_aktualnosci_5.jpg") no-repeat center center;
+}
+.top-wrapper.top-kontakt-1 {
+  background: url("../images/eko_aktualnosci_8.jpg") no-repeat center center;
+}
+.top-wrapper.top-partnerzy {
+  background: url("../images/eko_aktualnosci_3.jpg") no-repeat center center;
+}
+
+.site-title {
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  margin-top: 74px;
+}
+
+.article-list-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 0;
+}
+.article-list-title a {
+  color: #374778;
+}
+
+.article-list-date {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #303030;
+}
+
+.article-list-more {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #0c824b;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.article-list-hr {
+  border-color: #0c824b;
+  border-width: 2px;
+}
+
+.article-list-content {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px !important;
+  color: #303030 !important;
+}
+
+i.more-arrow {
+  position: relative;
+  top: 2px;
+}
+
+.site .files h4 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #0c824b;
+  padding-bottom: 0;
+}
+.site .article-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #0c824b;
+  padding-bottom: 20px;
+}
+.site .content-styles {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+.site .gallery.files {
+  padding-bottom: 15px;
+}
+
+.article-gallery-hr {
+  margin-top: 10px;
+}
+
+.article-files-hr-top {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.files .flex-center {
+  padding-top: 20px;
+}
+.files .flex-center a {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #374778;
+  text-decoration: none;
+  transition: all 1s;
+}
+.files .flex-center a:focus, .files .flex-center a:hover {
+  color: #0c824b;
+  text-decoration: none;
+}
+
+.animated_link4 a:after {
+  position: relative;
+  padding-left: 10px;
+  content: "";
+  transition: ease .5s;
+  color: #c4c4c4;
+  font-size: 0em;
+}
+
+.animated_link4 a:hover:after {
+  content: "\f019";
+  font-family: "FontAwesome";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  color: #0c824b;
+  transition: ease .5s;
+}
+
+.pagination-sm > li:first-child > a,
+.pagination-sm > li:first-child > span {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+.pagination-sm > li:last-child > a,
+.pagination-sm > li:last-child > span {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.pagination_page_count {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #8c8c8c;
+  margin-left: 15px;
+}
+
+.pagination-sm > li > a,
+.pagination-sm > li > span {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #374778;
+}
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+  background-color: #374778;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+  border-color: #c4c4c4;
+}
+
+div.dataTables_paginate.paging_simple_numbers.pagination {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.breadcrumb {
+  border-color: transparent;
+  background-color: transparent;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+ol.breadcrumb a {
+  color: #c4c4c4;
+}
+
 .footer {
   background-color: #098241;
 }

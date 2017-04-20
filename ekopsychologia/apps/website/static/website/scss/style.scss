@@ -87,6 +87,7 @@ nav.navbar.navbar-default {
   padding-top: 0;
   padding-bottom: 0;
 }
+
 .nav-content-top li a {
   padding-top: 5px;
   padding-bottom: 0;
@@ -206,9 +207,11 @@ a.btn.btn-default.btn-circle.btn-nav:hover {
 .nav.nav-content-bottom > li > a:hover:after {
   left: 0;
 }
+
 .nav.nav-content-bottom > li.active_tab > a:after {
   left: 0;
 }
+
 .nav.nav-content-bottom {
   padding-top: 40px;
 }
@@ -363,7 +366,7 @@ div.col-sm-12.nav-padding {
   -webkit-transform: translate3d(0, -100%, 0);
   transform: translate3d(0, -100%, 0);
   transition: all 1.5s;
-    -webkit-transition-delay: 100ms;
+  -webkit-transition-delay: 100ms;
   -moz-transition-delay: 1000ms;
   -ms-transition-delay: 1000ms;
   -o-transition-delay: 1000ms;
@@ -1199,6 +1202,214 @@ div.leaf {
 }
 
 //.......................................................
+
+//.................WRAPPER PODSTRONY......................
+.top-wrapper {
+  height: 200px;
+  margin-bottom: 30px;
+  @include shadow-2;
+  text-align: center;
+
+  .title > span:before,
+  .title > span:after {
+    background: $title;
+  }
+  h2 {
+    @include roboto-bold;
+    margin-top: 80px;
+    font-size: 36px;
+    color: $white;
+    text-shadow: 1px 1px 1px #000000;
+  }
+  background: url("../images/eko_aktualnosci_9.jpg") no-repeat center center;
+  &.top-aktualnosci {
+    background: url("../images/eko_aktualnosci_9.jpg") no-repeat center center;
+    //filter: brightness(98%);
+  }
+  &.top-o-nas {
+    background: url("../images/eko_aktualnosci_6.jpg") no-repeat center center;
+  }
+  &.top-publikacje {
+    background: url("../images/eko_aktualnosci_5.jpg") no-repeat center center;
+  }
+  &.top-kontakt-1 {
+    background: url("../images/eko_aktualnosci_8.jpg") no-repeat center center;
+  }
+  &.top-partnerzy {
+    background: url("../images/eko_aktualnosci_3.jpg") no-repeat center center;
+  }
+
+}
+.site-title {
+  color: $white;
+  @include roboto-bold;
+  font-size: 36px;
+  margin-top: 74px;
+  }
+
+
+//.........................ARTICLE LIST...................
+.article-list-title {
+  @include roboto-bold;
+  font-size: 18px;
+  margin-top: 0;
+  a{
+    color: $title;
+  }
+}
+
+.article-list-date {
+  @include roboto-regular;
+  font-size: 16px;
+  color: $dark-grey;
+}
+.article-list-more {
+  @include roboto-medium;
+  font-size: 16px;
+  color: $hover;
+  padding-top: 0;
+  padding-bottom: 0;
+  //border: 2px solid $hover;
+  //border-radius: 25px;
+}
+.article-list-hr {
+  border-color: $hover;
+  border-width: 2px;
+}
+.article-list-content {
+  @include roboto-regular;
+  font-size: 16px!important;
+  color: $dark-grey!important;
+}
+i.more-arrow {
+  position: relative;
+  top: 2px;
+}
+//....................SINGLE ARTICLE...................
+
+.site {
+ // .gallery,
+  .files h4 {
+    @include roboto-bold;
+    font-size: 24px;
+    color: $hover;
+    padding-bottom: 0;
+  }
+
+  .article-title {
+    @include roboto-bold;
+    font-size: 24px;
+    color: $hover;
+    padding-bottom: 20px;
+  }
+  .content-styles {
+    @include roboto-regular;
+    font-size: 16px;
+  }
+  .gallery.files {
+    padding-bottom: 15px;
+  }
+}
+.article-gallery-hr {
+ // margin-bottom: 10px;
+  margin-top: 10px;
+}
+.article-files-hr-top {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.files {
+  .flex-center {
+    padding-top: 20px;
+    a {
+      @include roboto-regular;
+      font-size: 14px;
+      color: $title;
+      text-decoration: none;
+      transition: all 1s;
+      &:focus,
+      &:hover {
+        color: $hover;
+        text-decoration: none;
+      }
+    }
+
+  }
+}
+
+
+.animated_link4 a:after {
+  position: relative;
+  padding-left: 10px;
+  content:"";
+  transition: ease .5s;
+  color: $grey;
+  font-size: 0em;
+}
+.animated_link4 a:hover:after {
+  content:"\f019";
+  font-family: "FontAwesome";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  color: $hover;
+  transition: ease .5s;
+}
+//......................PAGINATION.....................
+
+.pagination-sm>li:first-child>a,
+.pagination-sm>li:first-child>span {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+.pagination-sm>li:last-child>a,
+.pagination-sm>li:last-child>span {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.pagination_page_count {
+  @include roboto-regular;
+  font-size: 14px;
+  color: $tekst;
+  margin-left: 15px;
+}
+.pagination-sm>li>a,
+.pagination-sm>li>span {
+  @include roboto-regular;
+  font-size: 16px;
+  color: $title;
+}
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
+  background-color: $title;
+}
+.pagination>li>a,
+.pagination>li>span  {
+  border-color: $grey;
+}
+div.dataTables_paginate.paging_simple_numbers.pagination {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+//...................BREADCRUMB............................
+.breadcrumb {
+  border-color: transparent;
+  //border-bottom: 2px solid $hover;
+ // border-radius: 0;
+  background-color: transparent;
+  @include roboto-regular;
+  font-size: 18px;
+}
+ol.breadcrumb {
+  a {
+    color: $grey;
+  }
+}
 
 //...................STOPKA............................
 .footer {
