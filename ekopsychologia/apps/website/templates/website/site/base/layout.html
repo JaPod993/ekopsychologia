@@ -121,6 +121,8 @@
 
 </head>
 <body class="{% block bodyclass %}{{ LANGUAGE_CODE }}{% endblock %}">
+<div class="all-wrapper">
+<div class="main-content-wrapper">
 {% if request.user.is_superuser %}
 <div class="right-edit-buttons">
     <a class="right-edit-button" href="{% url 'admin:index' %}">
@@ -190,8 +192,9 @@
 {% block body_content %}
 
 {% endblock %}
-
+</div>
 <!-- FOOTER -->
+<div class="footer-wrapper">
 <footer>
 
     <!-- !!! STOPKA SM MD LG !!! -->
@@ -395,7 +398,8 @@
         </div>
     </div>
 </footer>
+</div>
 <!-- FOOTER END -->
-
+</div>
 </body>
 </html>

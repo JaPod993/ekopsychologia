@@ -4,6 +4,7 @@
 $white: #ffffff; //biały
 $white-accent: #ececec;
 $grey: #c4c4c4; //szary
+$light-grey: #e6e6e6; //jasny szary
 $dark-grey: #303030; //ciemny szary
 $hover: #0c824b; //zielony hover
 $footer: #098241;
@@ -1206,7 +1207,6 @@ div.leaf {
 //.................WRAPPER PODSTRONY......................
 .top-wrapper {
   height: 200px;
-  margin-bottom: 30px;
   @include shadow-2;
   text-align: center;
 
@@ -1226,7 +1226,11 @@ div.leaf {
     background: url("../images/eko_aktualnosci_9.jpg") no-repeat center center;
     //filter: brightness(98%);
   }
-  &.top-o-nas {
+  &.top-statut,
+  &.top-obszary-dzialania,
+  &.top-sprawozdania,
+  &.top-w-mediach,
+  &.top-stowarzyszenie-ekopsychologia {
     background: url("../images/eko_aktualnosci_6.jpg") no-repeat center center;
   }
   &.top-publikacje {
@@ -1247,6 +1251,10 @@ div.leaf {
   margin-top: 74px;
   }
 
+//..................ALL..........................
+.all-wrapper {
+  background-color: #eeeeee;
+}
 
 //.........................ARTICLE LIST...................
 .article-list-title {
@@ -1410,8 +1418,131 @@ ol.breadcrumb {
     color: $grey;
   }
 }
+//..................MENU LEWE.........................
+.left-menu {
+  ul{
+    padding-left: 0;
+  li {
+    list-style: none;
+   // border: 1px solid $grey;
+    border-top: 1px solid $light-grey;
+    //border-left: 1px solid $grey;
+    border-right: 1px solid transparent;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    &:last-child {
+      border-bottom: 1px solid $light-grey;
+    }
+    &.active {
+      border-top: 1px solid $hover;
+      //border-left: 1px solid $hover;
+      //border-right: 1px solid $hover;
+      background-color: $hover;
+      a {
+        color: $white;
+      }
+    }
+    &:hover {
+      border-top: 1px solid $hover;
+      //border-left: 1px solid $hover;
+     // border-right: 1px solid $hover;
+      background-color: $hover;
+      a {
+        color: $white;
+      }
+    }
+    a {
+      @include roboto-medium;
+      text-transform: uppercase;
+      color: $title;
+      font-size: 16px;
+    }
+    ul li {
+      //padding-left: 40px;
+      list-style: circle;
+    }
+  }
+  }
+}
+.navbar-collapse.collapse.navbar-left-menu {
+  padding-right: 0;
+  padding-left: 0;
+  border-right: 10px solid $hover;
+  border-left: 1px solid $light-grey;
+}
+div.col-md-3.left,
+div.col-md-9.right {
+   padding-top: 30px;
+}
+//............o nas podstrona.................
+p.o-nas-tekst {
+  text-align: justify;
+}
+
+//..................OBSZARY DZIALANIA..................
+.button-obszary {
+  -webkit-border-radius:0;
+  -moz-border-radius:0;
+  border-radius:0;
+  border: none;
+  &:active,
+  &:focus {
+    background-color: white;
+    outline: none;
+  }
+}
+.paper-wrapper {
+  margin-bottom: 30px;
+}
+.title-obszary {
+  @include roboto-bold;
+  font-size: 24px;
+  padding-bottom: 14px;
+  padding-top: 11px;
+}
+.title-obszary {
+  color: rgb(239, 108, 69);
+}
+.paper {
+  background-color: white;
+  @include shadow-2;
+}
 
 //...................STOPKA............................
+
+/// /// FOOTER BOTTOM /// ///
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+}
+
+.main-content-wrapper {
+height: 100%;
+  min-height: 100%;
+  padding-bottom:  338px;
+
+}
+
+.footer-wrapper {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0 0 0 0;
+}
+
+/// /// /// ///
+
 .footer {
   background-color: $footer;
 }
@@ -1623,6 +1754,9 @@ a.sc-logo {
 }
 
 @media screen and (max-width: 1200px) {
+  .main-content-wrapper {
+  padding-bottom:  332px;
+}
   .osiagniecia-cyfry {
     font-size: 30px;
   }
@@ -1684,6 +1818,9 @@ a.sc-logo {
 }
 
 @media screen and (max-width: 992px) {
+   .main-content-wrapper {
+  padding-bottom:  516px;
+}
   .leaf-relative {
     top: -75px;
   }
@@ -1821,6 +1958,9 @@ a.sc-logo {
 }
 
 @media screen and (max-width: 767px) {
+   .main-content-wrapper {
+  padding-bottom:  590px;
+}
   div.col-md-2.dot-four {
     width: 50%;
 
