@@ -18,8 +18,9 @@ class Site(SiteAbstract):
 
     @staticmethod
     def get_template_list():
-        return [('website/site/kontakt.html', u'Kontakt'), ('website/site/faq.html', u'FAQ'), ('website/site/akustyka.html', u'Akustyka')
-                ]
+        return [
+            ('website/site/templates/site_obszary_dzialalnosci.html', u'Obszary działania'),
+    ]
 
 
 class Article(ArticleAbstract):
