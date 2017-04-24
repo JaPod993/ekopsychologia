@@ -1434,14 +1434,60 @@ p.o-nas-tekst {
 }
 
 .button-obszary {
+  padding-bottom: 0;
+  padding-top: 10px;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
   border: none;
 }
-.button-obszary:active, .button-obszary:focus {
+.button-obszary .title-obszary {
+  display: inline-block;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.button-obszary:active:focus, .button-obszary:active, .button-obszary:focus {
   background-color: white;
   outline: none;
+}
+.button-obszary .eko-dzialalnosc-miedzynarodowa {
+  float: left;
+  font-size: 30px !important;
+}
+
+ul#obszary {
+  border-top: 2px solid #c4c4c4;
+}
+ul#obszary li {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #303030;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 30px;
+}
+ul#obszary li:first-child {
+  padding-top: 15px;
+}
+ul#obszary li:last-child {
+  padding-bottom: 20px;
+}
+
+.button-obszary.collapsed:after {
+  font-family: FontAwesome;
+  content: "\f054";
+  font-size: 25px;
+  color: #ef6c45;
+  float: right;
+}
+
+.button-obszary:after {
+  font-family: FontAwesome;
+  content: "\f078";
+  font-size: 25px;
+  color: #ef6c45;
+  float: right;
 }
 
 .paper-wrapper {

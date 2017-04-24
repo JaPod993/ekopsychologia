@@ -1481,16 +1481,61 @@ p.o-nas-tekst {
 
 //..................OBSZARY DZIALANIA..................
 .button-obszary {
+  .title-obszary {
+    display: inline-block;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  padding-bottom: 0;
+  padding-top: 10px;
   -webkit-border-radius:0;
   -moz-border-radius:0;
   border-radius:0;
   border: none;
+  &:active:focus,
   &:active,
   &:focus {
     background-color: white;
     outline: none;
   }
+  .eko-dzialalnosc-miedzynarodowa {
+    float: left;
+    font-size: 30px!important;
+  }
 }
+ul#obszary {
+  border-top: 2px solid $grey;
+  li {
+    @include roboto-regular;
+    font-size: 14px;
+    color: $dark-grey;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 30px;
+    &:first-child {
+      padding-top: 15px;
+    }
+    &:last-child {
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.button-obszary.collapsed:after {
+  font-family: FontAwesome;
+  content: "\f054";
+  font-size: 25px;
+  color: #ef6c45;
+  float: right;
+}
+.button-obszary:after {
+  font-family: FontAwesome;
+  content: "\f078";
+  font-size: 25px;
+  color: #ef6c45;
+  float: right;
+}
+
 .paper-wrapper {
   margin-bottom: 30px;
 }
