@@ -1167,7 +1167,7 @@ div.leaf {
   -moz-box-shadow: 0px 0px 42px 7px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 0px 42px 7px rgba(0, 0, 0, 0.15);
   text-align: center;
-  background: url("../images/eko_aktualnosci_9.jpg") no-repeat center center;
+  background: linear-gradient(rgba(9, 130, 65, 0.3), rgba(9, 130, 65, 0.3)), url("../images/eko_aktualnosci_9.jpg") no-repeat center center;
 }
 .top-wrapper .title > span:before,
 .top-wrapper .title > span:after {
@@ -1182,19 +1182,19 @@ div.leaf {
   text-shadow: 1px 1px 1px #000000;
 }
 .top-wrapper.top-aktualnosci {
-  background: url("../images/eko_aktualnosci_9.jpg") no-repeat center center;
+  background: linear-gradient(rgba(9, 130, 65, 0.3), rgba(9, 130, 65, 0.3)), url("../images/eko_aktualnosci_9.jpg") no-repeat center center;
 }
 .top-wrapper.top-statut, .top-wrapper.top-obszary-dzialania, .top-wrapper.top-sprawozdania, .top-wrapper.top-w-mediach, .top-wrapper.top-stowarzyszenie-ekopsychologia {
-  background: url("../images/eko_aktualnosci_6.jpg") no-repeat center center;
+  background: linear-gradient(rgba(9, 130, 65, 0.3), rgba(9, 130, 65, 0.3)), url("../images/eko_aktualnosci_6.jpg") no-repeat center center;
 }
 .top-wrapper.top-publikacje {
-  background: url("../images/eko_aktualnosci_5.jpg") no-repeat center center;
+  background: linear-gradient(rgba(9, 130, 65, 0.3), rgba(9, 130, 65, 0.3)), url("../images/eko_aktualnosci_5.jpg") no-repeat center center;
 }
 .top-wrapper.top-kontakt-1 {
-  background: url("../images/eko_aktualnosci_8.jpg") no-repeat center center;
+  background: linear-gradient(rgba(9, 130, 65, 0.3), rgba(9, 130, 65, 0.3)), url("../images/eko_aktualnosci_2.jpg") no-repeat center center;
 }
 .top-wrapper.top-partnerzy {
-  background: url("../images/eko_aktualnosci_3.jpg") no-repeat center center;
+  background: linear-gradient(rgba(9, 130, 65, 0.3), rgba(9, 130, 65, 0.3)), url("../images/eko_aktualnosci_3.jpg") no-repeat center center;
 }
 
 .site-title {

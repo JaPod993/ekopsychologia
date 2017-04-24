@@ -1221,9 +1221,10 @@ div.leaf {
     color: $white;
     text-shadow: 1px 1px 1px #000000;
   }
-  background: url("../images/eko_aktualnosci_9.jpg") no-repeat center center;
+  background: linear-gradient(rgba(9,130,65,.3), rgba(9,130,65,.3)),
+    url("../images/eko_aktualnosci_9.jpg") no-repeat center center;
   &.top-aktualnosci {
-    background: url("../images/eko_aktualnosci_9.jpg") no-repeat center center;
+    background: linear-gradient(rgba(9,130,65,.3), rgba(9,130,65,.3)), url("../images/eko_aktualnosci_9.jpg") no-repeat center center;
     //filter: brightness(98%);
   }
   &.top-statut,
@@ -1231,16 +1232,16 @@ div.leaf {
   &.top-sprawozdania,
   &.top-w-mediach,
   &.top-stowarzyszenie-ekopsychologia {
-    background: url("../images/eko_aktualnosci_6.jpg") no-repeat center center;
+     background: linear-gradient(rgba(9,130,65,.3), rgba(9,130,65,.3)), url("../images/eko_aktualnosci_6.jpg") no-repeat center center;
   }
   &.top-publikacje {
-    background: url("../images/eko_aktualnosci_5.jpg") no-repeat center center;
+    background: linear-gradient(rgba(9,130,65,.3), rgba(9,130,65,.3)), url("../images/eko_aktualnosci_5.jpg") no-repeat center center;
   }
   &.top-kontakt-1 {
-    background: url("../images/eko_aktualnosci_8.jpg") no-repeat center center;
+    background: linear-gradient(rgba(9,130,65,.3), rgba(9,130,65,.3)), url("../images/eko_aktualnosci_2.jpg") no-repeat center center;
   }
   &.top-partnerzy {
-    background: url("../images/eko_aktualnosci_3.jpg") no-repeat center center;
+    background: linear-gradient(rgba(9,130,65,.3), rgba(9,130,65,.3)), url("../images/eko_aktualnosci_3.jpg") no-repeat center center;
   }
 
 }
