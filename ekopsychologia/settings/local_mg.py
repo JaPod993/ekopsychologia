@@ -32,7 +32,7 @@ EMAIL_HOST_USER = 'noreply@silvercube.pl'
 EMAIL_HOST_PASSWORD = 'fUcUwAuE'
 EMAIL_FROM_USER = 'ECO <noreply@silvercube.pl>'
 
-CORECMS_CONTACT_FORM_SUBJECT = "Wiadomość z serwisu www"
+CORECMS_CONTACT_FORM_SUBJECT = u"Wiadomość z serwisu www"
 CORECMS_CONTACT_FORM_RECIPIENTS = ['contact.form.ekopsychologia@supermailing.eu']
 
 
@@ -80,7 +80,7 @@ LOGGING = {
             'propagate': True,
         },
         'sorl.thumbnail': {
-            'handlers': ['file',],
+            'handlers': ['file', ],
             'level': 'DEBUG',
             'propagate': False,
         },

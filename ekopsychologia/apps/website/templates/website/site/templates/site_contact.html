@@ -45,32 +45,7 @@
             <div class="row">
 
                 <div class="col-md-6 left mapa">
-
-
-                    <form class="form-inline" id="message"
-                          action="nie_wiem_co_tutaj_wpisac" method="post">
-
-                        {#% Imię i Nazwisko %#}
-                        <div class="input-group col-xs-12">
-                            <input type="text" name="name" value="" class="form-control"
-                                   placeholder="Imię i Nazwisko">
-                        </div>
-
-                        {#% E-mail %#}
-                        <div class="input-group col-xs-12">
-                            <input type="text" name="email" value="" class="form-control"
-                                   placeholder="E-mail">
-                        </div>
-
-                        {#% Wiadomość %#}
-                        <div class="input-group col-xs-12">
-                            <textarea class="form-control" rows="4" name="message" placeholder="Wiadomość"></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-default eko-contact-button pull-right">Wyślij</button>
-                        {% csrf_token %}
-                    </form>
-
+                    {% render_contact_form template_name='website/site/element/_contact_form.html' %}
                 </div>
 
                 <div class="col-md-6 right mapa">

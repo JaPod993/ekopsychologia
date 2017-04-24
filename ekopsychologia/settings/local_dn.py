@@ -34,5 +34,5 @@ EMAIL_HOST_USER = 'noreply@silvercube.pl'
 EMAIL_HOST_PASSWORD = 'fUcUwAuE'
 EMAIL_FROM_USER = 'AM2 <noreply@silvercube.pl>'
 
-CORECMS_CONTACT_FORM_SUBJECT = "Wiadomość z serwisu www"
+CORECMS_CONTACT_FORM_SUBJECT = u"Wiadomość z serwisu www"
 CORECMS_CONTACT_FORM_RECIPIENTS = ['contact.form.am2@supermailing.eu']
