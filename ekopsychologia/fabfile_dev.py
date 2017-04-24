@@ -7,10 +7,10 @@ path = '/home/services/python/ekopsychologia2'
 venv_path = '/virtuals/ekopsychologia'
 env.shell = '/bin/bash -l -c'
 sock_path = '/virtuals/ekopsychologia/ekopsychologia.sock'
-SETTINGS = 'settings.production'
+SETTINGS = 'settings.development'
 
 env.roledefs = {
-    'production': ['jmk@delta.silvercube.pl:1922']
+    'production': ['jmk@delta.silvercube.pl:1923']
 }
 
 
