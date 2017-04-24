@@ -7,13 +7,13 @@ TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = ['*']
 
-BASE_URL = 'https://.pl'
+BASE_URL = 'http://ekopsychologia.dev2.silvercube.pl'
 
 ADMINS = (('M.G.', 'cappuccio@silvercube.pl'), ('D.N.', 'dnowak@silvercube.pl'))
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dev_ekopsychologia',
+        'NAME': 'dev_ekopsychologia2dj',
         'USER': 'devSC',
         'PASSWORD': 'scDeV12$',
         'HOST': '',
@@ -39,10 +39,6 @@ SERVER_EMAIL = EMAIL_HOST_USER
 CORECMS_CONTACT_FORM_SUBJECT = "Wiadomość z serwisu www"
 CORECMS_CONTACT_FORM_RECIPIENTS = ['noreply@silvercube.pl']
 
-
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
 
 LOGGING = {
     'version': 1,
