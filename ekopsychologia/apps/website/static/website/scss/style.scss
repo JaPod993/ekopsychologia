@@ -598,7 +598,7 @@ a.btn.btn-default.btn-circle.btn-about.btn-dla-karpat { //BUTTON
   padding-left: 11px;
 }
 
-i.eko-dla-karpat { //ICON
+i.eko-dla-karpat-2 { //ICON
   color: #6c8d47;
   font-size: 40px;
 }
@@ -1481,77 +1481,150 @@ p.o-nas-tekst {
 }
 
 //..................OBSZARY DZIALANIA..................
-.button-obszary {
-  .title-obszary {
-    display: inline-block;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  padding-bottom: 0;
-  padding-top: 10px;
-  -webkit-border-radius:0;
-  -moz-border-radius:0;
-  border-radius:0;
-  border: none;
-  &:active:focus,
-  &:active,
-  &:focus {
-    background-color: white;
-    outline: none;
-  }
-  .eko-dzialalnosc-miedzynarodowa {
-    float: left;
-    font-size: 30px!important;
-  }
-}
-ul#obszary {
-  border-top: 2px solid $grey;
-  li {
-    @include roboto-regular;
-    font-size: 14px;
-    color: $dark-grey;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-right: 30px;
-    &:first-child {
-      padding-top: 15px;
-    }
-    &:last-child {
-      padding-bottom: 20px;
-    }
-  }
-}
-
-.button-obszary.collapsed:after {
-  font-family: FontAwesome;
-  content: "\f054";
-  font-size: 25px;
-  color: #ef6c45;
-  float: right;
-}
-.button-obszary:after {
-  font-family: FontAwesome;
-  content: "\f078";
-  font-size: 25px;
-  color: #ef6c45;
-  float: right;
-}
-
 .paper-wrapper {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
-.title-obszary {
-  @include roboto-bold;
-  font-size: 24px;
-  padding-bottom: 14px;
-  padding-top: 11px;
+.paper-obszary {
+  .paper {
+    background-color: white;
+    @include shadow-2;
+    & button {
+      padding-bottom: 6px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  button {
+    color: rgb(239, 108, 69);
+    .title {
+      display: inline-block;
+      padding-top: 2px;
+      padding-bottom: 0;
+      @include roboto-bold;
+      font-size: 20px;
+
+
+    }
+    padding-bottom: 0;
+    padding-top: 10px;
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+    border-radius:0;
+    border: none;
+    &:active:focus,
+    &:active,
+    &:focus {
+      background-color: white;
+      outline: none;
+    }
+    .eko-dzialalnosc-miedzynarodowa {
+      float: left;
+      font-size: 30px!important;
+    }
+    &.collapsed:after {
+      font-family: FontAwesome;
+      content: "\f054";
+      font-size: 25px;
+      float: right;
+    }
+    &:after {
+      font-family: FontAwesome;
+      content: "\f078";
+      font-size: 25px;
+      float: right;
+    }
+  }
+  ul {
+    border-top: 2px solid $grey;
+    li {
+      @include roboto-regular;
+      font-size: 14px;
+      color: $dark-grey;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-right: 30px;
+      &:first-child {
+        padding-top: 15px;
+      }
+      &:last-child {
+        padding-bottom: 20px;
+      }
+    }
+  }
+  &.paper-dzialalnosc-miedzynarodowa button:active:focus,
+  &.paper-dzialalnosc-miedzynarodowa button {
+    color: rgb(239, 108, 69);
+  }
+  &.paper-dla-karpat button:active:focus,
+  &.paper-dla-karpat button{
+    color: #6c8d47;
+  }
+  &.paper-dla-edukacji-ekologicznej button:active:focus,
+   &.paper-dla-edukacji-ekologicznej button{
+    color: #3c81c2;
+  }
+  &.paper-dla-partycypacji-spolecznej button:active:focus,
+  &.paper-dla-partycypacji-spolecznej button{
+    color: #b27a3f;
+  }
+  &.paper-dla-dziedzictwa-kulturowego button:active:focus,
+  &.paper-dla-dziedzictwa-kulturowego button{
+    color: #896b5f;
+  }
+  &.paper-dla-samorzadow-lokalnych button:active:focus,
+  &.paper-dla-samorzadow-lokalnych button{
+    color: #f2b756;
+  }
+   &.paper-dla-organizacji-pozarzadowych button:active:focus,
+   &.paper-dla-organizacji-pozarzadowych button{
+    color: #5d96a0;
+   }
+  &.paper-dla-spolecznosci-lokalnych button:active:focus,
+  &.paper-dla-spolecznosci-lokalnych button{
+    color: #6363aa;
+  }
+  &.paper-dla-swiata-nauki button:active:focus,
+  &.paper-dla-swiata-nauki button{
+    color: #b5842b;
+  }
 }
-.title-obszary {
-  color: rgb(239, 108, 69);
+
+@mixin eko-obszary {
+  font-size: 30px;
+  float: left;
 }
-.paper {
-  background-color: white;
-  @include shadow-2;
+.eko-dla-karpat:before {
+  @include eko-obszary;
+  content:'\0042';
+}
+.eko-dla-edukacji-ekologicznej:before {
+  content: '\0043';
+  @include eko-obszary;
+}
+.eko-dla-partycypacji-spolecznej:before {
+  content: '\0044';
+  @include eko-obszary;
+}
+.eko-dla-dziedzictwa-kulturowego:before {
+  @include eko-obszary;
+  content:'\0046';
+}
+.eko-dla-samorzadow-lokalnych:before {
+  @include eko-obszary;
+  content:'\0045';
+}
+.eko-dla-organizacji-pozarzadowych:before {
+  @include eko-obszary;
+  content:'\0047';
+}
+.eko-dla-spolecznosci-lokalnych:before {
+  @include eko-obszary;
+  content:'\0048';
+}
+.eko-dla-swiata-nauki:before {
+  @include eko-obszary;
+  content:'\0049';
 }
 
 //...................STOPKA............................
@@ -2113,7 +2186,16 @@ a.sc-logo {
 }
 
 @media screen and (max-width: 480px) {
-
+  .paper-obszary {
+    .paper {
+      button {
+        .title {
+          padding-top: 5px;
+          font-size: 16px;
+        }
+      }
+    }
+}
   div.col-md-2.dot-four {
     width: 100%;
 
@@ -2169,6 +2251,16 @@ a.sc-logo {
 }
 
 @media screen and (max-width: 360px) {
+   .paper-obszary {
+    .paper {
+      button {
+        .title {
+          padding-top: 7px;
+          font-size: 13px;
+        }
+      }
+    }
+}
   div.o-nas {
     height: 1220px;
   }
