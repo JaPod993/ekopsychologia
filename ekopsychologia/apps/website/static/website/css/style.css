@@ -1028,10 +1028,12 @@ div.article-title-2 {
   margin-bottom: 33px;
 }
 
-input.form-control {
+input.form-control-2 {
+  height: 34px;
+  padding-left: 5px;
   border-radius: 0;
 }
-input.form-control:focus {
+input.form-control-2:focus {
   border-color: #cccccc;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -1193,7 +1195,7 @@ div.leaf {
 .top-wrapper.top-kontakt-1 {
   background: linear-gradient(rgba(9, 130, 65, 0.3), rgba(9, 130, 65, 0.3)), url("../images/eko_aktualnosci_2.jpg") no-repeat center center;
 }
-.top-wrapper.top-partnerzy {
+.top-wrapper.top-fundatorzy-9, .top-wrapper.top-nalezymy-do, .top-wrapper.top-partnerzy-biznesowi, .top-wrapper.top-media-2, .top-wrapper.top-patroni, .top-wrapper.top-partnerzy {
   background: linear-gradient(rgba(9, 130, 65, 0.3), rgba(9, 130, 65, 0.3)), url("../images/eko_aktualnosci_3.jpg") no-repeat center center;
 }
 
