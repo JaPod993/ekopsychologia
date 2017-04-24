@@ -1626,6 +1626,45 @@ p.o-nas-tekst {
   @include eko-obszary;
   content:'\0049';
 }
+//.....................KONTAKT.........................
+@mixin form-border {
+  border: 1px solid $grey;
+  border-radius: 0;
+  @include roboto-regular;
+  font-size: 14px;
+
+
+}
+
+@mixin form-margin {
+  margin-bottom: 41px!important;
+}
+ #map {
+        height: 350px;
+        width: 100%;
+       }
+ .eko-mapa {
+   @include form-border;
+ }
+ .mapa {
+   padding-top: 50px;
+   padding-bottom: 50px;
+ }
+
+ input.form-control {
+   height: 50px;
+  @include form-border;
+  @include form-margin;
+ }
+ .eko-contact-button {
+   @include form-border;
+   color: $dark-grey!important;
+ }
+textarea.form-control {
+  resize: vertical;
+  @include form-border;
+  @include form-margin;
+}
 
 //...................STOPKA............................
 

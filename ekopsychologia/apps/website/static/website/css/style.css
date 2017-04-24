@@ -1579,6 +1579,53 @@ p.o-nas-tekst {
   content: '\0049';
 }
 
+#map {
+  height: 350px;
+  width: 100%;
+}
+
+.eko-mapa {
+  border: 1px solid #c4c4c4;
+  border-radius: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.mapa {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+input.form-control {
+  height: 50px;
+  border: 1px solid #c4c4c4;
+  border-radius: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 41px !important;
+}
+
+.eko-contact-button {
+  border: 1px solid #c4c4c4;
+  border-radius: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #303030 !important;
+}
+
+textarea.form-control {
+  resize: vertical;
+  border: 1px solid #c4c4c4;
+  border-radius: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 41px !important;
+}
+
 html {
   height: 100%;
   box-sizing: border-box;

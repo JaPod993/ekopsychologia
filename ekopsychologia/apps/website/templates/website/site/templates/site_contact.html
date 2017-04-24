@@ -1,5 +1,10 @@
 {% extends 'corecms/site/templates/site_layout.html' %}
 
+{% load corecms_tags %}
+{% load corecms_render_tags %}
+{% load thumbnail %}
+{% load staticfiles %}
+{% load mptt_tags %}
 
 {% load corecms_render_tags %}
 
@@ -7,38 +12,125 @@
 
 {% load i18n %}
 
-{% block site_inner_content %}
+{#% block site_inner_content %#}
 
-       TEST KONTAKT TEST
+{% block body_content %}
 
-        <!-- Okruszki -->
-        {% if published_by_hash %}
-            <div class="panel panel-default panel-danger">
-                <div class="panel-body">
-                    {% trans 'Widzisz tę ukrytą stronę ponieważ używasz linku z panelu administracyjnego, nie jest ona widoczna na liście artykułów i w dla wyszukiwarki google' %}
+<div class="top-wrapper top-{{object.slug}}">
+    <div class="container">
+        <div class="col-sm-12">
+             <h2 class="site-title text-center">{{ object.identity }}</h2>
+        </div>
+    </div>
+</div>
+
+
+    <div class="container site wow fadeIn">
+        <div class="row">
+            <div class="col-md-12 bg">
+                <!-- Tło -->
+                {% if object.main_image %}
+                    {% thumbnail object.main_image "1200x300" crop="center" seoname=object|addstr:"" as im %}
+                        <div class="bg_wrapper " style="background: url('{{ im.url }}') center center no-repeat;">
+                    {% endthumbnail %}
+                {% else %}
+                    <div class="bg_wrapper " style="background: url('{% static 'website/images/default.jpg' %}');">
+                {% endif %}
+                <div class="title wow fadeInLeft">
+                    <!--<h2>{{ object.identity }}</h2>-->
+                </div>
+                </div>
                 </div>
             </div>
-        {% endif %}
+            <div class="row">
 
-        {% block page_description %}
-            {% include 'corecms/site/site_description.html' %}
-        {% endblock %}
-        {% if object.content and object_articles %}
-            <hr>
-        {% endif %}
-        <!-- Lista artykułów -->
-        {% for article in object_articles %}
-            {% include 'corecms/site/article_list.html' with article=article only %}
-        {% endfor %}
-        <!-- Paginacja -->
-        {% digg_paginator template_name='corecms/site/_digg_paginator.html' %}
-        <!-- Pliki -->
-        {% include 'corecms/site/_files.html' %}
-        <!-- Zdjęcia z plików -->
-        {% include 'corecms/site/_images.html' %}
-        <!-- Galeria i formularz -->
-        {% for connector in article.connector_children.all %}
-            {% render_connector connector %}
-        {% endfor %}
+                <div class="col-md-6 left mapa">
 
+
+                    <form class="form-inline" id="message"
+                          action="nie_wiem_co_tutaj_wpisac" method="post">
+
+                        {#% Imię i Nazwisko %#}
+                        <div class="input-group col-xs-12">
+                            <input type="text" name="name" value="" class="form-control"
+                                   placeholder="Imię i Nazwisko">
+                        </div>
+
+                        {#% E-mail %#}
+                        <div class="input-group col-xs-12">
+                            <input type="text" name="email" value="" class="form-control"
+                                   placeholder="E-mail">
+                        </div>
+
+                        {#% Wiadomość %#}
+                        <div class="input-group col-xs-12">
+                            <textarea class="form-control" rows="4" name="message" placeholder="Wiadomość"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-default eko-contact-button pull-right">Wyślij</button>
+                        {% csrf_token %}
+                    </form>
+
+                </div>
+
+                <div class="col-md-6 right mapa">
+                    <div class="eko-mapa">
+                        {#%  <h3>My Google Maps Demo</h3> %#}
+                        <div id="map"></div>
+                        <script>
+                            function initMap() {
+                                var uluru = {lat: 49.851882, lng:  20.794651};
+                                var map = new google.maps.Map(document.getElementById('map'), {
+                                    zoom: 16,
+                                    center: uluru
+                                });
+                                var marker = new google.maps.Marker({
+                                    position: uluru,
+                                    map: map
+                                });
+                            }
+                        </script>
+                        <script async defer
+                                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDep27bukcLJPW4DQqADeiJnisWIrulmg8&callback=initMap">
+                        </script>
+
+                        {% block site_inner_content %}
+                        <!-- Okruszki -->
+                        <!--{% include 'corecms/site/_breadcrumbs.html' %}-->
+                        {% if published_by_hash %}
+                        <div class="panel panel-default panel-danger">
+                            <div class="panel-body">
+                                {% trans 'Widzisz tę ukrytą stronę ponieważ używasz linku z panelu administracyjnego, nie jest ona widoczna na liście artykułów i w dla wyszukiwarki google' %}
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        {% block page_description %}
+                        {% include 'corecms/site/site_description.html' %}
+                        {% endblock %}
+                        {% if object.content and object_articles %}
+                        <hr>
+                        {% endif %}
+                        <!-- Lista artykułów -->
+                        {% for article in object_articles %}
+                        {% include 'corecms/site/article_list.html' with article=article only %}
+                        {% endfor %}
+                        <!-- Paginacja -->
+                        {% digg_paginator template_name='corecms/site/_digg_paginator.html' %}
+                        <!-- Pliki -->
+                        {% include 'corecms/site/_files.html' %}
+                        <!-- Zdjęcia z plików -->
+                        {% include 'corecms/site/_images.html' %}
+                        <!-- Galeria i formularz -->
+                        {% for connector in article.connector_children.all %}
+                        {% render_connector connector %}
+                        {% endfor %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+</script>
 {% endblock %}
