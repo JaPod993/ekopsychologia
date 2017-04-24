@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+from corecms.models.base_element import BaseElement
 from corecms.models.config import ConfigCMSAbstract
 from django.db import models
 from positions.fields import PositionField
@@ -21,6 +22,16 @@ class Site(SiteAbstract):
         return [
             ('website/site/templates/site_obszary_dzialalnosci.html', u'Obszary działania'),
     ]
+
+    def allow_redirect_to_children(self):
+        if self.template == 'website/site/templates/site_obszary_dzialalnosci.html':
+            return False
+        return True
+
+    def show_in_menu(self):
+        if self.level < 2:
+            return True
+        return False
 
 
 class Article(ArticleAbstract):

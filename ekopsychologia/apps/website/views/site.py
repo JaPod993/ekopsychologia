@@ -1,7 +1,9 @@
 # -*- encoding: utf-8 -*-
+from corecms.views.site import ContentItemDetailView as BaseContentItemDetailView, RedirectException
 from django.contrib.contenttypes.models import ContentType
-from django.http.response import JsonResponse
+from django.http.response import JsonResponse, HttpResponseRedirect
 from django.views.generic.base import TemplateView, View
+from django.views.generic.detail import DetailView
 from django.views.generic.edit import FormView
 from django.views.generic.list import ListView
 
@@ -81,3 +83,18 @@ class GalleryListView(ListView):
         queryset = super(GalleryListView, self).get_queryset()
         queryset = queryset.filter(gallerydistinction__in_global=True)
         return queryset
+
+
+class ContentItemDetailView(BaseContentItemDetailView):
+
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        if isinstance(self.object, Site):
+            if self.get_children_queryset().count() == 0 and self.object.content == "" and self.object.allow_redirect_to_children():
+                redirect_site = self.object.children.published().first()
+                if redirect_site:
+                    return HttpResponseRedirect(redirect_site.get_absolute_url())
+        try:
+            return super(DetailView, self).get(request, *args, **kwargs)
+        except RedirectException as r:
+            return HttpResponseRedirect(r.url)

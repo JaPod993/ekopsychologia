@@ -7,42 +7,23 @@
 
 {% load i18n %}
 
-
-
 {% block site_inner_content %}
 
-
-
-        <div class="paper-wrapper">
-            <div class="paper">
-                    <button class="btn btn-default btn-block button-obszary collapsed" data-toggle="collapse"
-                            data-target="#obszary"> <i class=" eko-dzialalnosc-miedzynarodowa "></i><div class="title-obszary">DZIAŁALNOŚĆ MIĘDZYNARODOWA</div></button>
-
-                    <ul id="obszary" class="text-left collapse">
-
-                        <li class="">Uczestniczyliśmy aktywnie w pracach międzynarodowych Grup Roboczych
-Konwencji Karpackiej: ds. zrównoważonej turystyki, ds. zrównoważonego rolnictwa
-i leśnictwa, ds. dziedzictwa kulturowego.</li>
-                        <li class="">Zorganizowaliśmy cztery spotkania międzynarodowych Grup Roboczych Konwencji
-Karpackiej: ds. zrównoważonej turystyki, ds. dziedzictwa kulturowego,
-ds. różnorodności biologicznej oraz planowania przestrzennego.</li>
-                        <li class="">Uczestniczyliśmy aktywnie w 4 spotkaniach Konferencji Stron Konwencji Karpackiej.</li>
-                        <li class="">Zorganizowaliśmy trzy międzynarodowe konferencje: „Karpaty i inne euroregiony
-– postawy psychologiczne wobec ochrony środowiska” (2004 r.), Konferencję
-Karpacką (2010 r.) i „Turystyka wiejska na obszarach górskich” (2015 r.)
-dla 500 uczestników z 12 krajów.</li>
-
-
-                    </ul>
+        {% for child in object.children.published %}
+            <div class="paper-wrapper paper-{{ child.slug }}">
+                <div class="paper">
+                    <button class="btn btn-default btn-block collapsed" data-toggle="collapse" data-target="#{{ child.slug }}">
+                        <i class=" eko-dzialalnosc-miedzynarodowa "></i>
+                        <div class="title">{{ child }}</div>
+                    </button>
+                    <div id="{{ child.slug }}">
+                        {{ child.content|safe }}
+                    </div>
+                </div>
             </div>
-        </div>
-
-
-
-
+        {% endfor %}
 
         <!-- Okruszki -->
-        <!--{% include 'corecms/site/_breadcrumbs.html' %}-->
         {% if published_by_hash %}
             <div class="panel panel-default panel-danger">
                 <div class="panel-body">
