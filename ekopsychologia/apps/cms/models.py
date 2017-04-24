@@ -21,6 +21,8 @@ class Site(SiteAbstract):
     def get_template_list():
         return [
             ('website/site/templates/site_obszary_dzialalnosci.html', u'Obszary działania'),
+            ('website/site/templates/site_contact.html', u'Kontakt'),
+            ('website/site/templates/site_partnership.html', u'Współpraca'),
     ]
 
     def allow_redirect_to_children(self):

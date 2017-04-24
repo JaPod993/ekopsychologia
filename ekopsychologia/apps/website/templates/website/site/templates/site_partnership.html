@@ -1,0 +1,44 @@
+{% extends 'corecms/site/templates/site_layout.html' %}
+
+
+{% load corecms_render_tags %}
+
+{% load digg_paginator %}
+
+{% load i18n %}
+
+{% block site_inner_content %}
+
+       TEST WSPÓŁPRACA TEST
+
+        <!-- Okruszki -->
+        {% if published_by_hash %}
+            <div class="panel panel-default panel-danger">
+                <div class="panel-body">
+                    {% trans 'Widzisz tę ukrytą stronę ponieważ używasz linku z panelu administracyjnego, nie jest ona widoczna na liście artykułów i w dla wyszukiwarki google' %}
+                </div>
+            </div>
+        {% endif %}
+
+        {% block page_description %}
+            {% include 'corecms/site/site_description.html' %}
+        {% endblock %}
+        {% if object.content and object_articles %}
+            <hr>
+        {% endif %}
+        <!-- Lista artykułów -->
+        {% for article in object_articles %}
+            {% include 'corecms/site/article_list.html' with article=article only %}
+        {% endfor %}
+        <!-- Paginacja -->
+        {% digg_paginator template_name='corecms/site/_digg_paginator.html' %}
+        <!-- Pliki -->
+        {% include 'corecms/site/_files.html' %}
+        <!-- Zdjęcia z plików -->
+        {% include 'corecms/site/_images.html' %}
+        <!-- Galeria i formularz -->
+        {% for connector in article.connector_children.all %}
+            {% render_connector connector %}
+        {% endfor %}
+
+{% endblock %}
