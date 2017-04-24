@@ -1,6 +1,6 @@
 {% load i18n %}
 <ul class="text-left menu-bottom">
-    <li class="menu">Menu</li>
+    <li class="menu hidden-xs">Menu</li>
     {% for item in menu_items %}
         <li class="{% if item.get_absolute_url in request.breadcrumbs.urls %}active_tab{% endif %}">
             <a href="{{ item.get_absolute_url }}">{{ item }}</a>

@@ -246,21 +246,10 @@
 
                 <!-- MENU BOTTOM -->
                 <div class="col-sm-2 col-md-1 padding-left-footer">
-                    <ul class="text-left menu-bottom">
-                        <li class="menu">Menu</li>
 
-                        <li>O nas</li>
-                        <li>Aktualności</li>
-                        <li>Współpraca</li>
-                        <li>Publikacje</li>
-                        <li>Galeria</li>
-                        <li>Kontakt</li>
+                         {% render_menu 'menu-bottom' template_name='website/site/element/_menu_bottom.html' %}
 
-                        <!--
-                        {% render_menu 'menu-bottom' template_name='website/site/element/_menu_bottom.html' %}
-                        -->
 
-                    </ul>
                 </div>
 
                 <!-- PROJEKTY -->
@@ -268,10 +257,10 @@
                     <ul class="text-left lista-projekty">
                         <li class="projekty hidden-xs">Projekty</li>
 
-                        <li>Karpackie Inicjatywy Lokalne</li>
-                        <li>Karpacki Uniwersytet Partycypacji</li>
-                        <li>InRuTou</li>
-                        <li>Cafe Obywatelska</li>
+                        <li><a href="/projekty/karpaty-lacza/">Karpaty Łączą</a></li>
+                        <li><a href="/projekty/karpackie-inicjatywy-lokalne/">Karpackie Inicjatywy Lokalne</a></li>
+                        <li><a href="/projekty/karpacki-uniwersytet-partycypacji/">Karpacki Uniwersytet Partycypacji</a></li>
+                        <li><a href="/projekty/inrutou-innowacje-w-turystyce-wiejskiej/">InRuTou</a></li>
                         <li><a href="#">Więcej...</a></li>
                 </div>
 
@@ -342,16 +331,7 @@
                             data-target="#menu-mobile"><span class="padding-button-name">Menu</span></button>
                     <ul id="menu-mobile" class="text-left menu-bottom collapse">
 
-                        <li>O nas</li>
-                        <li>Aktualności</li>
-                        <li>Współpraca</li>
-                        <li>Publikacje</li>
-                        <li>Galeria</li>
-                        <li>Kontakt</li>
-
-                        <!--
                         {% render_menu 'menu-bottom' template_name='website/site/element/_menu_bottom.html' %}
-                        -->
 
                     </ul>
                 </div>
@@ -364,10 +344,10 @@
 
                     <ul id="projekty-mobile" class="text-left lista-projekty collapse">
 
-                        <li>Karpackie Inicjatywy Lokalne</li>
-                        <li>Karpacki Uniwersytet Partycypacji</li>
-                        <li>InRuTou</li>
-                        <li>Cafe Obywatelska</li>
+                        <li><a href="/projekty/karpaty-lacza/">Karpaty Łączą</a></li>
+                        <li><a href="/projekty/karpackie-inicjatywy-lokalne/">Karpackie Inicjatywy Lokalne</a></li>
+                        <li><a href="/projekty/karpacki-uniwersytet-partycypacji/">Karpacki Uniwersytet Partycypacji</a></li>
+                        <li><a href="/projekty/inrutou-innowacje-w-turystyce-wiejskiej/">InRuTou</a></li>
                         <li><a href="#">Więcej...</a></li>
                     </ul>
                     <hr class="footer-hr">
