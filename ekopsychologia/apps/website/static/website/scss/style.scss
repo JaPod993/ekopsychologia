@@ -1070,10 +1070,11 @@ input.form-control-2 {
   padding-left: 5px;
   border-radius: 0;
   &:focus {
-    border-color: #cccccc;
+   // border-color: #cccccc;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+    outline: none;
   }
 }
 
@@ -1635,10 +1636,17 @@ p.o-nas-tekst {
   font-size: 14px;
 }
 @mixin form-margin {
-  margin-bottom: 41px!important;
+  margin-bottom: 35px!important;
+}
+@mixin form-focus {
+   &:focus {
+     outline:none;
+     border-color: $hover;
+     box-shadow: none;
+   }
 }
  #map {
-        height: 350px;
+        height: 357px;
         width: 100%;
        }
  .eko-mapa {
@@ -1652,15 +1660,25 @@ p.o-nas-tekst {
    height: 50px;
   @include form-border;
   @include form-margin;
+  @include form-focus;
  }
  .eko-contact-button {
    @include form-border;
+   @include form-focus;
    color: $dark-grey!important;
+   &:active:focus,
+   &:active {
+     outline:none;
+     border-color: $hover;
+     box-shadow: none;
+   }
  }
 textarea.form-control {
   resize: vertical;
   @include form-border;
   @include form-margin;
+  height: 120px;
+   @include form-focus;
 }
 
 //...................STOPKA............................
@@ -2313,6 +2331,7 @@ a.sc-logo {
 #newsletter-sign-in {
   button {
     outline: 0;
+    border-color: #a9a9a9;
   }
   .msg {
     position: absolute;

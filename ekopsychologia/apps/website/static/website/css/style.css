@@ -1034,10 +1034,10 @@ input.form-control-2 {
   border-radius: 0;
 }
 input.form-control-2:focus {
-  border-color: #cccccc;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+  outline: none;
 }
 
 button.button-email {
@@ -1582,7 +1582,7 @@ p.o-nas-tekst {
 }
 
 #map {
-  height: 350px;
+  height: 357px;
   width: 100%;
 }
 
@@ -1606,7 +1606,12 @@ input.form-control {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 14px;
-  margin-bottom: 41px !important;
+  margin-bottom: 35px !important;
+}
+input.form-control:focus {
+  outline: none;
+  border-color: #0c824b;
+  box-shadow: none;
 }
 
 .eko-contact-button {
@@ -1617,6 +1622,16 @@ input.form-control {
   font-size: 14px;
   color: #303030 !important;
 }
+.eko-contact-button:focus {
+  outline: none;
+  border-color: #0c824b;
+  box-shadow: none;
+}
+.eko-contact-button:active:focus, .eko-contact-button:active {
+  outline: none;
+  border-color: #0c824b;
+  box-shadow: none;
+}
 
 textarea.form-control {
   resize: vertical;
@@ -1625,7 +1640,13 @@ textarea.form-control {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 14px;
-  margin-bottom: 41px !important;
+  margin-bottom: 35px !important;
+  height: 120px;
+}
+textarea.form-control:focus {
+  outline: none;
+  border-color: #0c824b;
+  box-shadow: none;
 }
 
 html {
@@ -2318,6 +2339,7 @@ a.sc-logo {
 }
 #newsletter-sign-in button {
   outline: 0;
+  border-color: #a9a9a9;
 }
 #newsletter-sign-in .msg {
   position: absolute;
