@@ -676,9 +676,9 @@ a.btn.btn-default.btn-circle.btn-about.btn-dla-karpat {
   padding-left: 11px;
 }
 
-i.eko-dla-karpat-2 {
-  color: #6c8d47;
-  font-size: 40px;
+i.eko-dla-karpat {
+  color: #6c8d47 !important;
+  font-size: 40px !important;
 }
 
 .kontener.nr3 {
@@ -1562,49 +1562,55 @@ p.o-nas-tekst {
   color: #b5842b;
 }
 
-.eko-dla-karpat:before {
+.eko-psych-dzialalnosc-miedzynarodowa:before {
+  font-size: 30px;
+  float: left;
+  content: '\0041';
+}
+
+.eko-psych-dla-karpat:before {
   font-size: 30px;
   float: left;
   content: '\0042';
 }
 
-.eko-dla-edukacji-ekologicznej:before {
+.eko-psych-dla-edukacji-ekologicznej:before {
   content: '\0043';
   font-size: 30px;
   float: left;
 }
 
-.eko-dla-partycypacji-spolecznej:before {
+.eko-psych-dla-partycypacji-spolecznej:before {
   content: '\0044';
   font-size: 30px;
   float: left;
 }
 
-.eko-dla-dziedzictwa-kulturowego:before {
+.eko-psych-dla-dziedzictwa-kulturowego:before {
   font-size: 30px;
   float: left;
   content: '\0046';
 }
 
-.eko-dla-samorzadow-lokalnych:before {
+.eko-psych-dla-samorzadow-lokalnych:before {
   font-size: 30px;
   float: left;
   content: '\0045';
 }
 
-.eko-dla-organizacji-pozarzadowych:before {
+.eko-psych-dla-organizacji-pozarzadowych:before {
   font-size: 30px;
   float: left;
   content: '\0047';
 }
 
-.eko-dla-spolecznosci-lokalnych:before {
+.eko-psych-dla-spolecznosci-lokalnych:before {
   font-size: 30px;
   float: left;
   content: '\0048';
 }
 
-.eko-dla-swiata-nauki:before {
+.eko-psych-dla-swiata-nauki:before {
   font-size: 30px;
   float: left;
   content: '\0049';
