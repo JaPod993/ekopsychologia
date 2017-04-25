@@ -1680,6 +1680,62 @@ textarea.form-control {
   height: 120px;
    @include form-focus;
 }
+//..................WSPÓŁPRACA.........................
+@mixin partnership-transition {
+  transition: all 1s;
+}
+
+.partnership {
+  .partnership-content {
+    @include partnership-transition;
+    padding-top: 47px;
+    padding-bottom: 46px;
+    padding-left: 10px;
+    background: $light-grey;
+
+    a {
+      @include roboto-light;
+      font-size: 14px;
+      color: $title;
+      @include partnership-transition;
+    }
+    .partnership-title {
+      @include roboto-medium;
+      font-size: 16px;
+      color: $hover;
+      @include partnership-transition;
+    }
+  }
+  .partnership-img {
+    border: 2px solid $light-grey;
+    padding-left: 0;
+    padding-right: 0;
+    // height: 130px;
+    // width: 130px;
+    @include partnership-transition;
+  }
+  margin-bottom: 30px;
+
+}
+.partnership:hover {
+    .partnership-content {
+      background: $hover;
+      a {
+        color: $white;
+      }
+      .partnership-title {
+        color: $white;
+      }
+    }
+    .partnership-img {
+      border: 2px solid $hover;
+    }
+
+  }
+
+
+
+
 
 //...................STOPKA............................
 

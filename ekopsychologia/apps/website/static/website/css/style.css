@@ -1649,6 +1649,50 @@ textarea.form-control:focus {
   box-shadow: none;
 }
 
+.partnership {
+  margin-bottom: 30px;
+}
+.partnership .partnership-content {
+  transition: all 1s;
+  padding-top: 47px;
+  padding-bottom: 46px;
+  padding-left: 10px;
+  background: #e6e6e6;
+}
+.partnership .partnership-content a {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #374778;
+  transition: all 1s;
+}
+.partnership .partnership-content .partnership-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #0c824b;
+  transition: all 1s;
+}
+.partnership .partnership-img {
+  border: 2px solid #e6e6e6;
+  padding-left: 0;
+  padding-right: 0;
+  transition: all 1s;
+}
+
+.partnership:hover .partnership-content {
+  background: #0c824b;
+}
+.partnership:hover .partnership-content a {
+  color: #ffffff;
+}
+.partnership:hover .partnership-content .partnership-title {
+  color: #ffffff;
+}
+.partnership:hover .partnership-img {
+  border: 2px solid #0c824b;
+}
+
 html {
   height: 100%;
   box-sizing: border-box;
