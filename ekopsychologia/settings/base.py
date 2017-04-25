@@ -88,6 +88,8 @@ WSGI_APPLICATION = 'ekopsychologia.wsgi.application'
 
 locale.setlocale(locale.LC_ALL, "pl_PL.UTF-8")
 
+os.environ['LC_ALL'] = "pl_PL.UTF-8"
+
 LANGUAGE_CODE = 'pl'
 TIME_ZONE = 'Europe/Warsaw'
 USE_I18N = True
