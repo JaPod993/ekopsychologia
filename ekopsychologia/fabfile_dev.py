@@ -76,7 +76,7 @@ def pip_install():
 
 @roles('production')
 def collect_static():
-    run('SETTINGS=%s %s/bin/python %s/ekopsychologia/manage.py collectstatic  --noinput' % (SETTINGS, venv_path, path))
+    run('LC_ALL=pl_PL.UTF8 PYTHONENCODING=UTF-8 SETTINGS=%s %s/bin/python %s/ekopsychologia/manage.py collectstatic  --noinput' % (SETTINGS, venv_path, path))
     reload_app()
 
 @roles('production')
