@@ -49,6 +49,7 @@ def gitstash():
 
 @roles('production')
 def clean_cache():
+    run('SETTINGS=%s %s/bin/python %s/ekopsychologia/manage.py thumbnail cleanup' % (SETTINGS, venv_path, path))
     run('SETTINGS=%s %s/bin/python %s/ekopsychologia/manage.py thumbnail clear' % (SETTINGS, venv_path, path))
 
 
