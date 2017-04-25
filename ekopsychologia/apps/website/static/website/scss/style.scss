@@ -418,6 +418,7 @@ div.col-sm-12.nav-padding {
 
 
 
+
 //...................O NAS....................
 div.row.single-item.slick-initialized.slick-slider.slick-dotted {
   margin-bottom: 0;
@@ -2013,6 +2014,12 @@ a.sc-logo {
 }
 
 @media screen and (max-width: 1200px) {
+  .project-hover {
+  font-size: 16px;
+  .project-title {
+    margin-top: 30px;
+  }
+}
   .main-content-wrapper {
   padding-bottom:  332px;
 }
@@ -2077,6 +2084,12 @@ a.sc-logo {
 }
 
 @media screen and (max-width: 992px) {
+  .project-hover {
+  font-size: 11px;
+  .project-title {
+    margin-top: 25px;
+  }
+}
    .main-content-wrapper {
   padding-bottom:  516px;
 }
@@ -2162,6 +2175,12 @@ a.sc-logo {
 }
 
 @media screen and (max-width: 768px) {
+  .project-hover {
+  font-size: 14px;
+  .project-title {
+    margin-top: 52px;
+  }
+}
   div.newsletter-text {
     text-align: center;
   }
@@ -2326,6 +2345,12 @@ a.sc-logo {
 }
 
 @media screen and (max-width: 480px) {
+    .project-hover {
+  font-size: 12px;
+  .project-title {
+    margin-top:22px;
+  }
+}
   .paper-obszary {
     .paper {
       button {
@@ -2391,6 +2416,12 @@ a.sc-logo {
 }
 
 @media screen and (max-width: 360px) {
+    .project-hover {
+  font-size: 8px;
+  .project-title {
+    margin-top:20px;
+  }
+}
    .paper-obszary {
     .paper {
       button {

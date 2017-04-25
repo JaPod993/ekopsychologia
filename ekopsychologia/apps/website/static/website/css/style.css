@@ -1982,6 +1982,13 @@ a.sc-logo {
   }
 }
 @media screen and (max-width: 1200px) {
+  .project-hover {
+    font-size: 16px;
+  }
+  .project-hover .project-title {
+    margin-top: 30px;
+  }
+
   .main-content-wrapper {
     padding-bottom: 332px;
   }
@@ -2060,6 +2067,13 @@ a.sc-logo {
   }
 }
 @media screen and (max-width: 992px) {
+  .project-hover {
+    font-size: 11px;
+  }
+  .project-hover .project-title {
+    margin-top: 25px;
+  }
+
   .main-content-wrapper {
     padding-bottom: 516px;
   }
@@ -2149,6 +2163,13 @@ a.sc-logo {
   }
 }
 @media screen and (max-width: 768px) {
+  .project-hover {
+    font-size: 14px;
+  }
+  .project-hover .project-title {
+    margin-top: 52px;
+  }
+
   div.newsletter-text {
     text-align: center;
   }
@@ -2332,6 +2353,13 @@ a.sc-logo {
   }
 }
 @media screen and (max-width: 480px) {
+  .project-hover {
+    font-size: 12px;
+  }
+  .project-hover .project-title {
+    margin-top: 22px;
+  }
+
   .paper-obszary .paper button .title {
     padding-top: 5px;
     font-size: 16px;
@@ -2394,6 +2422,13 @@ a.sc-logo {
   }
 }
 @media screen and (max-width: 360px) {
+  .project-hover {
+    font-size: 8px;
+  }
+  .project-hover .project-title {
+    margin-top: 20px;
+  }
+
   .paper-obszary .paper button .title {
     padding-top: 7px;
     font-size: 13px;
