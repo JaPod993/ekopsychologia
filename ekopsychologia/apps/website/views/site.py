@@ -27,6 +27,7 @@ class HomepageView(TemplateView):
     def get_context_data(self, **kwargs):
         import sys
         print(sys.stdin.encoding, sys.stdout.encoding)
+        print(sys.getdefaultencoding())
 
         context = super(HomepageView, self).get_context_data(**kwargs)
         #context['sites'] = Site.objects.published().all()
