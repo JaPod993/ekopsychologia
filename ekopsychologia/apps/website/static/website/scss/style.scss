@@ -388,6 +388,35 @@ div.col-sm-12.nav-padding {
 }
 
 //.............................................
+//.....................PROJECTS HOVER...................
+.project-hover {
+
+    display: inline-block;
+    @include roboto-bold;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 18px;
+    color: $white;
+
+  .project-title {
+    display: inline-block;
+    margin-top: 52px;
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    transition: all 1s;
+  }
+}
+.project-hover:hover {
+  background: rgba(0,126,61,0.7);
+  .project-title {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
 
 //...................O NAS....................
 div.row.single-item.slick-initialized.slick-slider.slick-dotted {
@@ -1686,6 +1715,7 @@ textarea.form-control {
 }
 
 .partnership {
+  cursor: pointer;
   .partnership-content {
     @include partnership-transition;
     padding-top: 47px;
@@ -1694,7 +1724,7 @@ textarea.form-control {
     background: $light-grey;
 
     a {
-      @include roboto-light;
+      @include roboto-regular;
       font-size: 14px;
       color: $title;
       @include partnership-transition;

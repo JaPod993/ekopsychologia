@@ -22,6 +22,7 @@
   .inner-shadow{
     display: block;
     position: relative;
+    transition: all 1s;
     .shadow{
       display: block;
       -webkit-box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.5);
@@ -31,9 +32,11 @@
       top:0px;
       width:100%;
       height: 100%;
+      transition: all 0.5s;
     }
   }
 }
+
 @mixin bg-fake-shadow{
     background: #efefef;
     background: -moz-linear-gradient(top, #cecece 0%, #e4e4e4 10%, #e4e4e4 10%);
