@@ -7,34 +7,39 @@
 <div class="row article_list">
 
 
-    <div class="col-xs-12 col-sm-4">
-        {% if article.content %}<a href="{{ article.get_absolute_url }}">{% endif %}
-        <div class="img-wrapper">
-        {% if article.thumbnail %}
+    <div class="article-wrapper">
+        <div class="col-xs-12 col-sm-4 article-image">
+            {% if article.content %}<a href="{{ article.get_absolute_url }}">{% endif %}
+            <div class="img-wrapper">
+                {% if article.thumbnail %}
 
-        {% thumbnail article.thumbnail "335x220" crop="center" seoname=article|addstr:"" as im %}
-            <img src="{{ im.url }}" class="img-responsive" alt="{{ article }}">
-        {% endthumbnail %}
-        {% else %}
-            <img src="{% static 'website/images/blue_orb.svg' %}" style="height:189px; width: 100%; opacity:0.5" class="img-responsive" alt="{{ article }}">
-        {% endif %}
+                {% thumbnail article.thumbnail "335x220" crop="center" seoname=article|addstr:"" as im %}
+                <img src="{{ im.url }}" class="img-responsive" alt="{{ article }}">
+                {% endthumbnail %}
+                {% else %}
+                <img src="{% static 'website/images/blue_orb.svg' %}" style="height:189px; width: 100%; opacity:0.5" class="img-responsive" alt="{{ article }}">
+                {% endif %}
+            </div>
+            {% if article.content %}</a>{% endif %}
         </div>
-        {% if article.content %}</a>{% endif %}
-    </div>
-    <div class="col-xs-12 col-sm-8">
+        <div class="col-xs-12 col-sm-8 article-content">
 
-        <h2 class="article-list-title">{% if article.content %}<a href="{{ article.get_absolute_url }}">{% endif %}{{ article.identity }}{% if article.content %}</a>{% endif %}</h2>
-        <p class="date article-list-date">{{ article.article_date }}</p>
-        <div class="content-styles article-list-content">
-            {{ article.shortcut|safe }}
+            <h2 class="article-list-title">{% if article.content %}<a href="{{ article.get_absolute_url }}">{% endif %}{{ article.identity }}{% if article.content %}</a>{% endif %}</h2>
+            <p class="date article-list-date">{{ article.article_date }}</p>
+            <div class="content-styles article-list-content">
+                {{ article.shortcut|safe }}
+            </div>
+            {% include 'corecms/site/tags.html' with size="sm" label=False tags=article.tags.all %}
+
+
         </div>
-        {% include 'corecms/site/tags.html' with size="sm" label=False tags=article.tags.all %}
-
-         {% if article.content %}
-    <div class=""><a href="{{ article.get_absolute_url }}" class="btn btn-blue pull-right full article-list-more">więcej <i class="fa fa-caret-right more-arrow" aria-hidden="true"></i></a></div>
-    {% endif %}
+        <div class="col-xs-12">
+            {% if article.content %}
+            <div class=""><a href="{{ article.get_absolute_url }}" class="btn btn-blue pull-right full article-list-more">więcej <i class="fa fa-caret-right more-arrow" aria-hidden="true"></i></a></div>
+            {% endif %}
+        </div>
+        <div class="col-xs-12 col-sm-12"><hr class="article-list-hr"></div>
 
     </div>
-    <div class="col-xs-12 col-sm-12"><hr class="article-list-hr"></div>
 
 </div>

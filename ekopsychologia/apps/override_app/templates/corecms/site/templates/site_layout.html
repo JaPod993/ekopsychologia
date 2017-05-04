@@ -25,11 +25,6 @@
 {% block body_content %}
 
 <div class="top-wrapper top-{{object.slug}}">
-    <div class="container">
-        <div class="col-sm-12">
-             <h2 class="site-title text-center">{{ object.identity }}</h2>
-        </div>
-    </div>
 </div>
 
 
@@ -56,26 +51,33 @@
                     {% include 'corecms/site/_left_column.html' %}
                 </div>
                 <div class="col-md-9 right">
-                    {% block site_inner_content %}
-                        <!-- Okruszki -->
-                        <!--{% include 'corecms/site/_breadcrumbs.html' %}-->
+
+                        {% block site_inner_content %}
+                    <!-- Okruszki -->
+                    {% include 'corecms/site/_breadcrumbs.html' %}
+
+                    {% if object.slug == "aktualnosci" %}
+                    <div class="col-xs-12 col-sm-12"><hr class="article-list-hr"></div>
+                    {% endif %}
+
+                    <div class="right-wrapper">
                         {% if published_by_hash %}
-                            <div class="panel panel-default panel-danger">
-                                <div class="panel-body">
-                                    {% trans 'Widzisz tę ukrytą stronę ponieważ używasz linku z panelu administracyjnego, nie jest ona widoczna na liście artykułów i w dla wyszukiwarki google' %}
-                                </div>
+                        <div class="panel panel-default panel-danger">
+                            <div class="panel-body">
+                                {% trans 'Widzisz tę ukrytą stronę ponieważ używasz linku z panelu administracyjnego, nie jest ona widoczna na liście artykułów i w dla wyszukiwarki google' %}
                             </div>
+                        </div>
                         {% endif %}
 
                         {% block page_description %}
-                            {% include 'corecms/site/site_description.html' %}
+                        {% include 'corecms/site/site_description.html' %}
                         {% endblock %}
                         {% if object.content and object_articles %}
-                            <hr>
+                        <hr>
                         {% endif %}
                         <!-- Lista artykułów -->
                         {% for article in object_articles %}
-                            {% include 'corecms/site/article_list.html' with article=article only %}
+                        {% include 'corecms/site/article_list.html' with article=article only %}
                         {% endfor %}
                         <!-- Paginacja -->
                         {% digg_paginator template_name='corecms/site/_digg_paginator.html' %}
@@ -85,9 +87,10 @@
                         {% include 'corecms/site/_images.html' %}
                         <!-- Galeria i formularz -->
                         {% for connector in article.connector_children.all %}
-                            {% render_connector connector %}
+                        {% render_connector connector %}
                         {% endfor %}
-                    {% endblock %}
+                        {% endblock %}
+                    </div>
                 </div>
             </div>
         </div>
