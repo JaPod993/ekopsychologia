@@ -1320,14 +1320,16 @@ i.more-arrow {
 .site .files h4 {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  font-size: 24px;
-  color: #0c824b;
+  font-size: 18px;
+  color: #374778;
+  padding-left: 15px;
   padding-bottom: 0;
 }
 .site .article-title {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  color: #0c824b;
+  color: #374778;
+  padding-left: 15px;
   padding-bottom: 20px;
 }
 .site .content-styles {
@@ -1481,6 +1483,11 @@ ol.breadcrumb a {
   margin-left: 0;
   margin-right: 0;
   background: #f2f2f2;
+}
+
+.article-wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .separator-menu {

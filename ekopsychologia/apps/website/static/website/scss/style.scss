@@ -1378,15 +1378,17 @@ i.more-arrow {
  // .gallery,
   .files h4 {
     @include roboto-bold;
-    font-size: 24px;
-    color: $hover;
+    font-size: 18px;
+    color: $title;
+    padding-left: 15px;
     padding-bottom: 0;
   }
 
   .article-title {
     @include roboto-bold;
     //font-size: 24px;
-    color: $hover;
+    color: $title;
+    padding-left: 15px;
     padding-bottom: 20px;
   }
   .content-styles {
@@ -1536,6 +1538,10 @@ ol.breadcrumb {
       }
     }
   }
+}
+.article-wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .separator-menu {
   border-top: 2px solid $grey;
