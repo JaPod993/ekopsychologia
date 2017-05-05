@@ -1002,12 +1002,13 @@ a.btn.btn-default.btn-circle.btn-about:focus {
 }
 
 .article-image {
-  padding-left: 30px;
+  padding-left: 45px;
   padding-right: 0;
 }
 
 .article-content {
   padding-right: 30px;
+  padding-left: 0px;
 }
 
 .aktualnosci {
@@ -1263,6 +1264,7 @@ div.leaf {
 }
 
 .article-list-title {
+  padding-left: 15px;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 18px;
@@ -1273,6 +1275,7 @@ div.leaf {
 }
 
 .article-list-date {
+  padding-left: 15px;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -1286,6 +1289,7 @@ div.leaf {
   color: #0c824b;
   padding-top: 0;
   padding-bottom: 0;
+  padding-right: 30px;
 }
 
 .article-list-hr {
@@ -1329,7 +1333,9 @@ i.more-arrow {
 .site .content-styles {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .site .gallery.files {
   padding-bottom: 15px;
@@ -1431,7 +1437,7 @@ div.dataTables_paginate.paging_simple_numbers.pagination {
   border-color: transparent;
   background-color: #f7f7f7;
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 14px;
 }
 
@@ -1440,6 +1446,7 @@ ol.breadcrumb {
   padding-right: 30px;
   padding-top: 15px;
   padding-bottom: 15px;
+  margin-bottom: 30px;
 }
 ol.breadcrumb a {
   color: #0c824b;
@@ -1447,47 +1454,60 @@ ol.breadcrumb a {
 
 .left-menu ul {
   padding-left: 0;
+  text-align: center;
 }
 .left-menu ul li {
   list-style: none;
-  border-top: 1px solid #e6e6e6;
-  border-right: 1px solid transparent;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-.left-menu ul li:last-child {
-  border-bottom: 1px solid #e6e6e6;
-}
-.left-menu ul li.active {
-  border-top: 1px solid #0c824b;
-  background-color: #0c824b;
-}
-.left-menu ul li.active a {
-  color: #ffffff;
-}
-.left-menu ul li:hover {
-  border-top: 1px solid #0c824b;
-  background-color: #0c824b;
-}
-.left-menu ul li:hover a {
-  color: #ffffff;
 }
 .left-menu ul li a {
+  border-bottom: 2px solid #f2f2f2;
+  margin-left: 15px;
+  margin-right: 15px;
   font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: #374778;
-  font-size: 16px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #303030;
+  display: block;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
-.left-menu ul li ul li {
-  list-style: circle;
+.left-menu ul li a:hover {
+  background: #f2f2f2;
+  text-decoration: none;
+}
+.left-menu ul li a.active {
+  position: relative;
+  top: -2px;
+  margin-left: 0;
+  margin-right: 0;
+  background: #f2f2f2;
 }
 
-.navbar-collapse.collapse.navbar-left-menu {
-  padding-right: 0;
+.separator-menu {
+  border-top: 2px solid #c4c4c4;
+  border-bottom: 2px solid #c4c4c4;
+  height: 25px;
+  background: #eeeeee;
+}
+
+.navbar-left-menu {
   padding-left: 0;
-  border-right: 10px solid #0c824b;
-  border-left: 1px solid #e6e6e6;
+  padding-right: 0;
+  position: relative;
+  top: -48px;
+}
+
+.left-menu-right-header {
+  color: #374778;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.page-title {
+  position: relative;
+  top: -51px;
 }
 
 div.left,
@@ -1504,6 +1524,10 @@ div.right {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
+.left-wrapper {
+  background: #ffffff;
+}
+
 .right-wrapper {
   padding-right: 15px;
   padding-left: 15px;
@@ -1513,10 +1537,21 @@ div.left {
   padding-left: 0;
   background: transparent;
 }
-div.left .navbar-left-menu {
+div.left .left-wrapper {
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.page-title {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background: #0c824b;
+}
+.page-title h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #ffffff;
 }
 
 p.o-nas-tekst {
@@ -2088,6 +2123,12 @@ h2 {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 18px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
 }
 
 @media screen and (max-width: 1700px) {

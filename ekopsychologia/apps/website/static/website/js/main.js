@@ -20,6 +20,21 @@ $(function () {
 });
 
 
+$(function() {
+	 //$('.item').matchHeight({ byRow: true });
+	$('.item').matchHeight({ property: 'min-height' });
+
+    $('button[data-toggle="collapse"]').parent().on('hidden.bs.collapse', function(){
+        $.fn.matchHeight._update();
+    });
+    $('button[data-toggle="collapse"]').parent().on('shown.bs.collapse', function(){
+        $.fn.matchHeight._update();
+    });
+
+});
+
+
+
 $(window).load(function () {
 
     if ($('.osiagniecia-bg').length > 0) {

@@ -4,9 +4,11 @@
 $white: #ffffff; //biały
 $white-accent: #ececec;
 $grey: #c4c4c4; //szary
+$light-light-grey: #f2f2f2;
 $light-grey: #e6e6e6; //jasny szary
 $breadcrumb-grey: #f7f7f7;
 $dark-grey: #303030; //ciemny szary
+$light-dark-grey: #eeeeee; //szary średnio ciemny
 $hover: #0c824b; //zielony hover
 $footer: #098241;
 $title: #374778; //niebieski akcent
@@ -1042,11 +1044,12 @@ a.btn.btn-default.btn-circle.btn-about:focus {
 
 ////....................ARTYKULY.........................
 .article-image {
-  padding-left: 30px;
+  padding-left: 45px;
   padding-right: 0;
 }
 .article-content {
   padding-right: 30px;
+  padding-left: 0px;
 }
 
 .aktualnosci {
@@ -1323,6 +1326,7 @@ div.leaf {
 
 //.........................ARTICLE LIST...................
 .article-list-title {
+  padding-left: 15px;
   @include roboto-bold;
   font-size: 18px;
   margin-top: 0;
@@ -1332,6 +1336,7 @@ div.leaf {
 }
 
 .article-list-date {
+  padding-left: 15px;
   @include roboto-regular;
   font-size: 14px;
   color: $dark-grey;
@@ -1342,6 +1347,7 @@ div.leaf {
   color: $hover;
   padding-top: 0;
   padding-bottom: 0;
+  padding-right: 30px;
   //border: 2px solid $hover;
   //border-radius: 25px;
 }
@@ -1385,7 +1391,9 @@ i.more-arrow {
   }
   .content-styles {
     @include roboto-regular;
-    font-size: 16px;
+    font-size: 14px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .gallery.files {
     padding-bottom: 15px;
@@ -1483,7 +1491,7 @@ div.dataTables_paginate.paging_simple_numbers.pagination {
   //border-bottom: 2px solid $hover;
  // border-radius: 0;
   background-color: $breadcrumb-grey;
-  @include roboto-light;
+  @include roboto-regular;
   font-size: 14px;
 }
 ol.breadcrumb {
@@ -1491,54 +1499,65 @@ ol.breadcrumb {
   padding-right: 30px;
   padding-top: 15px;
   padding-bottom: 15px;
+  margin-bottom: 30px;
   a {
     color: $hover;
   }
 }
 //..................MENU LEWE.........................
+
 .left-menu {
-  ul{
+  ul {
     padding-left: 0;
-  li {
-    list-style: none;
-    border-top: 1px solid $light-grey;
-    border-right: 1px solid transparent;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    &:last-child {
-      border-bottom: 1px solid $light-grey;
-    }
-    &.active {
-      border-top: 1px solid $hover;
-      background-color: $hover;
+    text-align: center;
+    li {
+      list-style: none;
       a {
-        color: $white;
+        border-bottom: 2px solid $light-light-grey;
+        margin-left: 15px;
+        margin-right: 15px;
+        @include roboto-regular;
+        font-size: 14px;
+        color: $dark-grey;
+        display: block;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        &:hover {
+          background: $light-light-grey;
+           text-decoration: none;
+        }
+        &.active {
+          position: relative;
+          top: -2px;
+          margin-left: 0;
+          margin-right: 0;
+          background: $light-light-grey;
+        }
       }
     }
-    &:hover {
-      border-top: 1px solid $hover;
-      background-color: $hover;
-      a {
-        color: $white;
-      }
-    }
-    a {
-      @include roboto-medium;
-      text-transform: uppercase;
-      color: $title;
-      font-size: 16px;
-    }
-    ul li {
-      list-style: circle;
-    }
-  }
   }
 }
-.navbar-collapse.collapse.navbar-left-menu {
-  padding-right: 0;
+.separator-menu {
+  border-top: 2px solid $grey;
+  border-bottom: 2px solid $grey;
+  height: 25px;
+  background: $light-dark-grey;
+}
+.navbar-left-menu {
   padding-left: 0;
-  border-right: 10px solid $hover;
-  border-left: 1px solid $light-grey;
+  padding-right: 0;
+  position: relative;
+  top: -48px;
+}
+.left-menu-right-header {
+  color: $title;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  @include roboto-bold;
+}
+.page-title {
+  position: relative;
+  top: -51px;
 }
 div.left,
 div.right {
@@ -1550,6 +1569,9 @@ div.right {
   padding-right: 0;
   @include material-shadow-2;
 }
+.left-wrapper {
+  background: $white;
+}
 .right-wrapper {
   padding-right: 15px;
   padding-left: 15px;
@@ -1557,8 +1579,17 @@ div.right {
 div.left {
   padding-left: 0;
   background: transparent;
-  .navbar-left-menu {
+  .left-wrapper {
     @include material-shadow-2;
+  }
+}
+.page-title {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background: $hover;
+  h1 {
+    @include roboto-medium;
+    color: $white
   }
 }
 //............o nas podstrona.................
@@ -2098,6 +2129,8 @@ $atuty: #2a5036;
   display: inline-block;
 }
 
+
+
 h1 {
   margin-top: 0;
   margin-bottom: 0;
@@ -2107,6 +2140,11 @@ h2 {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 18px;
+}
+body {
+  @include roboto-regular;
+  font-size: 14px;
+
 }
 
 
