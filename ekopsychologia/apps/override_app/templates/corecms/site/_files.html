@@ -5,7 +5,7 @@
 
 {% if object.published_files|media_distinction:'downloadable' %}
     <div class="files" style="margin-top:20px;">
-        <h4>Pliki do pobrania</h4>
+        <h4 class="download-files">Pliki do pobrania</h4>
         {% for file in object.published_files|media_distinction:'downloadable' %}
             {% if forloop.counter0|divisibleby:"2" %}
                 {% if not forloop.first %}

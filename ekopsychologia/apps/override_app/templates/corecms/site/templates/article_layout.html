@@ -62,8 +62,10 @@
                     {% include 'corecms/site/_left_column.html' %}
                 </div>
                 <div class="col-md-9 right">
+
                     <!-- Okruszki -->
-                    <!--{% include 'corecms/site/_breadcrumbs.html' %}-->
+                    {% include 'corecms/site/_breadcrumbs.html' %}
+                    <div class="article-wrapper">
                     {% if published_by_hash %}
                         <div class="panel panel-default panel-danger">
                             <div class="panel-body">
@@ -91,8 +93,8 @@
                     <!-- Galeria i formularz -->
                     {% for connector in article.connector_children.all %}
                         {% render_connector connector %}
-                    {% endfor %}
-
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
