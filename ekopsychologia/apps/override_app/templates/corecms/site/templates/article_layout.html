@@ -29,12 +29,7 @@
 
 <div class="top-wrapper top-{{object.slug}}">
     <div class="container">
-        <div class="col-sm-12">
-            <!--<div class="title ">-->
-            <!--<span class="site-title">{{ object.get_main_parent.identity }}</span>-->
-        <!--</div>-->
-             <h2 class="site-title text-center">{{ object.get_main_parent.identity }}</h2>
-        </div>
+
     </div>
 </div>
 
@@ -57,11 +52,19 @@
             </div>
             <div class="row">
 
-                <div class="col-md-3 left">
+                  <div class="col-md-3 left">
+                    <div class="left-wrapper item">
+
+                    <div class="page-title text-center">
+                        <h1>{{ request.breadcrumbs.0.name }}</h1>
+                    </div>
                     {% render_submenu object category 'corecms/admin/_render_submenu_left.html' %}
                     {% include 'corecms/site/_left_column.html' %}
+                         {#% <div class="separator-menu"></div> %#}
+                    </div>
                 </div>
-                <div class="col-md-9 right">
+
+                <div class="col-md-9 right item">
 
                     <!-- Okruszki -->
                     {% include 'corecms/site/_breadcrumbs.html' %}

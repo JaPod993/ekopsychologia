@@ -1297,6 +1297,9 @@ div.leaf {
   &.top-stowarzyszenie-ekopsychologia {
      background: url("../images/baner_o_nas.jpg") no-repeat center center;
   }
+  &.top-karpacki-uniwersytet-partycypacji {
+     background: url("../images/projekt_karpacki_uniwersytet.jpg") no-repeat center center;
+  }
   &.top-publikacje {
     background: linear-gradient(rgba(9,130,65,.3), rgba(9,130,65,.3)), url("../images/eko_aktualnosci_5.jpg") no-repeat center center;
   }
@@ -1943,6 +1946,7 @@ height: 100%;
   bottom: 0;
   left: 0;
   padding: 0 0 0 0;
+  z-index: 5;
 }
 
 /// /// /// ///
@@ -2322,6 +2326,123 @@ body {
 }
 
 @media screen and (max-width: 992px) {
+
+
+
+
+
+
+
+
+
+
+  //.......................................................................................................................................
+  //..................MENU LEWE.........................
+
+.left-menu {
+  ul {
+    padding-left: 0;
+    text-align: center;
+    li {
+      list-style: none;
+      a {
+        border-bottom: 2px solid $light-light-grey;
+        margin-left: 15px;
+        margin-right: 15px;
+        @include roboto-regular;
+        font-size: 14px;
+        color: $dark-grey;
+        display: block;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        &:hover {
+          background: $light-light-grey;
+           text-decoration: none;
+        }
+        &.active {
+          position: relative;
+          top: -2px;
+          margin-left: 0;
+          margin-right: 0;
+          background: $light-light-grey;
+        }
+      }
+    }
+  }
+}
+.article-wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.separator-menu {
+  border-top: 2px solid $grey;
+  border-bottom: 2px solid $grey;
+  height: 25px;
+  background: $light-dark-grey;
+}
+.navbar-left-menu {
+  padding-left: 0;
+  padding-right: 0;
+  //position: relative;
+  top: 0;
+}
+.left-menu-right-header {
+  color: $title;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  @include roboto-bold;
+}
+.page-title {
+  position: relative;
+  top: 0;
+}
+div.left,
+div.right {
+   padding-top: 0px;
+  background: $white;
+}
+div.right {
+  padding-left: 0;
+  padding-right: 0;
+  @include material-shadow-2;
+}
+.left-wrapper {
+  background: $white;
+}
+.right-wrapper {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+div.left {
+  padding-left: 0;
+  background: transparent;
+  .left-wrapper {
+    @include material-shadow-2;
+  }
+}
+.page-title {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background: $hover;
+  h1 {
+    @include roboto-medium;
+    color: $white
+  }
+}
+  //.......................................................................................................................................
+
+
+
+
+
+
+
+
+
+
+  .left {
+    padding-right: 0;
+  }
 .slide-3 {
   margin-top: 30px;
 }
@@ -2439,6 +2560,9 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  .brand {
+    padding-left: 15px;
+  }
   .article-image {
     padding-left: 15px;
     padding-bottom: 15px;

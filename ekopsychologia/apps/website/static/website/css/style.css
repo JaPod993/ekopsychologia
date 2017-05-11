@@ -1241,6 +1241,9 @@ div.leaf {
 .top-wrapper.top-statut, .top-wrapper.top-obszary-dzialania, .top-wrapper.top-sprawozdania, .top-wrapper.top-w-mediach, .top-wrapper.top-opinie, .top-wrapper.top-stowarzyszenie-ekopsychologia {
   background: url("../images/baner_o_nas.jpg") no-repeat center center;
 }
+.top-wrapper.top-karpacki-uniwersytet-partycypacji {
+  background: url("../images/projekt_karpacki_uniwersytet.jpg") no-repeat center center;
+}
 .top-wrapper.top-publikacje {
   background: linear-gradient(rgba(9, 130, 65, 0.3), rgba(9, 130, 65, 0.3)), url("../images/eko_aktualnosci_5.jpg") no-repeat center center;
 }
@@ -1911,6 +1914,7 @@ body {
   bottom: 0;
   left: 0;
   padding: 0 0 0 0;
+  z-index: 5;
 }
 
 .footer {
@@ -2324,6 +2328,116 @@ body {
   }
 }
 @media screen and (max-width: 992px) {
+  .left-menu ul {
+    padding-left: 0;
+    text-align: center;
+  }
+  .left-menu ul li {
+    list-style: none;
+  }
+  .left-menu ul li a {
+    border-bottom: 2px solid #f2f2f2;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #303030;
+    display: block;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .left-menu ul li a:hover {
+    background: #f2f2f2;
+    text-decoration: none;
+  }
+  .left-menu ul li a.active {
+    position: relative;
+    top: -2px;
+    margin-left: 0;
+    margin-right: 0;
+    background: #f2f2f2;
+  }
+
+  .article-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .separator-menu {
+    border-top: 2px solid #c4c4c4;
+    border-bottom: 2px solid #c4c4c4;
+    height: 25px;
+    background: #eeeeee;
+  }
+
+  .navbar-left-menu {
+    padding-left: 0;
+    padding-right: 0;
+    top: 0;
+  }
+
+  .left-menu-right-header {
+    color: #374778;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+  }
+
+  .page-title {
+    position: relative;
+    top: 0;
+  }
+
+  div.left,
+  div.right {
+    padding-top: 0px;
+    background: #ffffff;
+  }
+
+  div.right {
+    padding-left: 0;
+    padding-right: 0;
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  }
+
+  .left-wrapper {
+    background: #ffffff;
+  }
+
+  .right-wrapper {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  div.left {
+    padding-left: 0;
+    background: transparent;
+  }
+  div.left .left-wrapper {
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  }
+
+  .page-title {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background: #0c824b;
+  }
+  .page-title h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+  }
+
+  .left {
+    padding-right: 0;
+  }
+
   .slide-3 {
     margin-top: 30px;
   }
@@ -2450,6 +2564,10 @@ body {
   }
 }
 @media screen and (max-width: 768px) {
+  .brand {
+    padding-left: 15px;
+  }
+
   .article-image {
     padding-left: 15px;
     padding-bottom: 15px;
