@@ -1338,6 +1338,7 @@ i.more-arrow {
   font-size: 14px;
   padding-left: 15px;
   padding-right: 15px;
+  padding-bottom: 15px;
 }
 .site .gallery.files {
   padding-bottom: 15px;
@@ -2862,6 +2863,50 @@ body {
     height: 1170px;
   }
 }
+.gallery.files {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.wood-frame-wrapper-2 {
+  background: url(../images/deska.png) center center no-repeat;
+  position: relative;
+  -webkit-box-shadow: 2px 3px 2px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 3px 2px 0 rgba(0, 0, 0, 0.4);
+  margin-bottom: 30px;
+}
+.wood-frame-wrapper-2 a {
+  display: block;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+.wood-frame-wrapper-2 .gwozdz {
+  position: absolute;
+  left: 50%;
+  top: 2px;
+  width: 18px;
+  height: 24px;
+  display: block;
+  margin-left: -9px;
+  background: url(../images/gwozdz.png) center center no-repeat;
+}
+.wood-frame-wrapper-2 .inner-shadow {
+  display: block;
+  position: relative;
+  transition: all 1s;
+}
+.wood-frame-wrapper-2 .inner-shadow .shadow {
+  display: block;
+  -webkit-box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+
 @media screen and (max-width: 360px) {
   .slide-1 {
     font-size: 16px;
