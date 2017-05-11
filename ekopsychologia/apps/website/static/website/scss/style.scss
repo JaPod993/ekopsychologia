@@ -1293,6 +1293,7 @@ div.leaf {
   &.top-obszary-dzialania,
   &.top-sprawozdania,
   &.top-w-mediach,
+  &.top-opinie,
   &.top-stowarzyszenie-ekopsychologia {
      background: url("../images/baner_o_nas.jpg") no-repeat center center;
   }
@@ -1431,6 +1432,7 @@ i.more-arrow {
 .files-wrapper {
   padding-left: 15px;
   padding-right: 15px;
+  padding-bottom: 15px;
 }
 .tr-link {
   cursor: pointer;

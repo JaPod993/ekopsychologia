@@ -1238,7 +1238,7 @@ div.leaf {
 .top-wrapper.top-aktualnosci {
   background: linear-gradient(rgba(9, 130, 65, 0.3), rgba(9, 130, 65, 0.3)), url("../images/eko_aktualnosci_9.jpg") no-repeat center center;
 }
-.top-wrapper.top-statut, .top-wrapper.top-obszary-dzialania, .top-wrapper.top-sprawozdania, .top-wrapper.top-w-mediach, .top-wrapper.top-stowarzyszenie-ekopsychologia {
+.top-wrapper.top-statut, .top-wrapper.top-obszary-dzialania, .top-wrapper.top-sprawozdania, .top-wrapper.top-w-mediach, .top-wrapper.top-opinie, .top-wrapper.top-stowarzyszenie-ekopsychologia {
   background: url("../images/baner_o_nas.jpg") no-repeat center center;
 }
 .top-wrapper.top-publikacje {
@@ -1372,6 +1372,7 @@ i.more-arrow {
 .files-wrapper {
   padding-left: 15px;
   padding-right: 15px;
+  padding-bottom: 15px;
 }
 
 .tr-link {
