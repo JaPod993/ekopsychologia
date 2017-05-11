@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 from corecms.templatetags.corecms_tags import get_previous_breadcrumb
 from django import template
-from cms.models import Article
+from cms.models import Article, Site
 
 register = template.Library()
 
@@ -23,3 +23,12 @@ def get_site_identity(context, article=None):
             return article.get_main_parent().identity
         except AttributeError:
             return article.identity
+
+
+@register.assignment_tag
+def get_opinie_list():
+    return Site.objects.get(slug="opinie").articles.published()
+    try:
+        return Site.objects.get(slug="opinie").articles.published()
+    except:
+        return None

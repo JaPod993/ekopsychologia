@@ -1,0 +1,9 @@
+{% load templatetags %}
+
+{% get_opinie_list as opinie_list %}
+
+{% for item in opinie_list %}
+    <div>
+        {{item.shortcut|safe }}
+    </div>
+{% endfor %}

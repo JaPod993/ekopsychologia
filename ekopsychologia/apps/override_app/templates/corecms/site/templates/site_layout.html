@@ -81,6 +81,12 @@
                         {% block page_description %}
                         {% include 'corecms/site/site_description.html' %}
                         {% endblock %}
+
+
+                        {% if object.slug == "stowarzyszenie-ekopsychologia" %}
+                            {% include 'website/site/element/_opinie_list.html' %}
+                        {% endif %}
+
                         {% if object.content and object_articles %}
                         <hr>
                         {% endif %}
