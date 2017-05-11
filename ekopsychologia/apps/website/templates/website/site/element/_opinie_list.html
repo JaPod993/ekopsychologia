@@ -2,8 +2,23 @@
 
 {% get_opinie_list as opinie_list %}
 
-{% for item in opinie_list %}
-    <div>
-        {{item.shortcut|safe }}
+<div class="opinie-title"><h4>Opinie</h4></div>
+
+
+    <div class="opinie-wrapper clearfix">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 pojedyncza-opinia">
+            <div class="row opinie-slider">
+
+                {% for item in opinie_list %}
+                <a href="{{ item.get_absolute_url }}" class="opinie-link">
+                <span>
+                    {{item.shortcut|safe }}
+                </span>
+                </a>
+                {% endfor %}
+
+            </div>
+        </div>
+        <div class="col-md-2"></div>
     </div>
-{% endfor %}

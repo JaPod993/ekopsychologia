@@ -82,6 +82,14 @@ $(document).ready(function () {
         centerMode: true,
         autoplaySpeed: 5000,
     });
+    $('.opinie-slider').slick({
+
+        accessibility: true,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 7000,
+        speed: 1500,
+    });
 
 });
 

@@ -1322,7 +1322,6 @@ i.more-arrow {
   font-weight: 700;
   font-size: 18px;
   color: #374778;
-  padding-left: 15px;
   padding-bottom: 0;
 }
 .site .article-title {
@@ -2953,6 +2952,73 @@ body {
     top: -55px;
   }
 }
+.opinie-wrapper {
+  background: #f7f7f7;
+  margin-bottom: 15px;
+}
+
+.opinie-link {
+  color: #303030;
+}
+
+.opinie-link:hover {
+  text-decoration: none;
+  color: #374778;
+}
+
+.opinie-title {
+  padding-left: 15px;
+  padding-bottom: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  color: #374778;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.pojedyncza-opinia {
+  margin-left: 15px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.pojedyncza-opinia .slick-dotted.slick-slider {
+  margin-bottom: 0px;
+}
+.pojedyncza-opinia .slick-prev,
+.pojedyncza-opinia .slick-next {
+  font-size: 0;
+  position: absolute;
+  bottom: 20px;
+  color: #c4c4c4;
+  border: 0;
+  background: none;
+  z-index: 1;
+}
+.pojedyncza-opinia .slick-prev {
+  top: 15px;
+  left: -70px;
+}
+.pojedyncza-opinia .slick-prev:before, .pojedyncza-opinia .slick-next:before {
+  color: #c4c4c4;
+}
+.pojedyncza-opinia .slick-prev:before {
+  content: "\f104";
+  font: 50px/1 'FontAwesome';
+}
+.pojedyncza-opinia .slick-next {
+  top: 15px;
+  right: -70px;
+  text-align: right;
+}
+.pojedyncza-opinia .slick-next:before {
+  content: "\f105";
+  font: 50px/1 'FontAwesome';
+}
+.pojedyncza-opinia .slick-prev:hover:before,
+.pojedyncza-opinia .slick-next:hover:before {
+  color: #c4c4c4;
+}
+
 @media screen and (max-width: 320px) {
   .slide-1 {
     font-size: 14px;
