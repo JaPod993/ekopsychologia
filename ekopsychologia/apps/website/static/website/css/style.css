@@ -1368,6 +1368,55 @@ i.more-arrow {
   text-decoration: none;
 }
 
+.files-wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.tr-link {
+  cursor: pointer;
+}
+
+.file-table-row {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #eeeeee;
+}
+
+.icon-pdf:before {
+  font-family: FontAwesome;
+  content: "\f1c1";
+  font-style: normal;
+}
+
+.icon-doc:before,
+.icon-docx:before {
+  font-family: FontAwesome;
+  content: "\f1c2";
+  font-style: normal;
+}
+
+.icon-xls:before,
+.icon-xlsx:befrore {
+  font-family: FontAwesome;
+  content: "\f1c3";
+  font-style: normal;
+}
+
+th.file-table, td.file-table {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+}
+
+tr.file-table-row:hover {
+  background: #eeeeee;
+}
+
+.file-name {
+  color: #303030;
+}
+
 .animated_link4 a:after {
   position: relative;
   padding-left: 10px;
@@ -1566,14 +1615,17 @@ p.o-nas-tekst {
 }
 
 .paper-wrapper {
-  margin-bottom: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .paper-obszary .paper {
   background-color: white;
-  -webkit-box-shadow: 0px 0px 42px 7px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0px 0px 42px 7px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 0px 42px 7px rgba(0, 0, 0, 0.15);
 }
 .paper-obszary .paper button {
   padding-bottom: 6px;
@@ -2397,6 +2449,11 @@ body {
   }
 }
 @media screen and (max-width: 768px) {
+  .article-image {
+    padding-left: 15px;
+    padding-bottom: 15px;
+  }
+
   .nail {
     left: 62%;
   }
@@ -2793,6 +2850,14 @@ body {
   }
 }
 @media screen and (max-width: 400px) {
+  .article-list-content,
+  .content-styles,
+  .article-content,
+  .article-image {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   div.o-nas {
     height: 1170px;
   }
