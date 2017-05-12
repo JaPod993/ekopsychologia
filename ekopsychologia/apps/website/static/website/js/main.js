@@ -18,7 +18,12 @@ $(function () {
 
 
     // obszary dzialania sprawdzanie # i otwieranie
- if(window.location.hash != ""){ $('button[data-target="'+ window.location.hash +'"]').trigger('click'); }
+ if(window.location.hash != ""){
+	$('button[data-target="'+ window.location.hash +'"]').trigger('click');
+	$('html, body').animate({
+        scrollTop: $('button[data-target="'+ window.location.hash +'"]').offset().top
+    }, 1000);
+}
 });
 var eventFired = 0;
 
@@ -116,6 +121,14 @@ $(document).ready(function () {
         autoplaySpeed: 5000,
     });
     $('.opinie-slider').slick({
+
+        accessibility: true,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 10000,
+        speed: 1500,
+    });
+     $('.gallery-slider').slick({
 
         accessibility: true,
         dots: true,
