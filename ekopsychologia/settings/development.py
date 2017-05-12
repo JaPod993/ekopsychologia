@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 from base import *
 
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = DEBUG
 
@@ -32,8 +32,8 @@ EMAIL_HOST_USER = 'noreply@silvercube.pl'
 EMAIL_HOST_PASSWORD = 'fUcUwAuE'
 EMAIL_FROM_USER = 'AM2" <noreply@silvercube.pl>'
 EMAIL_DEFAULT_SUBJECT = u"Formularz kontaktowy z serwisu WWW"
-DEFAULT_FROM_EMAIL = EMAIL_FROM_USER
-SERVER_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = "noreply@silvercube.pl"
+SERVER_EMAIL = "noreply@silvercube.pl"
 
 
 CORECMS_CONTACT_FORM_SUBJECT = u"Wiadomość z serwisu www"
