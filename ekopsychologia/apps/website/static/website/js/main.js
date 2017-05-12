@@ -17,6 +17,8 @@ $(function () {
     });
 
 
+    // obszary dzialania sprawdzanie # i otwieranie
+ if(window.location.hash != ""){ $('button[data-target="'+ window.location.hash +'"]').trigger('click'); }
 });
 var eventFired = 0;
 
@@ -101,7 +103,7 @@ $(document).ready(function () {
 
         accessibility: true,
         dots: true,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 7000,
         speed: 1500,
     });
