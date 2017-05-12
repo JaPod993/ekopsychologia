@@ -2173,6 +2173,41 @@ a.sc-logo {
   text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
 }
 
+.wspolpraca-kartka {
+  background: url("../images/papier.jpg") center center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-bottom: 15px;
+  padding-top: 25px;
+  box-shadow: inset 1px 1px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+.wspolpraca-kartka-ramka {
+  background: white;
+  padding: 13px 13px 13px 13px;
+}
+
+.wspolpraca-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #374778;
+  font-size: 22px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.wspolpraca-tekst {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #374778;
+  font-size: 18px;
+}
+.wspolpraca-tekst .wyroznienie {
+  color: #0c824b;
+}
+
 .slick-slide img {
   display: inline-block;
 }

@@ -2179,7 +2179,43 @@ $atuty: #2a5036;
 }
 //.................................................................
 
+//................................SLIDE 3..........................
 
+.wspolpraca-kartka {
+  background: url("../images/papier.jpg") center center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-bottom: 15px;
+  padding-top: 25px;
+  // inset 0px 5px 4px 0.26px rgba(0, 0, 0, 0.57);
+    box-shadow: inset 1px 1px 8px 0 rgba(0, 0, 0, 0.5);
+
+
+
+}
+.wspolpraca-kartka-ramka {
+  background: white;
+  padding: 13px 13px 13px 13px;
+}
+.wspolpraca-title {
+  @include roboto-medium;
+  color: $title;
+  font-size: 22px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+.wspolpraca-tekst {
+  @include roboto-regular;
+  color: $title;
+  font-size: 18px;
+  .wyroznienie {
+    color: $hover;
+  }
+}
+
+//.................................................................
 
 
 //...................................................

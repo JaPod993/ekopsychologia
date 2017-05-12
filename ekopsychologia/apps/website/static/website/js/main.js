@@ -101,7 +101,7 @@ $(document).ready(function () {
 
         accessibility: true,
         dots: true,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 7000,
         speed: 1500,
     });
