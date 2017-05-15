@@ -25,12 +25,7 @@ class HomepageView(TemplateView):
             return None
 
     def get_context_data(self, **kwargs):
-        import sys
-        print(sys.stdin.encoding, sys.stdout.encoding)
-        print(sys.getdefaultencoding())
-
         context = super(HomepageView, self).get_context_data(**kwargs)
-        #context['sites'] = Site.objects.published().all()
 
         context['blocks'] = BlockSlider.objects.filter(visible=True).order_by('order')
         context['homepage_onas'] = self._get_site_by_slug("o-nas")
@@ -43,9 +38,11 @@ class HomepageView(TemplateView):
         context['homepage_publikacje'] = self._get_site_by_slug("publikacje")
         if context['homepage_publikacje']:
             context['homepage_publikacje_list'] = []
-            for item in context['homepage_publikacje'].articles.filter(for_lang=True).published()[:12]:
+            for item in context['homepage_publikacje'].articles.filter(for_lang=True).published():
                 file_item = item.all_files.filter(publish=True).first()
-                context['homepage_publikacje_list'].append((item, file_item))
+                if file_item and file_item.is_pdf():
+                    context['homepage_publikacje_list'].append((item, file_item))
+            context['homepage_publikacje_list'] = context['homepage_publikacje_list'][:24]
 
         context['homepage_partnership'] = self._get_site_by_slug("wspolpraca")
         context['partnership_slider_list'] = Slider.objects.filter(slug__in=["fundatorzy", "partnerzy", "patroni", "media", "partnerzy-biznesowi"])

@@ -186,3 +186,13 @@ THUMBNAIL_ENGINE = 'sorl.thumbnail.engines.wand_engine.Engine'
 THUMBNAIL_PRESERVE_FORMAT = True
 THUMBNAIL_BACKEND = "corecms.sorlbackend.SEOThumbnailBackend"
 THUMBNAIL_SEO_NAME = True
+
+#ratio dla miniatur
+BASE64_IMAGE_FIELD = {
+    'corecms_article_thumbnail': {
+        'ratio': '237:156'
+    },
+    'corecms_article_main_image': {
+        'ratio': '21:6'
+    }
+}

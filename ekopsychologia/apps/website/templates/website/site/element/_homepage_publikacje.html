@@ -12,7 +12,7 @@
 
     <div class="row publications-slick">
         {% for article, file in homepage_publikacje_list %}
-            {% if file.distinction.cover %}
+
                 <div class="col-md-3">
                     <div class="text-center publication-title"><strong>{{ article|truncatewords:4 }}</strong></div>
                     <div class="text-center">
@@ -25,7 +25,7 @@
                         <a href="{{ file.url }}" class="download-btn" download="{{ file.download_name }}"><span class="fa fa-file-pdf-o"></span> Pobierz</a>
                     </div>
                 </div>
-            {% endif %}
+
         {% endfor %}
     </div>
 
