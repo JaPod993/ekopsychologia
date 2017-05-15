@@ -1843,7 +1843,7 @@ p.o-nas-tekst {
    }
 }
  #map {
-        height: 357px;
+        height: 500px;
         width: 100%;
        }
  .eko-mapa {
@@ -2086,6 +2086,56 @@ ul.menu-bottom {
       text-decoration: none;
     }
   }
+}
+
+//.................KONTAKT PODSTRONA....................
+.kontakt-distinction {
+  color: $dark-grey;
+  //@include roboto-medium;
+
+}
+.dane-kontakotwe-tekst {
+  padding-left: 15px;
+  p {
+    @include roboto-regular;
+    font-size: 14px;
+    color: $title;
+    margin-bottom: 0;
+  }
+}
+.button-submit {
+  margin-bottom: 30px;
+}
+.button-submit {
+  padding-right: 0;
+}
+.kontakt-title-inner {
+  color: $white;
+  height: 50px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.kontakt-title {
+  position: relative;
+  top: -51px;
+  background: $hover;
+}
+.kontakt-shadow {
+  //padding-top: 30px;
+  background: white;
+  @include material-shadow-2;
+}
+.right.mapa,
+.left.mapa {
+  background: white;
+}
+.left.mapa {
+  padding-left: 30px;
+}
+.right.mapa {
+  box-shadow: none;
+  padding-left: 15px;
+  padding-right: 30px;
 }
 
 .osigw-padding {
@@ -2528,6 +2578,12 @@ body {
 }
 
 @media screen and (max-width: 992px) {
+  .right.mapa.item {
+    padding-left: 30px;
+  }
+  .left.mapa.item {
+    padding-right: 30px;
+  }
 
   .paper-dzialalnosc-miedzynarodowa {
     margin-top: 0;
