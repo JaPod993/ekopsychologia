@@ -74,7 +74,7 @@ class SiteAdmin(BaseSiteAdmin):
     change_form_template = "cms/admin/change_form_site.html"
 
     def get_inline_instances(self, request, obj=None):
-        if obj is not None and obj.parent.slug == 'projekty':
+        if obj is not None and obj.parent is not None and obj.parent.slug == 'projekty':
             self.inlines = [FounderInline]
         return super(SiteAdmin, self).get_inline_instances(request, obj)
 

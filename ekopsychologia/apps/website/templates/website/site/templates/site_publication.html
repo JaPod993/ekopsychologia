@@ -1,0 +1,105 @@
+{% extends 'website/site/base/layout.html' %}
+{% load corecms_tags %}
+{% load corecms_render_tags %}
+{% load thumbnail %}
+{% load digg_paginator %}
+{% load staticfiles %}
+{% load mptt_tags %}
+{% load i18n %}
+
+{% block edit_buttons %}
+    {% render_edit_button object 'Edytuj stronę' %}
+{% endblock %}
+{% block title %}<title>{{ object }} | {{ request.cms_config.site_title }}</title>{% endblock %}
+
+{% block canonical_url %}
+    <link rel="canonical" href="{{ request.base_url }}{{ object.get_absolute_url }}">
+{% endblock %}
+{% block body_content %}
+
+    {% include "corecms/site/templates/_top_wrapper.html" %}
+
+
+    <div class="container site wow fadeIn">
+        <div class="row">
+            <div class="col-md-12 bg">
+                <!-- Tło -->
+                {% if object.main_image %}
+                    {% thumbnail object.main_image "1200x300" crop="center" seoname=object|addstr:"" as im %}
+                        <div class="bg_wrapper " style="background: url('{{ im.url }}') center center no-repeat;">
+                    {% endthumbnail %}
+                {% else %}
+                    <div class="bg_wrapper">
+                {% endif %}
+                <div class="title wow fadeInLeft">
+                    <!--<h2>{{ object.identity }}</h2>-->
+                </div>
+                </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-3 left">
+                    <div class="left-wrapper item">
+                        {% if category_project %}
+                            {% include 'corecms/admin/_render_submenu_project.html' %}
+                        {% else %}
+                            <div class="page-title text-center">
+                                <h1>{{ request.breadcrumbs.0.name }}</h1>
+                            </div>
+                            {% render_submenu object category 'corecms/admin/_render_submenu_left.html' %}
+                            {% include 'corecms/site/_left_column.html' %}
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="col-md-9 right item">
+
+                    {% block site_inner_content %}
+                    <!-- Okruszki -->
+                    {% include 'corecms/site/_breadcrumbs.html' %}
+
+                    {% if object.slug == "aktualnosci" %}
+                    <div class="col-xs-12 col-sm-12"><hr class="article-list-hr"></div>
+                    {% endif %}
+
+                    {%if object.level > 0 %}
+                              <div><h2 class="left-menu-right-header">{{ object.identity }}</h2></div>
+                    {% endif %}
+
+                    <div class="right-wrapper">
+
+                        <!-- Lista artykułów -->
+                        {% for article in object_articles %}
+
+                            <div class="row article_list">
+                                <div class="article-wrapper">
+                                    <div class="col-xs-12 col-sm-4 article-image">
+                                        <div class="img-wrapper">
+                                         img
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 {% if category.slug == 'opinie' or category.slug == 'sprawozdania' %}col-sm-12{% else %}col-sm-8{% endif %} article-content">
+                                        <h2 class="article-list-title">{{ article.identity }}</h2>
+                                        <p class="date article-list-date">{{ article.article_date|date:"d.m.Y" }}</p>
+                                        <div class="content-styles article-list-content">
+                                            {{ article.shortcut|safe }}
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12"><hr class="article-list-hr"></div>
+                                </div>
+                            </div>
+
+                        {% endfor %}
+
+
+
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+{% endblock %}

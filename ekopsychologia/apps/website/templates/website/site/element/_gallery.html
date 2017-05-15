@@ -6,7 +6,7 @@
         {% thumbnail file.path "1000x750" as im_big %}
         <div class="col-sm-3 col-xs-6 img_col ">
             <div class="wood-frame-wrapper-2">
-            <a href="{{ im_big.url }}" data-lightbox="{{ object }}" data-title="{{ file.title }}{% if file.title and object %}, {% endif %}{{ object }}">
+            <a href="{{ im_big.url }}" data-lightbox="{{ gallery.pk }}" data-title="{{ file.title }}{% if file.title and object %}, {% endif %}{{ object }}">
                 <span class="inner-shadow">
                     <span class="shadow"></span>
                     <img src="{{ im.url }}" class="img-responsive" alt="{{ file.title }}{% if file.title and object %}, {% endif %}{{ object }}" title="{{ file.title }}{% if file.title and object %}, {% endif %}{{ object }}">
