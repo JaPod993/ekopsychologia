@@ -1,9 +1,10 @@
 {% load thumbnail %}
+
 <div class=" gallery-podstrona">
     <div class="row gallery-container-2">
         {% for file in gallery.images.all %}
-        {% thumbnail file.path "360x230" crop="center" as im %}
-        {% thumbnail file.path "1000x750" as im_big %}
+        {% thumbnail file.path "360x230" crop="center" seoname=file.title as im %}
+        {% thumbnail file.path "1000x750" seoname=file.title as im_big %}
         <div class="col-sm-3 col-xs-6 img_col ">
             <div class="wood-frame-wrapper-2">
             <a href="{{ im_big.url }}" data-lightbox="{{ gallery.pk }}" data-title="{{ file.title }}{% if file.title and object %}, {% endif %}{{ object }}">
