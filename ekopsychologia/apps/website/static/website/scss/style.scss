@@ -2092,7 +2092,7 @@ ul.menu-bottom {
 .kontakt-distinction {
   color: $dark-grey;
   //@include roboto-medium;
-  
+
 }
 .dane-kontakotwe-tekst {
   padding-left: 15px;
@@ -2578,6 +2578,12 @@ body {
 }
 
 @media screen and (max-width: 992px) {
+  .right.mapa.item {
+    padding-left: 30px;
+  }
+  .left.mapa.item {
+    padding-right: 30px;
+  }
 
   .paper-dzialalnosc-miedzynarodowa {
     margin-top: 0;
