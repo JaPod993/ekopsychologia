@@ -156,6 +156,7 @@ function set_news_height() {
     $(".compared-text-part2").height(Math.max.apply(null, sizes));
 }
 
+
 function is_desktop() {
     return $(window).width() >= 736;
 }
