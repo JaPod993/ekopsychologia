@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+from corecms.models.default.slider import Slider
 from corecms.templatetags.corecms_tags import get_previous_breadcrumb
 from django import template
 from cms.models import Article, Site
@@ -46,3 +47,12 @@ def get_obszary_dzialania_content(site):
 def to_hash_url(url):
     splited = url.rstrip("/").split("/")
     return "/".join(splited[0:len(splited)-1]) + "#" + splited[-1]
+
+
+
+@register.assignment_tag
+def get_partnership_slider(slug):
+    try:
+        return Slider.objects.get(slug=slug)
+    except Slider.DoesNotExist:
+        return None
