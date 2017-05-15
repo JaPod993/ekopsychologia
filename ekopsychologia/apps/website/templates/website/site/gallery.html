@@ -1,10 +1,20 @@
 {% extends 'website/site/base/layout.html' %}
 
 {% block body_content %}
-    Galerie<br>
+<div class="container-fluid gallery-fluid">
+    <div class="top-wrapper top-{{object.slug}}">
+    </div>
+</div>
+<div class="container galeria-szablon">
+    <div class="col-xs-12 galeria-napis">
+        <h1>Galeria</h1>
+    </div>
     {% for gallery in object_list %}
-        {{ gallery }}<br>
+    <h2 class="gallery-title">{{ gallery }}</h2>
+    <div class="gallery-content-wrapper">
         {% include "website/site/element/_gallery.html" with gallery=gallery %}
         <hr>
+    </div>
     {% endfor %}
+    </div>
 {% endblock %}

@@ -1478,7 +1478,7 @@ i.more-arrow {
   font-style: normal;
 }
 .icon-xls:before,
-.icon-xlsx:befrore {
+.icon-xlsx:before {
   font-family: FontAwesome;
   content: "\f1c3";
   font-style: normal;
@@ -2380,6 +2380,41 @@ $atuty: #2a5036;
 
 
 //...........GALERIA - PODSTRONA..........................
+.gallery-title {
+  color: $title;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+}
+.gallery-content-wrapper {
+ // padding-top: 30px;
+}
+.galeria-napis {
+  height: 50px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  color: $white;
+  background: $hover;
+  text-align: center;
+  position: relative;
+  top: -51px;
+
+
+}
+.gallery-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+.galeria-szablon {
+   padding-left: 0;
+  padding-right: 0;
+  background: white;
+  @include material-shadow-2;
+}
+.gallery-podstrona {
+  padding-left: 30px;
+  padding-right: 30px;
+}
 .gallery.files {
   padding-left: 15px;
   padding-right: 15px;

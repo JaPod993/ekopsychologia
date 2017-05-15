@@ -1534,7 +1534,7 @@ i.more-arrow {
 }
 
 .icon-xls:before,
-.icon-xlsx:befrore {
+.icon-xlsx:before {
   font-family: FontAwesome;
   content: "\f1c3";
   font-style: normal;
@@ -2481,6 +2481,43 @@ a.sc-logo {
 .article-image-padding {
   padding-left: 30px;
   padding-bottom: 30px;
+}
+
+.gallery-title {
+  color: #374778;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+}
+
+.galeria-napis {
+  height: 50px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  color: #ffffff;
+  background: #0c824b;
+  text-align: center;
+  position: relative;
+  top: -51px;
+}
+
+.gallery-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.galeria-szablon {
+  padding-left: 0;
+  padding-right: 0;
+  background: white;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.gallery-podstrona {
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .gallery.files {
