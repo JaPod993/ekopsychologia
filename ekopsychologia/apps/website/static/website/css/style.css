@@ -251,6 +251,10 @@
   text-decoration: none;
 }
 
+.article-wrapper .area-wrapper .areas-list-slider > div {
+  display: inline-block;
+}
+
 .project-info-wrapper {
   position: relative;
   top: -50px;
