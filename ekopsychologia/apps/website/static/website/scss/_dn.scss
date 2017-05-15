@@ -143,3 +143,35 @@ a {
   position: relative;
   z-index: 1;
 }
+
+.project-title-green{
+    margin-top: 200px;
+    background-color: #0b693d;
+    display: inline-block;
+    margin-right: -15px;
+    color: #fff;
+    font-size: 24px;
+    padding: 10px 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.page-title.project-icon{
+  background: #fff;
+  min-height: 100px;
+}
+.project-info-wrapper{
+  position: relative;
+  top: -50px;
+  .project-link{
+    color: #000;
+    margin-bottom: 70px;
+    display: inline-block;
+  }
+ .founders-title{
+   border-bottom: 2px solid #f2f2f2;
+   border-top: 2px solid #f2f2f2;
+   margin-bottom: 10px;
+   padding: 5px 0px;
+ }
+}

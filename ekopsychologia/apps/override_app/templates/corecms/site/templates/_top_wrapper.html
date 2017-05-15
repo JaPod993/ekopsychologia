@@ -1,6 +1,13 @@
 {% if category_project %}
 <div class="top-wrapper top-{{category.slug}}"{% if category_project.main_image %} style="background-image: url('{{ category_project.main_image.url }}')"{% endif %}>
-    <span style="background-color: red">{{ category_project }}</span>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-6 text-right">
+                <span class="project-title-green">{{ category_project }}</span>
+            </div>
+        </div>
+    </div>
+
 </div>
 {% else %}
 <div class="top-wrapper top-{{category.slug}}"{% if category.main_image %} style="background-image: url('{{ category.main_image.url }}')"{% endif %}>
