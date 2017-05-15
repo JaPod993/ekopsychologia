@@ -1,18 +1,18 @@
 {% load thumbnail %}
 <div class=" gallery-podstrona">
-    <div class="row gallery-container-2">
+    <div class="row gallery-container-2 dots">
         {% for file in gallery.images.all %}
         {% thumbnail file.path "360x230" crop="center" as im %}
         {% thumbnail file.path "1000x750" as im_big %}
         <div class="col-sm-3 col-xs-6 img_col ">
             <div class="wood-frame-wrapper-2">
-            <a href="{{ im_big.url }}" data-lightbox="{{ gallery.pk }}" data-title="{{ file.title }}{% if file.title and object %}, {% endif %}{{ object }}">
-                <span class="inner-shadow">
-                    <span class="shadow"></span>
-                    <img src="{{ im.url }}" class="img-responsive" alt="{{ file.title }}{% if file.title and object %}, {% endif %}{{ object }}" title="{{ file.title }}{% if file.title and object %}, {% endif %}{{ object }}">
-                </span>
-            </a>
-                </div>
+                <a href="{{ im_big.url }}" data-lightbox="{{ gallery.pk }}" data-title="{{ file.title }}{% if file.title and object %}, {% endif %}{{ object }}">
+                    <span class="inner-shadow">
+                        <span class="shadow"></span>
+                        <img src="{{ im.url }}" class="img-responsive" alt="{{ file.title }}{% if file.title and object %}, {% endif %}{{ object }}" title="{{ file.title }}{% if file.title and object %}, {% endif %}{{ object }}">
+                    </span>
+                </a>
+            </div>
         </div>
         {% endthumbnail %}
         {% endthumbnail %}
@@ -26,9 +26,10 @@ $(function(){
      $('.gallery-container-2').slick({
 
         accessibility: true,
+         infinite: false,
          slidesToShow: 4,
          slidesToScroll: 4,
-        dots: true,
+        dots: false,
         autoplay: true,
         autoplaySpeed: 10000,
         speed: 1500,

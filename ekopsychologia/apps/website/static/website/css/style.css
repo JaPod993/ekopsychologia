@@ -2500,6 +2500,36 @@ a.sc-logo {
   padding-bottom: 30px;
 }
 
+.gallery-container-2.dots .slick-dots {
+  top: 200px;
+}
+.gallery-container-2.dots .slick-dots li button:before {
+  color: #c4c4c4;
+}
+.gallery-container-2.dots .slick-prev:before, .gallery-container-2.dots .slick-next:before {
+  color: #c4c4c4;
+}
+.gallery-container-2.dots .slick-prev:before, .gallery-container-2.dots .slick-next:before {
+  width: 10px;
+  height: 10px;
+}
+.gallery-container-2.dots .slick-next:before {
+  font: 40px/1 'FontAwesome';
+}
+.gallery-container-2.dots .slick-prev:before {
+  font: 40px/1 'FontAwesome';
+}
+.gallery-container-2.dots .slick-next {
+  top: 72px;
+  right: -18px;
+  text-align: right;
+}
+.gallery-container-2.dots .slick-prev {
+  top: 72px;
+  left: -18px;
+  text-align: left;
+}
+
 .gallery-title {
   color: #374778;
   padding-top: 15px;
@@ -2533,8 +2563,8 @@ a.sc-logo {
 }
 
 .gallery-podstrona {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 45px;
+  padding-right: 45px;
 }
 
 .gallery.files {
@@ -2664,6 +2694,17 @@ body {
   }
 }
 @media screen and (max-width: 1200px) {
+  .gallery-container-2.dots .slick-next {
+    top: 56px;
+    right: -18px;
+    text-align: right;
+  }
+  .gallery-container-2.dots .slick-prev {
+    top: 56px;
+    left: -18px;
+    text-align: left;
+  }
+
   .atuty-title,
   .atuty-tekst {
     font-size: 16px;

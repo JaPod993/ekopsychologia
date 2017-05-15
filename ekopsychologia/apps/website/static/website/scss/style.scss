@@ -2378,8 +2378,41 @@ $atuty: #2a5036;
    padding-bottom: 30px;
 }
 
-
 //...........GALERIA - PODSTRONA..........................
+.galeria-hr {
+ // margin-top: 30px;
+}
+.gallery-container-2.dots {
+  .slick-dots {
+    top: 200px;
+  }
+  .slick-dots li button:before {
+    color: $grey;
+  }
+  .slick-prev:before, .slick-next:before {
+    color: $grey;
+  }
+  .slick-prev:before, .slick-next:before {
+    width: 10px;
+    height: 10px;
+  }
+  .slick-next:before {
+    font: 40px/1 'FontAwesome';
+  }
+  .slick-prev:before {
+    font: 40px/1 'FontAwesome';
+  }
+  .slick-next {
+    top: 72px;
+    right: -18px;
+    text-align: right;
+}
+    .slick-prev {
+    top: 72px;
+    left: -18px;
+    text-align: left;
+}
+}
 .gallery-title {
   color: $title;
   padding-top: 15px;
@@ -2413,8 +2446,8 @@ $atuty: #2a5036;
   @include material-shadow-2;
 }
 .gallery-podstrona {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 45px;
+  padding-right: 45px;
 }
 .gallery.files {
   padding-left: 15px;
@@ -2541,6 +2574,18 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
+  .gallery-container-2.dots {
+  .slick-next {
+    top: 56px;
+    right: -18px;
+    text-align: right;
+  }
+  .slick-prev {
+    top: 56px;
+    left: -18px;
+    text-align: left;
+  }
+}
   .atuty-title,
   .atuty-tekst {
     font-size: 16px;
