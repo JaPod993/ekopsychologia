@@ -27,11 +27,7 @@
 {% block body_content %}
 
 
-<div class="top-wrapper top-{{object.slug}}">
-    <div class="container">
-
-    </div>
-</div>
+    {% include "corecms/site/templates/_top_wrapper.html" %}
 
     <div class="container site wow fadeIn">
         <div class="row">
@@ -58,9 +54,12 @@
                     <div class="page-title text-center">
                         <h1>{{ request.breadcrumbs.0.name }}</h1>
                     </div>
-                    {% render_submenu object category 'corecms/admin/_render_submenu_left.html' %}
-                    {% include 'corecms/site/_left_column.html' %}
-                         {#% <div class="separator-menu"></div> %#}
+                    {% if category_project %}
+                        {% include 'corecms/admin/_render_submenu_project.html' %}
+                    {% else %}
+                        {% render_submenu object category 'corecms/admin/_render_submenu_left.html' %}
+                        {% include 'corecms/site/_left_column.html' %}
+                    {% endif %}
                     </div>
                 </div>
 

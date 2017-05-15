@@ -99,3 +99,13 @@ class ContentItemDetailView(BaseContentItemDetailView):
             return super(DetailView, self).get(request, *args, **kwargs)
         except RedirectException as r:
             return HttpResponseRedirect(r.url)
+
+    def get_context_data(self, **kwargs):
+        context = super(ContentItemDetailView, self).get_context_data(**kwargs)
+
+        if self.request.path.startswith("/projekty/"):
+            category_slugs = self.kwargs['hierarchy'].split('/')
+            category_project = Site.objects.get_by_slug(category_slugs[1])
+            if category_project.is_published():
+                context['category_project'] = category_project
+        return context

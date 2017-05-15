@@ -1,0 +1,9 @@
+{% if category_project %}
+<div class="top-wrapper top-{{category.slug}}"{% if category_project.main_image %} style="background-image: url('{{ category_project.main_image.url }}')"{% endif %}>
+    <span style="background-color: red">{{ category_project }}</span>
+</div>
+{% else %}
+<div class="top-wrapper top-{{category.slug}}"{% if category.main_image %} style="background-image: url('{{ category.main_image.url }}')"{% endif %}>
+
+</div>
+{% endif %}
