@@ -2,6 +2,7 @@
 import sys
 from shutil import copyfile
 
+from corecms.models.gallery import Gallery
 from django.core.files.uploadedfile import UploadedFile, SimpleUploadedFile
 from django.core.management.base import BaseCommand
 import os, errno
@@ -18,4 +19,7 @@ class Command(BaseCommand):
     help = ''
 
     def handle(self, *args, **options):
-        pass
+        for gallery in Gallery.objects.all():
+            if gallery.images.count() == 0:
+                print gallery
+                gallery.delete()

@@ -1,47 +1,100 @@
 {% load thumbnail %}
 {% load corecms_tags %}
 
-<nav role="navigation" class="sub_menu navbar navbar-default">
-    <div class="navbar-header">
-        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <div class="hidden-lg hidden-md hidden-sm hidden-xs "><h2><a
-                href="{{ category.get_root.get_absolute_url }}">{{ category.get_root }}</a></h2>
-        </div>
-    </div>
-    <div id="navbarCollapse" class="navbar-collapse collapse navbar-left-menu">
-        <div class="left-menu text-center" style="padding-bottom:10px;">
-            <ul>
-                {% for node in category_project.children.published %}
-                <li class="{% if node.get_absolute_url in request.breadcrumbs.urls %}active{% endif %}">
-                    <a href="{{ node.get_absolute_url }}" class="{% if node.get_absolute_url in request.breadcrumbs.urls %}active{% endif %}">{{ node|capfirst }}</a>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-</nav>
-
-
-<div>
+<div class="page-title text-center project-icon">
     {% if category_project.logo %}
         {% thumbnail category_project.logo "200" seoname=category_project|addstr:"" as im %}
-            <img src="{{ im.url }}">
+            <img src="{{ im.url }}" alt="{{ category_project }}">
         {% endthumbnail %}
     {% endif %}
-    {% if category_project.url %}<a href="{{ category_project.url }}">{{ category_project.url }}</a>{% endif %}
-    {% if category_project.execution_time %}{{ category_project.execution_time }}{% endif %}
-    {% if category_project.budget %}{{ category_project.budget }}{% endif %}
+</div>
+<div class="clearfix project-info-wrapper text-center">
+    <div>
+    {% if category_project.url %}<a class="project-link" href="{{ category_project.url }}">{{ category_project.url }}</a>{% endif %}
+    </div>
 
-    {% for founder in category_project.founder_set.all %}
-        {{ founder.name }}
-        {{ founder.logo.url }}
-        {{ founder.url }}
+    <nav role="navigation" class="sub_menu navbar navbar-default">
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="hidden-lg hidden-md hidden-sm hidden-xs "><h2><a
+                    href="{{ category.get_root.get_absolute_url }}">{{ category.get_root }}</a></h2>
+            </div>
+        </div>
+        <div id="navbarCollapse" class="navbar-collapse collapse navbar-left-menu">
+            <div class="left-menu text-center" style="padding-bottom:10px;">
+                <ul>
+                    {% for node in category_project.children.published %}
+                    <li class="{% if node.get_absolute_url in request.breadcrumbs.urls %}active{% endif %}">
+                        <a href="{{ node.get_absolute_url }}" class="{% if node.get_absolute_url in request.breadcrumbs.urls %}active{% endif %}">{{ node|capfirst }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    {% endfor %}
+    <div style="margin-bottom: 15px;">
+        <div class="text-center founders-title">Obszary działania</div>
+        <div class="area-wrapper">
+            <div class="areas-list-slider">
+
+                {% for area in category_project.areas.all %}
+                    <div><i class="eko-{{ area.slug }}" title="{{ area }}"></i></div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+    <div class="project-founders" style="margin-bottom: 15px;">
+        <div class="text-center founders-title">Fundatorzy</div>
+        <div class="founders-slider">
+        {% for founder in category_project.founder_set.all %}
+            <div class="text-center">
+                <a href="{{ founder.url }}" target="_blank">
+                    {% thumbnail founder.logo "64" seoname=category_project|addstr:"" as im %}
+                    <img src="{{ im.url }}" alt="{{ founder.name }}">
+                    {% endthumbnail %}
+                </a>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+
+    {% if category_project.execution_time %}
+    <div class="text-center founders-title">Czas realizacji: {{ category_project.execution_time }}</div>
+    {% endif %}
+    {% if category_project.budget %}
+    <div class="text-center founders-title">Budżet całkowity: {{ category_project.budget }}</div>
+    {% endif %}
 
 </div>
+<script>
+    $(function(){
+        $('.founders-slider').slick({
+          infinite: true,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+            arrows: false,
+            dots: false,
+            autoplay: true,
+            autoplaySpeed: 2000
+        });
+
+        $('.areas-list-slider').slick({
+          infinite: true,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+            arrows: false,
+            dots: false,
+            autoplay: true,
+            autoplaySpeed: 2000
+        });
+
+    })
+</script>

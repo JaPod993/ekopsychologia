@@ -146,6 +146,123 @@
   z-index: 1;
 }
 
+.project-title-green {
+  margin-top: 200px;
+  background-color: #0b693d;
+  display: inline-block;
+  margin-right: -15px;
+  color: #fff;
+  font-size: 24px;
+  padding: 10px 25px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.page-title.project-icon {
+  background: #fff;
+  min-height: 100px;
+}
+
+.project-info-wrapper {
+  position: relative;
+  top: -50px;
+}
+.project-info-wrapper .project-link {
+  color: #000;
+  margin-bottom: 70px;
+  display: inline-block;
+}
+.project-info-wrapper .founders-title {
+  border-bottom: 2px solid #f2f2f2;
+  border-top: 2px solid #f2f2f2;
+  margin-bottom: 10px;
+  padding: 5px 0px;
+}
+.project-info-wrapper .area-wrapper {
+  position: relative;
+}
+.project-info-wrapper [class*='eko-'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  border: 7px solid red;
+  margin-left: 10px;
+}
+.project-info-wrapper .eko-dzialalnosc-miedzynarodowa {
+  border-color: #ef6c45;
+}
+.project-info-wrapper .eko-dzialalnosc-miedzynarodowa:before {
+  content: '\0041';
+}
+.project-info-wrapper .eko-dla-karpat:before {
+  content: '\0042';
+}
+.project-info-wrapper .eko-dla-karpat {
+  border-color: #6c8d47;
+}
+.project-info-wrapper .eko-dla-edukacji-ekologicznej {
+  border-color: #3c81c2;
+}
+.project-info-wrapper .eko-dla-edukacji-ekologicznej:before {
+  content: '\0043';
+  color: #3c81c2;
+  font-size: 40px;
+}
+.project-info-wrapper .eko-dla-partycypacji-spolecznej {
+  border-color: #b27a3f;
+}
+.project-info-wrapper .eko-dla-partycypacji-spolecznej:before {
+  content: '\0044';
+  color: #b27a3f;
+  font-size: 36px;
+}
+.project-info-wrapper .eko-dla-samorzadow-lokalnych {
+  border-color: #f2b756;
+}
+.project-info-wrapper .eko-dla-samorzadow-lokalnych:before {
+  content: '\0045';
+  color: #f2b756;
+  font-size: 36px;
+}
+.project-info-wrapper .eko-dla-dziedzictwa-kulturowego {
+  border-color: #896b5f;
+}
+.project-info-wrapper .eko-dla-dziedzictwa-kulturowego:before {
+  content: '\0046';
+  color: #896b5f;
+  font-size: 38px;
+}
+.project-info-wrapper .eko-dla-organizacji-pozarzadowych {
+  border-color: #5d96a0;
+}
+.project-info-wrapper .eko-dla-organizacji-pozarzadowych:before {
+  content: '\0047';
+  color: #5d96a0;
+  font-size: 40px;
+}
+.project-info-wrapper .eko-dla-spolecznosci-lokalnych {
+  border-color: #6363aa;
+}
+.project-info-wrapper .eko-dla-spolecznosci-lokalnych:before {
+  content: '\0048';
+  color: #6363aa;
+  font-size: 36px;
+}
+.project-info-wrapper .eko-dla-swiata-nauki {
+  border-color: #b5842b;
+}
+.project-info-wrapper .eko-dla-swiata-nauki:before {
+  content: '\0049';
+  color: #b5842b;
+  font-size: 36px;
+}
+.project-info-wrapper .eko-sc_white:before {
+  content: '\004a';
+}
+
 .text-justify {
   text-align: justify;
 }
