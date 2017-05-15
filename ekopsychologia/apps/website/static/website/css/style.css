@@ -2303,6 +2303,11 @@ a.sc-logo {
   color: #c4c4c4;
 }
 
+.article-image-padding {
+  padding-left: 30px;
+  padding-bottom: 30px;
+}
+
 .gallery.files {
   padding-left: 15px;
   padding-right: 15px;
