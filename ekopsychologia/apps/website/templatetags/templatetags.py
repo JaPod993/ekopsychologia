@@ -40,3 +40,9 @@ def get_obszary_dzialania_content(site):
     rtn['sites'] = Site.objects.published().filter(areas=site)
     rtn['articles'] = Article.objects.published().filter(areas=site)
     return rtn
+
+
+@register.filter
+def to_hash_url(url):
+    splited = url.rstrip("/").split("/")
+    return "/".join(splited[0:len(splited)-1]) + "#" + splited[-1]
