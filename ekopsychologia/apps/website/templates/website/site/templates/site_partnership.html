@@ -1,83 +1,33 @@
 {% extends 'corecms/site/templates/site_layout.html' %}
 
-
 {% load corecms_render_tags %}
-
 {% load digg_paginator %}
-
 {% load i18n %}
-
 {% load staticfiles %}
+{% load templatetags %}
+{% load thumbnail %}
 
 {% block site_inner_content %}
 <div class="partnership-wrapper">
 
- <div><h2 class="partnership-title">{{ object.identity }}</h2></div>
+    <div><h2 class="partnership-title">{{ object.identity }}</h2></div>
 
-<div class="row">
-    <div class="col-md-12 col-lg-6 partnership" onclick="location.href='LINK DO STRONY';">
-        <img class="col-xs-4 img-responsive partnership-img compared-text-part3 compared-text-part " src="{% static 'website/images/patroni/Konwencja_Karpacka.png' %}">
-        <div class="col-xs-8 partnership-content compared-text-part3 compared-text-part">
-            <div class="partnership-title">LONG TITLE LONG TITLE LONG  </div>
-            <a href="http://www.carpathianconvention.org/">http://www.carpathianconvention.org/</a>
-        </div>
-    </div>
-
-    <div class="col-md-12 col-lg-6 partnership" onclick="location.href='LINK DO STRONY';">
-        <img class="col-xs-4 img-responsive partnership-img " src="{% static 'website/images/patroni/Ministerstwo_Rolnictwa.png' %}">
-        <div class="col-xs-8 partnership-content compared-text-part">
-            <div class="partnership-title">Title</div>
-            <a href="http://www.carpathianconvention.org/">http://www.carpathianconvention.org/</a>
-        </div>
-    </div>
-
-    <div class="col-md-12 col-lg-6 partnership" onclick="location.href='LINK DO STRONY';">
-            <img class="col-xs-4 img-responsive partnership-img " src="{% static 'website/images/patroni/Ministerstwo_Sportu_i_Turystyki.png' %}">
-            <div class="col-xs-8 partnership-content compared-text-part">
-                <div class="partnership-title">Title</div>
-                <a href="http://www.carpathianconvention.org/">http://www.carpathianconvention.org/</a>
-            </div>
-    </div>
-
-    <div class="col-md-12 col-lg-6 partnership" onclick="location.href='LINK DO STRONY';">
-        <img class="col-xs-4 img-responsive partnership-img " src="{% static 'website/images/patroni/Województwo_Podkarpackie.png' %}">
-        <div class="col-xs-8 partnership-content compared-text-part">
-            <div class="partnership-title">Title</div>
-            <a href="http://www.carpathianconvention.org/">http://www.carpathianconvention.org/</a>
-        </div>
-    </div>
-</div>
-
-</div>
-
-        <!-- Okruszki -->
-        {% if published_by_hash %}
-            <div class="panel panel-default panel-danger">
-                <div class="panel-body">
-                    {% trans 'Widzisz tę ukrytą stronę ponieważ używasz linku z panelu administracyjnego, nie jest ona widoczna na liście artykułów i w dla wyszukiwarki google' %}
+    <div class="row">
+        {% get_partnership_slider object.slug as slider %}
+        {% for slide in slider.items.all %}
+            {% thumbnail slide.image "150x150" seoname=slide.name as im %}
+            <div class="col-md-12 col-lg-6 partnership" {% if slide.url %}onclick="location.href='{{ slide.url }}';"{% endif %}>
+                <img class="col-xs-4 img-responsive partnership-img compared-text-part3 compared-text-part " src="{{ im.url }}">
+                <div class="col-xs-8 partnership-content compared-text-part3 compared-text-part">
+                    <div class="partnership-title">{{ slide.name }}</div>
+                    {% if slide.url %}<a href="{{ slide.url|get_domain }}">{{ slide.url }}</a>{% endif %}
                 </div>
             </div>
-        {% endif %}
+            {% endthumbnail %}
+        {% endfor %}
+    </div>
 
-        {% block page_description %}
-            {% include 'corecms/site/site_description.html' %}
-        {% endblock %}
-        {% if object.content and object_articles %}
-            <hr>
-        {% endif %}
-        <!-- Lista artykułów -->
-        {% for article in object_articles %}
-            {% include 'corecms/site/article_list.html' with article=article only %}
-        {% endfor %}
-        <!-- Paginacja -->
-        {% digg_paginator template_name='corecms/site/_digg_paginator.html' %}
-        <!-- Pliki -->
-        {% include 'corecms/site/_files.html' %}
-        <!-- Zdjęcia z plików -->
-        {% include 'corecms/site/_images.html' %}
-        <!-- Galeria i formularz -->
-        {% for connector in article.connector_children.all %}
-            {% render_connector connector %}
-        {% endfor %}
+</div>
+
 
 {% endblock %}
