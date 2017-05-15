@@ -17,7 +17,7 @@
         {% for slide in slider.items.all %}
             {% thumbnail slide.image "150x150" seoname=slide.name as im %}
             <div class="col-md-12 col-lg-6 partnership" {% if slide.url %}onclick="location.href='{{ slide.url }}';"{% endif %}>
-                <img class="col-xs-4 img-responsive partnership-img compared-text-part3 compared-text-part " src="{{ im.url }}' %}">
+                <img class="col-xs-4 img-responsive partnership-img compared-text-part3 compared-text-part " src="{{ im.url }}">
                 <div class="col-xs-8 partnership-content compared-text-part3 compared-text-part">
                     <div class="partnership-title">{{ slide.name }}</div>
                     {% if slide.url %}<a href="{{ slide.url }}">{{ slide.url }}</a>{% endif %}
