@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 import json
 
-from corecms.forms.forms import SiteAdminForm as BaseSiteAdminForm
+from corecms.forms.forms import SiteAdminForm as BaseSiteAdminForm, ArticleAdminForm as BaseArticleAdminForm
 from corecms.models.gallery import Gallery
 from corecms.widgets import Select2RelatedMultipleWidget
 from django.contrib import admin
@@ -14,7 +14,21 @@ from django.contrib.contenttypes.models import ContentType
 from cms.models import Article, GalleryDistinction, Site, Founder
 
 
+class ArticleAdminForm(BaseArticleAdminForm):
+
+    def __init__(self, *args, **kwargs):
+        super(ArticleAdminForm, self).__init__(*args, **kwargs)
+        self.fields['areas'].queryset = Site.objects.filter(parent__slug="obszary-dzialania")
+        self.fields['areas'].widget = Select2RelatedMultipleWidget(rel=Site, choices=self.fields['areas'].widget.choices)
+
+    class Meta:
+        model = Article
+        fields = ('identity', 'shortcut', 'content', 'status', 'slug',
+                  'template', 'article_date', 'thumbnail', 'main_image', 'for_lang', 'tags', 'areas')
+
+
 class ArticleAdmin(BaseArticleAdmin):
+    form = ArticleAdminForm
     change_form_template = "cms/admin/change_form_article.html"
 
     def change_view(self, request, object_id, form_url='', extra_context=None):

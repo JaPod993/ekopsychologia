@@ -1,5 +1,6 @@
 {% load thumbnail %}
 {% load corecms_tags %}
+{% load templatetags %}
 
 <div class="page-title text-center project-icon">
     {% if category_project.logo %}
@@ -42,11 +43,13 @@
         <div class="text-center founders-title">Obszary działania</div>
         <div class="area-wrapper">
             <div class="areas-list-slider">
-
                 {% for area in category_project.areas.all %}
-                    <div><i class="eko-{{ area.slug }}" title="{{ area }}"></i></div>
+                    <div>
+                        <a href="{{ area.get_absolute_url|to_hash_url }}">
+                            <i class="eko-{{ area.slug }}" title="{{ area }}"></i>
+                        </a>
+                    </div>
                 {% endfor %}
-
             </div>
         </div>
     </div>
@@ -56,7 +59,7 @@
         <div class="founders-slider">
         {% for founder in category_project.founder_set.all %}
             <div class="text-center">
-                <a href="{{ founder.url }}" target="_blank">
+                <a href="{{ founder.url|default:"javascript:void(0)" }}" target="_blank">
                     {% thumbnail founder.logo "64" seoname=category_project|addstr:"" as im %}
                     <img src="{{ im.url }}" alt="{{ founder.name }}">
                     {% endthumbnail %}

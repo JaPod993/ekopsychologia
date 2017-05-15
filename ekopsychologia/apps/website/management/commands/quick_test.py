@@ -19,7 +19,4 @@ class Command(BaseCommand):
     help = ''
 
     def handle(self, *args, **options):
-        for gallery in Gallery.objects.all():
-            if gallery.images.count() == 0:
-                print gallery
-                gallery.delete()
+        pass

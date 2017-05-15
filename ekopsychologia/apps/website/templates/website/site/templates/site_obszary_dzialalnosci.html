@@ -1,11 +1,8 @@
 {% extends 'corecms/site/templates/site_layout.html' %}
-
-
 {% load corecms_render_tags %}
-
 {% load digg_paginator %}
-
 {% load i18n %}
+{% load templatetags %}
 
 {% block site_inner_content %}
 
@@ -18,6 +15,15 @@
                     </button>
                     <div id="{{ child.slug }}" class="collapse">
                         {{ child.content|safe }}
+
+                        {% get_obszary_dzialania_content child as related_items %}
+                        {% for site in related_items.sites %}
+                            <a href="{{ site.get_absolute_url }}" style="display: block">{{ site }}</a>
+                        {% endfor %}
+                        {% for article in related_items.articles %}
+                            <a href="{{ article.get_absolute_url }}" style="display: block">{{ article }}</a>
+                        {% endfor %}
+
                     </div>
                 </div>
             </div>
