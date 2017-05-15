@@ -3,18 +3,23 @@
 {% load corecms_tags %}
 
 
-
 <div class="row article_list">
-
-
     <div class="article-wrapper">
         <div class="col-xs-12 col-sm-4 article-image">
             {% if article.content %}<a href="{{ article.get_absolute_url }}">{% endif %}
             <div class="img-wrapper">
                 {% if article.thumbnail %}
 
-                {% thumbnail article.thumbnail "335x220" crop="center" seoname=article|addstr:"" as im %}
-                <img src="{{ im.url }}" class="img-responsive" alt="{{ article }}">
+                {% thumbnail article.thumbnail "1920x1920" seoname=article|addstr:"" as im_large %}
+                    {% thumbnail article.thumbnail "335x220" crop="center" seoname=article|addstr:"" as im %}
+                    {% if category.slug == 'w-mediach' %}
+                        <a href="{{ im_large.url }}" data-lightbox="roadtrip">
+                            <img src="{{ im.url }}" class="img-responsive" alt="{{ article }}">
+                        </a>
+                    {% else %}
+                        <img src="{{ im.url }}" class="img-responsive" alt="{{ article }}">
+                    {% endif %}
+                    {% endthumbnail %}
                 {% endthumbnail %}
                 {% else %}
                 <img src="{% static 'website/images/blue_orb.svg' %}" style=" width: 100%; opacity:0.5" class="img-responsive" alt="{{ article }}">
@@ -28,6 +33,11 @@
             <p class="date article-list-date">{{ article.article_date|date:"d.m.Y" }}</p>
             <div class="content-styles article-list-content">
                 {{ article.shortcut|safe }}
+
+                {% if category.slug == 'w-mediach' %}
+                    {% include 'corecms/site/_files_article_list.html' with object=article %}
+                {% endif %}
+
             </div>
             {% include 'corecms/site/tags.html' with size="sm" label=False tags=article.tags.all %}
 
