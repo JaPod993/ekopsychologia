@@ -7,13 +7,6 @@
 {% load i18n %}
 {% load mptt_tags %}
 
-{% block css %}
-    <link rel="stylesheet" href="{% static 'website/css/lightbox.css' %}"/>
-    <link rel="stylesheet" href="{% static 'website/icons/48px/style.css' %}"/>
-{% endblock %}
-{% block js %}
-    <script src="{% static 'website/js/lightbox.js' %}"></script>
-{% endblock %}
 {% block edit_buttons %}
     {% render_edit_button object 'Edytuj artykuł' %}
 {% endblock %}
@@ -96,7 +89,7 @@
                     <!-- Galeria i formularz -->
                     {% for connector in article.connector_children.all %}
                         {% render_connector connector %}
-                        {% endfor %}
+                    {% endfor %}
                     </div>
                 </div>
             </div>

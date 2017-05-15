@@ -1,0 +1,18 @@
+{% load thumbnail %}
+{% load corecms_tags %}
+{% load corecms_render_tags %}
+
+<div class="files-wrapper">
+    {% if object.published_files|media_distinction:'downloadable' %}
+        {% for file in object.published_files|media_distinction:'downloadable' %}
+            <i class="icon-{{ file.extension }}"></i> <a class="file-name" href="{{ file.url }}" download="{{ file.download_name }}">{{ file }}</a> [{{file.get_file_size_display}}]
+            {% if not forloop.last %}<br>{% endif %}
+        {% endfor %}
+    {% endif %}
+</div>
+
+<script>
+    $('tr[data-href]').on("click", function() {
+    document.location = $(this).data('href');
+});
+</script>
