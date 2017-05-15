@@ -64,3 +64,11 @@ def get_domain(url):
     parsed_uri = urlparse(url)
     domain = '{uri.scheme}://{uri.netloc}/'.format(uri=parsed_uri)
     return domain
+
+
+@register.assignment_tag
+def get_first_pdf(article):
+    for f in article.published_files:
+        if f.is_pdf:
+            return f
+    return None
