@@ -1001,6 +1001,12 @@ a.btn.btn-default.btn-circle.btn-about:focus {
   outline: 0;
 }
 
+.article-layout-date {
+  padding-left: 15px;
+  padding-bottom: 20px;
+  font-size: 18px;
+}
+
 .article-image {
   padding-left: 45px;
   padding-right: 0;

@@ -75,11 +75,12 @@
                                 {% trans 'Widzisz tę ukrytą stronę ponieważ używasz linku z panelu administracyjnego, nie jest ona widoczna na liście artykułów i w dla wyszukiwarki google' %}
                             </div>
                         </div>
+
                     {% endif %}
                     {% block page_description %}
                         {% include 'corecms/site/article_description.html' %}
-                    {% endblock %}
 
+                    {% endblock %}
                     {% if object.content and object_articles %}
                         <hr>
                     {% endif %}

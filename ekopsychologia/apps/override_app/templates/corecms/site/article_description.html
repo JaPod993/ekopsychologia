@@ -8,6 +8,7 @@
     {% endthumbnail %}
     {% endif %}
     <div class="article-title text-left"><h1>{{object.identity}}</h1></div>
+    <p class="article-layout-date text-left">{{ article.article_date|date:"d.m.Y" }}</p>
 
 </div>
 {% include 'corecms/site/tags.html' with size="md" label=False margin_top="10px" tags=object.tags.all %}
