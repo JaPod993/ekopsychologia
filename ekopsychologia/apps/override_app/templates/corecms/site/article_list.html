@@ -5,9 +5,12 @@
 
 <div class="row article_list">
     <div class="article-wrapper">
+        {% if category.slug == 'opinie' or category.slug == 'sprawozdania' %}
+        {% else %}
         <div class="col-xs-12 col-sm-4 article-image">
             {% if article.content %}<a href="{{ article.get_absolute_url }}">{% endif %}
             <div class="img-wrapper">
+
                 {% if article.thumbnail %}
 
                 {% thumbnail article.thumbnail "1920x1920" seoname=article|addstr:"" as im_large %}
@@ -27,7 +30,8 @@
             </div>
             {% if article.content %}</a>{% endif %}
         </div>
-        <div class="col-xs-12 col-sm-8 article-content">
+        {% endif %}
+        <div class="col-xs-12 {% if category.slug == 'opinie' or category.slug == 'sprawozdania' %}col-sm-12{% else %}col-sm-8{% endif %} article-content">
 
             <h2 class="article-list-title">{% if article.content %}<a href="{{ article.get_absolute_url }}">{% endif %}{{ article.identity }}{% if article.content %}</a>{% endif %}</h2>
             <p class="date article-list-date">{{ article.article_date|date:"d.m.Y" }}</p>
@@ -44,7 +48,7 @@
 
         </div>
         <div class="col-xs-12">
-            {% if article.content %}
+            {% if article.content or article.published_files|length %}
             <div class=""><a href="{{ article.get_absolute_url }}" class="btn btn-blue pull-right full article-list-more">więcej <i class="fa fa-caret-right more-arrow" aria-hidden="true"></i></a></div>
             {% endif %}
         </div>
