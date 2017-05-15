@@ -72,3 +72,16 @@ def get_first_pdf(article):
         if f.is_pdf:
             return f
     return None
+
+@register.assignment_tag
+def get_top_wrapper(category_project, category, article):
+    if article and article.main_image:
+        return article.main_image
+
+    if category_project and category_project.main_image:
+        return category_project.main_image
+
+    if category and category.main_image:
+        return category.main_image
+
+    return None

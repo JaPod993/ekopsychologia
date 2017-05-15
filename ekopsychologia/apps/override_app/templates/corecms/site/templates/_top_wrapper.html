@@ -1,5 +1,10 @@
+{% load thumbnail %}
+{% load templatetags %}
+
+{% get_top_wrapper category_project category article as image_wrapper %}
+
 {% if category_project %}
-<div class="top-wrapper top-{{category.slug}}"{% if category_project.main_image %} style="background-image: url('{{ category_project.main_image.url }}')"{% endif %}>
+<div class="top-wrapper top-{{category.slug}}"{% if image_wrapper %}{% thumbnail image_wrapper "x300" as im %}style="background-image: url('{{ im.url }}')"{% endthumbnail %}{% endif %}>
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-lg-offset-6 text-right">
@@ -7,10 +12,9 @@
             </div>
         </div>
     </div>
-
 </div>
 {% else %}
-<div class="top-wrapper top-{{category.slug}}"{% if category.main_image %} style="background-image: url('{{ category.main_image.url }}')"{% endif %}>
+<div class="top-wrapper top-{{category.slug}}"{% if image_wrapper %}{% thumbnail image_wrapper "x300" as im %}style="background-image: url('{{ im.url }}')"{% endthumbnail %}{% endif %}>
 
 </div>
 {% endif %}
