@@ -2262,7 +2262,7 @@ a.sc-logo {
 .pojedyncza-opinia {
   margin-left: 15px;
   margin-right: 15px;
-  padding-top: 20px;
+  padding-top: 58px;
   padding-bottom: 10px;
 }
 .pojedyncza-opinia .slick-dotted.slick-slider {
@@ -2287,7 +2287,7 @@ a.sc-logo {
 }
 .pojedyncza-opinia .slick-prev:before {
   content: "\f104";
-  font: 50px/1 'FontAwesome';
+  font: 50px 'FontAwesome';
 }
 .pojedyncza-opinia .slick-next {
   top: 18px;
