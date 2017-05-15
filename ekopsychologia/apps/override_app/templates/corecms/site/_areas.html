@@ -1,0 +1,13 @@
+{% load templatetags %}
+
+<div class="area-wrapper">
+    <div class="areas-list-slider">
+        {% for area in object.areas.all %}
+            <div>
+                <a href="{{ area.get_absolute_url|to_hash_url }}">
+                    <i class="eko-{{ area.slug }}" title="{{ area }}"></i>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>

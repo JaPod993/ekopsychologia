@@ -41,17 +41,7 @@
 
     <div style="margin-bottom: 15px;">
         <div class="text-center founders-title">Obszary działania</div>
-        <div class="area-wrapper">
-            <div class="areas-list-slider">
-                {% for area in category_project.areas.all %}
-                    <div>
-                        <a href="{{ area.get_absolute_url|to_hash_url }}">
-                            <i class="eko-{{ area.slug }}" title="{{ area }}"></i>
-                        </a>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
+        {% include "corecms/site/_areas.html" with object=category_project only %}
     </div>
 
     <div class="project-founders" style="margin-bottom: 15px;">
