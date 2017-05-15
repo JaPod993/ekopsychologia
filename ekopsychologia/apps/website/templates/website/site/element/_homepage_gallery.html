@@ -11,8 +11,8 @@
         {% for file in homepage_gallery.children.images.all %}
             {% thumbnail file.path "200x130" crop="center" as im %}
                 {% thumbnail file.path "1000x750" as im_big %}
-                    <a href="{{ im_big.url }}" data-lightbox="galeria {#% {{ file.name }}, {{ object }} %#}" data-title="">
-                        <img src="{{ im.url }}" class="img-responsive" alt="{{ file.name }}, {{ object }}">
+                    <a href="{{ im_big.url }}" data-lightbox="galeria" data-title="{{ file.title }}">
+                        <img src="{{ im.url }}" class="img-responsive" alt="{{ file.title }}" title="{{ file.title }}">
                     </a>
                 {% endthumbnail %}
             {% endthumbnail %}

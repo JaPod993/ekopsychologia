@@ -4,8 +4,8 @@
         {% thumbnail file.path "200x130" crop="center" as im %}
             {% thumbnail file.path "1000x750" as im_big %}
                 <div class="col-sm-3 col-xs-6 img_col gallery-slider">
-                    <a href="{{ im_big.url }}" data-lightbox="{{ object }}" data-title="{{ object }}">
-                        <img src="{{ im.url }}" class="img-responsive" alt="{{ file.name }}, {{ object }}">
+                    <a href="{{ im_big.url }}" data-lightbox="{{ object }}" data-title="{{ file.title }}{% if file.title and object %}, {% endif %}{{ object }}">
+                        <img src="{{ im.url }}" class="img-responsive" alt="{{ file.title }}{% if file.title and object %}, {% endif %}{{ object }}" title="{{ file.title }}{% if file.title and object %}, {% endif %}{{ object }}">
                     </a>
                 </div>
             {% endthumbnail %}
