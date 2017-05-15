@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+from urlparse import urlparse
 from corecms.models.default.slider import Slider
 from corecms.templatetags.corecms_tags import get_previous_breadcrumb
 from django import template
@@ -56,3 +57,10 @@ def get_partnership_slider(slug):
         return Slider.objects.get(slug=slug)
     except Slider.DoesNotExist:
         return None
+
+
+@register.filter
+def get_domain(url):
+    parsed_uri = urlparse(url)
+    domain = '{uri.scheme}://{uri.netloc}/'.format(uri=parsed_uri)
+    return domain

@@ -20,7 +20,7 @@
                 <img class="col-xs-4 img-responsive partnership-img compared-text-part3 compared-text-part " src="{{ im.url }}">
                 <div class="col-xs-8 partnership-content compared-text-part3 compared-text-part">
                     <div class="partnership-title">{{ slide.name }}</div>
-                    {% if slide.url %}<a href="{{ slide.url }}">{{ slide.url }}</a>{% endif %}
+                    {% if slide.url %}<a href="{{ slide.url|get_domain }}">{{ slide.url }}</a>{% endif %}
                 </div>
             </div>
             {% endthumbnail %}
