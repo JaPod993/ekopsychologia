@@ -128,14 +128,8 @@ $(document).ready(function () {
         autoplaySpeed: 10000,
         speed: 1500,
     });
-     $('.gallery-slider').slick({
 
-        accessibility: true,
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        speed: 1500,
-    });
+
 
 });
 

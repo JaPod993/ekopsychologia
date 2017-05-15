@@ -1,14 +1,33 @@
 {% load thumbnail %}
-<div class="row">
-    {% for file in gallery.images.all %}
+<div class="container">
+    <div class="row gallery-container-2">
+        {% for file in gallery.images.all %}
         {% thumbnail file.path "200x130" crop="center" as im %}
-            {% thumbnail file.path "1000x750" as im_big %}
-                <div class="col-sm-3 col-xs-6 img_col gallery-slider">
-                    <a href="{{ im_big.url }}" data-lightbox="{{ object }}" data-title="{{ file.title }}{% if file.title and object %}, {% endif %}{{ object }}">
-                        <img src="{{ im.url }}" class="img-responsive" alt="{{ file.title }}{% if file.title and object %}, {% endif %}{{ object }}" title="{{ file.title }}{% if file.title and object %}, {% endif %}{{ object }}">
-                    </a>
-                </div>
-            {% endthumbnail %}
+        {% thumbnail file.path "1000x750" as im_big %}
+        <div class="col-sm-3 col-xs-6 img_col ">
+            <a href="{{ im_big.url }}" data-lightbox="{{ object }}" data-title="{{ file.title }}{% if file.title and object %}, {% endif %}{{ object }}">
+                <img src="{{ im.url }}" class="img-responsive" alt="{{ file.title }}{% if file.title and object %}, {% endif %}{{ object }}" title="{{ file.title }}{% if file.title and object %}, {% endif %}{{ object }}">
+            </a>
+        </div>
         {% endthumbnail %}
-    {% endfor %}
+        {% endthumbnail %}
+        {% endfor %}
+    </div>
 </div>
+
+<script>
+$(function(){
+
+     $('.gallery-container-2').slick({
+
+        accessibility: true,
+         slidesToShow: 4,
+         slidesToScroll: 4,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 10000,
+        speed: 1500,
+    });
+
+});
+</script>
