@@ -181,6 +181,12 @@
 .project-info-wrapper .area-wrapper {
   position: relative;
 }
+.project-info-wrapper a {
+  text-decoration: none;
+}
+.project-info-wrapper a a:hover {
+  text-decoration: none;
+}
 .project-info-wrapper [class*='eko-'] {
   display: flex;
   align-items: center;

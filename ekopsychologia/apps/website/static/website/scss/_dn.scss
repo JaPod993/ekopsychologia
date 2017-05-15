@@ -177,6 +177,12 @@ a {
   .area-wrapper{
     position: relative;
   }
+  a{
+    text-decoration: none;
+    a:hover{
+      text-decoration: none;
+    }
+  }
   [class*='eko-']{
     display: flex;
     align-items: center;
