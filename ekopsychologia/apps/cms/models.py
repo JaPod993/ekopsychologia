@@ -12,6 +12,10 @@ from corecms.models.media_file import AbstractMediaFile
 class Site(SiteAbstract):
 
     old_cms_id = models.IntegerField(null=True, default=None)
+    logo = models.ImageField("Logo", upload_to="site/images/", default=None, null=True, blank=True)
+    execution_time = models.CharField(u"Czas realizacji", max_length=255, default="", blank=True)
+    budget = models.CharField(u"Budżet całkowity", max_length=255, default="", blank=True)
+    areas = models.ManyToManyField('self', verbose_name="Obszary działania", blank=True, related_name="+")
 
     class Meta(SiteAbstract.Meta):
         abstract = False
@@ -103,3 +107,10 @@ class GalleryDistinction(models.Model):
 
     class Meta:
         app_label = 'cms'
+
+
+class Founder(models.Model):
+    site = models.ForeignKey(u"cms.Site")
+    name = models.CharField(u"Nazwa", max_length=255)
+    logo = models.ImageField("Logo", upload_to="site/founder/images/")
+    url = models.URLField(u"Link", default="", blank=True)

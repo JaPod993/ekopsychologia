@@ -3,13 +3,15 @@ from __future__ import unicode_literals
 
 import json
 
+from corecms.forms.forms import SiteAdminForm as BaseSiteAdminForm
 from corecms.models.gallery import Gallery
+from corecms.widgets import Select2RelatedMultipleWidget
 from django.contrib import admin
 
-from corecms.admin import ArticleAdmin as BaseArticleAdmin
+from corecms.admin import ArticleAdmin as BaseArticleAdmin, SiteAdmin as BaseSiteAdmin
 from django.contrib.contenttypes.models import ContentType
 
-from cms.models import Article, GalleryDistinction
+from cms.models import Article, GalleryDistinction, Site, Founder
 
 
 class ArticleAdmin(BaseArticleAdmin):
@@ -34,3 +36,33 @@ class ArticleAdmin(BaseArticleAdmin):
 
 admin.site.unregister(Article)
 admin.site.register(Article, ArticleAdmin)
+
+
+class SiteAdminForm(BaseSiteAdminForm):
+
+    def __init__(self, *args, **kwargs):
+        super(SiteAdminForm, self).__init__(*args, **kwargs)
+        self.fields['areas'].queryset = Site.objects.filter(parent__slug="obszary-dzialania")
+        self.fields['areas'].widget = Select2RelatedMultipleWidget(rel=Site, choices=self.fields['areas'].widget.choices)
+
+    class Meta:
+        model = Site
+        fields = ('identity', 'content', 'status', 'parent', 'slug', 'template', 'thumbnail',
+                  'main_image', 'logo', 'execution_time', 'budget', 'areas')
+
+
+class FounderInline(admin.TabularInline):
+    model = Founder
+
+
+class SiteAdmin(BaseSiteAdmin):
+    form = SiteAdminForm
+    change_form_template = "cms/admin/change_form_site.html"
+
+    def get_inline_instances(self, request, obj=None):
+        if obj is not None and obj.parent.slug == 'projekty':
+            self.inlines = [FounderInline]
+        return super(SiteAdmin, self).get_inline_instances(request, obj)
+
+admin.site.unregister(Site)
+admin.site.register(Site, SiteAdmin)
