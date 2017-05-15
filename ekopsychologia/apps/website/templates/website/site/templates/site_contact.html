@@ -17,11 +17,6 @@
 {% block body_content %}
 
 <div class="top-wrapper top-{{object.slug}}">
-    <div class="container">
-        <div class="col-sm-12">
-             <h2 class="site-title text-center">{{ object.identity }}</h2>
-        </div>
-    </div>
 </div>
 
 
@@ -42,13 +37,28 @@
                 </div>
                 </div>
             </div>
-            <div class="row">
-
-                <div class="col-md-6 left mapa">
+            <div class="row kontakt-shadow">
+                <div class="col-md-12 kontakt-title">
+                    <h1 class="text-center kontakt-title-inner">{{ object.identity }}</h1>
+                </div>
+                <div class="col-md-9"></div>
+                <div class="col-md-6 left mapa item">
                     {% render_contact_form template_name='website/site/element/_contact_form.html' %}
+                    <div class="row dane-kontaktowe">
+                        <div class="col-md-12 dane-kontaktowe-wrapper">
+                            <div class="col-md-6 dane-kontakotwe-tekst">
+                                <p><span class="kontakt-distinction">Stowarzyszenie Ekopsychologia</span><br>ul. Grabina 6/18<br>32-840 Zakliczyn<br><span class="kontakt-distinction">email:</span> ekopsychologia@ekopsychologia.pl</p>
+                            </div>
+
+                            <div class="col-md-6  dane-kontakotwe-tekst">
+                                <p><span class="kontakt-distinction">Monika Ochwat - Marcinkiewicz</span><br>tel.: +48 785 341 089</p>
+                                <p><span class="kontakt-distinction">Magdalena Socha</span><br>tel.: +48 788 285 615</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="col-md-6 right mapa">
+                <div class="col-md-6 right mapa item">
                     <div class="eko-mapa">
                         {#%  <h3>My Google Maps Demo</h3> %#}
                         <div id="map"></div>
@@ -68,41 +78,9 @@
                         <script async defer
                                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDep27bukcLJPW4DQqADeiJnisWIrulmg8&callback=initMap">
                         </script>
-
-                        {% block site_inner_content %}
-                        <!-- Okruszki -->
-                        <!--{% include 'corecms/site/_breadcrumbs.html' %}-->
-                        {% if published_by_hash %}
-                        <div class="panel panel-default panel-danger">
-                            <div class="panel-body">
-                                {% trans 'Widzisz tę ukrytą stronę ponieważ używasz linku z panelu administracyjnego, nie jest ona widoczna na liście artykułów i w dla wyszukiwarki google' %}
-                            </div>
-                        </div>
-                        {% endif %}
-
-                        {% block page_description %}
-                        {% include 'corecms/site/site_description.html' %}
-                        {% endblock %}
-                        {% if object.content and object_articles %}
-                        <hr>
-                        {% endif %}
-                        <!-- Lista artykułów -->
-                        {% for article in object_articles %}
-                        {% include 'corecms/site/article_list.html' with article=article only %}
-                        {% endfor %}
-                        <!-- Paginacja -->
-                        {% digg_paginator template_name='corecms/site/_digg_paginator.html' %}
-                        <!-- Pliki -->
-                        {% include 'corecms/site/_files.html' %}
-                        <!-- Zdjęcia z plików -->
-                        {% include 'corecms/site/_images.html' %}
-                        <!-- Galeria i formularz -->
-                        {% for connector in article.connector_children.all %}
-                        {% render_connector connector %}
-                        {% endfor %}
-                        {% endblock %}
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

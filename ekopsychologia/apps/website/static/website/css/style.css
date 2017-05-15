@@ -1788,7 +1788,7 @@ p.o-nas-tekst {
 }
 
 #map {
-  height: 357px;
+  height: 500px;
   width: 100%;
 }
 
@@ -2069,6 +2069,64 @@ ul.kontakt li a:hover,
 ul.menu-bottom li a:hover {
   color: #374778;
   text-decoration: none;
+}
+
+.kontakt-distinction {
+  color: #303030;
+}
+
+.dane-kontakotwe-tekst {
+  padding-left: 15px;
+}
+.dane-kontakotwe-tekst p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #374778;
+  margin-bottom: 0;
+}
+
+.button-submit {
+  margin-bottom: 30px;
+}
+
+.button-submit {
+  padding-right: 0;
+}
+
+.kontakt-title-inner {
+  color: #ffffff;
+  height: 50px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.kontakt-title {
+  position: relative;
+  top: -51px;
+  background: #0c824b;
+}
+
+.kontakt-shadow {
+  background: white;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.right.mapa,
+.left.mapa {
+  background: white;
+}
+
+.left.mapa {
+  padding-left: 30px;
+}
+
+.right.mapa {
+  box-shadow: none;
+  padding-left: 15px;
+  padding-right: 30px;
 }
 
 .osigw-padding {
