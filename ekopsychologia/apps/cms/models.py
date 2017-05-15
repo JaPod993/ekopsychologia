@@ -16,6 +16,7 @@ class Site(SiteAbstract):
     execution_time = models.CharField(u"Czas realizacji", max_length=255, default="", blank=True)
     budget = models.CharField(u"Budżet całkowity", max_length=255, default="", blank=True)
     areas = models.ManyToManyField('self', verbose_name="Obszary działania", blank=True, related_name="+")
+    url = models.URLField(u"Link", default="", blank=True)
 
     class Meta(SiteAbstract.Meta):
         abstract = False

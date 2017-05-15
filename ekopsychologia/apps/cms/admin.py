@@ -48,7 +48,7 @@ class SiteAdminForm(BaseSiteAdminForm):
     class Meta:
         model = Site
         fields = ('identity', 'content', 'status', 'parent', 'slug', 'template', 'thumbnail',
-                  'main_image', 'logo', 'execution_time', 'budget', 'areas')
+                  'main_image', 'logo', 'url', 'execution_time', 'budget', 'areas')
 
 
 class FounderInline(admin.TabularInline):

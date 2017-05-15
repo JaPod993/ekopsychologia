@@ -1,3 +1,6 @@
+{% load thumbnail %}
+{% load corecms_tags %}
+
 <nav role="navigation" class="sub_menu navbar navbar-default">
     <div class="navbar-header">
         <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
@@ -11,14 +14,34 @@
         </div>
     </div>
     <div id="navbarCollapse" class="navbar-collapse collapse navbar-left-menu">
-            <div class="left-menu text-center" style="padding-bottom:10px;">
-                <ul>
-                    {% for node in category_project.children.published %}
-                    <li class="{% if node.get_absolute_url in request.breadcrumbs.urls %}active{% endif %}">
-                        <a href="{{ node.get_absolute_url }}" class="{% if node.get_absolute_url in request.breadcrumbs.urls %}active{% endif %}">{{ node|capfirst }}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
+        <div class="left-menu text-center" style="padding-bottom:10px;">
+            <ul>
+                {% for node in category_project.children.published %}
+                <li class="{% if node.get_absolute_url in request.breadcrumbs.urls %}active{% endif %}">
+                    <a href="{{ node.get_absolute_url }}" class="{% if node.get_absolute_url in request.breadcrumbs.urls %}active{% endif %}">{{ node|capfirst }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 </nav>
+
+
+<div>
+    {% if category_project.logo %}
+        {% thumbnail category_project.logo "200" seoname=category_project|addstr:"" as im %}
+            <img src="{{ im.url }}">
+        {% endthumbnail %}
+    {% endif %}
+    {% if category_project.url %}<a href="{{ category_project.url }}">{{ category_project.url }}</a>{% endif %}
+    {% if category_project.execution_time %}{{ category_project.execution_time }}{% endif %}
+    {% if category_project.budget %}{{ category_project.budget }}{% endif %}
+
+    {% for founder in category_project.founder_set.all %}
+        {{ founder.name }}
+        {{ founder.logo.url }}
+        {{ founder.url }}
+
+    {% endfor %}
+
+</div>
