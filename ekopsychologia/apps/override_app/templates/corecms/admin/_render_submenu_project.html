@@ -9,62 +9,62 @@
     {% endif %}
 </div>
 <div class="clearfix project-info-wrapper text-center">
-<div>
-{% if category_project.url %}<a class="project-link" href="{{ category_project.url }}">{{ category_project.url }}</a>{% endif %}
-</div>
+    <div>
+    {% if category_project.url %}<a class="project-link" href="{{ category_project.url }}">{{ category_project.url }}</a>{% endif %}
+    </div>
 
-<nav role="navigation" class="sub_menu navbar navbar-default">
-    <div class="navbar-header">
-        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <div class="hidden-lg hidden-md hidden-sm hidden-xs "><h2><a
-                href="{{ category.get_root.get_absolute_url }}">{{ category.get_root }}</a></h2>
+    <nav role="navigation" class="sub_menu navbar navbar-default">
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="hidden-lg hidden-md hidden-sm hidden-xs "><h2><a
+                    href="{{ category.get_root.get_absolute_url }}">{{ category.get_root }}</a></h2>
+            </div>
         </div>
-    </div>
-    <div id="navbarCollapse" class="navbar-collapse collapse navbar-left-menu">
-        <div class="left-menu text-center" style="padding-bottom:10px;">
-            <ul>
-                {% for node in category_project.children.published %}
-                <li class="{% if node.get_absolute_url in request.breadcrumbs.urls %}active{% endif %}">
-                    <a href="{{ node.get_absolute_url }}" class="{% if node.get_absolute_url in request.breadcrumbs.urls %}active{% endif %}">{{ node|capfirst }}</a>
-                </li>
-                {% endfor %}
-            </ul>
+        <div id="navbarCollapse" class="navbar-collapse collapse navbar-left-menu">
+            <div class="left-menu text-center" style="padding-bottom:10px;">
+                <ul>
+                    {% for node in category_project.children.published %}
+                    <li class="{% if node.get_absolute_url in request.breadcrumbs.urls %}active{% endif %}">
+                        <a href="{{ node.get_absolute_url }}" class="{% if node.get_absolute_url in request.breadcrumbs.urls %}active{% endif %}">{{ node|capfirst }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
 
 
     {% if category_project.execution_time %}
     <div class="text-center founders-title">Czas realizacji: {{ category_project.execution_time }}</div>
-
     {% endif %}
     {% if category_project.budget %}
     <div class="text-center founders-title">Budżet całkowity: {{ category_project.budget }}</div>
-
     {% endif %}
-<div class="project-founders">
-    <div class="text-center founders-title">Fundatorzy</div>
-    <div class="founders-slider">
-    {% for founder in category_project.founder_set.all %}
-        <div class="text-center">
-            <a href="{{ founder.url }}" target="_blank">
-                {% thumbnail founder.logo "64" seoname=category_project|addstr:"" as im %}
-                <img src="{{ im.url }}" alt="{{ founder.name }}">
-                {% endthumbnail %}
-            </a>
+    <div class="project-founders">
+        <div class="text-center founders-title">Fundatorzy</div>
+        <div class="founders-slider">
+        {% for founder in category_project.founder_set.all %}
+            <div class="text-center">
+                <a href="{{ founder.url }}" target="_blank">
+                    {% thumbnail founder.logo "64" seoname=category_project|addstr:"" as im %}
+                    <img src="{{ im.url }}" alt="{{ founder.name }}">
+                    {% endthumbnail %}
+                </a>
+            </div>
+        {% endfor %}
         </div>
-    {% endfor %}
     </div>
-</div>
-<div>
 
-</div>
+
+    {% for area in category_project.areas.all %}
+        {{ area }} | {{ area.slug }}
+    {% endfor %}
 
 </div>
 <script>
