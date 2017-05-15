@@ -4,7 +4,7 @@
 {% load thumbnail %}
 {% load digg_paginator %}
 {% load staticfiles %}
-{% load mptt_tags %}
+{% load templatetags %}
 {% load i18n %}
 
 {% block edit_buttons %}
@@ -71,12 +71,17 @@
 
                         <!-- Lista artykułów -->
                         {% for article in object_articles %}
-
+                            {% get_first_pdf article as file %}
+                            {% if file %}
                             <div class="row article_list">
                                 <div class="article-wrapper">
                                     <div class="col-xs-12 col-sm-4 article-image">
                                         <div class="img-wrapper">
-                                         img
+                                            {% take_page_of_pdf file.absolute_path 0 as page %}
+                                            {% thumbnail page "175x240" seoname=article|addstr:"" as im %}
+                                                <img src="{{ im.url }}" class="img-responsive publication-image">
+                                            {% endthumbnail %}
+                                            <a href="{{ file.url }}" class="download-btn" download="{{ file.download_name }}"><span class="fa fa-file-pdf-o"></span> Pobierz</a>
                                         </div>
                                     </div>
                                     <div class="col-xs-12 {% if category.slug == 'opinie' or category.slug == 'sprawozdania' %}col-sm-12{% else %}col-sm-8{% endif %} article-content">
@@ -85,15 +90,14 @@
                                         <div class="content-styles article-list-content">
                                             {{ article.shortcut|safe }}
                                         </div>
+
+                                        {% include "corecms/site/_areas.html" with object=article only %}
                                     </div>
                                     <div class="col-xs-12 col-sm-12"><hr class="article-list-hr"></div>
                                 </div>
                             </div>
-
+                            {% endif %}
                         {% endfor %}
-
-
-
                         {% endblock %}
                     </div>
                 </div>

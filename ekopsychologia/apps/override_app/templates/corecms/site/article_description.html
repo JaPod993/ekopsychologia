@@ -7,6 +7,7 @@
             <div class="article-title text-left"><h2>{{object.identity}}</h2></div>
             <p class="article-layout-date text-left">{{ article.article_date|date:"d.m.Y" }}</p>
         </div>
+        {% comment %}
         <div class="col-md-12 article-image-padding">
             {% if object.main_image %}
             {% thumbnail object.main_image "335x220" crop="center" seoname=object|addstr:"" as im %}
@@ -14,7 +15,7 @@
             {% endthumbnail %}
             {% endif %}
         </div>
-
+        {% endcomment %}
     </div>
 </div>
 {% include 'corecms/site/tags.html' with size="md" label=False margin_top="10px" tags=object.tags.all %}
