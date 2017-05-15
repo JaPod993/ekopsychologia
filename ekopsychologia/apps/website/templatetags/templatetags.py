@@ -32,3 +32,11 @@ def get_opinie_list():
         return Site.objects.get(slug="opinie").articles.published()
     except:
         return None
+
+
+@register.assignment_tag
+def get_obszary_dzialania_content(site):
+    rtn = dict()
+    rtn['sites'] = Site.objects.published().filter(areas=site)
+    rtn['articles'] = Article.objects.published().filter(areas=site)
+    return rtn

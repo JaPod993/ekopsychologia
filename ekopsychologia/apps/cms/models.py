@@ -44,6 +44,7 @@ class Site(SiteAbstract):
 class Article(ArticleAbstract):
     alternative_url = models.CharField(u"Link alternatywny", max_length=255, default="", blank=True, help_text="Link na który bedzie wskazywała ten artykuł")
     old_cms_id = models.IntegerField(null=True, default=None)
+    areas = models.ManyToManyField('cms.Site', verbose_name="Obszary działania", blank=True, related_name="+")
 
     class Meta(ArticleAbstract.Meta):
         app_label = 'cms'
