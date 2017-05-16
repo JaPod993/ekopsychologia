@@ -6,6 +6,7 @@ $white-accent: #ececec;
 $grey: #c4c4c4; //szary
 $light-light-grey: #f2f2f2;
 $light-grey: #e6e6e6; //jasny szary
+$other-light-grey: #e4e4e4; //jasny szary tlo strona glowna
 $breadcrumb-grey: #f7f7f7;
 $dark-grey: #303030; //ciemny szary
 $light-dark-grey: #eeeeee; //szary średnio ciemny
@@ -2298,8 +2299,39 @@ $atuty: #2a5036;
     color: $hover;
   }
 }
-
+publication-list-hr {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+.publication-content {
+  padding-left: 15px;
+}
 //.................................................................
+
+//................PUBLIKACJE PODSTRONA................
+
+.publikacje-download {
+  background: transparent;
+  border: 2px solid $hover;
+  border-radius: 20px;
+  padding: 4px 10px 4px 10px;
+  @include roboto-regular;
+  color: $dark-grey;
+  font-size: 14px;
+  transition: all 1s;
+  &:hover {
+    text-decoration: none;
+    background: $other-light-grey;
+    color: $hover;
+  }
+}
+.img-wrapper {
+  padding-bottom: 20px;
+}
+.publication-image {
+   box-shadow: 3px 4px 0 0 #a7a7a7;
+}
+
 
 //................OPINIE - O NAS...................
 .opinie-wrapper {
@@ -2343,7 +2375,7 @@ $atuty: #2a5036;
 }
 
 .slick-prev {
-  top: 18px;
+  top: 40px;
   left: -70px;
 }
 
@@ -2357,7 +2389,7 @@ $atuty: #2a5036;
 }
 
 .slick-next {
-  top: 18px;
+  top: 40px;
   right: -70px;
   text-align: right;
 }
@@ -2377,6 +2409,7 @@ $atuty: #2a5036;
   padding-left: 30px;
    padding-bottom: 30px;
 }
+
 
 //...........GALERIA - PODSTRONA..........................
 .galeria-hr {
@@ -2526,6 +2559,7 @@ body {
   font-size: 14px;
 
 }
+
 
 
 //..............MEDIA QUERIES..................

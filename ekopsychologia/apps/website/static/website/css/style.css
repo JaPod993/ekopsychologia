@@ -2428,6 +2428,40 @@ a.sc-logo {
   color: #0c824b;
 }
 
+publication-list-hr {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.publication-content {
+  padding-left: 15px;
+}
+
+.publikacje-download {
+  background: transparent;
+  border: 2px solid #0c824b;
+  border-radius: 20px;
+  padding: 4px 10px 4px 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #303030;
+  font-size: 14px;
+  transition: all 1s;
+}
+.publikacje-download:hover {
+  text-decoration: none;
+  background: #e4e4e4;
+  color: #0c824b;
+}
+
+.img-wrapper {
+  padding-bottom: 20px;
+}
+
+.publication-image {
+  box-shadow: 3px 4px 0 0 #a7a7a7;
+}
+
 .opinie-wrapper {
   background: #f7f7f7;
   margin-bottom: 15px;
@@ -2471,7 +2505,7 @@ a.sc-logo {
   z-index: 1;
 }
 .pojedyncza-opinia .slick-prev {
-  top: 18px;
+  top: 40px;
   left: -70px;
 }
 .pojedyncza-opinia .slick-prev:before, .pojedyncza-opinia .slick-next:before {
@@ -2482,7 +2516,7 @@ a.sc-logo {
   font: 50px 'FontAwesome';
 }
 .pojedyncza-opinia .slick-next {
-  top: 18px;
+  top: 40px;
   right: -70px;
   text-align: right;
 }

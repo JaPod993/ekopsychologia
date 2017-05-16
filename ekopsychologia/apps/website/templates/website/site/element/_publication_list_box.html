@@ -4,29 +4,29 @@
 
 {% load templatetags %}
 
-
 {% get_first_pdf article as file %}
 {% if file %}
 <div class="row article_list">
     <div class="article-wrapper">
-        <div class="col-xs-12 col-sm-4 article-image">
+        <div class="col-xs-12 col-sm-3 article-image text-center">
             <div class="img-wrapper">
                 {% take_page_of_pdf file.absolute_path 0 as page %}
                 {% thumbnail page "175x240" seoname=article|addstr:"" as im %}
                     <img src="{{ im.url }}" class="img-responsive publication-image">
                 {% endthumbnail %}
-                <a href="{{ file.url }}" class="download-btn" download="{{ file.download_name }}"><span class="fa fa-file-pdf-o"></span> Pobierz</a>
             </div>
+                <a href="{{ file.url }}" class="download-btn publikacje-download" download="{{ file.download_name }}"><span class="fa fa-file-pdf-o"></span> Pobierz</a>
         </div>
-        <div class="col-xs-12 {% if category.slug == 'opinie' or category.slug == 'sprawozdania' %}col-sm-12{% else %}col-sm-8{% endif %} article-content">
+        <div class="col-xs-12 {% if category.slug == 'opinie' or category.slug == 'sprawozdania' %}col-sm-12{% else %}col-sm-9{% endif %} article-content publication-content">
             <h2 class="article-list-title">{{ article.identity }}</h2>
             <p class="date article-list-date">{{ article.article_date|date:"d.m.Y" }}</p>
             <div class="content-styles article-list-content">
                 {{ article.shortcut|safe }}
             </div>
+
             {% include "corecms/site/_areas.html" with object=article only %}
         </div>
-        <div class="col-xs-12 col-sm-12"><hr class="article-list-hr"></div>
+        <div class="col-xs-12 col-sm-12"><hr class="publication-list-hr"></div>
     </div>
 </div>
 {% endif %}
