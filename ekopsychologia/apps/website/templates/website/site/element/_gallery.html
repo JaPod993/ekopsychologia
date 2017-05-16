@@ -3,7 +3,7 @@
 <div class=" gallery-podstrona">
     <div class="row gallery-container-2 dots">
         {% for file in gallery.images.all %}
-        {% thumbnail file.path "360x230" crop="center" seoname=file.title as im %}
+        {% thumbnail file.path "360x200" crop="center" seoname=file.title as im %}
         {% thumbnail file.path "1000x750" seoname=file.title as im_big %}
         <div class="col-sm-3 col-xs-6 img_col ">
             <div class="wood-frame-wrapper-2">
