@@ -16,7 +16,7 @@
                     {{ slider }}
                     {% for slide in slider.items.all %}
                     <div class="partenr text-center">
-                        {% thumbnail slide.image "120x120" as im %}
+                        {% thumbnail slide.image "120x120" seoname=slide.name as im %}
                          <div class="wspolpraca-zdj">
                         {% if slide.url %}<a href="{{ slide.url }}" title="{{ slide.name }}" target="_blank">{% endif %}
 

@@ -62,7 +62,7 @@
                         <hr>
                     {% endif %}
 
-                    {% include "corecms/site/_areas.html" with object=category_project only %}
+                    {% include "corecms/site/_areas.html" with object=article publication_slider=True only %}
 
                     <!-- Lista artykułów -->
                     {% for article in object_articles %}

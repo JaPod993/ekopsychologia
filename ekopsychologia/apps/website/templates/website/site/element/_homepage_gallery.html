@@ -9,8 +9,8 @@
             <div class="col-sm-12 gallery-container">
 
         {% for file in homepage_gallery.children.images.all %}
-            {% thumbnail file.path "200x130" crop="center" as im %}
-                {% thumbnail file.path "1000x750" as im_big %}
+            {% thumbnail file.path "200x130" crop="center" seoname=file.title as im %}
+                {% thumbnail file.path "1000x750" seoname=file.title as im_big %}
                     <a href="{{ im_big.url }}" data-lightbox="galeria" data-title="{{ file.title }}">
                         <img src="{{ im.url }}" class="img-responsive" alt="{{ file.title }}" title="{{ file.title }}">
                     </a>
