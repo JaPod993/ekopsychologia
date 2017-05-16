@@ -2471,7 +2471,7 @@ a.sc-logo {
   z-index: 1;
 }
 .pojedyncza-opinia .slick-prev {
-  top: 18px;
+  top: 40px;
   left: -70px;
 }
 .pojedyncza-opinia .slick-prev:before, .pojedyncza-opinia .slick-next:before {
@@ -2482,7 +2482,7 @@ a.sc-logo {
   font: 50px 'FontAwesome';
 }
 .pojedyncza-opinia .slick-next {
-  top: 18px;
+  top: 40px;
   right: -70px;
   text-align: right;
 }
