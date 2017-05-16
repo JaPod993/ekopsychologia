@@ -8,7 +8,13 @@
         </button>
         <div id="{{ child.slug }}" class="collapse{% if open_tab == child.slug %} in{% endif %}">
             {{ child.content|safe }}
-            {% if show_more %}<a href="{{ child.get_absolute_url }}">więcej</a>{% endif %}
+            {% if show_more %}
+            <div class="more wiecej-obszary">
+
+                <a class="more-text about-us" href="{{ child.get_absolute_url }}">więcej</a>
+
+            </div>
+            {% endif %}
         </div>
     </div>
 </div>

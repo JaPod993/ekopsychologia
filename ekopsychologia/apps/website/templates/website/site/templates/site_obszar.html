@@ -12,31 +12,49 @@
 
         {% get_obszary_dzialania_content object as related_items %}
 
-        {% if related_items.projects %}
-        <div class="container-fluid">
 
-        {% for site in related_items.projects %}
-            <div class="col-sm-4 col-xs-6">
-                {% include "website/site/element/_projekt_box.html" %}
-            </div>
-            {% comment %}
-            {% if forloop.counter|divisibleby:"4" %}
-                <div class="clearfix hidden-xs"></div>
-                {% endif %}
-            {% endcomment %}
-        {% endfor %}
-        <div class="clearfix hidden-xs"></div>
+        {% if related_items.projects %}
+            <div class="container-fluid obszar-projekty">
+
+                <div class="obszar-title-wrapper"><h3 class="obszar-title">Projekty</h3></div>
+
+            {% for site in related_items.projects %}
+                <div class="col-sm-4 col-xs-6">
+                    {% include "website/site/element/_projekt_box.html" %}
+                </div>
+                {% comment %}
+                {% if forloop.counter|divisibleby:"4" %}
+                    <div class="clearfix hidden-xs"></div>
+                    {% endif %}
+                {% endcomment %}
+            {% endfor %}
+            <div class="clearfix hidden-xs"></div>
+
             </div>
         {% endif %}
-        {% for article in related_items.publications %}
-            {% include "website/site/element/_publication_list_box.html" with article=article %}
-        {% endfor %}
-        {% for site in related_items.sites %}
-            {% include 'corecms/site/article_list.html' with article=site only %}
-        {% endfor %}
-        {% for article in related_items.articles %}
-            {% include 'corecms/site/article_list.html' with article=article only %}
-        {% endfor %}
+
+        {% if related_items.publications %}
+            <div class=" obszar-publikacje">
+                <div class="obszar-title-wrapper-publikacje"><h3 class="obszar-title">Publikacje</h3></div>
+                {% for article in related_items.publications %}
+                {% include "website/site/element/_publication_list_box.html" with article=article %}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if related_items.sites %}
+            <div class="obszar-title-wrapper-publikacje"><h3 class="obszar-title">Strony</h3></div>
+            {% for site in related_items.sites %}
+                {% include 'corecms/site/article_list.html' with article=site only %}
+            {% endfor %}
+        {% endif %}
+
+        {% if related_items.articles %}
+            <div class="obszar-title-wrapper-publikacje"><h3 class="obszar-title">Artykuły</h3></div>
+            {% for article in related_items.articles %}
+                {% include 'corecms/site/article_list.html' with article=article only %}
+            {% endfor %}
+        {% endif %}
 
         <!-- Okruszki -->
         {% if published_by_hash %}
