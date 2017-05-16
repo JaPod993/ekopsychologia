@@ -1771,6 +1771,10 @@ p.o-nas-tekst {
   text-align: justify;
 }
 
+.project-overflow {
+  overflow: hidden;
+}
+
 .wiecej-obszary {
   padding-bottom: 15px;
 }

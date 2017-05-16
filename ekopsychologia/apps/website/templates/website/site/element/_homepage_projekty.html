@@ -1,12 +1,12 @@
 {% load thumbnail %}
 {% if homepage_projekty %}
 {% if homepage_projekty_list|length > 0 %}
-<div class="projects-wrapper">
+<div class="projects-wrapper" id="projekty">
 <div class="container title">
       <h1 class="title-text">Projekty</h1>
 </div>
 
-<div class="container">
+<div class="container project-overflow">
     <div class="row">
     {% for site in homepage_projekty_list %}
         <div class="col-sm-3 col-xs-6">
@@ -21,7 +21,33 @@
 {% endif %}
 
     <div class="container more">
-        <a class="more-text projekty" href="{{ homepage_projekty.get_absolute_url }}">Więcej</a>
+        <a class="more-text projekty toggle" href="{{ homepage_projekty.get_absolute_url }}">Więcej</a>
     </div>
 </div>
 {% endif %}
+
+<script>
+
+
+  $(document).ready(function() {
+      var start_panel_height = (($('.wood-frame-wrapper').height() + 30) * 2);
+      $('.project-overflow').height(start_panel_height);
+
+    $('.toggle').click(function(){
+
+        if( $('.project-overflow').hasClass('collapsed') ){
+            $('.project-overflow').css('height', 'auto');
+            $('.project-overflow').css('height', 'auto');
+            $('.project-overflow').removeClass('collapsed');
+        }else{
+            $('.project-overflow').addClass('collapsed');
+            var start_panel_height = (($('.wood-frame-wrapper').height() + 30) * 2);
+            $('.project-overflow').height(start_panel_height);
+        }
+
+    })
+  });
+
+</script>
+
+  

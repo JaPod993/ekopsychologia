@@ -31,7 +31,7 @@ class HomepageView(TemplateView):
         context['homepage_onas'] = self._get_site_by_slug("o-nas")
         context['homepage_projekty'] = self._get_site_by_slug("projekty")
         if context['homepage_projekty']:
-            context['homepage_projekty_list'] = context['homepage_projekty'].children.published()[:8]
+            context['homepage_projekty_list'] = context['homepage_projekty'].children.published()
         context['homepage_aktualnosci'] = self._get_site_by_slug("aktualnosci")
         if context['homepage_aktualnosci']:
             context['homepage_aktualnosci_list'] = context['homepage_aktualnosci'].articles.filter(for_lang=True).published()[:3]

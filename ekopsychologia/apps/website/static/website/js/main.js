@@ -19,11 +19,17 @@ $(function () {
 
     // obszary dzialania sprawdzanie # i otwieranie
  if(window.location.hash != ""){
-	$('button[data-target="'+ window.location.hash +'"]').trigger('click');
-	$('html, body').animate({
-        scrollTop: $('button[data-target="'+ window.location.hash +'"]').offset().top
-    }, 1000);
+ 	if( $('button[data-target="'+ window.location.hash +'"]').length > 0){
+		$('button[data-target="'+ window.location.hash +'"]').trigger('click');
+		$('html, body').animate({
+	        scrollTop: $('button[data-target="'+ window.location.hash +'"]').offset().top
+	    }, 1000);
+	}
 }
+
+
+
+
 });
 var eventFired = 0;
 
