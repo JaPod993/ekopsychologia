@@ -25,7 +25,8 @@ class Site(SiteAbstract):
     @staticmethod
     def get_template_list():
         return [
-            ('website/site/templates/site_obszary_dzialalnosci.html', u'Obszary działania'),
+            ('website/site/templates/site_obszary_dzialalnosci.html', u'Obszary działania (lista)'),
+            ('website/site/templates/site_obszar.html', u'Obszar działania'),
             ('website/site/templates/site_contact.html', u'Kontakt'),
             ('website/site/templates/site_partnership.html', u'Wspolpraca'),
             ('website/site/templates/site_publication.html', u'Publikacje'),
@@ -54,14 +55,6 @@ class Article(ArticleAbstract):
         if self.alternative_url != "":
             return self.alternative_url
         return super(Article, self).get_absolute_url(category)
-
-    # @staticmethod
-    # def get_template_list():
-    #     return [('website/site/templates/article_publication_list.html', 'Publikacja')]
-    #
-    # @property
-    # def is_publication(self):
-    #     return self.template == 'website/site/templates/article_publication_list.html'
 
 
 class TextBlock(TextBlockAbstract):

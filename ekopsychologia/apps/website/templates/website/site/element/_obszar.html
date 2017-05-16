@@ -1,0 +1,14 @@
+{% load templatetags %}
+
+<div class="paper-wrapper paper-{{ child.slug }} paper-obszary" id="paper-{{ child.slug }}">
+    <div class="paper">
+        <button class="btn btn-default btn-block {% if open_tab == child.slug %}{% else %}collapsed{% endif %}" data-toggle="collapse" data-target="#{{ child.slug }}">
+            <i class=" eko-psych-{{ child.slug }} "></i>
+            <div class="title">{{ child }}</div>
+        </button>
+        <div id="{{ child.slug }}" class="collapse{% if open_tab == child.slug %} in{% endif %}">
+            {{ child.content|safe }}
+            {% if show_more %}<a href="{{ child.get_absolute_url }}">więcej</a>{% endif %}
+        </div>
+    </div>
+</div>

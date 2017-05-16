@@ -39,8 +39,14 @@ def get_opinie_list():
 @register.assignment_tag
 def get_obszary_dzialania_content(site):
     rtn = dict()
-    rtn['sites'] = Site.objects.published().filter(areas=site)
+    rtn['projects'] = Site.objects.published().filter(areas=site, parent__slug='projekty')
+    rtn['sites'] = Site.objects.published().filter(areas=site).exclude(parent__slug='projekty')
     rtn['articles'] = Article.objects.published().filter(areas=site)
+    publication_site = Site.objects.filter(slug="publikacje").first()
+    if publication_site:
+        rtn['articles'] = rtn['articles'].exclude(sites=publication_site)
+        rtn['publications'] = Article.objects.published().filter(areas=site, sites=publication_site)
+
     return rtn
 
 

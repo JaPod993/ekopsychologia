@@ -75,8 +75,19 @@ class SiteAdmin(BaseSiteAdmin):
 
     def get_inline_instances(self, request, obj=None):
         if obj is not None and obj.parent is not None and obj.parent.slug == 'projekty':
-            self.inlines = [FounderInline]
-        return super(SiteAdmin, self).get_inline_instances(request, obj)
+            inline_instances = []
+            for inline_class in [FounderInline]:
+                inline = inline_class(self.model, self.admin_site)
+                if request:
+                    if not (inline.has_add_permission(request) or
+                            inline.has_change_permission(request, obj) or
+                            inline.has_delete_permission(request, obj)):
+                        continue
+                    if not inline.has_add_permission(request):
+                        inline.max_num = 0
+                inline_instances.append(inline)
+            return inline_instances
+        return []
 
 admin.site.unregister(Site)
 admin.site.register(Site, SiteAdmin)

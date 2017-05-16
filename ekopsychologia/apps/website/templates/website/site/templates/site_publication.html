@@ -15,30 +15,13 @@
 {% block canonical_url %}
     <link rel="canonical" href="{{ request.base_url }}{{ object.get_absolute_url }}">
 {% endblock %}
+
 {% block body_content %}
 
     {% include "corecms/site/templates/_top_wrapper.html" %}
-
-
     <div class="container site wow fadeIn">
         <div class="row">
-            <div class="col-md-12 bg">
-                <!-- Tło -->
-                {% if object.main_image %}
-                    {% thumbnail object.main_image "1200x300" crop="center" seoname=object|addstr:"" as im %}
-                        <div class="bg_wrapper " style="background: url('{{ im.url }}') center center no-repeat;">
-                    {% endthumbnail %}
-                {% else %}
-                    <div class="bg_wrapper">
-                {% endif %}
-                <div class="title wow fadeInLeft">
-                    <!--<h2>{{ object.identity }}</h2>-->
-                </div>
-                </div>
-                </div>
-            </div>
             <div class="row">
-
                 <div class="col-md-3 left">
                     <div class="left-wrapper item">
                         {% if category_project %}
@@ -54,56 +37,21 @@
                 </div>
 
                 <div class="col-md-9 right item">
-
                     {% block site_inner_content %}
-                    <!-- Okruszki -->
-                    {% include 'corecms/site/_breadcrumbs.html' %}
+                        <!-- Okruszki -->
+                        {% include 'corecms/site/_breadcrumbs.html' %}
 
-                    {% if object.slug == "aktualnosci" %}
-                    <div class="col-xs-12 col-sm-12"><hr class="article-list-hr"></div>
-                    {% endif %}
+                        {%if object.level > 0 %}
+                            <div><h2 class="left-menu-right-header">{{ object.identity }}</h2></div>
+                        {% endif %}
 
-                    {%if object.level > 0 %}
-                              <div><h2 class="left-menu-right-header">{{ object.identity }}</h2></div>
-                    {% endif %}
-
-                    <div class="right-wrapper">
-
-                        <!-- Lista artykułów -->
                         {% for article in object_articles %}
-                            {% get_first_pdf article as file %}
-                            {% if file %}
-                            <div class="row article_list">
-                                <div class="article-wrapper">
-                                    <div class="col-xs-12 col-sm-4 article-image">
-                                        <div class="img-wrapper">
-                                            {% take_page_of_pdf file.absolute_path 0 as page %}
-                                            {% thumbnail page "175x240" seoname=article|addstr:"" as im %}
-                                                <img src="{{ im.url }}" class="img-responsive publication-image">
-                                            {% endthumbnail %}
-                                            <a href="{{ file.url }}" class="download-btn" download="{{ file.download_name }}"><span class="fa fa-file-pdf-o"></span> Pobierz</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 {% if category.slug == 'opinie' or category.slug == 'sprawozdania' %}col-sm-12{% else %}col-sm-8{% endif %} article-content">
-                                        <h2 class="article-list-title">{{ article.identity }}</h2>
-                                        <p class="date article-list-date">{{ article.article_date|date:"d.m.Y" }}</p>
-                                        <div class="content-styles article-list-content">
-                                            {{ article.shortcut|safe }}
-                                        </div>
-
-                                        {% include "corecms/site/_areas.html" with object=article only %}
-                                    </div>
-                                    <div class="col-xs-12 col-sm-12"><hr class="article-list-hr"></div>
-                                </div>
-                            </div>
-                            {% endif %}
+                            {% include "website/site/element/_publication_list_box.html" with article=article %}
                         {% endfor %}
-                        {% endblock %}
-                    </div>
+
+                    {% endblock %}
                 </div>
             </div>
         </div>
     </div>
-    <script>
-    </script>
 {% endblock %}

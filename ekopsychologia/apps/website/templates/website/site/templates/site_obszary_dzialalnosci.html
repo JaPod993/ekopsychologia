@@ -7,26 +7,7 @@
 {% block site_inner_content %}
 
         {% for child in object.children.published %}
-            <div class="paper-wrapper paper-{{ child.slug }} paper-obszary" id="paper-{{ child.slug }}">
-                <div class="paper">
-                    <button class="btn btn-default btn-block collapsed" data-toggle="collapse" data-target="#{{ child.slug }}">
-                        <i class=" eko-psych-{{ child.slug }} "></i>
-                        <div class="title">{{ child }}</div>
-                    </button>
-                    <div id="{{ child.slug }}" class="collapse">
-                        {{ child.content|safe }}
-
-                        {% get_obszary_dzialania_content child as related_items %}
-                        {% for site in related_items.sites %}
-                            <a href="{{ site.get_absolute_url }}" style="display: block">{{ site }}</a>
-                        {% endfor %}
-                        {% for article in related_items.articles %}
-                            <a href="{{ article.get_absolute_url }}" style="display: block">{{ article }}</a>
-                        {% endfor %}
-
-                    </div>
-                </div>
-            </div>
+            {% include 'website/site/element/_obszar.html' with child=child show_more=True %}
         {% endfor %}
 
         <!-- Okruszki -->

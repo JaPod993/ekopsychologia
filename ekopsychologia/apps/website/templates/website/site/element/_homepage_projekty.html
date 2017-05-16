@@ -10,23 +10,11 @@
     <div class="row">
     {% for site in homepage_projekty_list %}
         <div class="col-sm-3 col-xs-6">
-            <div class="wood-frame-wrapper">
-                <a href="{{ site.get_absolute_url }}" class="">
-                    <span class="inner-shadow project-hover">
-                        <span class="shadow project-hover "><span class="project-title">{{ site }}</span></span>
-            {% thumbnail site.thumbnail "242x150" crop="center" as im %}
-                <img src="{{ im.url }}" class="img-responsive" alt="{{ site }}" title="{{ site }}">
-            {% endthumbnail %}
-
-                        </span>
-                <span class="gwozdz"></span>
-                </a>
-            </div>
+            {% include "website/site/element/_projekt_box.html" %}
         </div>
         {% if forloop.counter|divisibleby:"4" %}
         <div class="clearfix hidden-xs"></div>
         {% endif %}
-
     {% endfor %}
     </div>
 </div>

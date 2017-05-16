@@ -1,0 +1,17 @@
+{% load thumbnail %}
+
+
+
+    <div class="wood-frame-wrapper">
+        <a href="{{ site.get_absolute_url }}" class="">
+            <span class="inner-shadow project-hover">
+                <span class="shadow project-hover ">
+                    <span class="project-title">{{ site }}</span>
+                </span>
+                {% thumbnail site.thumbnail "242x150" crop="center" as im %}
+                    <img src="{{ im.url }}" class="img-responsive" alt="{{ site }}" title="{{ site }}">
+                {% endthumbnail %}
+            </span>
+            <span class="gwozdz"></span>
+        </a>
+    </div>
