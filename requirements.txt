@@ -6,7 +6,7 @@ pytz==2016.10
 six==1.10.0
 django-widget-tweaks==1.4.1
 -e git+ssh://git@git.silvercube.pl/materialtemplate.git@1.0.8#egg=materialtemplate
--e git+ssh://git@git.silvercube.pl/corecms.git@1.0.23#egg=corecms
+-e git+ssh://git@git.silvercube.pl/corecms.git@1.0.24#egg=corecms
 -e git://github.com/disqus/django-bitfield.git@1.9.1#egg=django-bitfield
 -e git://github.com/maciejga/django-positions.git#egg=django-positions
 sorl-thumbnail==12.4a1
