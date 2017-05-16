@@ -194,5 +194,11 @@ BASE64_IMAGE_FIELD = {
     },
     'corecms_article_main_image': {
         'ratio': '1920:300'
-    }
+    },
+    'corecms_site_thumbnail': {
+        'ratio': '360:200'
+    },
+    'corecms_site_main_image': {
+        'ratio': '1920:300'
+    },
 }
