@@ -14,7 +14,7 @@
                 {% if article.thumbnail %}
 
                 {% thumbnail article.thumbnail "1920x1920" seoname=article|addstr:"" as im_large %}
-                    {% thumbnail article.thumbnail "335x220" crop="center" seoname=article|addstr:"" as im %}
+                    {% thumbnail article.thumbnail "360x200" crop="center" seoname=article|addstr:"" as im %}
                     {% if category.slug == 'w-mediach' %}
                         <a href="{{ im_large.url }}" data-lightbox="roadtrip">
                             <img src="{{ im.url }}" class="img-responsive" alt="{{ article }}">

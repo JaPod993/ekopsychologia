@@ -167,14 +167,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 74px;
-  height: 74px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
-  border: 7px solid red;
+  border: 6px solid red;
   margin-left: 10px;
 }
 .area-wrapper .eko-dzialalnosc-miedzynarodowa {
   border-color: #ef6c45;
+  font-size: 28px;
 }
 .area-wrapper .eko-dzialalnosc-miedzynarodowa:before {
   content: '\0041';
@@ -184,6 +185,7 @@
 }
 .area-wrapper .eko-dla-karpat {
   border-color: #6c8d47;
+  font-size: 28px !important;
 }
 .area-wrapper .eko-dla-edukacji-ekologicznej {
   border-color: #3c81c2;
@@ -191,7 +193,7 @@
 .area-wrapper .eko-dla-edukacji-ekologicznej:before {
   content: '\0043';
   color: #3c81c2;
-  font-size: 40px;
+  font-size: 28px;
 }
 .area-wrapper .eko-dla-partycypacji-spolecznej {
   border-color: #b27a3f;
@@ -199,7 +201,7 @@
 .area-wrapper .eko-dla-partycypacji-spolecznej:before {
   content: '\0044';
   color: #b27a3f;
-  font-size: 36px;
+  font-size: 28px;
 }
 .area-wrapper .eko-dla-samorzadow-lokalnych {
   border-color: #f2b756;
@@ -207,7 +209,7 @@
 .area-wrapper .eko-dla-samorzadow-lokalnych:before {
   content: '\0045';
   color: #f2b756;
-  font-size: 36px;
+  font-size: 28px;
 }
 .area-wrapper .eko-dla-dziedzictwa-kulturowego {
   border-color: #896b5f;
@@ -215,15 +217,16 @@
 .area-wrapper .eko-dla-dziedzictwa-kulturowego:before {
   content: '\0046';
   color: #896b5f;
-  font-size: 38px;
+  font-size: 28px;
 }
 .area-wrapper .eko-dla-organizacji-pozarzadowych {
   border-color: #5d96a0;
+  font-size: 28px;
 }
 .area-wrapper .eko-dla-organizacji-pozarzadowych:before {
   content: '\0047';
   color: #5d96a0;
-  font-size: 40px;
+  font-size: 28px;
 }
 .area-wrapper .eko-dla-spolecznosci-lokalnych {
   border-color: #6363aa;
@@ -231,7 +234,7 @@
 .area-wrapper .eko-dla-spolecznosci-lokalnych:before {
   content: '\0048';
   color: #6363aa;
-  font-size: 36px;
+  font-size: 28px;
 }
 .area-wrapper .eko-dla-swiata-nauki {
   border-color: #b5842b;
@@ -239,7 +242,7 @@
 .area-wrapper .eko-dla-swiata-nauki:before {
   content: '\0049';
   color: #b5842b;
-  font-size: 36px;
+  font-size: 28px;
 }
 .area-wrapper .eko-sc_white:before {
   content: '\004a';
@@ -1422,6 +1425,8 @@ div.leaf {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   margin-top: 0;
+  color: #374778;
+  padding-bottom: 8px;
 }
 .article-list-title a {
   color: #374778;
@@ -2460,6 +2465,13 @@ publication-list-hr {
 
 .publication-image {
   box-shadow: 3px 4px 0 0 #a7a7a7;
+}
+
+.publication-slider {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .opinie-wrapper {
