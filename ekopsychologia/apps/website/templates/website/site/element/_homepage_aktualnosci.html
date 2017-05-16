@@ -14,7 +14,7 @@
                     {% for article in homepage_aktualnosci_list %}
                     <div class="col-xs-12 col-sm-4">
                         <li class="article-style-li">
-                            {% thumbnail article.thumbnail "360x200" crop="center" as im %}
+                            {% thumbnail article.thumbnail "360x200" seoname=article.identity|truncatewords:4 crop="center" as im %}
                             <img class="default img-responsive{% if forloop.counter == 2 %} hidden-sm hidden-md hidden-lg{% endif %}" src="{{ im.url }}" alt="{{ site }}" title="{{ site }}">
                             <div class="article-title-2 compared-text-part srodkowanie-pionowe-tabela">
                                 <div class="srodkowanie-pionowe-komorka">
