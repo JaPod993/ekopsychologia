@@ -24,7 +24,7 @@
                 {{ article.shortcut|safe }}
             </div>
 
-            {% include "corecms/site/_areas.html" with object=article only %}
+            {% include "corecms/site/_areas.html" with object=article publication_slider=True only %}
         </div>
         <div class="col-xs-12 col-sm-12"><hr class="publication-list-hr"></div>
     </div>

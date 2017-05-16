@@ -10,7 +10,7 @@
         {% comment %}
         <div class="col-md-12 article-image-padding">
             {% if object.main_image %}
-            {% thumbnail object.main_image "335x220" crop="center" seoname=object|addstr:"" as im %}
+            {% thumbnail object.main_image "360x200" crop="center" seoname=object|addstr:"" as im %}
             <img class="border img-responsive " src="{{im.url}}" class="img-responsive"/>
             {% endthumbnail %}
             {% endif %}

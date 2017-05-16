@@ -1,5 +1,6 @@
+{% if object.areas.all %}
 <div class="area-wrapper">
-    <div class="areas-list-slider publication-slider">
+    <div class="areas-list-slider {% if publication_slider %}publication-slider{% endif %}">
         {% for area in object.areas.all %}
             <div>
                 <a href="{{ area.get_absolute_url }}">
@@ -9,3 +10,4 @@
         {% endfor %}
     </div>
 </div>
+{% endif %}
