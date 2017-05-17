@@ -1907,6 +1907,8 @@ textarea.form-control {
 @mixin partnership-transition {
   transition: all 1s;
 }
+.partnership-single-wrapper {
+}
 
 .partnership-title {
   @include roboto-bold;
