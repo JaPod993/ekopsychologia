@@ -11,7 +11,7 @@
 </div>
 <div class="clearfix project-info-wrapper text-center">
     <div>
-    {% if category_project.url %}<a class="project-link" href="{{ category_project.url }}">{{ category_project.url }}</a>{% endif %}
+    <a class="project-link" href="{{ category_project.url }}">{% if category_project.url %}{{ category_project.url }}{% endif %}</a>
     </div>
 
     <nav role="navigation" class="sub_menu navbar navbar-default">
