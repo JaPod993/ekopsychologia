@@ -133,6 +133,15 @@ $(document).ready(function () {
         autoplay: true,
         autoplaySpeed: 10000,
         speed: 1500,
+         responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+          arrows: false,
+        dots: false,
+      }
+    }
+  ]
     });
 
 

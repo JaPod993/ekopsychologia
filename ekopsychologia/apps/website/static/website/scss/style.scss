@@ -1065,7 +1065,7 @@ table, th, td {
   font-size: 16px;
 }
 .article-image {
-  padding-left: 45px;
+  padding-left: 30px;
   padding-right: 0;
 }
 .article-content {
@@ -1400,7 +1400,9 @@ i.more-arrow {
   padding-top: 5px;
 }
 //....................SINGLE ARTICLE...................
+.row.article_list {
 
+}
 .site {
  // .gallery,
   .files h4 {
@@ -2332,6 +2334,34 @@ publication-list-hr {
 //.................................................................
 
 //................PUBLIKACJE PODSTRONA................
+@mixin public-dots {
+  top: 400px;
+}
+.publications-slick {
+  .slick-dots {
+    @include public-dots;
+  }
+  @media screen and (max-width: 480px) {
+    .slick-dots {
+    @include public-dots;
+  }
+  }
+  @media screen and (max-width: 768px) {
+    .slick-dots {
+    @include public-dots;
+  }
+  }
+  @media screen and (max-width: 992px) {
+    .slick-dots {
+    @include public-dots;
+  }
+  }
+  @media screen and (max-width: 1200px) {
+    .slick-dots {
+    @include public-dots;
+  }
+  }
+}
 
 .publikacje-download {
   position: relative;
@@ -3216,6 +3246,9 @@ div.left {
 }
 
 @media screen and (max-width: 480px) {
+  .partnership-link {
+    font-size: 10px!important;
+  }
   .wspolpraca-title {
     font-size: 16px;
   }
@@ -3407,6 +3440,9 @@ div.left {
 }
 
 @media screen and (max-width: 320px) {
+  div.o-nas {
+    height: 1240px;
+}
   .slide-1 {
     font-size: 14px;
   }
@@ -3424,6 +3460,7 @@ div.left {
     }
   }
 }
+
 //.............................................
 
 #newsletter-sign-in {

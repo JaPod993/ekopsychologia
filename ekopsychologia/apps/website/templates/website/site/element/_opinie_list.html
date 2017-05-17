@@ -8,16 +8,17 @@
     <div class="opinie-wrapper clearfix">
         <div class="col-sm-2"></div>
         <div class="col-sm-8 pojedyncza-opinia">
-            <div class="row opinie-slider">
+            <div class="row ">
+                <div class="col-xs-12 opinie-slider">
 
-                {% for item in opinie_list %}
-                <a href="{{ item.get_absolute_url }}" class="opinie-link">
-                <span>
-                    {{item.shortcut|safe }}
-                </span>
-                </a>
-                {% endfor %}
-
+                    {% for item in opinie_list %}
+                    <a href="{{ item.get_absolute_url }}" class="opinie-link">
+                        <span>
+                            {{item.shortcut|safe }}
+                        </span>
+                    </a>
+                    {% endfor %}
+                </div>
             </div>
         </div>
         <div class="col-md-2"></div>
