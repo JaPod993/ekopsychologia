@@ -190,15 +190,15 @@ THUMBNAIL_SEO_NAME = True
 #ratio dla miniatur
 BASE64_IMAGE_FIELD = {
     'corecms_article_thumbnail': {
-        'ratio': '360:200'
+        'ratio': '36:20'
     },
     'corecms_article_main_image': {
-        'ratio': '1920:300'
+        'ratio': '192:30'
     },
     'corecms_site_thumbnail': {
-        'ratio': '360:200'
+        'ratio': '36:20'
     },
     'corecms_site_main_image': {
-        'ratio': '1920:300'
+        'ratio': '192:30'
     },
 }
