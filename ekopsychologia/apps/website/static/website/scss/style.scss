@@ -415,6 +415,85 @@ div.col-sm-12.nav-padding {
 }
 
 //.............................................
+//.................. podstrona projekty..................
+@mixin przesuniecie {
+  position: relative;
+  top: -37px;
+}
+.czas-wrapper {
+  @include przesuniecie;
+}
+.czas-realizacji-wrapper {
+  padding-top: 5px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid $light-light-grey;
+  margin-bottom: 30px;
+}
+.budzer-calkowity-wrapper {
+  padding-top: 5px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid $light-light-grey;
+  margin-bottom: 30px;
+}
+.budzet-wrapper {
+  @include przesuniecie;
+}
+.project-icon {
+
+}
+.project-info-wrapper {
+  .left-menu ul li {
+    &:first-child {
+      border-top: 2px solid $light-light-grey;
+    }
+  }
+}
+a.project-link.link-hover {
+  color: $white;
+  margin-bottom: 0px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+}
+.project-link-wrapper-border {
+  background: $hover;
+ // border-bottom: 2px solid $light-grey;
+}
+.project-link-wrapper {
+  margin-bottom: 46px;
+}
+.page-title.project-icon {
+  border-bottom: 2px solid $light-light-grey;
+}
+.obszary-projekty-wrapper {
+  border-bottom: 2px solid $light-light-grey;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  @include przesuniecie;
+}
+.project-founders-wrapper {
+  border-bottom: 2px solid $light-light-grey;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  @include przesuniecie;
+}
+.founders-title {
+  color: $hover;
+}
+.obszary-projekty-slider {
+  .area-wrapper {
+    [class*='eko-'] {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      border: 6px solid red;
+      margin-left: 0px;
+    }
+  }
+}
 //.....................PROJECTS HOVER...................
 .project-hover {
 
@@ -505,14 +584,39 @@ div.about {
   margin-left: 15px;
 }
 
+span.title-text,
 h1.title-text {
   @include roboto-bold;
- // font-size: 24px;
+ font-size: 24px;
   color: $title;
+}
+.title > span {
+  position: relative;
+  display: inline-block;
+}
 
+.title > span:before,
+.title > span:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 9999px;
+  height: 2px;
+  background: $hover;
+}
+
+.title > span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+
+.title > span:after {
+  left: 100%;
+  margin-left: 15px;
 }
 
 //.............................................
+span.title-text,
 h1.title-text {
   margin-top: 30px;
   text-transform: uppercase;
@@ -2813,6 +2917,7 @@ body {
       font-size: 16px;
     }
   }
+
   .eko-white {
     padding-top: 50px;
     padding-right: 20px;
@@ -2828,6 +2933,13 @@ body {
 }
 
 @media screen and (max-width: 992px) {
+ .obszary-projekty-wrapper,
+ .project-founders-wrapper,
+ .czas-wrapper,
+ .budzet-wrapper,
+ .project-info-wrapper {
+  top: 0;
+}
   .right.mapa.item {
     padding-left: 30px;
   }

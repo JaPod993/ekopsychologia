@@ -2,17 +2,24 @@
 {% load corecms_tags %}
 {% load templatetags %}
 
-<div class="page-title text-center project-icon">
+<div class="page-title text-center project-icon clearfix">
     {% if category_project.logo %}
         {% thumbnail category_project.logo "200" seoname=category_project|addstr:"" as im %}
             <img src="{{ im.url }}" alt="{{ category_project }}">
         {% endthumbnail %}
     {% endif %}
 </div>
+
 <div class="clearfix project-info-wrapper text-center">
-    <div>
-    <a class="project-link" href="{{ category_project.url }}">{% if category_project.url %}{{ category_project.url }}{% endif %}</a>
+    <div class="project-link-wrapper ">
+        {% if category_project.url %}
+    <div class="project-link-wrapper-border">
+
+    <a class="project-link link-hover " href="{{ category_project.url }}">{{ category_project.url }}</a>
+
     </div>
+        {% endif %}
+        </div>
 
     <nav role="navigation" class="sub_menu navbar navbar-default">
         <div class="navbar-header">
@@ -38,13 +45,15 @@
             </div>
         </div>
     </nav>
-
-    <div style="margin-bottom: 15px;">
+{% if object.areas.all %}
+    <div  class="obszary-projekty-wrapper">
         <div class="text-center founders-title">Obszary działania</div>
-        {% include "corecms/site/_areas.html" with object=category_project only %}
+        {% include "corecms/site/_areas_2.html" with object=category_project only %}
     </div>
+ {% endif %}
 
-    <div class="project-founders" style="margin-bottom: 15px;">
+{% if category_project.founder_set.all %}
+    <div class="project-founders project-founders-wrapper">
         <div class="text-center founders-title">Fundatorzy</div>
         <div class="founders-slider">
         {% for founder in category_project.founder_set.all %}
@@ -58,12 +67,23 @@
         {% endfor %}
         </div>
     </div>
+ {% endif %}
 
     {% if category_project.execution_time %}
-    <div class="text-center founders-title">Czas realizacji: {{ category_project.execution_time }}</div>
+    <div class="czas-wrapper">
+        <div class="text-center founders-title">Czas realizacji:</div>
+        <div class="czas-realizacji-wrapper">
+            {{ category_project.execution_time }}
+        </div>
+    </div>
     {% endif %}
     {% if category_project.budget %}
-    <div class="text-center founders-title">Budżet całkowity: {{ category_project.budget }}</div>
+    <div class="budzet-wrapper">
+        <div class="text-center founders-title">Budżet całkowity:</div>
+        <div class="budzer-calkowity-wrapper">
+            {{ category_project.budget }}
+        </div>
+    </div>
     {% endif %}
 
 </div>
@@ -85,8 +105,8 @@
           slidesToScroll: 3,
             arrows: false,
             dots: false,
-            autoplay: true,
-            autoplaySpeed: 2000
+            autoplay: false,
+            autoplaySpeed: 2500
         });
 
     })

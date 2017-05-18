@@ -1,0 +1,26 @@
+{% load corecms_tags %}
+{% load corecms_render_tags %}
+{% load thumbnail %}
+
+{% load templatetags %}
+
+{% get_first_pdf article as file %}
+{% if file %}
+<div class="col-md-3 text-center publikacja-wrapper-all">
+           <div class="text-center publication-title publicatiton-title-podstrona"><strong>{{ article|truncatechars:40 }}</strong></div>
+            <div class="text-center publikacja-wrapper-pdf">
+                {% if article.thumbnail %}
+                    {% thumbnail article.thumbnail "175x240" seoname=article|addstr:"" as im %}
+                        <img src="{{ im.url }}" class="img-responsive publication-image">
+                    {% endthumbnail %}
+                {% else %}
+                    {% take_page_of_pdf file.absolute_path 0 as page %}
+                    {% thumbnail page "175x240" seoname=article|addstr:"" as im %}
+                        <img src="{{ im.url }}" class="img-responsive publication-image">
+                    {% endthumbnail %}
+                {% endif %}
+            </div>
+                <a href="{{ file.url }}" class="download-btn publikacje-download" download="{{ file.download_name }}"><span class="fa fa-file-pdf-o"></span> Pobierz</a>
+        </div>
+{% endif %}
+
