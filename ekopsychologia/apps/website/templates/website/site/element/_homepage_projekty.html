@@ -6,7 +6,7 @@
       <h1 class="title-text">Projekty</h1>
 </div>
 
-<div class="container project-overflow">
+<div class="container project-overflow collapsed">
     <div class="row">
     {% for site in homepage_projekty_list %}
         <div class="col-sm-3 col-xs-6">
@@ -21,7 +21,7 @@
 {% endif %}
 
     <div class="container more">
-        <a class="more-text projekty toggle" href="{{ homepage_projekty.get_absolute_url }}">Więcej</a>
+        <a class="more-text projekty toggle">Więcej</a>
     </div>
 </div>
 {% endif %}

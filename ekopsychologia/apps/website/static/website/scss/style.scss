@@ -422,10 +422,12 @@ div.col-sm-12.nav-padding {
     @include roboto-bold;
     text-transform: uppercase;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
     color: $white;
 
   .project-title {
+    padding-left: 5px!important;
+    padding-right: 5px!important;
     display: inline-block;
     margin-top: 52px;
     opacity: 0;
@@ -2336,6 +2338,19 @@ publication-list-hr {
 //.................................................................
 
 //................PUBLIKACJE PODSTRONA................
+.publications-wrapper {
+  .slick-next {
+    top: 160px;
+    right: 0;
+}
+  .slick-prev {
+    top: 160px;
+    left: 0;
+}
+}
+.site-publication-wrapper {
+  overflow: auto;
+}
 @mixin public-dots {
   top: 400px;
 }
@@ -2689,7 +2704,7 @@ body {
     font-size: 16px;
   }
   .project-hover {
-  font-size: 16px;
+  font-size: 12px;
   .project-title {
     margin-top: 30px;
   }
@@ -2893,9 +2908,13 @@ div.left {
   margin-bottom: 15px;
 }
   .project-hover {
-  font-size: 11px;
+  font-size: 9px;
+   // padding-left: 5px;
+   // padding-right: 5px;
   .project-title {
     margin-top: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }
    .main-content-wrapper {
@@ -3035,9 +3054,11 @@ div.left {
     font-size: 12px;
   }
   .project-hover {
-  font-size: 14px;
+  font-size: 12px;
   .project-title {
     margin-top: 52px;
+     padding-left: 5px;
+    padding-right: 5px;
   }
 }
   div.newsletter-text {
@@ -3303,9 +3324,11 @@ div.left {
     font-size: 12px;
   }
     .project-hover {
-  font-size: 12px;
+  font-size: 10px;
   .project-title {
     margin-top:22px;
+     padding-left: 5px;
+      padding-right: 5px;
   }
 }
   .paper-obszary {
@@ -3415,7 +3438,7 @@ div.left {
     margin-top: 45px;
   }
     .project-hover {
-  font-size: 8px;
+  font-size: 7px;
   .project-title {
     margin-top:20px;
   }
@@ -3442,6 +3465,9 @@ div.left {
 }
 
 @media screen and (max-width: 320px) {
+  .project-hover {
+    font-size: 6px;
+  }
   div.o-nas {
     height: 1240px;
 }

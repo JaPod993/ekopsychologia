@@ -7,7 +7,7 @@
 {% get_first_pdf article as file %}
 {% if file %}
 <div class="article_list clearfix">
-    <div class="article-wrapper clearfix">
+    <div class="article-wrapper publication-scroll-wrapper clearfix">
         <div class="col-xs-12 col-sm-3 article-image text-center">
             <div class="img-wrapper">
                 {% take_page_of_pdf file.absolute_path 0 as page %}
@@ -30,3 +30,4 @@
     </div>
 </div>
 {% endif %}
+
