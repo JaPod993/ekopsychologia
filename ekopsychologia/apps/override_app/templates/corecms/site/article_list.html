@@ -48,8 +48,10 @@
 
         </div>
         <div class="col-xs-12">
-            {% if article.content or article.published_files|length %}
-            <div class=""><a href="{{ article.get_absolute_url }}" class="btn btn-blue pull-right full article-list-more">więcej <i class="fa fa-caret-right more-arrow" aria-hidden="true"></i></a></div>
+            {% if category.slug != 'w-mediach' %}
+                {% if article.content or article.published_files|length %}
+                <div class=""><a href="{{ article.get_absolute_url }}" class="btn btn-blue pull-right full article-list-more">więcej <i class="fa fa-caret-right more-arrow" aria-hidden="true"></i></a></div>
+                {% endif %}
             {% endif %}
         </div>
         <div class="col-xs-12 col-sm-12"><hr class="article-list-hr"></div>
