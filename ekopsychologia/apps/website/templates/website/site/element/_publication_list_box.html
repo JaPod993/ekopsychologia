@@ -10,10 +10,16 @@
     <div class="article-wrapper clearfix">
         <div class="col-xs-12 col-sm-3 article-image text-center">
             <div class="img-wrapper">
-                {% take_page_of_pdf file.absolute_path 0 as page %}
-                {% thumbnail page "175x240" seoname=article|addstr:"" as im %}
-                    <img src="{{ im.url }}" class="img-responsive publication-image">
-                {% endthumbnail %}
+                {% if article.thumbnail %}
+                    {% thumbnail article.thumbnail "175x240" seoname=article|addstr:"" as im %}
+                        <img src="{{ im.url }}" class="img-responsive publication-image">
+                    {% endthumbnail %}
+                {% else %}
+                    {% take_page_of_pdf file.absolute_path 0 as page %}
+                    {% thumbnail page "175x240" seoname=article|addstr:"" as im %}
+                        <img src="{{ im.url }}" class="img-responsive publication-image">
+                    {% endthumbnail %}
+                {% endif %}
             </div>
                 <a href="{{ file.url }}" class="download-btn publikacje-download" download="{{ file.download_name }}"><span class="fa fa-file-pdf-o"></span> Pobierz</a>
         </div>
