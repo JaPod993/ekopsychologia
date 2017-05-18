@@ -110,6 +110,15 @@ $(window).load(function () {
 
 $(document).ready(function () {
 
+     $('.publikacje-slider').slick({
+
+        accessibility: true,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 7000,
+        speed: 1500,
+    });
+
     $('.single-item').slick({
 
         accessibility: true,
@@ -143,6 +152,8 @@ $(document).ready(function () {
     }
   ]
     });
+
+
 
 
 

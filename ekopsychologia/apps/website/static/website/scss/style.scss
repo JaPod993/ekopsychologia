@@ -2338,6 +2338,63 @@ publication-list-hr {
 //.................................................................
 
 //................PUBLIKACJE PODSTRONA................
+.publicatiton-title-podstrona {
+  padding-bottom: 15px;
+}
+.publications-slick-2 {
+  .slick-prev:before {
+    color: $hover;
+  }
+  .slick-next:before {
+    color: $hover;
+  }
+  .slick-next {
+    top: 147px;
+    right: 0;
+  }
+  .slick-prev {
+    top: 147px;
+    left: 0;
+  }
+
+@mixin public-dots {
+  top: 365px;
+}
+.slick-dots li button:before  {
+  color: $hover;
+}
+  .slick-dots {
+    @include public-dots;
+  }
+  @media screen and (max-width: 480px) {
+    .slick-dots {
+    @include public-dots;
+  }
+  }
+  @media screen and (max-width: 768px) {
+    .slick-dots {
+    @include public-dots;
+  }
+  }
+  @media screen and (max-width: 992px) {
+    .slick-dots {
+    @include public-dots;
+  }
+  }
+  @media screen and (max-width: 1200px) {
+    .slick-dots {
+    @include public-dots;
+  }
+  }
+
+}
+
+.publikacja-wrapper-pdf {
+  padding-bottom: 30px;
+}
+.publikacja-wrapper-all {
+  padding-bottom: 45px;
+}
 .publications-wrapper {
   .slick-next {
     top: 160px;
@@ -2348,9 +2405,7 @@ publication-list-hr {
     left: 0;
 }
 }
-.site-publication-wrapper {
-  overflow: auto;
-}
+
 @mixin public-dots {
   top: 400px;
 }
