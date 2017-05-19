@@ -17,6 +17,7 @@ class Site(SiteAbstract):
     budget = models.CharField(u"Budżet całkowity", max_length=255, default="", blank=True)
     areas = models.ManyToManyField('self', verbose_name="Obszary działania", blank=True, related_name="+")
     url = models.URLField(u"Link", default="", blank=True)
+    archived = models.BooleanField(u"Projekt archiwalny", default=False, blank=True)
 
     class Meta(SiteAbstract.Meta):
         abstract = False
