@@ -1,6 +1,6 @@
 {% if object.areas.all %}
 <div class="area-wrapper">
-    <div class="areas-list-slider {% if publication_slider %}publication-slider{% endif %}">
+    <div class="areas-list-slider center-block {% if publication_slider %}publication-slider{% endif %}">
         {% for area in object.areas.all %}
             <div class="col-xs-4 obszary-projekty-slider">
                 <a href="{{ area.get_absolute_url }}">

@@ -33,7 +33,7 @@
         {% endif %}
         <div class="col-xs-12 {% if category.slug == 'opinie' or category.slug == 'sprawozdania' %}col-sm-12{% else %}col-sm-8{% endif %} article-content">
 
-            <h2 class="article-list-title">{% if article.content %}<a href="{{ article.get_absolute_url }}">{% endif %}{{ article.identity }}{% if article.content %}</a>{% endif %}</h2>
+            <h2 class="article-list-title">{% if article.content or article.published_files|length %}<a href="{{ article.get_absolute_url }}">{{ article.identity }}</a>{% endif %}</h2>
             <p class="date article-list-date">{{ article.article_date|date:"d.m.Y" }}</p>
             <div class="content-styles article-list-content">
                 {{ article.shortcut|safe }}

@@ -22,21 +22,13 @@
     <div class="container site wow fadeIn">
         <div class="row">
             <div class="">
-                <div class="col-md-3 left">
-                    <div class="left-wrapper item">
-                        {% if category_project %}
-                            {% include 'corecms/admin/_render_submenu_project.html' %}
-                        {% else %}
-                            <div class="page-title text-center">
-                                <h1>{{ request.breadcrumbs.0.name }}</h1>
-                            </div>
-                            {% render_submenu object category 'corecms/admin/_render_submenu_left.html' %}
-                            {% include 'corecms/site/_left_column.html' %}
-                        {% endif %}
-                    </div>
-                </div>
 
-                <div class="col-md-9 right item">
+
+                <div class="col-md-12 right item">
+
+                    <h1 class="text-center publication-title-inner kontakt-title">{{ object.identity }}</h1>
+
+<div class="wrapper-single-column">
                     {% block site_inner_content %}
                         <!-- Okruszki -->
                         {% include 'corecms/site/_breadcrumbs.html' %}
@@ -51,6 +43,7 @@
                         {% endfor %}
                     </div>
                     {% endblock %}
+    </div>
                 </div>
             </div>
         </div>

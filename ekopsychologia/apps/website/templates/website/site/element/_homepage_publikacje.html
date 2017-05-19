@@ -18,12 +18,12 @@
                     <div class="text-center">
                         {% if article.thumbnail %}
                             {% thumbnail article.thumbnail "175x240" seoname=article|addstr:"" as im %}
-                                <img src="{{ im.url }}" class="img-responsive publication-image">
+                                <img src="{{ im.url }}" class="img-responsive publication-image center-block">
                             {% endthumbnail %}
                         {% else %}
                             {% take_page_of_pdf file.absolute_path 0 as page %}
                             {% thumbnail page "175x240" seoname=article|addstr:"" as im %}
-                                <img src="{{ im.url }}" class="img-responsive publication-image">
+                                <img src="{{ im.url }}" class="img-responsive publication-image center-block">
                             {% endthumbnail %}
                         {% endif %}
                     </div>

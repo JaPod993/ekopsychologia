@@ -1,4 +1,5 @@
 {% load thumbnail %}
+{% load staticfiles %}
 <div class="articles">
     <div class="article-bacground">
 
@@ -14,8 +15,13 @@
                     {% for article in homepage_aktualnosci_list %}
                     <div class="col-xs-12 col-sm-4">
                         <li class="article-style-li">
+                            {% if article.thumbnail %}
                             {% thumbnail article.thumbnail "360x200" seoname=article.identity|truncatewords:4 crop="center" as im %}
                             <img class="default img-responsive{% if forloop.counter == 2 %} hidden-sm hidden-md hidden-lg{% endif %}" src="{{ im.url }}" alt="{{ site }}" title="{{ site }}">
+                            {% endthumbnail %}
+                            {% else %}
+                             <img src="{% static 'website/images/blue_orb.svg' %}" style=" width: 100%; opacity:0.5" class="img-responsive" alt="{{ article }}">
+                            {% endif %}
                             <div class="article-title-2 compared-text-part srodkowanie-pionowe-tabela">
                                 <div class="srodkowanie-pionowe-komorka">
                                     <a class="article-title" href="{{ article.get_absolute_url }}"><h2>{{ article }}</h2></a>
@@ -23,9 +29,12 @@
                             </div>
                             <div class="compared-text-part2">{{ article.shortcut|striptags|truncatechars:240|safe }}</div>
                             {% if forloop.counter == 2 %}
+                            {% thumbnail article.thumbnail "360x200" seoname=article.identity|truncatewords:4 crop="center" as im %}
                             <img class="default img-responsive hidden-xs" src="{{ im.url }}" alt="{{ site }}" title="{{ site }}">
-                            {% endif %}
                             {% endthumbnail %}
+                            {% endif %}
+
+
                         </li>
                     </div>
                     {% endfor %}

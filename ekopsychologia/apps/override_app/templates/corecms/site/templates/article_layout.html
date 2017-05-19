@@ -63,8 +63,9 @@
                     {% endif %}
 
                     {% if object.areas.all %}
-                         <div class="obszar-title-wrapper-obszary"><h3 class="obszar-title">Obszary działania</h3></div>
+                        <div class="area-title-wrapper">
                          {% include "corecms/site/_areas.html" with object=article publication_slider=True only %}
+                        </div>
                     {% endif %}
 
                     <!-- Lista artykułów -->

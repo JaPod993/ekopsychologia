@@ -5,6 +5,7 @@ $white: #ffffff; //biały
 $white-accent: #ececec;
 $grey: #c4c4c4; //szary
 $light-light-grey: #f2f2f2;
+$light-grey-e5: #e5e5e5;
 $light-grey: #e6e6e6; //jasny szary
 $other-light-grey: #e4e4e4; //jasny szary tlo strona glowna
 $breadcrumb-grey: #f7f7f7;
@@ -15,6 +16,7 @@ $footer: #098241;
 $title: #374778; //niebieski akcent
 $tekst: #8c8c8c; //szary tekst
 $tekst-ciemny: #595959; //#737373;
+
 
 // justify class
 .text-justify {
@@ -443,6 +445,9 @@ div.col-sm-12.nav-padding {
  background: url("../images/archive.png");
 }
 
+.areas-list-slider.publication-slider {
+  display: flex;
+}
 
 .project-info-wrapper {
   .left-menu ul li {
@@ -482,6 +487,9 @@ a.project-link.link-hover {
 }
 .founders-title {
   color: $hover;
+  @include roboto-medium;
+  //background: #f2f2f2;
+  background: $light-light-grey;
 }
 .obszary-projekty-slider {
   .area-wrapper {
@@ -1794,8 +1802,97 @@ p.o-nas-tekst {
 }
 .obszar-title {
   padding-left: 15px;
-
+  padding-right: 15px;
+  margin-top: 17px;
 }
+.areas-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+.area-wrapper-2 {
+  [class*='eko-'] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 6px solid red;
+    margin-left: 10px;
+
+  }
+
+  .eko-dzialalnosc-miedzynarodowa{
+    border-color: #ef6c45;
+    font-size: 28px;
+  }
+  .eko-dzialalnosc-miedzynarodowa:before{content:'\0041';}
+  .eko-dla-karpat:before{content:'\0042';}
+  .eko-dla-karpat{
+    border-color: #6c8d47;
+    font-size: 28px!important;
+  }
+  .eko-dla-edukacji-ekologicznej{
+    border-color: #3c81c2;
+  }
+  .eko-dla-edukacji-ekologicznej:before{
+    content:'\0043';
+    color: #3c81c2;
+    font-size: 28px;
+  }
+  .eko-dla-partycypacji-spolecznej{
+    border-color: #b27a3f;
+  }
+  .eko-dla-partycypacji-spolecznej:before{content:'\0044';
+      color: #b27a3f;
+    font-size: 28px;
+  }
+  .eko-dla-samorzadow-lokalnych{
+    border-color:#f2b756;
+  }
+  .eko-dla-samorzadow-lokalnych:before{content:'\0045';
+    color: #f2b756;
+    font-size: 28px;
+  }
+  .eko-dla-dziedzictwa-kulturowego{
+    border-color: #896b5f;
+  }
+  .eko-dla-dziedzictwa-kulturowego:before{content:'\0046';
+    color: #896b5f;
+    font-size: 28px;
+  }
+  .eko-dla-organizacji-pozarzadowych{
+    border-color: #5d96a0;
+    font-size: 28px;
+  }
+  .eko-dla-organizacji-pozarzadowych:before{content:'\0047';
+      color: #5d96a0;
+    font-size: 28px;
+  }
+  .eko-dla-spolecznosci-lokalnych{
+    border-color: #6363aa;
+  }
+  .eko-dla-spolecznosci-lokalnych:before{content:'\0048';
+    color: #6363aa;
+    font-size: 28px;
+  }
+  .eko-dla-swiata-nauki{
+    border-color: #b5842b;
+  }
+  .eko-dla-swiata-nauki:before{content:'\0049';
+    color: #b5842b;
+    font-size: 28px;
+  }
+  .eko-sc_white:before{content:'\004a';}
+  a{
+    text-decoration: none;
+    a:hover{
+      text-decoration: none;
+    }
+  }
+}
+
+
 .obszar-title-wrapper {
   border-bottom: 1px solid $light-grey;
   margin-bottom: 15px;
@@ -2252,6 +2349,17 @@ ul.menu-bottom {
   padding-top: 12px;
   padding-bottom: 12px;
 }
+.publication-title-inner {
+  color: $white;
+  height: 51px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.wrapper-single-column {
+  position: relative;
+    top: -50px;
+}
+
 .kontakt-title {
   position: relative;
   top: -51px;
@@ -2333,6 +2441,7 @@ a.sc-logo {
 
 //............................SLIDE 2................................
 .atut {
+  display: block;
   margin-bottom: 50px;
   text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
   @include roboto-bold;
@@ -2399,6 +2508,12 @@ $atuty: #2a5036;
 }
 //.................................................................
 
+.project-info-wrapper .founders-title {
+    border-bottom: 2px solid $light-grey-e5;
+    border-top: 2px solid $light-grey-e5;
+    margin-bottom: 10px;
+    padding: 5px 0px;
+}
 //................................SLIDE 3..........................
 
 .wspolpraca-kartka {
@@ -2571,7 +2686,13 @@ publication-list-hr {
   border-top: 1px solid $light-grey;
   border-bottom: 1px solid $light-grey;
 }
-
+.founders-slider,
+.areas-list-slider {
+  .slick-track {
+    margin: 0px auto;
+  display: block;
+  }
+}
 
 //................OPINIE - O NAS...................
 .opinie-wrapper {
@@ -2648,6 +2769,46 @@ publication-list-hr {
  .article-image-padding {
   padding-left: 30px;
    padding-bottom: 30px;
+}
+
+//.................PROJEKT ARCHIWALNY.....................
+@mixin archived {
+   background: rgba(125, 125, 125, 0.4);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+  top: 0px;
+}
+.archived-wrapper {
+ @include archived;
+}
+@mixin padlock {
+  background: rgba(125, 125, 125, 0.3);
+  text-transform: uppercase;
+  @include roboto-medium;
+  color: rgba(0, 0, 0, 0.6);
+  color: $white;
+  font-size: 16px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+    right: 0;
+  padding-bottom: 3px;
+  padding-top: 3px;
+}
+.icon-padlock {
+  @include padlock;
+}
+.archived-wrapper-2 {
+ @include archived;
+  height: 102%;
+  background: rgba(125, 125, 125, 0.2);
+}
+.icon-padlock-2 {
+  @include padlock;
+  background: rgba(125, 125, 125, 0.8);
 }
 
 
@@ -2936,6 +3097,9 @@ body {
 }
 
 @media screen and (max-width: 992px) {
+  .icon-padlock {
+  font-size: 10px;
+}
  .obszary-projekty-wrapper,
  .project-founders-wrapper,
  .czas-wrapper,
@@ -3428,6 +3592,7 @@ div.left {
   }
 .atut {
   margin-bottom: 11px;
+
 }
   .atuty-tekst,
   .atuty-title {

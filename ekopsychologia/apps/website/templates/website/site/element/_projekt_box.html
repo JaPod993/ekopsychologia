@@ -5,6 +5,11 @@
     <div class="wood-frame-wrapper{% if site.archived %} archived{% endif %}" id="wood-project-wrapper">
         <a href="{{ site.get_absolute_url }}" class="">
             <span class="inner-shadow project-hover">
+                {% if site.archived %}
+                <span class="archived-wrapper">
+                     <span class="icon-padlock">Projekt Archiwalny</span>
+                </span>
+                {% endif %}
                 <span class="shadow project-hover ">
                     <span class="project-title">{{ site }}</span>
                 </span>

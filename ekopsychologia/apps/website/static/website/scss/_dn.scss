@@ -162,16 +162,17 @@ a {
 }
 
 .area-wrapper {
-  [class*='eko-']{
+  [class*='eko-'] {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    border:6px solid red;
+    border: 6px solid red;
     margin-left: 0px;
   }
+
   .eko-dzialalnosc-miedzynarodowa{
     border-color: #ef6c45;
     font-size: 28px;
