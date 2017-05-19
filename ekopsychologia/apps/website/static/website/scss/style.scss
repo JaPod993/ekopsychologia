@@ -438,9 +438,12 @@ div.col-sm-12.nav-padding {
 .budzet-wrapper {
   @include przesuniecie;
 }
-.project-icon {
 
+.inner-shadow.project-hover {
+ background: url("../images/archive.png");
 }
+
+
 .project-info-wrapper {
   .left-menu ul li {
     &:first-child {

@@ -626,6 +626,10 @@ div.col-sm-12.nav-padding {
   top: -37px;
 }
 
+.inner-shadow.project-hover {
+  background: url("../images/archive.png");
+}
+
 .project-info-wrapper .left-menu ul li:first-child {
   border-top: 2px solid #f2f2f2;
 }

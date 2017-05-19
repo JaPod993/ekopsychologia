@@ -2,15 +2,19 @@
 {% load corecms_tags %}
 {% load templatetags %}
 
-<div class="page-title text-center project-icon clearfix">
-    {% if category_project.logo %}
 
-        {% thumbnail category_project.logo "200" seoname=category_project|addstr:"" as im %}
-            <img src="{{ im.url }}" alt="{{ category_project }}">
-        {% endthumbnail %}
+    <div class="page-title text-center project-icon clearfix">
+        <div class="archive-project">
+            {% if category_project.logo %}
+            <a href="../" class="">
+                {% thumbnail category_project.logo "200" seoname=category_project|addstr:"" as im %}
+                <img src="{{ im.url }}" alt="{{ category_project }}">
+                {% endthumbnail %}
+            </a>
+            {% endif %}
+        </div>
+    </div>
 
-    {% endif %}
-</div>
 
 <div class="clearfix project-info-wrapper text-center">
     <div class="project-link-wrapper ">
