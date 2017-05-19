@@ -4,9 +4,11 @@
 
 <div class="page-title text-center project-icon clearfix">
     {% if category_project.logo %}
+
         {% thumbnail category_project.logo "200" seoname=category_project|addstr:"" as im %}
             <img src="{{ im.url }}" alt="{{ category_project }}">
         {% endthumbnail %}
+
     {% endif %}
 </div>
 

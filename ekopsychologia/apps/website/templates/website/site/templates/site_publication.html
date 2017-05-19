@@ -44,6 +44,7 @@
                         {%if object.level > 0 %}
                             <div><h2 class="left-menu-right-header">{{ object.identity }}</h2></div>
                         {% endif %}
+                    
                     <div class="article-list-wrapper">
                         {% for article in object_articles %}
                             {% include "website/site/element/_publication_list_box.html" with article=article %}
@@ -54,5 +55,7 @@
             </div>
         </div>
     </div>
+
+
 {% endblock %}
 
