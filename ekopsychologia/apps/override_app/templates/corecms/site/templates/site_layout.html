@@ -64,7 +64,7 @@
                     {% endif %}
 
 
-                        {%if object.level > 0 %}
+                        {%if object.level > 0 and object.parent.slug != "projekty" %}
                             <div><h2 class="left-menu-right-header">{{ object.identity }}</h2></div>
                         {% endif %}
 
