@@ -3,12 +3,12 @@
 
 <div class="pagination-block">
   <div class="row">
-    <!--<div class="col-sm-2 text-left">-->
-      <!--<span class="pagination_page_count">Strona {{page}} z {{pages}}</span>-->
-    <!--</div>-->
+    {#% <div class="col-sm-2 text-left"> %#}
+      {#% <span class="pagination_page_count">Strona {{page}} z {{pages}}</span> %#}
+    {#% </div> %#}
     <div class="col-sm-12 text-center">
       <div class="dataTables_paginate paging_simple_numbers pagination">
-        <ul class="pagination pagination-sm">
+        <ul class="pagination pagination-sm ">
           {% if has_previous %}
           <li class="prev"><a href="{% if get_params %}?{{ get_params }}&{% else %}?{% endif %}page={{ previous }}">Poprzednia</a>
           </li>

@@ -28,22 +28,26 @@
 
                     <h1 class="text-center publication-title-inner kontakt-title">{{ object.identity }}</h1>
 
-<div class="wrapper-single-column">
-                    {% block site_inner_content %}
+                    <div class="wrapper-single-column">
+                        {% block site_inner_content %}
                         <!-- Okruszki -->
                         {% include 'corecms/site/_breadcrumbs.html' %}
 
                         {% if object.level > 0 %}
-                            <div><h2 class="left-menu-right-header">{{ object.identity }}</h2></div>
+                        <div><h2 class="left-menu-right-header">{{ object.identity }}</h2></div>
                         {% endif %}
 
-                    <div class="article-list-wrapper">
-                        {% for article in object_articles %}
+                        <div class="article-list-wrapper">
+                            {% for article in object_articles %}
                             {% include "website/site/element/_publication_list_box.html" with article=article %}
-                        {% endfor %}
+                            {% endfor %}
+                        </div>
+                        <!-- Paginacja -->
+                            {% digg_paginator template_name='corecms/site/_digg_paginator.html' %}
+                        {% endblock %}
                     </div>
-                    {% endblock %}
-    </div>
+
+
                 </div>
             </div>
         </div>

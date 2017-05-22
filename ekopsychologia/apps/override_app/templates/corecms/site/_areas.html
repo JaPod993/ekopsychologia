@@ -3,11 +3,10 @@
 
     <div class="areas-list-slider {% if publication_slider %}publication-slider{% endif %} ">
 
-        <h3 class="obszar-title col-xs-4">Obszary działania :</h3>
-<div class="row container">
-        {% for area in object.areas.all %}
+        <h3 class="obszar-title">Obszary działania :</h3>
 
-            <div class="col-xs-4 col-sm-2 clearfix areas-padding">
+        {% for area in object.areas.all %}
+            <div class="col-xs-1 areas-padding">
                 <a href="{{ area.get_absolute_url }}">
                     <i class="eko-{{ area.slug }}" title="{{ area }}"></i>
                 </a>
@@ -15,6 +14,11 @@
 
         {% endfor %}
     </div>
-    </div>
 </div>
 {% endif %}
+
+
+
+
+
+
