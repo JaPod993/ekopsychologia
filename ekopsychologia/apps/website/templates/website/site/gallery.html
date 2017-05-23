@@ -10,7 +10,7 @@
         <h1>Galeria</h1>
     </div>
     {% for gallery in object_list %}
-      <h2 class="gallery-title"><a class="gallery-title" href="{{ article.get_absolute_url }}">{{ gallery }}</a></h2>
+      <h2 class="gallery-title"><a class="gallery-title" href="{{ gallery.connector_parents.first.parent.get_absolute_url }}">{{ gallery }}</a></h2>
 
     <div class="gallery-content-wrapper">
         {% include "website/site/element/_gallery.html" with gallery=gallery %}
