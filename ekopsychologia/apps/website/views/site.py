@@ -86,6 +86,11 @@ class GalleryListView(ListView):
         queryset = queryset.filter(gallerydistinction__in_global=True)
         return queryset
 
+    def get_context_data(self, **kwargs):
+        context = super(GalleryListView, self).get_context_data(**kwargs)
+        context['category'] = Site.objects.published().filter(slug="galeria").first()
+        return context
+
 
 class ContentItemDetailView(BaseContentItemDetailView):
 
