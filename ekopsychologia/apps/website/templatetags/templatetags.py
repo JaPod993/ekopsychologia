@@ -1,10 +1,15 @@
 # -*- encoding: utf-8 -*-
 from urlparse import urlparse
+
+from django.core.paginator import Paginator, InvalidPage
+from django.http.response import Http404
+
 from corecms.models.default.slider import Slider
 from corecms.templatetags.corecms_tags import get_previous_breadcrumb
 from django import template
 from cms.models import Article, Site
 
+from django.utils.translation import ugettext_lazy as _
 register = template.Library()
 
 
@@ -36,8 +41,30 @@ def get_opinie_list():
         return None
 
 
-@register.assignment_tag
-def get_obszary_dzialania_content(site):
+def paginate_queryset(queryset, context):
+
+    paginator = Paginator(queryset, 5)
+
+    page = context['request'].GET.get('p') or 1
+
+    try:
+        page_number = int(page)
+    except ValueError:
+        if page == 'last':
+            page_number = paginator.num_pages
+        else:
+            raise Http404(_("Page is not 'last', nor can it be converted to an int."))
+    try:
+        page = paginator.page(page_number)
+        return paginator, page, page.object_list, page.has_other_pages()
+    except InvalidPage as e:
+        raise Http404(_('Invalid page (%(page_number)s): %(message)s') % {
+            'page_number': page_number,
+            'message': str(e)
+        })
+
+@register.inclusion_tag('website/site/templates/_site_obszar_content.html', takes_context=True)
+def render_obszary_dzialania_content(context, site):
     rtn = dict()
     rtn['projects'] = Site.objects.published().filter(areas=site, parent__slug='projekty')
     rtn['sites'] = Site.objects.published().filter(areas=site).exclude(parent__slug='projekty')
@@ -46,15 +73,23 @@ def get_obszary_dzialania_content(site):
     if publication_site:
         rtn['articles'] = rtn['articles'].exclude(sites=publication_site)
         rtn['publications'] = Article.objects.published().filter(areas=site, sites=publication_site)
+    context['related_items'] = rtn
 
-    return rtn
+    paginator, page, queryset, is_paginated = paginate_queryset(rtn['articles'], context)
+    context.update({
+        'paginator': paginator,
+        'page_obj': page,
+        'is_paginated': is_paginated,
+        'object_list': queryset
+    })
+    context['related_items']['articles'] = queryset
+    return context
 
 
 @register.filter
 def to_hash_url(url):
     splited = url.rstrip("/").split("/")
     return "/".join(splited[0:len(splited)-1]) + "#" + splited[-1]
-
 
 
 @register.assignment_tag
