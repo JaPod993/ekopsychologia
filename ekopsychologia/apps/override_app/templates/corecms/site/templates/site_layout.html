@@ -101,7 +101,7 @@
                         <!-- Zdjęcia z plików -->
                         {% include 'corecms/site/_images.html' %}
                         <!-- Galeria i formularz -->
-                        {% for connector in article.connector_children.all %}
+                        {% for connector in object.connector_children.all %}
                             {% render_connector connector %}
                         {% endfor %}
                         {% endblock %}
