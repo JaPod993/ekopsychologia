@@ -1,7 +1,7 @@
 {% if object.areas.all %}
-<div class="area-wrapper-2">
+<div class="hidden-xs hidden-sm area-wrapper-2">
 
-    <div class="areas-list-slider {% if publication_slider %}publication-slider{% endif %} ">
+    <div class=" areas-list-slider {% if publication_slider %}publication-slider{% endif %} ">
 
         <h3 class="obszar-title">Obszary działania :</h3>
 
@@ -14,6 +14,24 @@
 
         {% endfor %}
     </div>
+
+</div>
+<div class="visible-xs visible-sm area-wrapper-2">
+
+    <div class=" areas-list-slider {% if publication_slider %}publication-slider{% endif %} ">
+
+        <div class="row">
+            {% for area in object.areas.all %}
+            <div class="col-xs-2 col-sm-2 areas-padding areas-padding-xs">
+                <a href="{{ area.get_absolute_url }}">
+                    <i class="eko-{{ area.slug }}" title="{{ area }}"></i>
+                </a>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
 </div>
 {% endif %}
 

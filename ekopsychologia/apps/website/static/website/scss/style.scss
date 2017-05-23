@@ -1183,7 +1183,7 @@ table, th, td {
 }
 .article-image {
   padding-left: 30px;
-  padding-right: 0;
+  padding-right: 15px;
 }
 .article-content {
   padding-right: 30px;
@@ -2853,6 +2853,16 @@ publication-list-hr {
   padding-bottom: 15px;
   padding-left: 15px;
 }
+.pagination-block {
+  .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+.areas-padding-xs {
+  padding-left: 35px!important;
+  padding-right:35px!important;
+}
 .gallery-content-wrapper {
  // padding-top: 30px;
 }
@@ -3604,6 +3614,9 @@ div.left {
 }
 
 @media screen and (max-width: 480px) {
+  .pagination-sm > li > a, .pagination-sm > li > span {
+    font-size: 13px;
+  }
   .partnership-link {
     font-size: 10px!important;
   }
@@ -3800,6 +3813,9 @@ div.left {
 }
 
 @media screen and (max-width: 320px) {
+  .pagination-sm > li > a, .pagination-sm > li > span {
+    font-size: 10px;
+  }
   .project-hover {
     font-size: 6px;
   }
