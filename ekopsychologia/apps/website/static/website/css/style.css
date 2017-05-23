@@ -3011,6 +3011,16 @@ publication-list-hr {
   padding-left: 15px;
 }
 
+.pagination-block .row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.areas-padding-xs {
+  padding-left: 35px !important;
+  padding-right: 35px !important;
+}
+
 .galeria-napis {
   height: 50px;
   padding-bottom: 12px;
@@ -3824,6 +3834,10 @@ body {
   }
 }
 @media screen and (max-width: 480px) {
+  .pagination-sm > li > a, .pagination-sm > li > span {
+    font-size: 13px;
+  }
+
   .partnership-link {
     font-size: 10px !important;
   }
@@ -4021,6 +4035,10 @@ body {
   }
 }
 @media screen and (max-width: 320px) {
+  .pagination-sm > li > a, .pagination-sm > li > span {
+    font-size: 10px;
+  }
+
   .project-hover {
     font-size: 6px;
   }
