@@ -31,6 +31,8 @@ class Site(SiteAbstract):
             ('website/site/templates/site_contact.html', u'Kontakt'),
             ('website/site/templates/site_partnership.html', u'Wspolpraca'),
             ('website/site/templates/site_publication.html', u'Publikacje'),
+            ('corecms/site/templates/articles_list_layout.html', u'Aktualności - lista'),
+
     ]
 
     def allow_redirect_to_children(self):

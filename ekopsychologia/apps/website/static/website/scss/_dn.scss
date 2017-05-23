@@ -275,3 +275,20 @@ a {
     }
   }
 }
+.position-relative{
+  position: relative;
+}
+
+.page-head-title{
+    margin-left: -15px;
+    margin-right: -15px;
+    height: 50px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    color: #fff;
+    background: #0c824b;
+    text-align: center;
+    position: absolute;
+    top: -50px;
+    width: 100%;
+}
