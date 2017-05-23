@@ -56,14 +56,14 @@
         </div>
     </nav>
 {% if category_project.areas.all %}
-    <div  class="obszary-projekty-wrapper">
+    <div  class="animated fadeInUp obszary-projekty-wrapper">
         <div class="text-center founders-title">Obszary działania</div>
         {% include "corecms/site/_areas_2.html" with object=category_project only %}
     </div>
  {% endif %}
 
 {% if category_project.founder_set.all %}
-    <div class="project-founders project-founders-wrapper">
+    <div class="animated fadeInUp project-founders project-founders-wrapper">
         <div class="text-center founders-title">Fundatorzy</div>
         <div class="founders-slider">
         {% for founder in category_project.founder_set.all %}
@@ -80,7 +80,7 @@
  {% endif %}
 
     {% if category_project.execution_time %}
-    <div class="czas-wrapper">
+    <div class="animated fadeInUp czas-wrapper">
         <div class="text-center founders-title">Czas realizacji:</div>
         <div class="czas-realizacji-wrapper">
             {{ category_project.execution_time }}
@@ -88,7 +88,7 @@
     </div>
     {% endif %}
     {% if category_project.budget %}
-    <div class="budzet-wrapper">
+    <div class="animated fadeInUp budzet-wrapper">
         <div class="text-center founders-title">Budżet całkowity:</div>
         <div class="budzer-calkowity-wrapper">
             {{ category_project.budget }}
