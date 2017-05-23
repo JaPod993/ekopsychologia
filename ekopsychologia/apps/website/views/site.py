@@ -79,6 +79,7 @@ class NewsletterSignView(FormView):
 class GalleryListView(ListView):
     model = Gallery
     template_name = "website/site/gallery.html"
+    paginate_by = 5
 
     def get_queryset(self):
         queryset = super(GalleryListView, self).get_queryset()

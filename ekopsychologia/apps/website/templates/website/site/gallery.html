@@ -1,4 +1,5 @@
 {% extends 'website/site/base/layout.html' %}
+{% load digg_paginator %}
 
 {% block body_content %}
 <div class="container-fluid gallery-fluid">
@@ -18,5 +19,10 @@
     </div>
     {% endfor %}
 
-    </div>
+{% digg_paginator template_name='corecms/site/_digg_paginator.html' %}
+
+</div>
+
+
+
 {% endblock %}
