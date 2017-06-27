@@ -21,10 +21,12 @@
                                 <img src="{{ im.url }}" class="img-responsive publication-image center-block">
                             {% endthumbnail %}
                         {% else %}
+                            {% comment %}
                             {% take_page_of_pdf file.absolute_path 0 as page %}
                             {% thumbnail page "175x240" seoname=article|addstr:"" as im %}
                                 <img src="{{ im.url }}" class="img-responsive publication-image center-block">
                             {% endthumbnail %}
+                            {% endcomment %}
                         {% endif %}
                     </div>
                     <div class="text-center">

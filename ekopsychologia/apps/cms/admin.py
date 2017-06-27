@@ -8,10 +8,10 @@ from corecms.models.gallery import Gallery
 from corecms.widgets import Select2RelatedMultipleWidget
 from django.contrib import admin
 
-from corecms.admin import ArticleAdmin as BaseArticleAdmin, SiteAdmin as BaseSiteAdmin
+from corecms.admin import ArticleAdmin as BaseArticleAdmin, SiteAdmin as BaseSiteAdmin, ConfigCMSAdmin
 from django.contrib.contenttypes.models import ContentType
 
-from cms.models import Article, GalleryDistinction, Site, Founder
+from cms.models import Article, GalleryDistinction, Site, Founder, ConfigCMS
 
 
 class ArticleAdminForm(BaseArticleAdminForm):
@@ -91,3 +91,19 @@ class SiteAdmin(BaseSiteAdmin):
 
 admin.site.unregister(Site)
 admin.site.register(Site, SiteAdmin)
+
+
+class CustomConfigCMSAdmin(ConfigCMSAdmin):
+    fieldsets = [
+        (None, {
+            'classes': ('tab-data',),
+            'fields': ['site_title', 'site_pagination', 'tracking_code', 'cookie_description', 'events', 'participants', 'institutions', 'experts', 'founds', 'projects']
+        }),
+        ('SEO', {
+            'classes': ('tab-seo',),
+            'fields': ['seo_keywords', 'seo_description']
+        })
+    ]
+
+admin.site.unregister(ConfigCMS)
+admin.site.register(ConfigCMS, CustomConfigCMSAdmin)

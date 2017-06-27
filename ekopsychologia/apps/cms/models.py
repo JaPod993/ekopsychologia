@@ -84,6 +84,14 @@ class MediaFile(AbstractMediaFile):
 
 
 class ConfigCMS(ConfigCMSAbstract):
+
+    events = models.IntegerField(verbose_name=u'Ilość wydarzeń', default=0) # 370
+    participants = models.IntegerField(verbose_name=u'Uczestnicy', default=0) # 15000
+    institutions = models.IntegerField(verbose_name=u'Inistytucji w Porozumieniu Karpackim', default=0) # 70
+    experts = models.IntegerField(verbose_name=u'Ekspertów', default=0) # 300
+    founds = models.IntegerField(verbose_name=u'Milionów złotych pozyskanych na działania', default=0) # 5
+    projects = models.IntegerField(verbose_name=u'Zrealizowane Projekty', default=0) # 22
+
     class Meta(ConfigCMSAbstract.Meta):
         abstract = False
         app_label = 'cms'

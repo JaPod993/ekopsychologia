@@ -16,7 +16,7 @@
                     <img class="img-responsive center-block" src="{% static 'website/images/leaf.png' %}" alt="">
                     <div class="leaf-relative leaf-1">
                         <div class="osiagniecia-cyfry">
-                            370
+                            {{ request.cms_config.events }}
                         </div>
                         <div class="osiagniecia-kreska">
                             |
@@ -32,7 +32,7 @@
                          alt="">
                     <div class="leaf-relative leaf-2">
                         <div class="osiagniecia-cyfry">
-                            15000
+                            {{ request.cms_config.participants }}
                         </div>
                         <div class="osiagniecia-kreska">
                             |
@@ -49,13 +49,13 @@
                     <img class="img-responsive center-block" src="{% static 'website/images/leaf.png' %}" alt="">
                     <div class="leaf-relative leaf-3">
                         <div class="osiagniecia-cyfry">
-                            70
+                            {{ request.cms_config.institutions }}
                         </div>
                         <div class="osiagniecia-kreska">
                             |
                         </div>
                         <div class="osiagniecia-podpis">
-                            Inistytucji w Porozumieniu Karpackim
+                            Instytucji w Porozumieniu Karpackim
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                          src="{% static 'website/images/leaf.png' %}" alt="">
                     <div class="leaf-relative leaf-4">
                         <div class="osiagniecia-cyfry">
-                            300
+                            {{ request.cms_config.experts }}
                         </div>
                         <div class="osiagniecia-kreska">
                             |
@@ -83,7 +83,7 @@
                          alt="">
                     <div class="leaf-relative leaf-5">
                         <div class="osiagniecia-cyfry">
-                            5
+                            {{ request.cms_config.founds }}
                         </div>
                         <div class="osiagniecia-kreska">
                             |
@@ -99,7 +99,7 @@
                          src="{% static 'website/images/leaf.png' %}" alt="">
                     <div class="leaf-relative leaf-6">
                         <div class="osiagniecia-cyfry">
-                            22
+                            {{ request.cms_config.projects }}
                         </div>
                         <div class="osiagniecia-kreska">
                             |
