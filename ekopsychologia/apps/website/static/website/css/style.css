@@ -2848,7 +2848,13 @@ publication-list-hr {
 }
 
 .opinie-wrapper {
-  background: #f7f7f7;
+  background: url("../images/opinie_bg_3.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   margin-bottom: 15px;
 }
 
