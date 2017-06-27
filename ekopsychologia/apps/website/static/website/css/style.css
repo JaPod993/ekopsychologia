@@ -4104,3 +4104,18 @@ body {
     padding-top: 5px;
   }
 }
+button.slick-prev.slick-arrow,
+button.slick-next.slick-arrow {
+  height: 65px !important;
+  width: 25px !important;
+}
+
+button.btn.btn-default.btn-block {
+  position: relative;
+}
+
+button.btn.btn-default.btn-block:after {
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+}
