@@ -8,7 +8,7 @@
         {% for area in object.areas.all %}
             <div class="col-xs-1 areas-padding">
                 <a href="{{ area.get_absolute_url }}">
-                    <i class="eko-{{ area.slug }}" title="{{ area }}"></i>
+                    <i class="eko-{{ area.slug }}" title="{{ area|lower|truncatechars:3 }}"></i>
                 </a>
             </div>
 

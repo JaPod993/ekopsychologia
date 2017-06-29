@@ -13,6 +13,7 @@ from django.utils.translation import ugettext_lazy as _
 register = template.Library()
 
 
+
 @register.simple_tag
 def get_site_thumbnail(article=None):
     try:
@@ -126,3 +127,4 @@ def get_top_wrapper(category_project, category, article):
         return category.main_image
 
     return None
+
