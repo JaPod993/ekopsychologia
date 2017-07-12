@@ -1,3 +1,4 @@
+{% load templatetags %}
 {% if object.areas.all %}
 
 
@@ -6,7 +7,7 @@
         {% for area in object.areas.all %}
             <div class="col-xs-4 obszary-projekty-slider">
                 <a href="{{ area.get_absolute_url }}">
-                    <i class="eko-{{ area.slug }}" title="dla{{ area|title|slice:'3:' }}"></i>
+                    <i class="eko-{{ area.slug }}" title="{{ area.identity|low_first }}"></i>
 
 
                 </a>

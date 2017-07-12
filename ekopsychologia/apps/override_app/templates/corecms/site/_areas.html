@@ -1,3 +1,4 @@
+{% load templatetags %}
 {% if object.areas.all %}
 <div class="hidden-xs hidden-sm area-wrapper-2">
 
@@ -8,7 +9,7 @@
         {% for area in object.areas.all %}
             <div class="col-xs-1 areas-padding">
                 <a href="{{ area.get_absolute_url }}">
-                    <i class="eko-{{ area.slug }}" title="dla{{ area|title|slice:'3:' }}"></i>
+                    <i class="eko-{{ area.slug }}" title="{{ area.identity|low_first }}"></i>
                 </a>
             </div>
 
@@ -38,5 +39,8 @@
 
 
 
+{% comment %}
 
+dla{{ area|title|slice:'3:' }}
 
+{% endcomment %}

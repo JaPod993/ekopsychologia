@@ -128,3 +128,10 @@ def get_top_wrapper(category_project, category, article):
 
     return None
 
+
+@register.filter
+def low_first(value):
+    return value[0].lower() + value[1:]
+
+
+
